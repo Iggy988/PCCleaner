@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>PCCleaner</RootNamespace>
+    <AssemblyName>PCCleaner</AssemblyName>
+
+    <Version>1.0.0</Version>
+    <Product>PC Cleaner</Product>
+    <AssemblyTitle>PC Cleaner</AssemblyTitle>
+    <Description>Clean junk files, manage startup apps and optimize Windows.</Description>
+    <Copyright>Copyright © 2026</Copyright>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+
+    <!-- Only ship English resources from the framework/packages (smaller self-contained publish). -->
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <!-- Release builds always run elevated; Debug runs as the current user so `dotnet run` works. -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' != 'Release'">
+    <ApplicationManifest>app.debug.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app.ico" />
+    <Resource Include="Assets\app.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="PCCleaner.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.14" />
+    <PackageReference Include="System.Management" Version="10.0.14" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="10.0.14" />
+    <PackageReference Include="WPF-UI" Version="4.3.0" />
+    <PackageReference Include="WPF-UI.DependencyInjection" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>

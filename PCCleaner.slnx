@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PCCleaner/PCCleaner.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PCCleaner.Tests/PCCleaner.Tests.csproj" />
+  </Folder>
+</Solution>

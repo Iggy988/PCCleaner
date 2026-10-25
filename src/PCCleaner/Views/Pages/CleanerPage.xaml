@@ -1,0 +1,318 @@
+<Page
+    x:Class="PCCleaner.Views.Pages.CleanerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:vm="clr-namespace:PCCleaner.ViewModels"
+    Title="Cleaner"
+    d:DataContext="{d:DesignInstance vm:CleanerViewModel}"
+    ScrollViewer.CanContentScroll="False"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d">
+    <Grid Margin="0,0,0,16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--  Toolbar  -->
+        <Grid Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                <ui:Button
+                    Appearance="Transparent"
+                    Command="{Binding SelectRecommendedCommand}"
+                    Content="Recommended"
+                    Icon="{ui:SymbolIcon Sparkle24}"
+                    IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBool}}" />
+                <ui:Button
+                    Margin="4,0,0,0"
+                    Appearance="Transparent"
+                    Command="{Binding SelectAllCommand}"
+                    Content="Select all"
+                    Icon="{ui:SymbolIcon CheckboxChecked24}"
+                    IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBool}}" />
+                <ui:Button
+                    Margin="4,0,0,0"
+                    Appearance="Transparent"
+                    Command="{Binding SelectNoneCommand}"
+                    Content="Select none"
+                    Icon="{ui:SymbolIcon CheckboxUnchecked24}"
+                    IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBool}}" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <ui:Button
+                    Command="{Binding ScanCommand}"
+                    Content="Scan"
+                    Icon="{ui:SymbolIcon Search24}" />
+                <ui:Button
+                    Margin="8,0,0,0"
+                    Appearance="Primary"
+                    Command="{Binding CleanCommand}"
+                    Content="Clean selected"
+                    Icon="{ui:SymbolIcon Broom24}" />
+            </StackPanel>
+        </Grid>
+
+        <!--  Notices  -->
+        <StackPanel Grid.Row="1">
+            <ui:InfoBar
+                Title="Some apps are running"
+                Margin="0,0,0,8"
+                IsClosable="False"
+                IsOpen="True"
+                Message="{Binding BlockingWarning}"
+                Severity="Informational"
+                Visibility="{Binding BlockingWarning, Converter={StaticResource NullToVisibility}}" />
+        </StackPanel>
+
+        <!--  Categories  -->
+        <ScrollViewer
+            Grid.Row="2"
+            Padding="0,0,12,0"
+            HorizontalScrollBarVisibility="Disabled"
+            VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Groups}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type vm:CleanupGroupViewModel}">
+                        <StackPanel Margin="0,0,0,14">
+                            <!--  Group header with select-all  -->
+                            <Grid Margin="2,4,2,8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <CheckBox
+                                    MinWidth="0"
+                                    VerticalAlignment="Center"
+                                    IsChecked="{Binding IsAllChecked}"
+                                    IsEnabled="{Binding DataContext.IsBusy, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource InverseBool}}"
+                                    ToolTip="Select or clear this whole group" />
+                                <ui:SymbolIcon
+                                    Grid.Column="1"
+                                    Margin="2,0,8,0"
+                                    VerticalAlignment="Center"
+                                    FontSize="18"
+                                    Symbol="{Binding Icon}" />
+                                <TextBlock
+                                    Grid.Column="2"
+                                    VerticalAlignment="Center"
+                                    FontSize="16"
+                                    FontWeight="SemiBold"
+                                    Text="{Binding Name}" />
+                                <TextBlock
+                                    Grid.Column="3"
+                                    VerticalAlignment="Center"
+                                    Style="{StaticResource CaptionText}"
+                                    Text="{Binding Summary}" />
+                            </Grid>
+
+                            <ItemsControl ItemsSource="{Binding Items}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type vm:CleanupItemViewModel}">
+                                        <Border
+                                            x:Name="Row"
+                                            Cursor="Hand"
+                                            Style="{StaticResource RowCard}">
+                                            <Border.InputBindings>
+                                                <MouseBinding Command="{Binding ToggleCommand}" Gesture="LeftClick" />
+                                            </Border.InputBindings>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <CheckBox
+                                                    MinWidth="0"
+                                                    VerticalAlignment="Center"
+                                                    IsChecked="{Binding IsChecked}"
+                                                    IsEnabled="{Binding IsAvailable}" />
+
+                                                <Grid
+                                                    Grid.Column="1"
+                                                    Width="38"
+                                                    Height="38"
+                                                    Margin="4,0,14,0"
+                                                    VerticalAlignment="Center">
+                                                    <Border Style="{StaticResource IconTile}" />
+                                                    <ui:SymbolIcon
+                                                        FontSize="20"
+                                                        Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}"
+                                                        Symbol="{Binding Icon}" />
+                                                </Grid>
+
+                                                <StackPanel Grid.Column="2" VerticalAlignment="Center">
+                                                    <TextBlock Style="{StaticResource TitleText}" Text="{Binding Name}" />
+                                                    <TextBlock Style="{StaticResource CaptionText}" Text="{Binding Description}" />
+                                                    <StackPanel
+                                                        Margin="0,3,0,0"
+                                                        Orientation="Horizontal"
+                                                        Visibility="{Binding Warning, Converter={StaticResource NullToVisibility}}">
+                                                        <ui:SymbolIcon
+                                                            Margin="0,0,5,0"
+                                                            FontSize="13"
+                                                            Foreground="{DynamicResource SystemFillColorCautionBrush}"
+                                                            Symbol="Info24" />
+                                                        <TextBlock Style="{StaticResource WarningText}" Text="{Binding Warning}" />
+                                                    </StackPanel>
+                                                </StackPanel>
+
+                                                <StackPanel
+                                                    Grid.Column="3"
+                                                    MinWidth="110"
+                                                    Margin="16,0,0,0"
+                                                    VerticalAlignment="Center">
+                                                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                                        <ui:ProgressRing
+                                                            Width="16"
+                                                            Height="16"
+                                                            Margin="0,0,8,0"
+                                                            IsIndeterminate="True"
+                                                            Visibility="{Binding IsBusy, Converter={StaticResource BoolToVisibility}}" />
+                                                        <TextBlock
+                                                            x:Name="StatusLabel"
+                                                            FontSize="15"
+                                                            FontWeight="SemiBold"
+                                                            Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                                                            Text="{Binding StatusText}" />
+                                                    </StackPanel>
+                                                    <TextBlock
+                                                        HorizontalAlignment="Right"
+                                                        Style="{StaticResource CaptionText}"
+                                                        Text="{Binding DetailText}"
+                                                        Visibility="{Binding DetailText, Converter={StaticResource NullToVisibility}}" />
+                                                </StackPanel>
+                                            </Grid>
+                                        </Border>
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding IsAvailable}" Value="False">
+                                                <Setter TargetName="Row" Property="Opacity" Value="0.55" />
+                                                <Setter TargetName="Row" Property="Cursor" Value="Arrow" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Status}" Value="Cleaned">
+                                                <Setter TargetName="StatusLabel" Property="Foreground" Value="{DynamicResource SystemFillColorSuccessBrush}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding HasFoundJunk}" Value="True">
+                                                <Setter TargetName="StatusLabel" Property="Foreground" Value="{DynamicResource AccentTextFillColorPrimaryBrush}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Status}" Value="Failed">
+                                                <Setter TargetName="StatusLabel" Property="Foreground" Value="{DynamicResource SystemFillColorCriticalBrush}" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <!--  Bottom summary / progress / result bar  -->
+        <Border
+            Grid.Row="3"
+            Margin="0,10,12,0"
+            Padding="18,14"
+            Style="{StaticResource Card}">
+            <Grid>
+                <!--  Idle: selection summary  -->
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel.Style>
+                        <Style TargetType="StackPanel">
+                            <Setter Property="Visibility" Value="Visible" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsBusy}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ShowResult}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </StackPanel.Style>
+                    <ui:SymbolIcon
+                        Margin="0,0,10,0"
+                        FontSize="20"
+                        Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}"
+                        Symbol="DataUsage24" />
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontSize="14"
+                        Text="{Binding SelectionSummary}" />
+                </StackPanel>
+
+                <!--  Busy: progress  -->
+                <Grid Visibility="{Binding IsBusy, Converter={StaticResource BoolToVisibility}}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock
+                            Margin="0,0,0,6"
+                            FontSize="14"
+                            Text="{Binding ProgressText}" />
+                        <ProgressBar
+                            Height="6"
+                            IsIndeterminate="{Binding IsScanning}"
+                            Maximum="100"
+                            Value="{Binding Progress}" />
+                    </StackPanel>
+                    <ui:Button
+                        Grid.Column="1"
+                        Margin="16,0,0,0"
+                        Command="{Binding CancelCommand}"
+                        Content="Cancel"
+                        Icon="{ui:SymbolIcon Dismiss24}" />
+                </Grid>
+
+                <!--  Done: result with count-up  -->
+                <Grid>
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                            <Style.Triggers>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding ShowResult}" Value="True" />
+                                        <Condition Binding="{Binding IsBusy}" Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </MultiDataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ui:SymbolIcon
+                        Margin="0,0,14,0"
+                        VerticalAlignment="Center"
+                        FontSize="34"
+                        Foreground="{DynamicResource SystemFillColorSuccessBrush}"
+                        Symbol="CheckmarkCircle24" />
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                        <TextBlock FontSize="22" FontWeight="Bold">
+                            <Run Text="Freed" />
+                            <Run Foreground="{DynamicResource SystemFillColorSuccessBrush}" Text="{Binding DisplayedFreedBytes, Converter={StaticResource Bytes}, Mode=OneWay}" />
+                        </TextBlock>
+                        <TextBlock Style="{StaticResource CaptionText}" Text="{Binding ResultDetails}" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>
