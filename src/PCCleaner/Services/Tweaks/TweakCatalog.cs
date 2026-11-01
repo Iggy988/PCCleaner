@@ -10,12 +10,8 @@ public sealed class TweakCatalog(SettingsService settings)
 
     public IReadOnlyList<ITweak> Tweaks { get; } =
     [
-        new PowerPlanTweak("power-high", "High performance power plan",
-            "Keeps the CPU at higher clock speeds instead of saving power. Best for desktops or laptops on AC power.",
-            SymbolRegular.Power24, PowerPlanTweak.HighPerformance, OwnHighPerformance, settings),
-        new PowerPlanTweak("power-ultimate", "Ultimate performance power plan",
-            "Removes power-saving micro-latencies. Intended for workstations; uses more energy and battery.",
-            SymbolRegular.Rocket24, PowerPlanTweak.UltimatePerformance, OwnUltimatePerformance, settings),
+        new PowerPlanTweak("power-high", SymbolRegular.Power24, PowerPlanTweak.HighPerformance, OwnHighPerformance, settings),
+        new PowerPlanTweak("power-ultimate", SymbolRegular.Rocket24, PowerPlanTweak.UltimatePerformance, OwnUltimatePerformance, settings),
         new VisualEffectsTweak(settings),
         new GameDvrTweak(settings),
     ];

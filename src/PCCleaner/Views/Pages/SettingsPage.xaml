@@ -3,10 +3,11 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:loc="clr-namespace:PCCleaner.Services.Localization"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     xmlns:vm="clr-namespace:PCCleaner.ViewModels"
-    Title="Settings"
+    Title="{loc:Tr Nav_Settings}"
     d:DataContext="{d:DesignInstance vm:SettingsViewModel}"
     Foreground="{DynamicResource TextFillColorPrimaryBrush}"
     mc:Ignorable="d">
@@ -14,33 +15,65 @@
         <TextBlock
             Margin="2,0,0,8"
             Style="{StaticResource SectionHeader}"
-            Text="Appearance" />
+            Text="{loc:Tr Settings_General}" />
+        <ui:CardControl Margin="0,0,0,6">
+            <ui:CardControl.Icon>
+                <ui:SymbolIcon FontSize="24" Symbol="LocalLanguage24" />
+            </ui:CardControl.Icon>
+            <ui:CardControl.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Settings_Language}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Settings_LanguageDesc}" />
+                </StackPanel>
+            </ui:CardControl.Header>
+            <ComboBox
+                MinWidth="200"
+                AutomationProperties.Name="{loc:Tr Settings_Language}"
+                DisplayMemberPath="NativeName"
+                ItemsSource="{Binding Languages}"
+                SelectedItem="{Binding SelectedLanguage}" />
+        </ui:CardControl>
+
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Settings_Appearance}" />
         <ui:CardControl Margin="0,0,0,6">
             <ui:CardControl.Icon>
                 <ui:SymbolIcon FontSize="24" Symbol="Color24" />
             </ui:CardControl.Icon>
             <ui:CardControl.Header>
                 <StackPanel>
-                    <TextBlock Style="{StaticResource TitleText}" Text="App theme" />
-                    <TextBlock Style="{StaticResource CaptionText}" Text="Choose light, dark, or follow your Windows setting." />
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Settings_Theme}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Settings_ThemeDesc}" />
                 </StackPanel>
             </ui:CardControl.Header>
             <ComboBox
                 MinWidth="200"
+                AutomationProperties.Name="{loc:Tr Settings_Theme}"
                 DisplayMemberPath="Label"
                 ItemsSource="{Binding ThemeOptions}"
                 SelectedItem="{Binding SelectedTheme}" />
         </ui:CardControl>
+        <ui:CardControl Margin="0,0,0,6">
+            <ui:CardControl.Icon>
+                <ui:SymbolIcon FontSize="24" Symbol="SlideTransition24" />
+            </ui:CardControl.Icon>
+            <ui:CardControl.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Settings_ReduceMotion}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Settings_ReduceMotionDesc}" />
+                </StackPanel>
+            </ui:CardControl.Header>
+            <ui:ToggleSwitch IsChecked="{Binding ReduceMotion}" />
+        </ui:CardControl>
 
-        <TextBlock Style="{StaticResource SectionHeader}" Text="Cleaning" />
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Settings_Cleaning}" />
         <ui:CardControl Margin="0,0,0,6">
             <ui:CardControl.Icon>
                 <ui:SymbolIcon FontSize="24" Symbol="Clock24" />
             </ui:CardControl.Icon>
             <ui:CardControl.Header>
                 <StackPanel>
-                    <TextBlock Style="{StaticResource TitleText}" Text="Skip temp files newer than 24 hours" />
-                    <TextBlock Style="{StaticResource CaptionText}" Text="Recommended. Recent temp files may still be used by installers or running apps." />
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Settings_SkipRecent}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Settings_SkipRecentDesc}" />
                 </StackPanel>
             </ui:CardControl.Header>
             <ui:ToggleSwitch IsChecked="{Binding SkipRecentTempFiles}" />
@@ -51,28 +84,82 @@
             </ui:CardControl.Icon>
             <ui:CardControl.Header>
                 <StackPanel>
-                    <TextBlock Style="{StaticResource TitleText}" Text="Remember my selections" />
-                    <TextBlock Style="{StaticResource CaptionText}" Text="Keep the categories you check or uncheck in the Cleaner for next time." />
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Settings_Remember}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Settings_RememberDesc}" />
                 </StackPanel>
             </ui:CardControl.Header>
             <ui:ToggleSwitch IsChecked="{Binding RememberSelections}" />
         </ui:CardControl>
 
-        <TextBlock Style="{StaticResource SectionHeader}" Text="Safety" />
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Settings_Safety}" />
         <ui:CardControl Margin="0,0,0,6">
             <ui:CardControl.Icon>
                 <ui:SymbolIcon FontSize="24" Symbol="ShieldCheckmark24" />
             </ui:CardControl.Icon>
             <ui:CardControl.Header>
                 <StackPanel>
-                    <TextBlock Style="{StaticResource TitleText}" Text="Create a restore point before optimizing" />
-                    <TextBlock Style="{StaticResource CaptionText}" Text="Makes a System Restore point before the first tweak in each session (administrator only)." />
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Settings_RestorePoint}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Settings_RestorePointDesc}" />
                 </StackPanel>
             </ui:CardControl.Header>
             <ui:ToggleSwitch IsChecked="{Binding CreateRestorePoint}" />
         </ui:CardControl>
 
-        <TextBlock Style="{StaticResource SectionHeader}" Text="About" />
+        <ui:CardExpander Margin="0,0,0,6" IsExpanded="{Binding VirusTotalEnabled, Mode=OneTime}">
+            <ui:CardExpander.Icon>
+                <ui:SymbolIcon FontSize="24" Symbol="Globe24" />
+            </ui:CardExpander.Icon>
+            <ui:CardExpander.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Settings_VirusTotal}" />
+                        <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Settings_VirusTotalDesc}" TextWrapping="Wrap" />
+                    </StackPanel>
+                    <ui:ToggleSwitch
+                        Grid.Column="1"
+                        Margin="12,0,16,0"
+                        IsChecked="{Binding VirusTotalEnabled}" />
+                </Grid>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <TextBlock
+                    Margin="0,0,0,8"
+                    Style="{StaticResource CaptionText}"
+                    Text="{loc:Tr Settings_VirusTotalPrivacy}"
+                    TextWrapping="Wrap" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" MaxWidth="420" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ui:PasswordBox
+                        x:Name="VirusTotalKeyBox"
+                        AutomationProperties.Name="{loc:Tr Settings_VirusTotalKey}"
+                        PlaceholderText="{loc:Tr Settings_VirusTotalKey}" />
+                    <ui:Button
+                        Grid.Column="1"
+                        Margin="8,0,0,0"
+                        Command="{Binding SaveVirusTotalKeyCommand}"
+                        CommandParameter="{Binding Password, ElementName=VirusTotalKeyBox}"
+                        Content="{loc:Tr Settings_VirusTotalSave}"
+                        Icon="{ui:SymbolIcon Save24}" />
+                    <TextBlock
+                        Grid.Column="2"
+                        Margin="12,0,0,0"
+                        VerticalAlignment="Center"
+                        Style="{StaticResource CaptionText}"
+                        Text="{loc:Tr Settings_VirusTotalKeySaved}"
+                        Visibility="{Binding HasVirusTotalKey, Converter={StaticResource BoolToVisibility}}" />
+                </Grid>
+            </StackPanel>
+        </ui:CardExpander>
+
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Settings_About}" />
         <Border Style="{StaticResource Card}">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -81,29 +168,31 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <Image
-                    Width="48"
-                    Height="48"
+                    Width="56"
+                    Height="56"
                     Margin="0,0,16,0"
-                    Source="pack://application:,,,/Assets/app.png" />
+                    RenderOptions.BitmapScalingMode="HighQuality"
+                    Source="pack://application:,,,/Assets/app.png"
+                    Stretch="Uniform" />
                 <StackPanel Grid.Column="1" VerticalAlignment="Center">
                     <TextBlock FontSize="16" FontWeight="SemiBold">
-                        <Run Text="PC Cleaner" />
+                        <Run Text="{loc:Tr App_Name}" />
                         <Run Foreground="{DynamicResource TextFillColorSecondaryBrush}" Text="{Binding Version, Mode=OneWay, StringFormat=v{0}}" />
                     </TextBlock>
                     <TextBlock Style="{StaticResource CaptionText}">
-                        <Run Text="Settings and logs:" />
+                        <Run Text="{loc:Tr Settings_DataFolder}" />
                         <Run Text="{Binding DataFolder, Mode=OneWay}" />
                     </TextBlock>
                 </StackPanel>
                 <StackPanel Grid.Column="2" Orientation="Horizontal">
                     <ui:Button
                         Command="{Binding OpenDataFolderCommand}"
-                        Content="Open folder"
+                        Content="{loc:Tr Settings_OpenFolder}"
                         Icon="{ui:SymbolIcon FolderOpen24}" />
                     <ui:Button
                         Margin="8,0,0,0"
                         Command="{Binding OpenLogsCommand}"
-                        Content="View logs"
+                        Content="{loc:Tr Settings_ViewLogs}"
                         Icon="{ui:SymbolIcon DocumentBulletList24}" />
                 </StackPanel>
             </Grid>

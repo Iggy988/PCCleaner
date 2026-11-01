@@ -165,6 +165,20 @@ internal static class NativeMethods
     [DllImport("kernel32.dll")]
     internal static extern IntPtr LocalFree(IntPtr hMem);
 
+    // ---------- File lock probe ----------
+
+    internal const uint DELETE = 0x00010000;
+    internal const uint FILE_FLAG_OPEN_REPARSE_POINT = 0x00200000;
+    internal const int ERROR_FILE_NOT_FOUND = 2;
+    internal const int ERROR_PATH_NOT_FOUND = 3;
+    internal const int ERROR_ACCESS_DENIED = 5;
+    internal const int ERROR_SHARING_VIOLATION = 32;
+    internal const int ERROR_LOCK_VIOLATION = 33;
+
+    [DllImport("kernel32.dll", EntryPoint = "CreateFileW", CharSet = CharSet.Unicode, SetLastError = true)]
+    internal static extern SafeFileHandle CreateFile(string lpFileName, uint dwDesiredAccess, System.IO.FileShare dwShareMode,
+        IntPtr lpSecurityAttributes, System.IO.FileMode dwCreationDisposition, uint dwFlagsAndAttributes, IntPtr hTemplateFile);
+
     // ---------- Console code page ----------
 
     [DllImport("kernel32.dll")]
@@ -193,4 +207,84 @@ internal static class NativeMethods
     [DllImport("user32.dll", SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]
     internal static extern bool DestroyIcon(IntPtr hIcon);
+
+    // ---------- AMSI ----------
+
+    internal const int AMSI_RESULT_BLOCKED_BY_ADMIN_START = 0x4000;
+    internal const int AMSI_RESULT_BLOCKED_BY_ADMIN_END = 0x4fff;
+    internal const int AMSI_RESULT_DETECTED = 32768;
+
+    [DllImport("amsi.dll", CharSet = CharSet.Unicode)]
+    internal static extern int AmsiInitialize(string appName, out IntPtr amsiContext);
+
+    [DllImport("amsi.dll")]
+    internal static extern void AmsiUninitialize(IntPtr amsiContext);
+
+    [DllImport("amsi.dll")]
+    internal static extern int AmsiOpenSession(IntPtr amsiContext, out IntPtr amsiSession);
+
+    [DllImport("amsi.dll")]
+    internal static extern void AmsiCloseSession(IntPtr amsiContext, IntPtr amsiSession);
+
+    [DllImport("amsi.dll", CharSet = CharSet.Unicode)]
+    internal static extern int AmsiScanString(IntPtr amsiContext, string @string, string contentName, IntPtr amsiSession, out int result);
+
+    // ---------- Authenticode ----------
+
+    internal static readonly Guid WINTRUST_ACTION_GENERIC_VERIFY_V2 = new("00AAC56B-CD44-11d0-8CC2-00C04FC295EE");
+    internal const uint WTD_UI_NONE = 2;
+    internal const uint WTD_REVOKE_NONE = 0;
+    internal const uint WTD_CHOICE_FILE = 1;
+    internal const uint WTD_STATEACTION_VERIFY = 1;
+    internal const uint WTD_STATEACTION_CLOSE = 2;
+    internal const uint WTD_REVOCATION_CHECK_NONE = 0x10;
+    internal const uint WTD_CACHE_ONLY_URL_RETRIEVAL = 0x1000;
+    internal const int TRUST_E_NOSIGNATURE = unchecked((int)0x800B0100);
+
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+    internal struct WINTRUST_FILE_INFO
+    {
+        public uint cbStruct;
+        [MarshalAs(UnmanagedType.LPWStr)]
+        public string pcwszFilePath;
+        public IntPtr hFile;
+        public IntPtr pgKnownSubject;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    internal struct WINTRUST_DATA
+    {
+        public uint cbStruct;
+        public IntPtr pPolicyCallbackData;
+        public IntPtr pSIPClientData;
+        public uint dwUIChoice;
+        public uint fdwRevocationChecks;
+        public uint dwUnionChoice;
+        public IntPtr pFile;
+        public uint dwStateAction;
+        public IntPtr hWVTStateData;
+        public IntPtr pwszURLReference;
+        public uint dwProvFlags;
+        public uint dwUIContext;
+        public IntPtr pSignatureSettings;
+    }
+
+    [DllImport("wintrust.dll", ExactSpelling = true)]
+    internal static extern int WinVerifyTrust(IntPtr hwnd, ref Guid pgActionID, ref WINTRUST_DATA pWVTData);
+
+    // ---------- Delete on reboot ----------
+
+    internal const uint MOVEFILE_DELAY_UNTIL_REBOOT = 0x4;
+
+    [DllImport("kernel32.dll", EntryPoint = "MoveFileExW", CharSet = CharSet.Unicode, SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    internal static extern bool MoveFileEx(string lpExistingFileName, string? lpNewFileName, uint dwFlags);
+
+    // ---------- Computer name ----------
+
+    internal const int ComputerNamePhysicalDnsHostname = 5;
+
+    [DllImport("kernel32.dll", EntryPoint = "SetComputerNameExW", CharSet = CharSet.Unicode, SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    internal static extern bool SetComputerNameEx(int nameType, string lpBuffer);
 }

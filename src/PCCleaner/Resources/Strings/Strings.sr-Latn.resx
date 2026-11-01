@@ -1,0 +1,1738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="App_Name" xml:space="preserve">
+    <value>Ultimate PC Cleaner</value>
+  </data>
+  <data name="App_NameUpper" xml:space="preserve">
+    <value>ULTIMATE PC CLEANER</value>
+  </data>
+  <data name="App_TitleLimited" xml:space="preserve">
+    <value>{0} (ograničeni režim)</value>
+  </data>
+  <data name="App_UnhandledError" xml:space="preserve">
+    <value>Došlo je do greške:
+
+{0}
+
+Detalji su upisani u dnevnik u folderu {1}.</value>
+  </data>
+  <data name="Cleaner_Analyzing" xml:space="preserve">
+    <value>Analiza računara…</value>
+  </data>
+  <data name="Cleaner_AppsRunning" xml:space="preserve">
+    <value>Neke aplikacije su pokrenute</value>
+  </data>
+  <data name="Cleaner_BlockingWarning" xml:space="preserve">
+    <value>Trenutno pokrenuto: {0}. Zatvorite ove aplikacije da biste potpuno očistili keš; fajlovi u upotrebi se preskaču.</value>
+  </data>
+  <data name="Cleaner_CleanSelected" xml:space="preserve">
+    <value>Očisti izabrano</value>
+  </data>
+  <data name="Cleaner_CleaningItem" xml:space="preserve">
+    <value>Čišćenje: {0}…</value>
+  </data>
+  <data name="Cleaner_ConfirmMessage" xml:space="preserve">
+    <value>Ultimate PC Cleaner će trajno obrisati {0} ({1}).
+
+Fajlovi koji su trenutno u upotrebi automatski se preskaču.</value>
+  </data>
+  <data name="Cleaner_ConfirmTitle" xml:space="preserve">
+    <value>Očistiti izabrane stavke?</value>
+  </data>
+  <data name="Cleaner_DoneMessage" xml:space="preserve">
+    <value>Oslobođeno {0} prostora na disku.</value>
+  </data>
+  <data name="Cleaner_DonePartialTitle" xml:space="preserve">
+    <value>Čišćenje delimično završeno</value>
+  </data>
+  <data name="Cleaner_DoneTitle" xml:space="preserve">
+    <value>Čišćenje završeno</value>
+  </data>
+  <data name="Cleaner_Freed" xml:space="preserve">
+    <value>Oslobođeno</value>
+  </data>
+  <data name="Cleaner_GroupSelected" xml:space="preserve">
+    <value>Izabrano {0} od {1}</value>
+  </data>
+  <data name="Cleaner_GroupToggle" xml:space="preserve">
+    <value>Izaberi ili poništi celu grupu</value>
+  </data>
+  <data name="Cleaner_Group_Apps" xml:space="preserve">
+    <value>Aplikacije</value>
+  </data>
+  <data name="Cleaner_Group_Browsers" xml:space="preserve">
+    <value>Veb pregledači</value>
+  </data>
+  <data name="Cleaner_Group_Windows" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="Cleaner_NothingMessage" xml:space="preserve">
+    <value>Izabrane kategorije su već čiste.</value>
+  </data>
+  <data name="Cleaner_NothingTitle" xml:space="preserve">
+    <value>Nema šta da se očisti</value>
+  </data>
+  <data name="Cleaner_Recommended" xml:space="preserve">
+    <value>Preporučeno</value>
+  </data>
+  <data name="Cleaner_SelectAll" xml:space="preserve">
+    <value>Izaberi sve</value>
+  </data>
+  <data name="Cleaner_SelectNone" xml:space="preserve">
+    <value>Poništi izbor</value>
+  </data>
+  <data name="Cleaner_SummaryNotScanned" xml:space="preserve">
+    <value>Izabrano: {0} · skenirajte da vidite koliko prostora možete osloboditi</value>
+  </data>
+  <data name="Cleaner_SummaryScanned" xml:space="preserve">
+    <value>Izabrano: {0} · moguće je osloboditi {1}</value>
+  </data>
+  <data name="Cleanup_BrowserCache_Desc" xml:space="preserve">
+    <value>Keširane veb stranice, skripte i slike. Kolačići, istorija i lozinke se čuvaju.</value>
+  </data>
+  <data name="Cleanup_brave_cache_Name" xml:space="preserve">
+    <value>Brave keš</value>
+  </data>
+  <data name="Cleanup_chrome_cache_Name" xml:space="preserve">
+    <value>Google Chrome keš</value>
+  </data>
+  <data name="Cleanup_delivery_optimization_Desc" xml:space="preserve">
+    <value>Fajlovi ažuriranja koje Windows čuva za deljenje sa drugim računarima.</value>
+  </data>
+  <data name="Cleanup_delivery_optimization_Name" xml:space="preserve">
+    <value>Keš optimizacije isporuke</value>
+  </data>
+  <data name="Cleanup_edge_cache_Name" xml:space="preserve">
+    <value>Microsoft Edge keš</value>
+  </data>
+  <data name="Cleanup_error_reports_Desc" xml:space="preserve">
+    <value>Izveštaji o padovima i problemima koji su već poslati ili čekaju na slanje.</value>
+  </data>
+  <data name="Cleanup_error_reports_Name" xml:space="preserve">
+    <value>Windows izveštaji o greškama</value>
+  </data>
+  <data name="Cleanup_firefox_cache_Name" xml:space="preserve">
+    <value>Mozilla Firefox keš</value>
+  </data>
+  <data name="Cleanup_memory_dumps_Desc" xml:space="preserve">
+    <value>Dijagnostički fajlovi zapisani kada se Windows ili neka aplikacija srušila.</value>
+  </data>
+  <data name="Cleanup_memory_dumps_Name" xml:space="preserve">
+    <value>Memorijski dampovi</value>
+  </data>
+  <data name="Cleanup_prefetch_Desc" xml:space="preserve">
+    <value>Tragovi pokretanja koje Windows koristi da brže pokreće aplikacije.</value>
+  </data>
+  <data name="Cleanup_prefetch_Name" xml:space="preserve">
+    <value>Prefetch podaci</value>
+  </data>
+  <data name="Cleanup_prefetch_Warn" xml:space="preserve">
+    <value>Windows ovim upravlja automatski. Brisanje ne ubrzava računar — aplikacije se u početku mogu sporije pokretati dok Windows ponovo ne izgradi podatke.</value>
+  </data>
+  <data name="Cleanup_recycle_bin_Desc" xml:space="preserve">
+    <value>Obrisani fajlovi koji se još čuvaju u korpi za otpatke na svim diskovima.</value>
+  </data>
+  <data name="Cleanup_recycle_bin_Name" xml:space="preserve">
+    <value>Korpa za otpatke</value>
+  </data>
+  <data name="Cleanup_shader_cache_Desc" xml:space="preserve">
+    <value>Kompajlirani grafički šejderi koje keširaju igre i aplikacije.</value>
+  </data>
+  <data name="Cleanup_shader_cache_Name" xml:space="preserve">
+    <value>DirectX keš šejdera</value>
+  </data>
+  <data name="Cleanup_shader_cache_Warn" xml:space="preserve">
+    <value>Igre ponovo prave šejdere pri sledećem pokretanju, što prvi put može izazvati kratko seckanje.</value>
+  </data>
+  <data name="Cleanup_thumbnail_cache_Desc" xml:space="preserve">
+    <value>Keširani pregledi slika i video zapisa u Istraživaču datoteka.</value>
+  </data>
+  <data name="Cleanup_thumbnail_cache_Name" xml:space="preserve">
+    <value>Keš sličica</value>
+  </data>
+  <data name="Cleanup_thumbnail_cache_Warn" xml:space="preserve">
+    <value>Istraživač datoteka drži neke od njih otvorenim; ponovo se prave dok pregledate foldere.</value>
+  </data>
+  <data name="Cleanup_user_temp_Desc" xml:space="preserve">
+    <value>Ostaci koje aplikacije i instalacioni programi upisuju u vaš lični Temp folder.</value>
+  </data>
+  <data name="Cleanup_user_temp_Name" xml:space="preserve">
+    <value>Korisnički privremeni fajlovi</value>
+  </data>
+  <data name="Cleanup_windows_logs_Desc" xml:space="preserve">
+    <value>Dnevnici instalacije i servisiranja stariji od 7 dana.</value>
+  </data>
+  <data name="Cleanup_windows_logs_Name" xml:space="preserve">
+    <value>Stari Windows dnevnici</value>
+  </data>
+  <data name="Cleanup_windows_temp_Desc" xml:space="preserve">
+    <value>Privremeni fajlovi koje prave Windows i sistemski servisi.</value>
+  </data>
+  <data name="Cleanup_windows_temp_Name" xml:space="preserve">
+    <value>Windows privremeni fajlovi</value>
+  </data>
+  <data name="Cleanup_windows_update_Desc" xml:space="preserve">
+    <value>Paketi ažuriranja koji su već preuzeti i instalirani.</value>
+  </data>
+  <data name="Cleanup_windows_update_Name" xml:space="preserve">
+    <value>Keš Windows Update-a</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Otkaži</value>
+  </data>
+  <data name="Common_CleanNow" xml:space="preserve">
+    <value>Očisti sada</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>Kreiraj</value>
+  </data>
+  <data name="Common_Disabled" xml:space="preserve">
+    <value>Onemogućeno</value>
+  </data>
+  <data name="Common_Dismiss" xml:space="preserve">
+    <value>Zatvori</value>
+  </data>
+  <data name="Common_Enabled" xml:space="preserve">
+    <value>Omogućeno</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>Isključeno</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>Uključeno</value>
+  </data>
+  <data name="Common_Refresh" xml:space="preserve">
+    <value>Osveži</value>
+  </data>
+  <data name="Common_RestartAsAdmin" xml:space="preserve">
+    <value>Pokreni ponovo kao administrator</value>
+  </data>
+  <data name="Common_Run" xml:space="preserve">
+    <value>Pokreni</value>
+  </data>
+  <data name="Common_Scan" xml:space="preserve">
+    <value>Skeniraj</value>
+  </data>
+  <data name="Count_AccessDenied_Few" xml:space="preserve">
+    <value>{0} bez dozvole</value>
+  </data>
+  <data name="Count_AccessDenied_Many" xml:space="preserve">
+    <value>{0} bez dozvole</value>
+  </data>
+  <data name="Count_AccessDenied_One" xml:space="preserve">
+    <value>{0} bez dozvole</value>
+  </data>
+  <data name="Count_AlreadyGone_Few" xml:space="preserve">
+    <value>{0} već uklonjena</value>
+  </data>
+  <data name="Count_AlreadyGone_Many" xml:space="preserve">
+    <value>{0} već uklonjeno</value>
+  </data>
+  <data name="Count_AlreadyGone_One" xml:space="preserve">
+    <value>{0} već uklonjen</value>
+  </data>
+  <data name="Count_Categories_Few" xml:space="preserve">
+    <value>{0} kategorije</value>
+  </data>
+  <data name="Count_Categories_Many" xml:space="preserve">
+    <value>{0} kategorija</value>
+  </data>
+  <data name="Count_Categories_One" xml:space="preserve">
+    <value>{0} kategorija</value>
+  </data>
+  <data name="Count_EligibleFiles_Few" xml:space="preserve">
+    <value>{0} fajla za brisanje</value>
+  </data>
+  <data name="Count_EligibleFiles_Many" xml:space="preserve">
+    <value>{0} fajlova za brisanje</value>
+  </data>
+  <data name="Count_EligibleFiles_One" xml:space="preserve">
+    <value>{0} fajl za brisanje</value>
+  </data>
+  <data name="Count_Errors_Few" xml:space="preserve">
+    <value>{0} greške</value>
+  </data>
+  <data name="Count_Errors_Many" xml:space="preserve">
+    <value>{0} grešaka</value>
+  </data>
+  <data name="Count_Errors_One" xml:space="preserve">
+    <value>{0} greška</value>
+  </data>
+  <data name="Count_FilesRemoved_Few" xml:space="preserve">
+    <value>uklonjena {0} fajla</value>
+  </data>
+  <data name="Count_FilesRemoved_Many" xml:space="preserve">
+    <value>uklonjeno {0} fajlova</value>
+  </data>
+  <data name="Count_FilesRemoved_One" xml:space="preserve">
+    <value>uklonjen {0} fajl</value>
+  </data>
+  <data name="Count_Files_Few" xml:space="preserve">
+    <value>{0} fajla</value>
+  </data>
+  <data name="Count_Files_Many" xml:space="preserve">
+    <value>{0} fajlova</value>
+  </data>
+  <data name="Count_Files_One" xml:space="preserve">
+    <value>{0} fajl</value>
+  </data>
+  <data name="Count_InUse_Few" xml:space="preserve">
+    <value>{0} u upotrebi</value>
+  </data>
+  <data name="Count_InUse_Many" xml:space="preserve">
+    <value>{0} u upotrebi</value>
+  </data>
+  <data name="Count_InUse_One" xml:space="preserve">
+    <value>{0} u upotrebi</value>
+  </data>
+  <data name="Count_Inaccessible_Few" xml:space="preserve">
+    <value>{0} nedostupne stavke</value>
+  </data>
+  <data name="Count_Inaccessible_Many" xml:space="preserve">
+    <value>{0} nedostupnih stavki</value>
+  </data>
+  <data name="Count_Inaccessible_One" xml:space="preserve">
+    <value>{0} nedostupna stavka</value>
+  </data>
+  <data name="Count_Items_Few" xml:space="preserve">
+    <value>{0} stavke</value>
+  </data>
+  <data name="Count_Items_Many" xml:space="preserve">
+    <value>{0} stavki</value>
+  </data>
+  <data name="Count_Items_One" xml:space="preserve">
+    <value>{0} stavka</value>
+  </data>
+  <data name="Count_SkippedInUse_Few" xml:space="preserve">
+    <value>{0} u upotrebi, preskočena</value>
+  </data>
+  <data name="Count_SkippedInUse_Many" xml:space="preserve">
+    <value>{0} u upotrebi, preskočeno</value>
+  </data>
+  <data name="Count_SkippedInUse_One" xml:space="preserve">
+    <value>{0} u upotrebi, preskočen</value>
+  </data>
+  <data name="Count_SkippedSafety_Few" xml:space="preserve">
+    <value>{0} preskočena radi bezbjednosti</value>
+  </data>
+  <data name="Count_SkippedSafety_Many" xml:space="preserve">
+    <value>{0} preskočeno radi bezbjednosti</value>
+  </data>
+  <data name="Count_SkippedSafety_One" xml:space="preserve">
+    <value>{0} preskočen radi bezbednosti</value>
+  </data>
+  <data name="Count_Skipped_Few" xml:space="preserve">
+    <value>{0} preskočena</value>
+  </data>
+  <data name="Count_Skipped_Many" xml:space="preserve">
+    <value>{0} preskočeno</value>
+  </data>
+  <data name="Count_Skipped_One" xml:space="preserve">
+    <value>{0} preskočen</value>
+  </data>
+  <data name="Count_Suspicious_Few" xml:space="preserve">
+    <value>Pronađene su {0} sumnjive stavke</value>
+  </data>
+  <data name="Count_Suspicious_Many" xml:space="preserve">
+    <value>Pronađeno je {0} sumnjivih stavki</value>
+  </data>
+  <data name="Count_Suspicious_One" xml:space="preserve">
+    <value>Pronađena je {0} sumnjiva stavka</value>
+  </data>
+  <data name="Dashboard_Boost" xml:space="preserve">
+    <value>UBRZAJ</value>
+  </data>
+  <data name="Dashboard_BoostCancelled" xml:space="preserve">
+    <value>Ubrzanje je otkazano. Ništa nije obrisano.</value>
+  </data>
+  <data name="Dashboard_BoostCleaning" xml:space="preserve">
+    <value>Uklanjanje nepotrebnih fajlova…</value>
+  </data>
+  <data name="Dashboard_BoostConfirmMessage" xml:space="preserve">
+    <value>Ubrzanje će trajno obrisati {0} ({1}), a zatim isprazniti DNS keš i osloboditi RAM.
+
+Fajlovi u upotrebi se automatski preskaču.</value>
+  </data>
+  <data name="Dashboard_BoostConfirmTitle" xml:space="preserve">
+    <value>Pokrenuti ubrzanje?</value>
+  </data>
+  <data name="Dashboard_BoostDefault" xml:space="preserve">
+    <value>Jednim klikom čisti izabrane nepotrebne fajlove, prazni DNS keš i oslobađa RAM — pre brisanja tražimo potvrdu.</value>
+  </data>
+  <data name="Dashboard_BoostDns" xml:space="preserve">
+    <value>Pražnjenje DNS keša…</value>
+  </data>
+  <data name="Dashboard_BoostDone" xml:space="preserve">
+    <value>Gotovo! Oslobođeno je {0} na disku i {1} RAM-a.</value>
+  </data>
+  <data name="Dashboard_BoostDonePartialTitle" xml:space="preserve">
+    <value>Ubrzanje završeno (neki fajlovi su preskočeni)</value>
+  </data>
+  <data name="Dashboard_BoostDoneTitle" xml:space="preserve">
+    <value>Ubrzanje završeno</value>
+  </data>
+  <data name="Dashboard_BoostFailedTitle" xml:space="preserve">
+    <value>Ubrzanje nije uspelo</value>
+  </data>
+  <data name="Dashboard_BoostRam" xml:space="preserve">
+    <value>Oslobađanje memorije…</value>
+  </data>
+  <data name="Dashboard_BoostRun" xml:space="preserve">
+    <value>Pokreni ubrzanje</value>
+  </data>
+  <data name="Dashboard_BoostScanning" xml:space="preserve">
+    <value>Traženje nepotrebnih fajlova…</value>
+  </data>
+  <data name="Dashboard_BoostTooltip" xml:space="preserve">
+    <value>Očisti nepotrebne fajlove izabrane u Čišćenju, isprazni DNS keš i oslobodi RAM (pita pre brisanja)</value>
+  </data>
+  <data name="Dashboard_Cleanup" xml:space="preserve">
+    <value>Čišćenje</value>
+  </data>
+  <data name="Dashboard_CleanupDesc" xml:space="preserve">
+    <value>Skeniranje pronalazi nepotrebne fajlove u kategorijama Čišćenja i u folderima privremenih fajlova. Ništa se ne briše dok ne pregledate i potvrdite.</value>
+  </data>
+  <data name="Dashboard_CleanupTitle" xml:space="preserve">
+    <value>Pronađite prostor koji možete osloboditi</value>
+  </data>
+  <data name="Dashboard_Cpu" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="Dashboard_CpuCaption" xml:space="preserve">
+    <value>Opterećenje procesora</value>
+  </data>
+  <data name="Dashboard_DiskText" xml:space="preserve">
+    <value>Slobodno {0} od {1}</value>
+  </data>
+  <data name="Dashboard_DriveLabel" xml:space="preserve">
+    <value>Disk {0}</value>
+  </data>
+  <data name="Dashboard_GoodAfternoon" xml:space="preserve">
+    <value>Dobar dan</value>
+  </data>
+  <data name="Dashboard_GoodEvening" xml:space="preserve">
+    <value>Dobro veče</value>
+  </data>
+  <data name="Dashboard_GoodMorning" xml:space="preserve">
+    <value>Dobro jutro</value>
+  </data>
+  <data name="Dashboard_Memory" xml:space="preserve">
+    <value>Memorija</value>
+  </data>
+  <data name="Dashboard_Never" xml:space="preserve">
+    <value>Nikad</value>
+  </data>
+  <data name="Dashboard_NotScanned" xml:space="preserve">
+    <value>Još nije skenirano</value>
+  </data>
+  <data name="Dashboard_OpenOptimize" xml:space="preserve">
+    <value>Optimizacija</value>
+  </data>
+  <data name="Dashboard_OpenTemp" xml:space="preserve">
+    <value>Privremeni fajlovi</value>
+  </data>
+  <data name="Dashboard_Overview" xml:space="preserve">
+    <value>Pregled</value>
+  </data>
+  <data name="Dashboard_RamText" xml:space="preserve">
+    <value>U upotrebi {0} od {1}</value>
+  </data>
+  <data name="Dashboard_ReviewCleaner" xml:space="preserve">
+    <value>Pregledaj u Čišćenju</value>
+  </data>
+  <data name="Dashboard_ScanDoneMessage" xml:space="preserve">
+    <value>Pronađeno je {0} koje je moguće osloboditi. Pre brisanja pregledajte rezultate u Privremenim fajlovima ili Čišćenju.</value>
+  </data>
+  <data name="Dashboard_ScanDoneTitle" xml:space="preserve">
+    <value>Skeniranje završeno</value>
+  </data>
+  <data name="Dashboard_ScanNow" xml:space="preserve">
+    <value>Skeniraj sada</value>
+  </data>
+  <data name="Dashboard_StatFreed" xml:space="preserve">
+    <value>Ukupno oslobođeno</value>
+  </data>
+  <data name="Dashboard_StatFreedHint" xml:space="preserve">
+    <value>Otkako koristite aplikaciju</value>
+  </data>
+  <data name="Dashboard_StatJunk" xml:space="preserve">
+    <value>Pronađeno za brisanje</value>
+  </data>
+  <data name="Dashboard_StatJunkHint" xml:space="preserve">
+    <value>Izabrano u Čišćenju i Privremenim fajlovima</value>
+  </data>
+  <data name="Dashboard_StatLastCleaned" xml:space="preserve">
+    <value>Poslednje čišćenje</value>
+  </data>
+  <data name="Dashboard_StatTemp" xml:space="preserve">
+    <value>Privremeni fajlovi</value>
+  </data>
+  <data name="Dashboard_StatTempHint" xml:space="preserve">
+    <value>Može se osloboditi u Temp i Prefetch</value>
+  </data>
+  <data name="Dashboard_SystemStatus" xml:space="preserve">
+    <value>Stanje sistema</value>
+  </data>
+  <data name="Dashboard_UpFor" xml:space="preserve">
+    <value>Radi već</value>
+  </data>
+  <data name="Dashboard_UptimeDays" xml:space="preserve">
+    <value>{0} d {1} h {2} min</value>
+  </data>
+  <data name="Dashboard_UptimeHours" xml:space="preserve">
+    <value>{0} h {1} min</value>
+  </data>
+  <data name="Health_AdminMessage" xml:space="preserve">
+    <value>Ovi Windows alati za popravku rade samo kada je Ultimate PC Cleaner pokrenut kao administrator.</value>
+  </data>
+  <data name="Health_AdminTitle" xml:space="preserve">
+    <value>Potrebna su administratorska prava</value>
+  </data>
+  <data name="Health_Cancelled" xml:space="preserve">
+    <value>{0} je otkazan</value>
+  </data>
+  <data name="Health_Clear" xml:space="preserve">
+    <value>Obriši izlaz</value>
+  </data>
+  <data name="Health_Copy" xml:space="preserve">
+    <value>Kopiraj izlaz</value>
+  </data>
+  <data name="Health_CouldNotStart" xml:space="preserve">
+    <value>{0} nije mogao da se pokrene: {1}</value>
+  </data>
+  <data name="Health_Duration" xml:space="preserve">
+    <value>{0} min</value>
+  </data>
+  <data name="Health_Finished" xml:space="preserve">
+    <value>{0} je uspešno završen</value>
+  </data>
+  <data name="Health_FinishedCode" xml:space="preserve">
+    <value>{0} je završen (izlazni kod {1})</value>
+  </data>
+  <data name="Health_Idle" xml:space="preserve">
+    <value>Neaktivno</value>
+  </data>
+  <data name="Health_OutputPlaceholder" xml:space="preserve">
+    <value>Izaberite alat iznad da biste počeli. Izlaz se ovde prikazuje uživo.</value>
+  </data>
+  <data name="Health_Running" xml:space="preserve">
+    <value>Pokrenuto: {0}…</value>
+  </data>
+  <data name="Health_chkdsk_Desc" xml:space="preserve">
+    <value>Skenira {0} u potrazi za greškama fajl sistema, bez pravljenja izmena (chkdsk /scan).</value>
+  </data>
+  <data name="Health_chkdsk_Name" xml:space="preserve">
+    <value>Provera diska</value>
+  </data>
+  <data name="Health_defrag_Desc" xml:space="preserve">
+    <value>Pokreće TRIM na SSD diskovima ili defragmentira hard diskove za {0}.</value>
+  </data>
+  <data name="Health_defrag_Name" xml:space="preserve">
+    <value>Optimizacija sistemskog diska</value>
+  </data>
+  <data name="Health_dism_cleanup_Desc" xml:space="preserve">
+    <value>Uklanja zastarele komponente Windows ažuriranja iz WinSxS radi oslobađanja prostora.</value>
+  </data>
+  <data name="Health_dism_cleanup_Name" xml:space="preserve">
+    <value>Čišćenje skladišta komponenti</value>
+  </data>
+  <data name="Health_dism_restore_Desc" xml:space="preserve">
+    <value>Proverava skladište Windows komponenti i preuzima ispravne kopije oštećenih fajlova (DISM RestoreHealth).</value>
+  </data>
+  <data name="Health_dism_restore_Name" xml:space="preserve">
+    <value>Popravka Windows slike</value>
+  </data>
+  <data name="Health_sfc_Desc" xml:space="preserve">
+    <value>Skenira zaštićene Windows fajlove i popravlja oštećene (sfc /scannow).</value>
+  </data>
+  <data name="Health_sfc_Name" xml:space="preserve">
+    <value>Provera sistemskih fajlova</value>
+  </data>
+  <data name="Main_LimitedMessage" xml:space="preserve">
+    <value>Ultimate PC Cleaner radi bez administratorskih prava. Možete očistiti svoje privremene fajlove; za Windows Temp, Prefetch, sistemski keš, servise, tačke vraćanja i alate za popravku potrebna su povišena prava.</value>
+  </data>
+  <data name="Main_LimitedTitle" xml:space="preserve">
+    <value>Ograničeni režim.</value>
+  </data>
+  <data name="Nav_Cleaner" xml:space="preserve">
+    <value>Čišćenje</value>
+  </data>
+  <data name="Nav_Dashboard" xml:space="preserve">
+    <value>Kontrolna tabla</value>
+  </data>
+  <data name="Nav_Health" xml:space="preserve">
+    <value>Zdravlje sistema</value>
+  </data>
+  <data name="Nav_Optimize" xml:space="preserve">
+    <value>Optimizacija</value>
+  </data>
+  <data name="Nav_Security" xml:space="preserve">
+    <value>Bezbjednost</value>
+  </data>
+  <data name="Nav_Settings" xml:space="preserve">
+    <value>Podešavanja</value>
+  </data>
+  <data name="Nav_Startup" xml:space="preserve">
+    <value>Pokretanje sistema</value>
+  </data>
+  <data name="Nav_TempFiles" xml:space="preserve">
+    <value>Privremeni fajlovi</value>
+  </data>
+  <data name="Optimize_Applied" xml:space="preserve">
+    <value>Optimizacija primenjena</value>
+  </data>
+  <data name="Optimize_ApplyAnyway" xml:space="preserve">
+    <value>Ipak primeni</value>
+  </data>
+  <data name="Optimize_ChangeFailed" xml:space="preserve">
+    <value>Ovo podešavanje nije moguće promeniti</value>
+  </data>
+  <data name="Optimize_DnsDesc" xml:space="preserve">
+    <value>Briše sačuvane adrese sajtova. Pomaže kada se sajtovi ne učitavaju nakon promene mreže ili DNS-a.</value>
+  </data>
+  <data name="Optimize_DnsFailed" xml:space="preserve">
+    <value>Nije moguće isprazniti DNS keš.</value>
+  </data>
+  <data name="Optimize_DnsFlushed" xml:space="preserve">
+    <value>DNS keš ispražnjen u {0}</value>
+  </data>
+  <data name="Optimize_DnsTitle" xml:space="preserve">
+    <value>Isprazni DNS keš</value>
+  </data>
+  <data name="Optimize_NoRestoreMessage" xml:space="preserve">
+    <value>{0}
+
+Da li ipak želite da primenite promenu?</value>
+  </data>
+  <data name="Optimize_NoRestoreTitle" xml:space="preserve">
+    <value>Tačka vraćanja nije kreirana</value>
+  </data>
+  <data name="Optimize_QuickActions" xml:space="preserve">
+    <value>Brze radnje</value>
+  </data>
+  <data name="Optimize_RamDesc" xml:space="preserve">
+    <value>Smanjuje neiskorišćenu memoriju aplikacija i prazni keš u pripravnosti. Korisno pre pokretanja igre ili zahtevne aplikacije.</value>
+  </data>
+  <data name="Optimize_RamFreed" xml:space="preserve">
+    <value>Oslobođeno {0} RAM-a u {1}</value>
+  </data>
+  <data name="Optimize_RamName" xml:space="preserve">
+    <value>Oslobodi RAM</value>
+  </data>
+  <data name="Optimize_RamTitle" xml:space="preserve">
+    <value>Memorija optimizovana</value>
+  </data>
+  <data name="Optimize_RestoreCreatedTitle" xml:space="preserve">
+    <value>Tačka vraćanja kreirana</value>
+  </data>
+  <data name="Optimize_RestoreCreating" xml:space="preserve">
+    <value>Kreiranje tačke vraćanja… ovo može potrajati minut.</value>
+  </data>
+  <data name="Optimize_RestoreCreatingFirst" xml:space="preserve">
+    <value>Kreiranje tačke vraćanja sistema pre prve promene…</value>
+  </data>
+  <data name="Optimize_RestoreDesc" xml:space="preserve">
+    <value>Čuva snimak stanja sistema na koji se možete vratiti iz Windows oporavka. Zahteva administratorska prava.</value>
+  </data>
+  <data name="Optimize_RestoreDescBefore" xml:space="preserve">
+    <value>{0} - pre optimizacije</value>
+  </data>
+  <data name="Optimize_RestoreDescManual" xml:space="preserve">
+    <value>{0} - ručna tačka vraćanja</value>
+  </data>
+  <data name="Optimize_RestoreFailedTitle" xml:space="preserve">
+    <value>Kreiranje tačke vraćanja nije uspelo</value>
+  </data>
+  <data name="Optimize_RestoreTitle" xml:space="preserve">
+    <value>Kreiraj tačku vraćanja</value>
+  </data>
+  <data name="Optimize_Restored" xml:space="preserve">
+    <value>Podešavanje vraćeno</value>
+  </data>
+  <data name="Optimize_SafeMessage" xml:space="preserve">
+    <value>Svaki prekidač možete ponovo isključiti da biste vratili prvobitno podešavanje. Ako je uključeno u Podešavanjima, pre prve promene kreira se tačka vraćanja sistema.</value>
+  </data>
+  <data name="Optimize_SafeTitle" xml:space="preserve">
+    <value>Bezbedno i reverzibilno</value>
+  </data>
+  <data name="Optimize_Tweaks" xml:space="preserve">
+    <value>Podešavanja performansi</value>
+  </data>
+  <data name="Restore_Created" xml:space="preserve">
+    <value>Tačka vraćanja je kreirana.</value>
+  </data>
+  <data name="Restore_Failed" xml:space="preserve">
+    <value>Windows nije mogao da kreira tačku vraćanja: {0}</value>
+  </data>
+  <data name="Restore_FailedCode" xml:space="preserve">
+    <value>Windows nije mogao da kreira tačku vraćanja (kod {0}). Zaštita sistema je možda isključena.</value>
+  </data>
+  <data name="Restore_NeedsAdmin" xml:space="preserve">
+    <value>Za kreiranje tačke vraćanja potrebna su administratorska prava.</value>
+  </data>
+  <data name="Restore_ProtectionOff" xml:space="preserve">
+    <value>Zaštita sistema je isključena za sistemski disk. Uključite je u Svojstva sistema → Zaštita sistema.</value>
+  </data>
+  <data name="Sec_AdminMessage" xml:space="preserve">
+    <value>Možete videti status i potražiti sumnjive stavke. Pokrenite aplikaciju kao administrator da biste skenirali, stavljali u karantin ili vraćali fajlove.</value>
+  </data>
+  <data name="Sec_AdminTitle" xml:space="preserve">
+    <value>Skeniranje i karantin zahtevaju administratorska prava</value>
+  </data>
+  <data name="Sec_Allow" xml:space="preserve">
+    <value>Dozvoli</value>
+  </data>
+  <data name="Sec_AllowMessage" xml:space="preserve">
+    <value>Microsoft Defender više neće reagovati na „{0}“. Uradite ovo samo ako ste sigurni da je fajl bezbjedan.</value>
+  </data>
+  <data name="Sec_AllowTitle" xml:space="preserve">
+    <value>Dozvoli pretnju</value>
+  </data>
+  <data name="Sec_Allowed" xml:space="preserve">
+    <value>„{0}“ je sada dozvoljen.</value>
+  </data>
+  <data name="Sec_Cancelled" xml:space="preserve">
+    <value>Otkazano.</value>
+  </data>
+  <data name="Sec_CheckVirusTotal" xml:space="preserve">
+    <value>Proveri heš na VirusTotalu</value>
+  </data>
+  <data name="Sec_CreatingRestorePoint" xml:space="preserve">
+    <value>Pravim tačku za vraćanje sistema…</value>
+  </data>
+  <data name="Sec_DefenderQuarantineEmpty" xml:space="preserve">
+    <value>Defenderov karantin je prazan.</value>
+  </data>
+  <data name="Sec_DefenderQuarantineHeader" xml:space="preserve">
+    <value>Karantin Microsoft Defendera</value>
+  </data>
+  <data name="Sec_Delete" xml:space="preserve">
+    <value>Obriši</value>
+  </data>
+  <data name="Sec_DeleteMessage" xml:space="preserve">
+    <value>„{0}“ će biti trajno obrisan i neće moći da se vrati.</value>
+  </data>
+  <data name="Sec_DeleteTitle" xml:space="preserve">
+    <value>Trajno obriši</value>
+  </data>
+  <data name="Sec_Failed" xml:space="preserve">
+    <value>Neuspešno: {0}</value>
+  </data>
+  <data name="Sec_FinishedClean" xml:space="preserve">
+    <value>{0}: završeno — nisu pronađene pretnje.</value>
+  </data>
+  <data name="Sec_FinishedCode" xml:space="preserve">
+    <value>{0}: završeno sa kodom {1}.</value>
+  </data>
+  <data name="Sec_FinishedThreats" xml:space="preserve">
+    <value>{0}: pronađene su pretnje. Microsoft Defender ih je obradio prema svojim podešavanjima — pogledajte listu ispod.</value>
+  </data>
+  <data name="Sec_FolderScan" xml:space="preserve">
+    <value>Skeniranje: {0}</value>
+  </data>
+  <data name="Sec_FullScan" xml:space="preserve">
+    <value>Potpuno skeniranje</value>
+  </data>
+  <data name="Sec_Idle" xml:space="preserve">
+    <value>Spremno.</value>
+  </data>
+  <data name="Sec_Intro" xml:space="preserve">
+    <value>Skenirajte pomoću Microsoft Defendera, proverite skripte kroz AMSI, pronađite sumnjive stavke pri pokretanju i sklonite rizične fajlove u karantin iz kog ih možete vratiti. Otkrivanje vrši vaš antivirus — ova stranica ga ne zamenjuje.</value>
+  </data>
+  <data name="Sec_Level_High" xml:space="preserve">
+    <value>Visok</value>
+  </data>
+  <data name="Sec_Level_Low" xml:space="preserve">
+    <value>Nizak</value>
+  </data>
+  <data name="Sec_Level_Medium" xml:space="preserve">
+    <value>Srednji</value>
+  </data>
+  <data name="Sec_Never" xml:space="preserve">
+    <value>nikad</value>
+  </data>
+  <data name="Sec_NoResources" xml:space="preserve">
+    <value>Nema podataka o fajlu</value>
+  </data>
+  <data name="Sec_NoRestoreMessage" xml:space="preserve">
+    <value>{0}
+
+Da li ipak želite da stavite fajl u karantin?</value>
+  </data>
+  <data name="Sec_NoThreats" xml:space="preserve">
+    <value>Microsoft Defender nema zabeleženih pretnji.</value>
+  </data>
+  <data name="Sec_OtherAvDetail" xml:space="preserve">
+    <value>Skeniranje Microsoft Defenderom nije dostupno dok je aktivan drugi antivirus. Provera skripti kroz AMSI i pretraga sumnjivih stavki i dalje rade.</value>
+  </data>
+  <data name="Sec_OutputPlaceholder" xml:space="preserve">
+    <value>Ovde se prikazuje izlaz skeniranja.</value>
+  </data>
+  <data name="Sec_Overwrite" xml:space="preserve">
+    <value>Zameni</value>
+  </data>
+  <data name="Sec_PendingReboot" xml:space="preserve">
+    <value>Originalni fajl je bio u upotrebi i biće uklonjen pri sledećem restartu.</value>
+  </data>
+  <data name="Sec_PickFolder" xml:space="preserve">
+    <value>Izaberite folder za skeniranje</value>
+  </data>
+  <data name="Sec_Progress_Scripts" xml:space="preserve">
+    <value>Proveravam skripte u korisničkim folderima…</value>
+  </data>
+  <data name="Sec_Progress_Startup" xml:space="preserve">
+    <value>Proveravam stavke pri pokretanju…</value>
+  </data>
+  <data name="Sec_Progress_Tasks" xml:space="preserve">
+    <value>Proveravam zakazane zadatke…</value>
+  </data>
+  <data name="Sec_Quarantine" xml:space="preserve">
+    <value>Karantin</value>
+  </data>
+  <data name="Sec_QuarantineDetails" xml:space="preserve">
+    <value>U karantinu od {0} · {1} · {2}</value>
+  </data>
+  <data name="Sec_QuarantineEmpty" xml:space="preserve">
+    <value>Nema fajlova u karantinu.</value>
+  </data>
+  <data name="Sec_QuarantineHeader" xml:space="preserve">
+    <value>Karantin Ultimate PC Cleanera</value>
+  </data>
+  <data name="Sec_QuarantineMessage" xml:space="preserve">
+    <value>{0}
+
+Fajl će biti premešten u karantin u obliku koji ne može da se pokrene, a njegova stavka pri pokretanju (ako postoji) isključena. Možete ga vratiti u bilo kom trenutku.</value>
+  </data>
+  <data name="Sec_QuarantineTitle" xml:space="preserve">
+    <value>Premesti u karantin</value>
+  </data>
+  <data name="Sec_Quarantined" xml:space="preserve">
+    <value>„{0}“ je premešten u karantin.</value>
+  </data>
+  <data name="Sec_QuarantinedPending" xml:space="preserve">
+    <value>„{0}“ je stavljen u karantin. Original je u upotrebi i biće uklonjen pri sledećem restartu.</value>
+  </data>
+  <data name="Sec_QuickScan" xml:space="preserve">
+    <value>Brzo skeniranje</value>
+  </data>
+  <data name="Sec_Reason_AmsiDetected" xml:space="preserve">
+    <value>Vaš antivirus ga je označio (AMSI)</value>
+  </data>
+  <data name="Sec_Reason_DoubleExtension" xml:space="preserve">
+    <value>Prikriveno ime fajla (dvostruka ekstenzija)</value>
+  </data>
+  <data name="Sec_Reason_MissingTarget" xml:space="preserve">
+    <value>Pokazuje na fajl koji više ne postoji</value>
+  </data>
+  <data name="Sec_Reason_ObfuscatedCommand" xml:space="preserve">
+    <value>Skrivena ili kodirana komandna linija</value>
+  </data>
+  <data name="Sec_Reason_ObfuscatedScript" xml:space="preserve">
+    <value>Skripta koristi prikrivanje ili preuzima kod</value>
+  </data>
+  <data name="Sec_Reason_ScriptHost" xml:space="preserve">
+    <value>Script host pokreće fajl iz korisničkog foldera</value>
+  </data>
+  <data name="Sec_Reason_UnsignedUserFolder" xml:space="preserve">
+    <value>Nepotpisan program u folderu u koji korisnik može da piše</value>
+  </data>
+  <data name="Sec_RemoveThreats" xml:space="preserve">
+    <value>Ukloni aktivne pretnje</value>
+  </data>
+  <data name="Sec_Restore" xml:space="preserve">
+    <value>Vrati</value>
+  </data>
+  <data name="Sec_RestoreDefenderMessage" xml:space="preserve">
+    <value>Vratiti sve fajlove koje je Microsoft Defender stavio u karantin kao „{0}“? Defender ih može ponovo otkriti ako ne dozvolite tu pretnju.</value>
+  </data>
+  <data name="Sec_RestoreMessage" xml:space="preserve">
+    <value>{0}
+
+Vratiti ovaj fajl na prvobitnu lokaciju? Uradite to samo ako ste sigurni da je bezbjedan.</value>
+  </data>
+  <data name="Sec_RestoreOverwrite" xml:space="preserve">
+    <value>Na lokaciji {0} već postoji fajl. Zameniti ga kopijom iz karantina?</value>
+  </data>
+  <data name="Sec_RestorePendingReboot" xml:space="preserve">
+    <value>Prvo restartujte Windows — originalni fajl još čeka da bude uklonjen.</value>
+  </data>
+  <data name="Sec_RestorePointDesc" xml:space="preserve">
+    <value>{0}: pre karantina</value>
+  </data>
+  <data name="Sec_RestoreTitle" xml:space="preserve">
+    <value>Vrati fajl</value>
+  </data>
+  <data name="Sec_Restored" xml:space="preserve">
+    <value>„{0}“ je vraćen.</value>
+  </data>
+  <data name="Sec_Running" xml:space="preserve">
+    <value>U toku: {0}…</value>
+  </data>
+  <data name="Sec_ScanFolder" xml:space="preserve">
+    <value>Skeniraj folder…</value>
+  </data>
+  <data name="Sec_ScanHeader" xml:space="preserve">
+    <value>Skeniranje</value>
+  </data>
+  <data name="Sec_ScanScripts" xml:space="preserve">
+    <value>Proveri skripte (AMSI)…</value>
+  </data>
+  <data name="Sec_ScanScriptsTip" xml:space="preserve">
+    <value>Proverava svaki PowerShell, VBScript, JavaScript i batch fajl u folderu kroz AMSI. Radi sa bilo kojim instaliranim antivirusom, ne samo sa Defenderom.</value>
+  </data>
+  <data name="Sec_ScanSuspicious" xml:space="preserve">
+    <value>Pronađi sumnjive stavke</value>
+  </data>
+  <data name="Sec_ScanWithDefender" xml:space="preserve">
+    <value>Skeniraj ovaj fajl Microsoft Defenderom</value>
+  </data>
+  <data name="Sec_ScriptScanClean" xml:space="preserve">
+    <value>Nisu pronađene zlonamerne skripte.</value>
+  </data>
+  <data name="Sec_ScriptScanFound" xml:space="preserve">
+    <value>Vaš antivirus je označio skripte: {0} — pogledajte izlaz iznad. Skenirajte folder Defenderom da biste ih uklonili.</value>
+  </data>
+  <data name="Sec_ScriptScanRunning" xml:space="preserve">
+    <value>Proveravam skripte u {0}…</value>
+  </data>
+  <data name="Sec_Source_ScheduledTask" xml:space="preserve">
+    <value>Zakazani zadatak</value>
+  </data>
+  <data name="Sec_Source_ScriptFile" xml:space="preserve">
+    <value>Skripta</value>
+  </data>
+  <data name="Sec_Source_StartupEntry" xml:space="preserve">
+    <value>Stavka pri pokretanju</value>
+  </data>
+  <data name="Sec_StatusChecking" xml:space="preserve">
+    <value>Proveravam status zaštite…</value>
+  </data>
+  <data name="Sec_StatusDetail" xml:space="preserve">
+    <value>Potpisi {0} · ažurirano {1} · poslednje brzo skeniranje {2}</value>
+  </data>
+  <data name="Sec_StatusDisabled" xml:space="preserve">
+    <value>Microsoft Defender antivirus je isključen</value>
+  </data>
+  <data name="Sec_StatusOtherAv" xml:space="preserve">
+    <value>{0} štiti ovaj računar</value>
+  </data>
+  <data name="Sec_StatusProtected" xml:space="preserve">
+    <value>Microsoft Defender štiti ovaj računar</value>
+  </data>
+  <data name="Sec_StatusRealtimeOff" xml:space="preserve">
+    <value>Zaštita u realnom vremenu je isključena</value>
+  </data>
+  <data name="Sec_StatusUnavailable" xml:space="preserve">
+    <value>Microsoft Defender nije dostupan</value>
+  </data>
+  <data name="Sec_SuspiciousIntro" xml:space="preserve">
+    <value>Stavke pri pokretanju, zakazani zadaci i skripte koji se ponašaju kao zlonamerni softver: skrivene komande, prikrivena imena, nepotpisani programi u korisničkim folderima. Poklapanje nije dokaz — proverite pre stavljanja u karantin.</value>
+  </data>
+  <data name="Sec_SuspiciousNone" xml:space="preserve">
+    <value>Ništa sumnjivo nije pronađeno.</value>
+  </data>
+  <data name="Sec_SuspiciousNotScanned" xml:space="preserve">
+    <value>Još nije skenirano.</value>
+  </data>
+  <data name="Sec_SuspiciousRunning" xml:space="preserve">
+    <value>Tražim sumnjive stavke…</value>
+  </data>
+  <data name="Sec_SuspiciousTitle" xml:space="preserve">
+    <value>Sumnjive stavke</value>
+  </data>
+  <data name="Sec_TamperOn" xml:space="preserve">
+    <value>zaštita od neovlašćenih izmena uključena</value>
+  </data>
+  <data name="Sec_ThreatActive" xml:space="preserve">
+    <value>aktivna</value>
+  </data>
+  <data name="Sec_ThreatDetails" xml:space="preserve">
+    <value>Ozbiljnost: {0} · otkriveno {1} · {2}</value>
+  </data>
+  <data name="Sec_ThreatResolved" xml:space="preserve">
+    <value>rešena</value>
+  </data>
+  <data name="Sec_ThreatSev_0" xml:space="preserve">
+    <value>nepoznata</value>
+  </data>
+  <data name="Sec_ThreatSev_1" xml:space="preserve">
+    <value>niska</value>
+  </data>
+  <data name="Sec_ThreatSev_2" xml:space="preserve">
+    <value>umerena</value>
+  </data>
+  <data name="Sec_ThreatSev_4" xml:space="preserve">
+    <value>visoka</value>
+  </data>
+  <data name="Sec_ThreatSev_5" xml:space="preserve">
+    <value>kritična</value>
+  </data>
+  <data name="Sec_ThreatsHeader" xml:space="preserve">
+    <value>Pretnje koje je otkrio Microsoft Defender</value>
+  </data>
+  <data name="Sec_ThreatsRemoved" xml:space="preserve">
+    <value>Microsoft Defender je uklonio aktivne pretnje.</value>
+  </data>
+  <data name="Sec_UpdateSignatures" xml:space="preserve">
+    <value>Ažuriraj potpise</value>
+  </data>
+  <data name="Sec_VtResult" xml:space="preserve">
+    <value>VirusTotal detekcije: {0}</value>
+  </data>
+  <data name="Sec_VtUnknown" xml:space="preserve">
+    <value>VirusTotal ne poznaje ovaj fajl</value>
+  </data>
+  <data name="Settings_About" xml:space="preserve">
+    <value>O aplikaciji</value>
+  </data>
+  <data name="Settings_Appearance" xml:space="preserve">
+    <value>Izgled</value>
+  </data>
+  <data name="Settings_Cleaning" xml:space="preserve">
+    <value>Čišćenje</value>
+  </data>
+  <data name="Settings_DataFolder" xml:space="preserve">
+    <value>Podešavanja i dnevnici:</value>
+  </data>
+  <data name="Settings_General" xml:space="preserve">
+    <value>Opšte</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>Jezik</value>
+  </data>
+  <data name="Settings_LanguageDesc" xml:space="preserve">
+    <value>Izaberite jezik aplikacije. Promena se primenjuje odmah.</value>
+  </data>
+  <data name="Settings_OpenFolder" xml:space="preserve">
+    <value>Otvori folder</value>
+  </data>
+  <data name="Settings_ReduceMotion" xml:space="preserve">
+    <value>Smanji animacije</value>
+  </data>
+  <data name="Settings_ReduceMotionDesc" xml:space="preserve">
+    <value>Isključuje dekorativne animacije. Animacije su isključene i kada su Windows efekti animacije onemogućeni.</value>
+  </data>
+  <data name="Settings_Remember" xml:space="preserve">
+    <value>Zapamti moj izbor</value>
+  </data>
+  <data name="Settings_RememberDesc" xml:space="preserve">
+    <value>Zadrži kategorije i lokacije koje označite ili poništite za sledeći put.</value>
+  </data>
+  <data name="Settings_RestorePoint" xml:space="preserve">
+    <value>Kreiraj tačku vraćanja pre optimizacije</value>
+  </data>
+  <data name="Settings_RestorePointDesc" xml:space="preserve">
+    <value>Pravi tačku vraćanja sistema pre prve izmene u svakoj sesiji (samo administrator).</value>
+  </data>
+  <data name="Settings_Safety" xml:space="preserve">
+    <value>Bezbjednost</value>
+  </data>
+  <data name="Settings_SkipRecent" xml:space="preserve">
+    <value>Preskoči privremene fajlove novije od 24 sata</value>
+  </data>
+  <data name="Settings_SkipRecentDesc" xml:space="preserve">
+    <value>Preporučeno. Nove privremene fajlove možda još koriste instalacioni programi ili pokrenute aplikacije.</value>
+  </data>
+  <data name="Settings_Theme" xml:space="preserve">
+    <value>Tema aplikacije</value>
+  </data>
+  <data name="Settings_ThemeDark" xml:space="preserve">
+    <value>Tamna</value>
+  </data>
+  <data name="Settings_ThemeDesc" xml:space="preserve">
+    <value>Izaberite svetlu, tamnu ili temu prema Windows podešavanju.</value>
+  </data>
+  <data name="Settings_ThemeLight" xml:space="preserve">
+    <value>Svetla</value>
+  </data>
+  <data name="Settings_ThemeSystem" xml:space="preserve">
+    <value>Prema Windows podešavanju</value>
+  </data>
+  <data name="Settings_ViewLogs" xml:space="preserve">
+    <value>Prikaži dnevnike</value>
+  </data>
+  <data name="Settings_VirusTotal" xml:space="preserve">
+    <value>Provera heša na VirusTotalu</value>
+  </data>
+  <data name="Settings_VirusTotalDesc" xml:space="preserve">
+    <value>Dodaje dugme za proveru sumnjivih fajlova kod 70+ antivirusa. Potreban je besplatan API ključ sa virustotal.com.</value>
+  </data>
+  <data name="Settings_VirusTotalKey" xml:space="preserve">
+    <value>VirusTotal API ključ</value>
+  </data>
+  <data name="Settings_VirusTotalKeySaved" xml:space="preserve">
+    <value>Ključ je sačuvan.</value>
+  </data>
+  <data name="Settings_VirusTotalPrivacy" xml:space="preserve">
+    <value>VirusTotalu se šalje samo SHA-256 heš fajla — nikada sam fajl. Ključ se čuva šifrovan za vaš Windows nalog. Besplatni API dozvoljava 4 provere u minutu.</value>
+  </data>
+  <data name="Settings_VirusTotalSave" xml:space="preserve">
+    <value>Sačuvaj ključ</value>
+  </data>
+  <data name="Skip_AccessDenied" xml:space="preserve">
+    <value>Pristup odbijen</value>
+  </data>
+  <data name="Skip_Error" xml:space="preserve">
+    <value>Greška</value>
+  </data>
+  <data name="Skip_InUse" xml:space="preserve">
+    <value>U upotrebi</value>
+  </data>
+  <data name="Skip_Unsafe" xml:space="preserve">
+    <value>Preskočeno radi bezbjednosti</value>
+  </data>
+  <data name="Startup_ChangeFailed" xml:space="preserve">
+    <value>Nije moguće promeniti aplikaciju pri pokretanju</value>
+  </data>
+  <data name="Startup_DisabledMessage" xml:space="preserve">
+    <value>{0} se više neće pokretati sa Windows-om.</value>
+  </data>
+  <data name="Startup_DisabledTitle" xml:space="preserve">
+    <value>Aplikacija pri pokretanju onemogućena</value>
+  </data>
+  <data name="Startup_Empty" xml:space="preserve">
+    <value>Nisu pronađene aplikacije pri pokretanju.</value>
+  </data>
+  <data name="Startup_EnabledMessage" xml:space="preserve">
+    <value>{0} će se pokretati sa Windows-om.</value>
+  </data>
+  <data name="Startup_EnabledTitle" xml:space="preserve">
+    <value>Aplikacija pri pokretanju omogućena</value>
+  </data>
+  <data name="Startup_Intro" xml:space="preserve">
+    <value>Programi koji se pokreću kada se prijavite. Njihovo onemogućavanje ubrzava pokretanje i oslobađa memoriju — ništa se ne deinstalira i možete ih ponovo uključiti bilo kada.</value>
+  </data>
+  <data name="Startup_Loc_FolderAll" xml:space="preserve">
+    <value>Folder za pokretanje (svi korisnici)</value>
+  </data>
+  <data name="Startup_Loc_FolderUser" xml:space="preserve">
+    <value>Folder za pokretanje (trenutni korisnik)</value>
+  </data>
+  <data name="Startup_Loc_RegistryAll" xml:space="preserve">
+    <value>Registar (svi korisnici)</value>
+  </data>
+  <data name="Startup_Loc_RegistryAll32" xml:space="preserve">
+    <value>Registar (svi korisnici, 32-bitni)</value>
+  </data>
+  <data name="Startup_Loc_RegistryUser" xml:space="preserve">
+    <value>Registar (trenutni korisnik)</value>
+  </data>
+  <data name="Startup_OpenLocation" xml:space="preserve">
+    <value>Otvori lokaciju fajla</value>
+  </data>
+  <data name="Startup_ReadOnlyMessage" xml:space="preserve">
+    <value>Aplikacije registrovane za sve korisnike mogu se menjati samo kada Ultimate PC Cleaner radi kao administrator.</value>
+  </data>
+  <data name="Startup_ReadOnlyTitle" xml:space="preserve">
+    <value>Neke stavke su samo za čitanje</value>
+  </data>
+  <data name="Startup_Search" xml:space="preserve">
+    <value>Pretraži aplikacije pri pokretanju…</value>
+  </data>
+  <data name="Startup_Summary" xml:space="preserve">
+    <value>Omogućeno: {0} · onemogućeno: {1}</value>
+  </data>
+  <data name="Startup_UnknownPublisher" xml:space="preserve">
+    <value>Nepoznat izdavač</value>
+  </data>
+  <data name="Status_Clean" xml:space="preserve">
+    <value>Čisto</value>
+  </data>
+  <data name="Status_Cleaned" xml:space="preserve">
+    <value>Očišćeno</value>
+  </data>
+  <data name="Status_Cleaning" xml:space="preserve">
+    <value>Čišćenje…</value>
+  </data>
+  <data name="Status_Error" xml:space="preserve">
+    <value>Greška</value>
+  </data>
+  <data name="Status_RequiresAdmin" xml:space="preserve">
+    <value>Potreban administrator</value>
+  </data>
+  <data name="Status_Scanning" xml:space="preserve">
+    <value>Skeniranje…</value>
+  </data>
+  <data name="Temp_AdminReason" xml:space="preserve">
+    <value>Windows štiti ovaj folder: samo administratori mogu da vide i brišu njegove fajlove. Pokrenite aplikaciju ponovo kao administrator da biste ga skenirali i očistili.</value>
+  </data>
+  <data name="Temp_CleanSelected" xml:space="preserve">
+    <value>Obriši izabrano</value>
+  </data>
+  <data name="Temp_ConfirmButton" xml:space="preserve">
+    <value>Obriši fajlove</value>
+  </data>
+  <data name="Temp_ConfirmIntro" xml:space="preserve">
+    <value>Sledeći privremeni fajlovi biće trajno obrisani (ne idu u korpu za otpatke):</value>
+  </data>
+  <data name="Temp_ConfirmSafety" xml:space="preserve">
+    <value>Uklanjaju se samo fajlovi — sami folderi ostaju. Fajlovi koji su u upotrebi ili zaštićeni preskaču se i prijavljuju.</value>
+  </data>
+  <data name="Temp_ConfirmTitle" xml:space="preserve">
+    <value>Obrisati privremene fajlove?</value>
+  </data>
+  <data name="Temp_ConfirmTotal" xml:space="preserve">
+    <value>Procenjeni prostor koji će biti oslobođen: {0}</value>
+  </data>
+  <data name="Temp_Intro" xml:space="preserve">
+    <value>Skenira Windows foldere sa privremenim fajlovima i bezbjedno uklanja zaostale fajlove. Pregledajte šta je pronađeno, izaberite lokacije i potvrdite pre nego što se bilo šta obriše.</value>
+  </data>
+  <data name="Temp_NothingMessage" xml:space="preserve">
+    <value>Prvo skenirajte, a zatim izaberite lokaciju koja ima fajlove za brisanje.</value>
+  </data>
+  <data name="Temp_OpenFolder" xml:space="preserve">
+    <value>Otvori folder u Istraživaču datoteka</value>
+  </data>
+  <data name="Temp_PathUnresolved" xml:space="preserve">
+    <value>Putanju nije moguće bezbedno odrediti</value>
+  </data>
+  <data name="Temp_Prefetch_Desc" xml:space="preserve">
+    <value>Tragovi pokretanja aplikacija (*.pf) u %WINDIR%\Prefetch.</value>
+  </data>
+  <data name="Temp_Prefetch_Name" xml:space="preserve">
+    <value>Windows Prefetch</value>
+  </data>
+  <data name="Temp_Prefetch_Note" xml:space="preserve">
+    <value>Windows automatski upravlja Prefetch podacima. Njihovo brisanje ne ubrzava računar — aplikacije se u početku mogu sporije pokretati dok Windows ponovo ne izgradi ove podatke. Čistite ih samo pri rešavanju problema.</value>
+  </data>
+  <data name="Temp_ProgressCounts" xml:space="preserve">
+    <value>Obrađeno {0} od {1} fajlova · {2} · {3}</value>
+  </data>
+  <data name="Temp_Reclaimed" xml:space="preserve">
+    <value>Oslobođeno</value>
+  </data>
+  <data name="Temp_ResultCancelled" xml:space="preserve">
+    <value>Čišćenje otkazano</value>
+  </data>
+  <data name="Temp_ResultFailed" xml:space="preserve">
+    <value>Čišćenje nije uspelo</value>
+  </data>
+  <data name="Temp_ResultFreed" xml:space="preserve">
+    <value>{0} · oslobođeno {1}</value>
+  </data>
+  <data name="Temp_ResultLocationError" xml:space="preserve">
+    <value>jednu lokaciju nije bilo moguće očistiti (pogledajte dnevnik)</value>
+  </data>
+  <data name="Temp_ResultPartial" xml:space="preserve">
+    <value>Delimično očišćeno</value>
+  </data>
+  <data name="Temp_ResultSuccess" xml:space="preserve">
+    <value>Čišćenje završeno</value>
+  </data>
+  <data name="Temp_SafetyBody" xml:space="preserve">
+    <value>• Putanje se dobijaju iz Windows promenljivih okruženja (%LOCALAPPDATA%, %WINDIR%), pa ništa nije unapred zadato.
+• Brišu se samo fajlovi. Sami Temp i Prefetch folderi se nikada ne uklanjaju; uklanjaju se samo prazni podfolderi.
+• Veze (junctions/symlinks) se nikada ne prate, a svaki fajl se ponovo proverava neposredno pre brisanja.
+• Fajlovi u upotrebi ili zaštićeni fajlovi se preskaču i prijavljuju. Privremeni fajlovi iz poslednja 24 sata se podrazumevano čuvaju.
+• Dokumenti, preuzimanja, profili pregledača, lozinke i podešavanja aplikacija se nikada ne diraju.</value>
+  </data>
+  <data name="Temp_SafetyHeader" xml:space="preserve">
+    <value>Kako čišćenje ostaje bezbjedno</value>
+  </data>
+  <data name="Temp_Scanning" xml:space="preserve">
+    <value>Skeniranje foldera sa privremenim fajlovima…</value>
+  </data>
+  <data name="Temp_SkippedHeader" xml:space="preserve">
+    <value>Preskočeni fajlovi</value>
+  </data>
+  <data name="Temp_SkippedHint" xml:space="preserve">
+    <value>Ovi fajlovi su ostavljeni na mestu. Većinu koriste pokrenute aplikacije i mogu se ukloniti nakon ponovnog pokretanja računara. (Prikazano je najviše 200.)</value>
+  </data>
+  <data name="Temp_State_AccessDenied" xml:space="preserve">
+    <value>Pristup odbijen</value>
+  </data>
+  <data name="Temp_State_Cancelled" xml:space="preserve">
+    <value>Otkazano</value>
+  </data>
+  <data name="Temp_State_Missing" xml:space="preserve">
+    <value>Folder ne postoji</value>
+  </data>
+  <data name="Temp_State_NotScanned" xml:space="preserve">
+    <value>Nije skenirano</value>
+  </data>
+  <data name="Temp_State_ResolveError" xml:space="preserve">
+    <value>Nedostupno</value>
+  </data>
+  <data name="Temp_SummaryNotScanned" xml:space="preserve">
+    <value>Skenirajte da vidite koliko prostora zauzimaju privremeni fajlovi.</value>
+  </data>
+  <data name="Temp_SummaryScanned" xml:space="preserve">
+    <value>Izabrano: {0} · moguće je osloboditi {1}</value>
+  </data>
+  <data name="Temp_UserTemp_Desc" xml:space="preserve">
+    <value>Vaš lični Temp folder (%LOCALAPPDATA%\Temp), gde aplikacije i instalacioni programi ostavljaju fajlove.</value>
+  </data>
+  <data name="Temp_UserTemp_Name" xml:space="preserve">
+    <value>Korisnički privremeni fajlovi</value>
+  </data>
+  <data name="Temp_WindowsTemp_Desc" xml:space="preserve">
+    <value>Sistemski Temp folder (%WINDIR%\Temp) koji koriste Windows, servisi i instalacioni programi.</value>
+  </data>
+  <data name="Temp_WindowsTemp_Name" xml:space="preserve">
+    <value>Windows privremeni fajlovi</value>
+  </data>
+  <data name="Tweak_PowerPlanRevertFailed" xml:space="preserve">
+    <value>Nije moguće vratiti prethodni plan napajanja.</value>
+  </data>
+  <data name="Tweak_PowerPlanUnsupported" xml:space="preserve">
+    <value>Konfiguracija napajanja ovog računara ne dozvoljava ovaj plan (uređaji sa Modern Standby podržavaju samo Uravnoteženi plan).</value>
+  </data>
+  <data name="Tweak_game_dvr_Desc" xml:space="preserve">
+    <value>Sprečava da Xbox Game Bar neprekidno snima igranje u pozadini (Game DVR).</value>
+  </data>
+  <data name="Tweak_game_dvr_Name" xml:space="preserve">
+    <value>Isključi snimanje igara u pozadini</value>
+  </data>
+  <data name="Tweak_power_high_Desc" xml:space="preserve">
+    <value>Drži procesor na višim taktovima umesto da štedi energiju. Najbolje za stone računare ili laptopove priključene na struju.</value>
+  </data>
+  <data name="Tweak_power_high_Name" xml:space="preserve">
+    <value>Plan napajanja visokih performansi</value>
+  </data>
+  <data name="Tweak_power_ultimate_Desc" xml:space="preserve">
+    <value>Uklanja mikro-kašnjenja zbog štednje energije. Namenjeno radnim stanicama; troši više energije i baterije.</value>
+  </data>
+  <data name="Tweak_power_ultimate_Name" xml:space="preserve">
+    <value>Plan napajanja maksimalnih performansi</value>
+  </data>
+  <data name="Tweak_visual_effects_Desc" xml:space="preserve">
+    <value>Isključuje animacije prozora, glatko pomeranje i providnost kako bi radna površina bila brža na sporijim računarima.</value>
+  </data>
+  <data name="Tweak_visual_effects_Name" xml:space="preserve">
+    <value>Vizuelni efekti za performanse</value>
+  </data>
+  <data name="Unit_B" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="Unit_GB" xml:space="preserve">
+    <value>GB</value>
+  </data>
+  <data name="Unit_KB" xml:space="preserve">
+    <value>KB</value>
+  </data>
+  <data name="Unit_MB" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="Unit_TB" xml:space="preserve">
+    <value>TB</value>
+  </data>
+  <data name="Nav_System" xml:space="preserve">
+    <value>Sistem</value>
+  </data>
+  <data name="System_AdminTitle" xml:space="preserve">
+    <value>Potrebna su administratorska prava</value>
+  </data>
+  <data name="System_AdminMessage" xml:space="preserve">
+    <value>Za preimenovanje računara i instalaciju ažuriranja potrebna su administratorska prava. Proveru ažuriranja možete pokrenuti i bez njih.</value>
+  </data>
+  <data name="System_RenameHeader" xml:space="preserve">
+    <value>Ime računara</value>
+  </data>
+  <data name="System_RenameTitle" xml:space="preserve">
+    <value>Preimenuj računar</value>
+  </data>
+  <data name="System_RenameDesc" xml:space="preserve">
+    <value>Ime koje drugi uređaji vide na mreži. Novo ime važi nakon ponovnog pokretanja.</value>
+  </data>
+  <data name="System_CurrentName" xml:space="preserve">
+    <value>Trenutno ime: {0}</value>
+  </data>
+  <data name="System_PendingName" xml:space="preserve">
+    <value>Nakon ponovnog pokretanja: {0}</value>
+  </data>
+  <data name="System_NewNamePlaceholder" xml:space="preserve">
+    <value>Novo ime</value>
+  </data>
+  <data name="System_Rename" xml:space="preserve">
+    <value>Preimenuj</value>
+  </data>
+  <data name="System_NameRules" xml:space="preserve">
+    <value>Do 15 znakova: slova, cifre i crtice.</value>
+  </data>
+  <data name="System_NameTooLong" xml:space="preserve">
+    <value>Ime može imati najviše 15 znakova.</value>
+  </data>
+  <data name="System_NameInvalidChars" xml:space="preserve">
+    <value>Koristite samo slova (A–Z), cifre i crtice, bez razmaka.</value>
+  </data>
+  <data name="System_NameAllDigits" xml:space="preserve">
+    <value>Ime ne može da se sastoji samo od cifara.</value>
+  </data>
+  <data name="System_NameHyphenEdge" xml:space="preserve">
+    <value>Ime ne može da počinje ni da se završava crticom.</value>
+  </data>
+  <data name="System_Renamed" xml:space="preserve">
+    <value>Računar će se zvati „{0}” nakon ponovnog pokretanja.</value>
+  </data>
+  <data name="System_RenameFailed" xml:space="preserve">
+    <value>Preimenovanje nije uspelo</value>
+  </data>
+  <data name="System_RestartTitle" xml:space="preserve">
+    <value>Potrebno je ponovno pokretanje</value>
+  </data>
+  <data name="System_RestartMessage" xml:space="preserve">
+    <value>Promene stupaju na snagu nakon ponovnog pokretanja računara. Sačuvajte svoj rad pre restarta.</value>
+  </data>
+  <data name="System_RebootRequired" xml:space="preserve">
+    <value>Ponovo pokrenite računar da biste završili primenu promena i ažuriranja.</value>
+  </data>
+  <data name="System_RestartNow" xml:space="preserve">
+    <value>Restartuj sada</value>
+  </data>
+  <data name="System_RestartLater" xml:space="preserve">
+    <value>Kasnije</value>
+  </data>
+  <data name="System_UpdatesHeader" xml:space="preserve">
+    <value>Windows Update</value>
+  </data>
+  <data name="System_UpdatesTitle" xml:space="preserve">
+    <value>Windows ažuriranja</value>
+  </data>
+  <data name="System_UpdatesDesc" xml:space="preserve">
+    <value>Proverite, preuzmite i instalirajte ažuriranja od Microsofta.</value>
+  </data>
+  <data name="System_Check" xml:space="preserve">
+    <value>Proveri ažuriranja</value>
+  </data>
+  <data name="System_Install" xml:space="preserve">
+    <value>Instaliraj izabrano</value>
+  </data>
+  <data name="System_OpenSettings" xml:space="preserve">
+    <value>Otvori Windows Update podešavanja</value>
+  </data>
+  <data name="System_UpdatesIdle" xml:space="preserve">
+    <value>Još nije provereno.</value>
+  </data>
+  <data name="System_Searching" xml:space="preserve">
+    <value>Provera ažuriranja… Ovo može potrajati nekoliko minuta.</value>
+  </data>
+  <data name="System_UpToDate" xml:space="preserve">
+    <value>Sistem je ažuran</value>
+  </data>
+  <data name="System_LastChecked" xml:space="preserve">
+    <value>poslednja provera u {0}</value>
+  </data>
+  <data name="System_SearchFailed" xml:space="preserve">
+    <value>Greška Windows Update-a: {0}</value>
+  </data>
+  <data name="System_Downloading" xml:space="preserve">
+    <value>Preuzimanje {0} od {1}: {2}</value>
+  </data>
+  <data name="System_Installing" xml:space="preserve">
+    <value>Instaliranje {0} od {1}: {2}</value>
+  </data>
+  <data name="System_InstallDone" xml:space="preserve">
+    <value>Instalirano {0} od {1} ažuriranja.</value>
+  </data>
+  <data name="System_InstallCancelled" xml:space="preserve">
+    <value>Instalacija je zaustavljena. Već instalirana ažuriranja ostaju.</value>
+  </data>
+  <data name="System_UpdateDownloaded" xml:space="preserve">
+    <value>Preuzeto</value>
+  </data>
+  <data name="System_UpdateOptional" xml:space="preserve">
+    <value>Opciono</value>
+  </data>
+  <data name="Count_Updates_One" xml:space="preserve">
+    <value>{0} dostupno ažuriranje</value>
+  </data>
+  <data name="Count_Updates_Few" xml:space="preserve">
+    <value>{0} dostupna ažuriranja</value>
+  </data>
+  <data name="Count_Updates_Many" xml:space="preserve">
+    <value>{0} dostupnih ažuriranja</value>
+  </data>
+  <data name="Nav_Help" xml:space="preserve">
+    <value>Uputstvo</value>
+  </data>
+  <data name="Help_Intro" xml:space="preserve">
+    <value>Detaljan vodič kroz Ultimate PC Cleaner: šta radi svaka stranica, kako se koristi i kako aplikacija čuva vaše podatke. Kliknite na odeljak da ga otvorite, a zatim na „Otvori stranicu“ da odete direktno na tu funkciju.</value>
+  </data>
+  <data name="Help_QuickStartHeader" xml:space="preserve">
+    <value>Brzi početak</value>
+  </data>
+  <data name="Help_QuickStartBody" xml:space="preserve">
+    <value>1. Na Kontrolnoj tabli kliknite „Skeniraj sada“. Aplikacija pronalazi nepotrebne fajlove, ali ništa ne briše.
+2. Pregledajte rezultate na stranicama Čišćenje i Privremeni fajlovi, označite šta želite da uklonite i potvrdite brisanje.
+3. Na stranici Pokretanje sistema isključite programe koji vam ne trebaju odmah po prijavi — Windows će se brže pokretati.
+4. Na stranici Bezbjednost proverite status zaštite i povremeno pokrenite „Pronađi sumnjive stavke“.
+5. Za brzo održavanje jednim klikom koristite dugme „UBRZAJ“ na Kontrolnoj tabli.
+
+Savet: za sistemske foldere, Defender skeniranje, alate za popravku i instalaciju ažuriranja pokrenite aplikaciju kao administrator (dugme „Pokreni ponovo kao administrator“ u traci na vrhu prozora).</value>
+  </data>
+  <data name="Help_PagesHeader" xml:space="preserve">
+    <value>Stranice aplikacije</value>
+  </data>
+  <data name="Help_OpenPage" xml:space="preserve">
+    <value>Otvori stranicu</value>
+  </data>
+  <data name="Help_Dashboard_Summary" xml:space="preserve">
+    <value>Pregled stanja računara, statistika čišćenja i ubrzanje jednim klikom.</value>
+  </data>
+  <data name="Help_Dashboard_Body" xml:space="preserve">
+    <value>Kontrolna tabla je početni ekran i prikazuje stanje računara na prvi pogled.
+• Stanje sistema — merači uživo prikazuju opterećenje procesora (CPU), zauzetost memorije (RAM) i slobodan prostor na sistemskom disku, kao i koliko dugo računar radi od poslednjeg pokretanja.
+• Pronađeno za brisanje — ukupna veličina nepotrebnih fajlova izabranih na stranicama Čišćenje i Privremeni fajlovi.
+• Privremeni fajlovi — prostor koji se može osloboditi u folderima Temp i Prefetch.
+• Ukupno oslobođeno i Poslednje čišćenje — koliko ste prostora oslobodili otkako koristite aplikaciju i kada je to poslednji put urađeno.
+• „Skeniraj sada“ — pretražuje sve kategorije i prikazuje koliko prostora možete osloboditi. Skeniranje nikada ništa ne briše; rezultate zatim pregledajte dugmetom „Pregledaj u Čišćenju“.
+• „UBRZAJ“ — jednim klikom čisti nepotrebne fajlove izabrane u Čišćenju, prazni DNS keš i oslobađa RAM. Pre brisanja prikazuje se prozor sa tačnom količinom podataka i traži vašu potvrdu; izborom „Otkaži“ ništa se ne menja.
+Prečice „Privremeni fajlovi“ i „Optimizacija“ vode direktno na te stranice.</value>
+  </data>
+  <data name="Help_TempFiles_Summary" xml:space="preserve">
+    <value>Pregled i bezbedno brisanje fajlova iz Windows foldera za privremene fajlove.</value>
+  </data>
+  <data name="Help_TempFiles_Body" xml:space="preserve">
+    <value>Ova stranica radi sa tri lokacije koje Windows koristi za privremene podatke:
+• Korisnički privremeni fajlovi (%LOCALAPPDATA%\Temp) — vaš lični Temp folder; ne zahteva administratorska prava.
+• Windows privremeni fajlovi (%WINDIR%\Temp) — sistemski Temp folder; zahteva administratora.
+• Windows Prefetch (%WINDIR%\Prefetch, samo *.pf fajlovi) — zahteva administratora.
+
+Kako se koristi:
+1. Kliknite „Skeniraj“. Za svaku lokaciju videćete broj fajlova, prostor koji se može osloboditi, fajlove u upotrebi i nedostupne stavke.
+2. Označite lokacije koje želite da očistite. Ikonica foldera otvara lokaciju u Istraživaču datoteka.
+3. Kliknite „Obriši izabrano“, proverite spisak u prozoru za potvrdu i kliknite „Obriši fajlove“.
+4. Pratite napredak uživo. Na kraju se prikazuje rezultat: šta je obrisano, šta je preskočeno (i zašto) i šta je već bilo uklonjeno.
+
+Fajlovi u upotrebi se preskaču — većina se može obrisati posle ponovnog pokretanja računara. Fajlovi mlađi od 24 sata se podrazumevano čuvaju (Podešavanja → „Preskoči privremene fajlove novije od 24 sata“).
+Napomena: brisanje Prefetch podataka ne ubrzava računar; aplikacije se u početku mogu sporije pokretati. Koristite ga samo pri rešavanju problema.</value>
+  </data>
+  <data name="Help_Cleaner_Summary" xml:space="preserve">
+    <value>Čišćenje keševa, dnevnika, korpe za otpatke i keša veb pregledača po kategorijama.</value>
+  </data>
+  <data name="Help_Cleaner_Body" xml:space="preserve">
+    <value>Čišćenje pokriva širi skup kategorija, podeljenih u grupe:
+• Windows — korisnički i Windows privremeni fajlovi, keš Windows Update-a, keš optimizacije isporuke, izveštaji o greškama, memorijski dampovi, stari Windows dnevnici (stariji od 7 dana), korpa za otpatke, Prefetch podaci i keš sličica.
+• Veb pregledači — keš za Microsoft Edge, Google Chrome, Brave i Mozilla Firefox. Briše se samo keš; kolačići, istorija i lozinke ostaju netaknuti.
+• Aplikacije — DirectX keš šejdera.
+
+Kako se koristi:
+1. Označite ili poništite kategorije. Polje uz naziv grupe bira ili poništava celu grupu; „Izaberi sve“, „Preporučeno“ i „Poništi izbor“ menjaju izbor za sve kategorije odjednom.
+2. Kliknite „Skeniraj“ da vidite koliko prostora zauzima svaka kategorija.
+3. Kliknite „Očisti izabrano“ i potvrdite. Na kraju se prikazuje koliko je prostora oslobođeno.
+
+Ako je pregledač pokrenut, pojaviće se upozorenje „Neke aplikacije su pokrenute“ — zatvorite ga za potpuno čišćenje keša. Kategorije sa žutim upozorenjem (npr. Prefetch ili keš šejdera) imaju sporedne efekte, pa ih uključite samo kada vam zaista trebaju. Kategorije označene sa „Potreban administrator“ rade samo u administratorskom režimu.</value>
+  </data>
+  <data name="Help_Startup_Summary" xml:space="preserve">
+    <value>Uključivanje i isključivanje programa koji se pokreću sa Windows-om.</value>
+  </data>
+  <data name="Help_Startup_Body" xml:space="preserve">
+    <value>Ovde su navedeni svi programi koji se automatski pokreću kada se prijavite na Windows — iz registra i iz foldera za pokretanje, za trenutnog korisnika i za sve korisnike.
+• Prekidačem uz program onemogućavate ili ponovo omogućavate njegovo pokretanje. Koristi se isti mehanizam kao u Upravljaču zadacima, pa se ništa ne briše ni ne deinstalira.
+• Polje za pretragu filtrira listu po nazivu; pored njega je zbir omogućenih i onemogućenih stavki.
+• Za svaku stavku vide se izdavač i lokacija (npr. „Registar (trenutni korisnik)“); dugme „Otvori lokaciju fajla“ prikazuje program u Istraživaču datoteka.
+• „Osveži“ ponovo učitava listu.
+
+Stavke registrovane za sve korisnike mogu se menjati samo u administratorskom režimu — u suprotnom su samo za čitanje.
+Savet: isključite programe koji vam ne trebaju odmah po prijavi (pokretači igara, alati za ažuriranje, aplikacije za ćaskanje). Antivirus i programe za upravljanje hardverom (zvuk, touchpad, grafika) ostavite uključene.</value>
+  </data>
+  <data name="Help_Security_Summary" xml:space="preserve">
+    <value>Skeniranje Microsoft Defenderom, provera skripti, sumnjive stavke i karantin.</value>
+  </data>
+  <data name="Help_Security_Body" xml:space="preserve">
+    <value>Stranica Bezbjednost koristi Microsoft Defender i antivirus instaliran na računaru — ona nije zaseban antivirus.
+• Status zaštite — na vrhu vidite da li je računar zaštićen, verziju i datum potpisa i vreme poslednjeg skeniranja. Ako je aktivan drugi antivirus, Defender skeniranje nije dostupno, ali ostale funkcije rade.
+• „Brzo skeniranje“, „Potpuno skeniranje“ i „Skeniraj folder…“ pokreću Defender skeniranje, a izlaz se prikazuje uživo. „Ažuriraj potpise“ preuzima najnovije definicije virusa.
+• „Proveri skripte (AMSI)…“ — šalje svaku PowerShell, VBScript, JavaScript i batch skriptu iz izabranog foldera na proveru instaliranom antivirusu.
+• „Pronađi sumnjive stavke“ — pregleda stavke pri pokretanju, zakazane zadatke i skripte i označava rizične obrasce: skrivene ili kodirane komande, prikrivena imena (npr. faktura.pdf.exe), nepotpisane programe u korisničkim folderima i stavke koje pokazuju na nepostojeće fajlove. Svaka stavka ima nivo rizika (Nizak, Srednji, Visok) i razlog. Poklapanje nije dokaz — proverite pre nego što reagujete.
+• Za sumnjivu stavku možete da je skenirate Defenderom, proverite njen heš na VirusTotalu (ako je uključeno u Podešavanjima) ili da je premestite u karantin.
+• Pretnje koje je otkrio Microsoft Defender — lista detekcija. „Ukloni aktivne pretnje“ ih uklanja, a „Dozvoli“ označava fajl kao bezbedan (samo ako ste sigurni).
+• Karantin Ultimate PC Cleanera — premešteni fajlovi čuvaju se u obliku koji ne može da se pokrene. „Vrati“ ih vraća na prvobitno mesto, a „Obriši“ ih trajno uklanja. Ovde možete vratiti i fajlove iz Defenderovog karantina.
+
+Skeniranje, karantin i vraćanje zahtevaju administratorska prava; status i pretraga sumnjivih stavki rade i bez njih.</value>
+  </data>
+  <data name="Help_Optimize_Summary" xml:space="preserve">
+    <value>Reverzibilna podešavanja performansi i brze radnje.</value>
+  </data>
+  <data name="Help_Optimize_Body" xml:space="preserve">
+    <value>Podešavanja performansi (prekidači — isključivanjem se vraća prethodno stanje):
+• Plan napajanja visokih performansi — procesor radi na višim taktovima; najbolje za stone računare i laptopove priključene na struju.
+• Plan napajanja maksimalnih performansi — uklanja mikro-kašnjenja zbog štednje energije, ali troši više struje i baterije. Na uređajima sa Modern Standby režimom dostupan je samo Uravnoteženi plan.
+• Vizuelni efekti za performanse — isključuje animacije prozora, glatko pomeranje i providnost; korisno na slabijim računarima.
+• Isključi snimanje igara u pozadini — sprečava da Xbox Game Bar (Game DVR) stalno snima igranje.
+
+Pre prve promene u sesiji aplikacija pravi tačku vraćanja sistema (ako je to uključeno u Podešavanjima i aplikacija radi kao administrator). Ako tačka ne može da se napravi, pitaće vas da li ipak želite da nastavite.
+
+Brze radnje:
+• Isprazni DNS keš — pomaže kada se sajtovi ne učitavaju posle promene mreže ili DNS servera.
+• Oslobodi RAM — smanjuje neiskorišćenu memoriju aplikacija; korisno pre igre ili zahtevnog programa.
+• Kreiraj tačku vraćanja — ručno pravi snimak stanja sistema na koji se možete vratiti iz Windows oporavka (zahteva administratora i uključenu Zaštitu sistema).</value>
+  </data>
+  <data name="Help_Health_Summary" xml:space="preserve">
+    <value>Windows alati za proveru i popravku sistema, sa izlazom uživo.</value>
+  </data>
+  <data name="Help_Health_Body" xml:space="preserve">
+    <value>Ovde pokrećete ugrađene Windows alate za održavanje. Svi zahtevaju administratorska prava.
+• Provera sistemskih fajlova (sfc /scannow) — pronalazi i popravlja oštećene zaštićene Windows fajlove.
+• Popravka Windows slike (DISM RestoreHealth) — popravlja skladište Windows komponenti i zahteva internet vezu. Pokrenite ga ako SFC prijavi greške koje ne može da popravi, a zatim ponovo pokrenite SFC.
+• Čišćenje skladišta komponenti (DISM) — uklanja zastarele komponente ažuriranja iz WinSxS foldera i oslobađa prostor.
+• Optimizacija sistemskog diska — TRIM za SSD, odnosno defragmentacija za hard disk.
+• Provera diska (chkdsk /scan) — traži greške fajl sistema bez pravljenja izmena.
+
+Kliknite „Pokreni“ uz alat i pratite izlaz u prozoru ispod. Alat možete prekinuti dugmetom „Otkaži“, a izlaz kopirati („Kopiraj izlaz“) ili obrisati („Obriši izlaz“). Neki alati traju i po nekoliko desetina minuta — ne gasite računar dok rade.</value>
+  </data>
+  <data name="Help_System_Summary" xml:space="preserve">
+    <value>Promena imena računara i Windows ažuriranja.</value>
+  </data>
+  <data name="Help_System_Body" xml:space="preserve">
+    <value>Ime računara
+• Kartica prikazuje kako se računar trenutno zove na mreži.
+• Unesite novo ime i kliknite „Preimenuj“. Pravila: do 15 znakova, samo slova (A–Z), cifre i crtice, bez razmaka; ime ne sme da se sastoji samo od cifara niti da počinje ili se završava crticom.
+• Novo ime važi posle ponovnog pokretanja računara.
+
+Windows Update
+• „Proveri ažuriranja“ traži dostupna ažuriranja (može potrajati nekoliko minuta); radi i bez administratorskih prava.
+• Ažuriranja se prikazuju kao lista. Obavezna su unapred označena, a opciona (npr. nadogradnje funkcija) nisu.
+• „Instaliraj izabrano“ preuzima i instalira označena ažuriranja uz prikaz napretka; „Otkaži“ zaustavlja instalaciju, a već instalirana ažuriranja ostaju.
+• Ikonica pored dugmadi otvara Windows Update u Windows podešavanjima.
+
+Kada je potrebno ponovno pokretanje (posle preimenovanja ili ažuriranja), na vrhu stranice pojavljuje se kartica sa dugmetom „Restartuj sada“. Sačuvajte svoj rad pre restarta.</value>
+  </data>
+  <data name="Help_Settings_Summary" xml:space="preserve">
+    <value>Jezik, tema, bezbednosne opcije čišćenja i VirusTotal.</value>
+  </data>
+  <data name="Help_Settings_Body" xml:space="preserve">
+    <value>Opšte
+• Jezik — srpski (latinica), engleski, ruski, nemački ili kineski; promena se primenjuje odmah.
+
+Izgled
+• Tema aplikacije — svetla, tamna ili prema Windows podešavanju.
+• Smanji animacije — isključuje dekorativne animacije (one su isključene i kada su animacije isključene u Windows-u).
+
+Čišćenje
+• Preskoči privremene fajlove novije od 24 sata — preporučeno, jer nove fajlove možda još koriste instalacioni programi ili pokrenute aplikacije.
+• Zapamti moj izbor — čuva označene kategorije i lokacije za sledeći put.
+
+Bezbjednost
+• Kreiraj tačku vraćanja pre optimizacije — pravi tačku vraćanja sistema pre prve izmene u svakoj sesiji.
+• Provera heša na VirusTotalu — dodaje dugme za proveru sumnjivih fajlova kod 70+ antivirusa. Potreban je besplatan API ključ sa virustotal.com: unesite ga i kliknite „Sačuvaj ključ“. Šalje se samo SHA-256 heš fajla, nikada sam fajl, a ključ se čuva šifrovan za vaš Windows nalog.
+
+O aplikaciji
+• Prikazuje verziju i folder sa podešavanjima i dnevnicima; „Otvori folder“ i „Prikaži dnevnike“ otvaraju ga u Istraživaču datoteka.</value>
+  </data>
+  <data name="Help_SafetyHeader" xml:space="preserve">
+    <value>Bezbednost i administratorska prava</value>
+  </data>
+  <data name="Help_SafetyTitle" xml:space="preserve">
+    <value>Kako aplikacija čuva vaše podatke</value>
+  </data>
+  <data name="Help_SafetySummary" xml:space="preserve">
+    <value>Pravila koja važe za svako skeniranje i brisanje.</value>
+  </data>
+  <data name="Help_SafetyBody" xml:space="preserve">
+    <value>• Ništa se ne briše bez vaše potvrde — svako brisanje, uključujući UBRZAJ, prvo prikazuje šta će biti uklonjeno i koliko prostora.
+• Skeniranje samo čita podatke i nikada ništa ne briše.
+• Putanje se određuju iz Windows promenljivih okruženja (%LOCALAPPDATA%, %WINDIR%). Putanja koja se ne može bezbedno odrediti (relativna, mrežna, koren diska ili veza) se prijavljuje i ne čisti.
+• Brišu se samo fajlovi. Glavni folderi se nikada ne uklanjaju, a prazni podfolderi uklanjaju se jedan po jedan.
+• Veze (junctions i symlinks) se nikada ne prate, a svaki fajl se ponovo proverava neposredno pre brisanja.
+• Fajlovi u upotrebi, bez dozvole ili koji ne prođu proveru se preskaču i navode u rezultatu — delimičan uspeh se prijavljuje kao delimičan.
+• Dokumenti, preuzimanja, kolačići, istorija pregledača, lozinke i podešavanja aplikacija se nikada ne diraju.
+• Optimizacije su reverzibilne, a pre prve izmene pravi se tačka vraćanja sistema.
+• Stranica Bezbjednost nikada sama ne briše fajlove; karantin se radi samo uz potvrdu i može se poništiti.
+• Obrisani fajlovi ne idu u korpu za otpatke — brisanje je trajno, zato pažljivo pregledajte izbor.</value>
+  </data>
+  <data name="Help_AdminTitle" xml:space="preserve">
+    <value>Ograničeni režim i administratorska prava</value>
+  </data>
+  <data name="Help_AdminSummary" xml:space="preserve">
+    <value>Šta radi bez povišenih prava, a šta zahteva administratora.</value>
+  </data>
+  <data name="Help_AdminBody" xml:space="preserve">
+    <value>Aplikacija se pokreće sa pravima trenutnog korisnika. Tada naslov prozora sadrži oznaku „(ograničeni režim)“, a na vrhu se prikazuje traka sa objašnjenjem.
+
+Bez administratorskih prava radi:
+• čišćenje vašeg Temp foldera i keša pregledača,
+• uključivanje i isključivanje vaših programa pri pokretanju,
+• većina podešavanja performansi i brze radnje,
+• status zaštite, provera skripti i pretraga sumnjivih stavki,
+• provera Windows ažuriranja.
+
+Administratorska prava su potrebna za:
+• Windows Temp, Prefetch i sistemske keševe,
+• programe pri pokretanju registrovane za sve korisnike,
+• tačke vraćanja sistema,
+• alate na stranici Zdravlje sistema,
+• Defender skeniranje, karantin i vraćanje fajlova,
+• preimenovanje računara i instalaciju ažuriranja.
+
+Kliknite „Pokreni ponovo kao administrator“ u traci na vrhu i potvrdite Windows UAC prozor. Aplikacija nikada sama ne traži povišena prava. Traku možete zatvoriti dugmetom X.</value>
+  </data>
+  <data name="Help_FaqHeader" xml:space="preserve">
+    <value>Česta pitanja</value>
+  </data>
+  <data name="Help_Faq1_Q" xml:space="preserve">
+    <value>Zašto posle čišćenja ostanu neki fajlovi?</value>
+  </data>
+  <data name="Help_Faq1_A" xml:space="preserve">
+    <value>Fajlove koje trenutno koristi neka aplikacija ili sam Windows nije moguće obrisati, pa se preskaču i navode u rezultatu („U upotrebi“, „Pristup odbijen“). Zatvorite aplikacije ili ponovo pokrenite računar i pokrenite čišćenje još jednom. Privremeni fajlovi mlađi od 24 sata takođe se namerno čuvaju.</value>
+  </data>
+  <data name="Help_Faq2_Q" xml:space="preserve">
+    <value>Da li čišćenje keša pregledača briše lozinke ili istoriju?</value>
+  </data>
+  <data name="Help_Faq2_A" xml:space="preserve">
+    <value>Ne. Briše se samo keš (privremeno sačuvane stranice, slike i skripte). Kolačići, istorija, lozinke, obeleživači i podešavanja ostaju. Sajtovi se prvi put posle čišćenja mogu učitati malo sporije.</value>
+  </data>
+  <data name="Help_Faq3_Q" xml:space="preserve">
+    <value>Mogu li da vratim obrisane fajlove?</value>
+  </data>
+  <data name="Help_Faq3_A" xml:space="preserve">
+    <value>Ne — obrisani fajlovi ne idu u korpu za otpatke, zato se pre svakog brisanja traži potvrda. Izuzetak su fajlovi premešteni u karantin na stranici Bezbjednost: njih uvek možete vratiti dugmetom „Vrati“. Promene na stranici Optimizacija poništavate isključivanjem prekidača ili preko tačke vraćanja sistema.</value>
+  </data>
+  <data name="Help_Faq4_Q" xml:space="preserve">
+    <value>Zašto su neka dugmad ili kategorije neaktivni?</value>
+  </data>
+  <data name="Help_Faq4_A" xml:space="preserve">
+    <value>Najčešće zato što aplikacija radi u ograničenom režimu. Funkcije koje menjaju sistem zahtevaju administratorska prava — kliknite „Pokreni ponovo kao administrator“. Na stranici Bezbjednost Defender skeniranje nije dostupno ni kada je aktivan drugi antivirus.</value>
+  </data>
+  <data name="Help_Faq5_Q" xml:space="preserve">
+    <value>Tačka vraćanja ne može da se kreira. Šta da radim?</value>
+  </data>
+  <data name="Help_Faq5_A" xml:space="preserve">
+    <value>Proverite da li aplikacija radi kao administrator. Ako radi, verovatno je isključena Zaštita sistema za sistemski disk: u Windows pretrazi upišite „Kreiraj tačku vraćanja“, izaberite sistemski disk (obično C:), kliknite „Konfiguriši“ i uključite zaštitu sistema.</value>
+  </data>
+  <data name="Help_Faq6_Q" xml:space="preserve">
+    <value>Windows SmartScreen upozorava pri instalaciji. Da li je to problem?</value>
+  </data>
+  <data name="Help_Faq6_A" xml:space="preserve">
+    <value>Instalacioni program nije digitalno potpisan, pa Windows SmartScreen može prikazati poruku „Windows je zaštitio vaš računar“. Kliknite „Više informacija“, a zatim „Ipak pokreni“. Aplikacija ne šalje vaše podatke nikuda; jedini izuzetak je opciona VirusTotal provera, koja šalje samo heš fajla.</value>
+  </data>
+  <data name="Help_Faq7_Q" xml:space="preserve">
+    <value>Gde su podešavanja i dnevnici i šta da pošaljem kada prijavljujem problem?</value>
+  </data>
+  <data name="Help_Faq7_A" xml:space="preserve">
+    <value>Podešavanja i dnevnici nalaze se u folderu %LOCALAPPDATA%\UltimatePCCleaner. Otvorite Podešavanja → O aplikaciji → „Prikaži dnevnike“ i priložite najnoviji dnevnik uz opis problema i korake koji su do njega doveli.</value>
+  </data>
+</root>

@@ -2,6 +2,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PCCleaner.Services;
 using PCCleaner.Services.Cleaning;
+using PCCleaner.Services.Localization;
 using Wpf.Ui.Controls;
 
 namespace PCCleaner.ViewModels;
@@ -68,22 +69,25 @@ public sealed partial class CleanupItemViewModel : ObservableObject
 
     public string StatusText => Status switch
     {
-        CleanupStatus.RequiresAdmin => "Requires admin",
-        CleanupStatus.Scanning => "Scanning…",
-        CleanupStatus.Cleaning => FreedBytes > 0 ? ByteSize.Format(FreedBytes) : "Cleaning…",
-        CleanupStatus.Scanned => FoundFiles == 0 ? "Clean" : ByteSize.Format(FoundBytes),
+        CleanupStatus.RequiresAdmin => Loc.T("Status_RequiresAdmin"),
+        CleanupStatus.Scanning => Loc.T("Status_Scanning"),
+        CleanupStatus.Cleaning => FreedBytes > 0 ? ByteSize.Format(FreedBytes) : Loc.T("Status_Cleaning"),
+        CleanupStatus.Scanned => FoundFiles == 0 ? Loc.T("Status_Clean") : ByteSize.Format(FoundBytes),
         CleanupStatus.Cleaned => "−" + ByteSize.Format(FreedBytes),
-        CleanupStatus.Failed => "Error",
+        CleanupStatus.Failed => Loc.T("Status_Error"),
         _ => "—",
     };
 
     public string? DetailText => Status switch
     {
-        CleanupStatus.Scanned when FoundFiles > 0 => $"{FoundFiles:N0} items",
-        CleanupStatus.Cleaned when SkippedFiles > 0 => $"{SkippedFiles:N0} in use, skipped",
-        CleanupStatus.Cleaned => "Cleaned",
+        CleanupStatus.Scanned when FoundFiles > 0 => Loc.Count("Count_Items", FoundFiles),
+        CleanupStatus.Cleaned when SkippedFiles > 0 => Loc.Count("Count_SkippedInUse", SkippedFiles),
+        CleanupStatus.Cleaned => Loc.T("Status_Cleaned"),
         _ => null,
     };
+
+    /// <summary>Re-reads all localized text after a language change.</summary>
+    public void RefreshText() => OnPropertyChanged(string.Empty);
 
     [RelayCommand]
     private void Toggle()

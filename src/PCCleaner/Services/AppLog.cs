@@ -2,13 +2,17 @@ using System.IO;
 
 namespace PCCleaner.Services;
 
-/// <summary>Minimal daily log file in %LOCALAPPDATA%\PCCleaner\logs.</summary>
+/// <summary>Minimal daily log file in %LOCALAPPDATA%\UltimatePCCleaner\logs.</summary>
 public static class AppLog
 {
     private static readonly Lock Gate = new();
 
+    /// <summary>Turned off by the test suite so tests never write to the user's real log.</summary>
+    internal static bool IsEnabled { get; set; } = true;
+
     public static void Write(string message)
     {
+        if (!IsEnabled) return;
         lock (Gate)
         {
             try

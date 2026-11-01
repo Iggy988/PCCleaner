@@ -7,6 +7,7 @@ public interface ICleanupProvider
 {
     string Id { get; }
 
+    /// <summary>Localized display name (looked up on every access, so it follows language changes).</summary>
     string Name { get; }
 
     string Description { get; }
@@ -26,7 +27,10 @@ public interface ICleanupProvider
     /// <summary>Process names that hold files in this category open (e.g. a browser).</summary>
     IReadOnlyList<string> BlockingProcesses { get; }
 
+    /// <summary>Product name of the app behind <see cref="BlockingProcesses"/> (e.g. "Google Chrome").</summary>
+    string? BlockingAppName { get; }
+
     Task<ScanResult> ScanAsync(CancellationToken cancellationToken);
 
-    Task<CleanResult> CleanAsync(IProgress<long>? progress, CancellationToken cancellationToken);
+    Task<CleanResult> CleanAsync(IProgress<CleanProgress>? progress, CancellationToken cancellationToken);
 }

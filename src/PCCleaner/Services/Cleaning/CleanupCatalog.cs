@@ -1,10 +1,11 @@
 using System.IO;
 using PCCleaner.Models;
+using PCCleaner.Services.Cleaning.Temp;
 using Wpf.Ui.Controls;
 
 namespace PCCleaner.Services.Cleaning;
 
-/// <summary>All cleanup categories the app offers, in display order.</summary>
+/// <summary>All cleanup categories the app offers, in display order. Names/descriptions live in the string resources.</summary>
 public sealed class CleanupCatalog
 {
     private static readonly string Windows = Environment.GetFolderPath(Environment.SpecialFolder.Windows);
@@ -12,59 +13,53 @@ public sealed class CleanupCatalog
     private static readonly string ProgramData = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
 
     private readonly SettingsService _settings;
+    private readonly TempLocationResolver _tempLocations;
 
-    public CleanupCatalog(SettingsService settings)
+    public CleanupCatalog(SettingsService settings, TempLocationResolver tempLocations)
     {
         _settings = settings;
+        _tempLocations = tempLocations;
         Providers = BuildProviders().ToList();
     }
 
     public IReadOnlyList<ICleanupProvider> Providers { get; }
 
+    /// <summary>Categories that cover the same folders as the Temp Files page (used to avoid counting them twice).</summary>
+    public static IReadOnlySet<string> TempLocationIds { get; } = new HashSet<string> { "user-temp", "windows-temp", "prefetch" };
+
     private TimeSpan TempMinAge => _settings.Current.SkipRecentTempFiles ? TimeSpan.FromHours(24) : TimeSpan.Zero;
+
+    /// <summary>Same resolution and rules as the Temp Files page; an unresolvable location yields no targets.</summary>
+    private IEnumerable<FolderTarget> TempTargets(TempLocationKind kind)
+    {
+        var location = _tempLocations.Resolve(kind, TempMinAge);
+        return location.IsResolved ? [location.ToFolderTarget()] : [];
+    }
 
     private IEnumerable<ICleanupProvider> BuildProviders()
     {
-        var userTemp = Path.GetTempPath();
+        yield return new FolderCleanupProvider("user-temp", CleanupGroup.System, SymbolRegular.DocumentBulletList24,
+            () => TempTargets(TempLocationKind.UserTemp));
 
-        yield return new FolderCleanupProvider("user-temp", "User temporary files",
-            "Leftovers that apps and installers write to your personal Temp folder.",
-            CleanupGroup.System, SymbolRegular.DocumentBulletList24,
-            () => [new FolderTarget
-            {
-                Path = userTemp,
-                MinAge = TempMinAge,
-                // Self-extracting .NET apps cache their native files here.
-                ExcludedPaths = [Path.Combine(userTemp, ".net")],
-            }]);
-
-        yield return new FolderCleanupProvider("windows-temp", "Windows temporary files",
-            "Temporary files created by Windows and system services.",
-            CleanupGroup.System, SymbolRegular.Window24,
-            () => [new FolderTarget { Path = Path.Combine(Windows, "Temp"), MinAge = TempMinAge }])
+        yield return new FolderCleanupProvider("windows-temp", CleanupGroup.System, SymbolRegular.Window24,
+            () => TempTargets(TempLocationKind.WindowsTemp))
         { RequiresAdmin = true };
 
-        yield return new FolderCleanupProvider("windows-update", "Windows Update cache",
-            "Update packages that were already downloaded and installed.",
-            CleanupGroup.System, SymbolRegular.ArrowDownload24,
+        yield return new FolderCleanupProvider("windows-update", CleanupGroup.System, SymbolRegular.ArrowDownload24,
             () => [new FolderTarget { Path = Path.Combine(Windows, "SoftwareDistribution", "Download") }])
         {
             RequiresAdmin = true,
             ServicesToStop = ["wuauserv", "bits"],
         };
 
-        yield return new FolderCleanupProvider("delivery-optimization", "Delivery Optimization cache",
-            "Update files Windows keeps to share with other PCs.",
-            CleanupGroup.System, SymbolRegular.CloudArrowDown24,
+        yield return new FolderCleanupProvider("delivery-optimization", CleanupGroup.System, SymbolRegular.CloudArrowDown24,
             () => [new FolderTarget { Path = Path.Combine(Windows, @"ServiceProfiles\NetworkService\AppData\Local\Microsoft\Windows\DeliveryOptimization\Cache") }])
         {
             RequiresAdmin = true,
             ServicesToStop = ["dosvc"],
         };
 
-        yield return new FolderCleanupProvider("error-reports", "Windows error reports",
-            "Crash and problem reports that were already sent or queued.",
-            CleanupGroup.System, SymbolRegular.DocumentError24,
+        yield return new FolderCleanupProvider("error-reports", CleanupGroup.System, SymbolRegular.DocumentError24,
             () =>
             [
                 new FolderTarget { Path = Path.Combine(ProgramData, @"Microsoft\Windows\WER\ReportArchive") },
@@ -75,9 +70,7 @@ public sealed class CleanupCatalog
             ])
         { RequiresAdmin = true };
 
-        yield return new FolderCleanupProvider("memory-dumps", "Memory dumps",
-            "Diagnostic dump files written when Windows or an app crashed.",
-            CleanupGroup.System, SymbolRegular.Bug24,
+        yield return new FolderCleanupProvider("memory-dumps", CleanupGroup.System, SymbolRegular.Bug24,
             () =>
             [
                 new FolderTarget { Path = Path.Combine(Windows, "Minidump"), SearchPattern = "*.dmp" },
@@ -86,31 +79,25 @@ public sealed class CleanupCatalog
             ])
         { RequiresAdmin = true };
 
-        yield return new FolderCleanupProvider("windows-logs", "Old Windows log files",
-            "Setup and servicing logs older than 7 days.",
-            CleanupGroup.System, SymbolRegular.History24,
+        yield return new FolderCleanupProvider("windows-logs", CleanupGroup.System, SymbolRegular.History24,
             () => [new FolderTarget { Path = Path.Combine(Windows, "Logs"), SearchPattern = "*.log", MinAge = TimeSpan.FromDays(7) }])
         { RequiresAdmin = true };
 
         yield return new RecycleBinProvider();
 
-        yield return new FolderCleanupProvider("prefetch", "Prefetch data",
-            "Launch traces Windows uses to start your apps faster.",
-            CleanupGroup.System, SymbolRegular.Flash24,
-            () => [new FolderTarget { Path = Path.Combine(Windows, "Prefetch"), SearchPattern = "*.pf", Recursive = false }])
+        yield return new FolderCleanupProvider("prefetch", CleanupGroup.System, SymbolRegular.Flash24,
+            () => TempTargets(TempLocationKind.Prefetch))
         {
             RequiresAdmin = true,
             IsRecommended = false,
-            Warning = "Windows rebuilds this automatically. Apps may start a bit slower the first time after cleaning.",
+            HasWarning = true,
         };
 
-        yield return new FolderCleanupProvider("thumbnail-cache", "Thumbnail cache",
-            "Cached picture and video previews shown in File Explorer.",
-            CleanupGroup.System, SymbolRegular.Image24,
+        yield return new FolderCleanupProvider("thumbnail-cache", CleanupGroup.System, SymbolRegular.Image24,
             () => [new FolderTarget { Path = Path.Combine(LocalAppData, @"Microsoft\Windows\Explorer"), SearchPattern = "thumbcache_*.db", Recursive = false }])
         {
             IsRecommended = false,
-            Warning = "File Explorer keeps some of these open; they are rebuilt as you browse folders.",
+            HasWarning = true,
         };
 
         foreach (var browser in ChromiumBrowsers())
@@ -119,16 +106,16 @@ public sealed class CleanupCatalog
         var firefoxProfiles = Path.Combine(LocalAppData, @"Mozilla\Firefox\Profiles");
         if (Directory.Exists(firefoxProfiles))
         {
-            yield return new FolderCleanupProvider("firefox-cache", "Mozilla Firefox cache",
-                "Cached web pages and images. Cookies, history and passwords are kept.",
-                CleanupGroup.Browsers, SymbolRegular.Globe24,
-                () => SafeSubDirectories(firefoxProfiles).Select(profile => new FolderTarget { Path = Path.Combine(profile, "cache2") }))
-            { BlockingProcesses = ["firefox"] };
+            yield return new FolderCleanupProvider("firefox-cache", CleanupGroup.Browsers, SymbolRegular.Globe24,
+                () => SafeSubDirectories(firefoxProfiles).Select(profile => new FolderTarget { Path = Path.Combine(profile, "cache2") }),
+                descriptionKey: "Cleanup_BrowserCache_Desc")
+            {
+                BlockingProcesses = ["firefox"],
+                BlockingAppName = "Mozilla Firefox",
+            };
         }
 
-        yield return new FolderCleanupProvider("shader-cache", "DirectX shader cache",
-            "Compiled graphics shaders cached by games and apps.",
-            CleanupGroup.Applications, SymbolRegular.Games24,
+        yield return new FolderCleanupProvider("shader-cache", CleanupGroup.Applications, SymbolRegular.Games24,
             () =>
             [
                 new FolderTarget { Path = Path.Combine(LocalAppData, "D3DSCache") },
@@ -138,28 +125,29 @@ public sealed class CleanupCatalog
             ])
         {
             IsRecommended = false,
-            Warning = "Games rebuild shaders on next launch, which can cause brief stutter the first time.",
+            HasWarning = true,
         };
     }
 
     private static IEnumerable<ICleanupProvider> ChromiumBrowsers()
     {
-        (string Id, string Name, string UserData, string Process)[] browsers =
+        (string Id, string AppName, string UserData, string Process)[] browsers =
         [
-            ("edge-cache", "Microsoft Edge cache", Path.Combine(LocalAppData, @"Microsoft\Edge\User Data"), "msedge"),
-            ("chrome-cache", "Google Chrome cache", Path.Combine(LocalAppData, @"Google\Chrome\User Data"), "chrome"),
-            ("brave-cache", "Brave cache", Path.Combine(LocalAppData, @"BraveSoftware\Brave-Browser\User Data"), "brave"),
+            ("edge-cache", "Microsoft Edge", Path.Combine(LocalAppData, @"Microsoft\Edge\User Data"), "msedge"),
+            ("chrome-cache", "Google Chrome", Path.Combine(LocalAppData, @"Google\Chrome\User Data"), "chrome"),
+            ("brave-cache", "Brave", Path.Combine(LocalAppData, @"BraveSoftware\Brave-Browser\User Data"), "brave"),
         ];
 
-        foreach (var (id, name, userData, process) in browsers)
+        foreach (var (id, appName, userData, process) in browsers)
         {
             if (!Directory.Exists(userData)) continue;
 
-            yield return new FolderCleanupProvider(id, name,
-                "Cached web pages, scripts and images. Cookies, history and passwords are kept.",
-                CleanupGroup.Browsers, SymbolRegular.Globe24,
-                () => ChromiumTargets(userData))
-            { BlockingProcesses = [process] };
+            yield return new FolderCleanupProvider(id, CleanupGroup.Browsers, SymbolRegular.Globe24,
+                () => ChromiumTargets(userData), descriptionKey: "Cleanup_BrowserCache_Desc")
+            {
+                BlockingProcesses = [process],
+                BlockingAppName = appName,
+            };
         }
     }
 

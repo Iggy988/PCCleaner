@@ -1,0 +1,1738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="App_Name" xml:space="preserve">
+    <value>Ultimate PC Cleaner</value>
+  </data>
+  <data name="App_NameUpper" xml:space="preserve">
+    <value>ULTIMATE PC CLEANER</value>
+  </data>
+  <data name="App_TitleLimited" xml:space="preserve">
+    <value>{0} (ограниченный режим)</value>
+  </data>
+  <data name="App_UnhandledError" xml:space="preserve">
+    <value>Что-то пошло не так:
+
+{0}
+
+Подробности записаны в журнал в папке {1}.</value>
+  </data>
+  <data name="Cleaner_Analyzing" xml:space="preserve">
+    <value>Анализ компьютера…</value>
+  </data>
+  <data name="Cleaner_AppsRunning" xml:space="preserve">
+    <value>Некоторые приложения запущены</value>
+  </data>
+  <data name="Cleaner_BlockingWarning" xml:space="preserve">
+    <value>Сейчас запущено: {0}. Закройте эти приложения, чтобы полностью очистить кэш; используемые файлы пропускаются.</value>
+  </data>
+  <data name="Cleaner_CleanSelected" xml:space="preserve">
+    <value>Очистить выбранное</value>
+  </data>
+  <data name="Cleaner_CleaningItem" xml:space="preserve">
+    <value>Очистка: {0}…</value>
+  </data>
+  <data name="Cleaner_ConfirmMessage" xml:space="preserve">
+    <value>Ultimate PC Cleaner безвозвратно удалит {0} ({1}).
+
+Файлы, которые сейчас используются, будут автоматически пропущены.</value>
+  </data>
+  <data name="Cleaner_ConfirmTitle" xml:space="preserve">
+    <value>Очистить выбранные элементы?</value>
+  </data>
+  <data name="Cleaner_DoneMessage" xml:space="preserve">
+    <value>Освобождено {0} на диске.</value>
+  </data>
+  <data name="Cleaner_DonePartialTitle" xml:space="preserve">
+    <value>Очистка выполнена частично</value>
+  </data>
+  <data name="Cleaner_DoneTitle" xml:space="preserve">
+    <value>Очистка завершена</value>
+  </data>
+  <data name="Cleaner_Freed" xml:space="preserve">
+    <value>Освобождено</value>
+  </data>
+  <data name="Cleaner_GroupSelected" xml:space="preserve">
+    <value>Выбрано {0} из {1}</value>
+  </data>
+  <data name="Cleaner_GroupToggle" xml:space="preserve">
+    <value>Выбрать или снять всю группу</value>
+  </data>
+  <data name="Cleaner_Group_Apps" xml:space="preserve">
+    <value>Приложения</value>
+  </data>
+  <data name="Cleaner_Group_Browsers" xml:space="preserve">
+    <value>Веб-браузеры</value>
+  </data>
+  <data name="Cleaner_Group_Windows" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="Cleaner_NothingMessage" xml:space="preserve">
+    <value>Выбранные категории уже чисты.</value>
+  </data>
+  <data name="Cleaner_NothingTitle" xml:space="preserve">
+    <value>Нечего очищать</value>
+  </data>
+  <data name="Cleaner_Recommended" xml:space="preserve">
+    <value>Рекомендуемые</value>
+  </data>
+  <data name="Cleaner_SelectAll" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="Cleaner_SelectNone" xml:space="preserve">
+    <value>Снять выбор</value>
+  </data>
+  <data name="Cleaner_SummaryNotScanned" xml:space="preserve">
+    <value>Выбрано: {0} · выполните сканирование, чтобы узнать, сколько места можно освободить</value>
+  </data>
+  <data name="Cleaner_SummaryScanned" xml:space="preserve">
+    <value>Выбрано: {0} · можно освободить {1}</value>
+  </data>
+  <data name="Cleanup_BrowserCache_Desc" xml:space="preserve">
+    <value>Кэшированные веб-страницы, скрипты и изображения. Файлы cookie, история и пароли сохраняются.</value>
+  </data>
+  <data name="Cleanup_brave_cache_Name" xml:space="preserve">
+    <value>Кэш Brave</value>
+  </data>
+  <data name="Cleanup_chrome_cache_Name" xml:space="preserve">
+    <value>Кэш Google Chrome</value>
+  </data>
+  <data name="Cleanup_delivery_optimization_Desc" xml:space="preserve">
+    <value>Файлы обновлений, которые Windows хранит для передачи другим ПК.</value>
+  </data>
+  <data name="Cleanup_delivery_optimization_Name" xml:space="preserve">
+    <value>Кэш оптимизации доставки</value>
+  </data>
+  <data name="Cleanup_edge_cache_Name" xml:space="preserve">
+    <value>Кэш Microsoft Edge</value>
+  </data>
+  <data name="Cleanup_error_reports_Desc" xml:space="preserve">
+    <value>Отчёты о сбоях и проблемах, уже отправленные или ожидающие отправки.</value>
+  </data>
+  <data name="Cleanup_error_reports_Name" xml:space="preserve">
+    <value>Отчёты об ошибках Windows</value>
+  </data>
+  <data name="Cleanup_firefox_cache_Name" xml:space="preserve">
+    <value>Кэш Mozilla Firefox</value>
+  </data>
+  <data name="Cleanup_memory_dumps_Desc" xml:space="preserve">
+    <value>Диагностические файлы, записанные при сбое Windows или приложения.</value>
+  </data>
+  <data name="Cleanup_memory_dumps_Name" xml:space="preserve">
+    <value>Дампы памяти</value>
+  </data>
+  <data name="Cleanup_prefetch_Desc" xml:space="preserve">
+    <value>Трассировки запуска, которые Windows использует для ускорения запуска приложений.</value>
+  </data>
+  <data name="Cleanup_prefetch_Name" xml:space="preserve">
+    <value>Данные Prefetch</value>
+  </data>
+  <data name="Cleanup_prefetch_Warn" xml:space="preserve">
+    <value>Windows управляет этим автоматически. Очистка не ускоряет ПК — приложения сначала могут запускаться медленнее, пока Windows восстанавливает данные.</value>
+  </data>
+  <data name="Cleanup_recycle_bin_Desc" xml:space="preserve">
+    <value>Удалённые вами файлы, которые всё ещё хранятся в корзине на всех дисках.</value>
+  </data>
+  <data name="Cleanup_recycle_bin_Name" xml:space="preserve">
+    <value>Корзина</value>
+  </data>
+  <data name="Cleanup_shader_cache_Desc" xml:space="preserve">
+    <value>Скомпилированные графические шейдеры, кэшированные играми и приложениями.</value>
+  </data>
+  <data name="Cleanup_shader_cache_Name" xml:space="preserve">
+    <value>Кэш шейдеров DirectX</value>
+  </data>
+  <data name="Cleanup_shader_cache_Warn" xml:space="preserve">
+    <value>Игры заново создают шейдеры при следующем запуске, из-за чего в первый раз возможны кратковременные подтормаживания.</value>
+  </data>
+  <data name="Cleanup_thumbnail_cache_Desc" xml:space="preserve">
+    <value>Кэшированные эскизы изображений и видео в Проводнике.</value>
+  </data>
+  <data name="Cleanup_thumbnail_cache_Name" xml:space="preserve">
+    <value>Кэш эскизов</value>
+  </data>
+  <data name="Cleanup_thumbnail_cache_Warn" xml:space="preserve">
+    <value>Проводник держит часть этих файлов открытыми; они пересоздаются при просмотре папок.</value>
+  </data>
+  <data name="Cleanup_user_temp_Desc" xml:space="preserve">
+    <value>Остатки, которые приложения и установщики оставляют в вашей личной папке Temp.</value>
+  </data>
+  <data name="Cleanup_user_temp_Name" xml:space="preserve">
+    <value>Временные файлы пользователя</value>
+  </data>
+  <data name="Cleanup_windows_logs_Desc" xml:space="preserve">
+    <value>Журналы установки и обслуживания старше 7 дней.</value>
+  </data>
+  <data name="Cleanup_windows_logs_Name" xml:space="preserve">
+    <value>Старые журналы Windows</value>
+  </data>
+  <data name="Cleanup_windows_temp_Desc" xml:space="preserve">
+    <value>Временные файлы, созданные Windows и системными службами.</value>
+  </data>
+  <data name="Cleanup_windows_temp_Name" xml:space="preserve">
+    <value>Временные файлы Windows</value>
+  </data>
+  <data name="Cleanup_windows_update_Desc" xml:space="preserve">
+    <value>Пакеты обновлений, которые уже загружены и установлены.</value>
+  </data>
+  <data name="Cleanup_windows_update_Name" xml:space="preserve">
+    <value>Кэш Центра обновления Windows</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Common_CleanNow" xml:space="preserve">
+    <value>Очистить сейчас</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="Common_Disabled" xml:space="preserve">
+    <value>Отключено</value>
+  </data>
+  <data name="Common_Dismiss" xml:space="preserve">
+    <value>Скрыть</value>
+  </data>
+  <data name="Common_Enabled" xml:space="preserve">
+    <value>Включено</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>Выкл.</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>Вкл.</value>
+  </data>
+  <data name="Common_Refresh" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="Common_RestartAsAdmin" xml:space="preserve">
+    <value>Перезапустить от имени администратора</value>
+  </data>
+  <data name="Common_Run" xml:space="preserve">
+    <value>Запустить</value>
+  </data>
+  <data name="Common_Scan" xml:space="preserve">
+    <value>Сканировать</value>
+  </data>
+  <data name="Count_AccessDenied_Few" xml:space="preserve">
+    <value>{0} — доступ запрещён</value>
+  </data>
+  <data name="Count_AccessDenied_Many" xml:space="preserve">
+    <value>{0} — доступ запрещён</value>
+  </data>
+  <data name="Count_AccessDenied_One" xml:space="preserve">
+    <value>{0} — доступ запрещён</value>
+  </data>
+  <data name="Count_AlreadyGone_Few" xml:space="preserve">
+    <value>{0} уже удалено</value>
+  </data>
+  <data name="Count_AlreadyGone_Many" xml:space="preserve">
+    <value>{0} уже удалено</value>
+  </data>
+  <data name="Count_AlreadyGone_One" xml:space="preserve">
+    <value>{0} уже удалён</value>
+  </data>
+  <data name="Count_Categories_Few" xml:space="preserve">
+    <value>{0} категории</value>
+  </data>
+  <data name="Count_Categories_Many" xml:space="preserve">
+    <value>{0} категорий</value>
+  </data>
+  <data name="Count_Categories_One" xml:space="preserve">
+    <value>{0} категория</value>
+  </data>
+  <data name="Count_EligibleFiles_Few" xml:space="preserve">
+    <value>{0} файла можно удалить</value>
+  </data>
+  <data name="Count_EligibleFiles_Many" xml:space="preserve">
+    <value>{0} файлов можно удалить</value>
+  </data>
+  <data name="Count_EligibleFiles_One" xml:space="preserve">
+    <value>{0} файл можно удалить</value>
+  </data>
+  <data name="Count_Errors_Few" xml:space="preserve">
+    <value>{0} ошибки</value>
+  </data>
+  <data name="Count_Errors_Many" xml:space="preserve">
+    <value>{0} ошибок</value>
+  </data>
+  <data name="Count_Errors_One" xml:space="preserve">
+    <value>{0} ошибка</value>
+  </data>
+  <data name="Count_FilesRemoved_Few" xml:space="preserve">
+    <value>удалено {0} файла</value>
+  </data>
+  <data name="Count_FilesRemoved_Many" xml:space="preserve">
+    <value>удалено {0} файлов</value>
+  </data>
+  <data name="Count_FilesRemoved_One" xml:space="preserve">
+    <value>удалён {0} файл</value>
+  </data>
+  <data name="Count_Files_Few" xml:space="preserve">
+    <value>{0} файла</value>
+  </data>
+  <data name="Count_Files_Many" xml:space="preserve">
+    <value>{0} файлов</value>
+  </data>
+  <data name="Count_Files_One" xml:space="preserve">
+    <value>{0} файл</value>
+  </data>
+  <data name="Count_InUse_Few" xml:space="preserve">
+    <value>{0} используются</value>
+  </data>
+  <data name="Count_InUse_Many" xml:space="preserve">
+    <value>{0} используются</value>
+  </data>
+  <data name="Count_InUse_One" xml:space="preserve">
+    <value>{0} используется</value>
+  </data>
+  <data name="Count_Inaccessible_Few" xml:space="preserve">
+    <value>{0} недоступных объекта</value>
+  </data>
+  <data name="Count_Inaccessible_Many" xml:space="preserve">
+    <value>{0} недоступных объектов</value>
+  </data>
+  <data name="Count_Inaccessible_One" xml:space="preserve">
+    <value>{0} недоступный объект</value>
+  </data>
+  <data name="Count_Items_Few" xml:space="preserve">
+    <value>{0} элемента</value>
+  </data>
+  <data name="Count_Items_Many" xml:space="preserve">
+    <value>{0} элементов</value>
+  </data>
+  <data name="Count_Items_One" xml:space="preserve">
+    <value>{0} элемент</value>
+  </data>
+  <data name="Count_SkippedInUse_Few" xml:space="preserve">
+    <value>{0} используются, пропущено</value>
+  </data>
+  <data name="Count_SkippedInUse_Many" xml:space="preserve">
+    <value>{0} используются, пропущено</value>
+  </data>
+  <data name="Count_SkippedInUse_One" xml:space="preserve">
+    <value>{0} используется, пропущен</value>
+  </data>
+  <data name="Count_SkippedSafety_Few" xml:space="preserve">
+    <value>{0} пропущено ради безопасности</value>
+  </data>
+  <data name="Count_SkippedSafety_Many" xml:space="preserve">
+    <value>{0} пропущено ради безопасности</value>
+  </data>
+  <data name="Count_SkippedSafety_One" xml:space="preserve">
+    <value>{0} пропущен ради безопасности</value>
+  </data>
+  <data name="Count_Skipped_Few" xml:space="preserve">
+    <value>{0} пропущено</value>
+  </data>
+  <data name="Count_Skipped_Many" xml:space="preserve">
+    <value>{0} пропущено</value>
+  </data>
+  <data name="Count_Skipped_One" xml:space="preserve">
+    <value>{0} пропущен</value>
+  </data>
+  <data name="Count_Suspicious_Few" xml:space="preserve">
+    <value>Найдено {0} подозрительных элемента</value>
+  </data>
+  <data name="Count_Suspicious_Many" xml:space="preserve">
+    <value>Найдено {0} подозрительных элементов</value>
+  </data>
+  <data name="Count_Suspicious_One" xml:space="preserve">
+    <value>Найден {0} подозрительный элемент</value>
+  </data>
+  <data name="Dashboard_Boost" xml:space="preserve">
+    <value>УСКОРИТЬ</value>
+  </data>
+  <data name="Dashboard_BoostCancelled" xml:space="preserve">
+    <value>Ускорение отменено. Ничего не удалено.</value>
+  </data>
+  <data name="Dashboard_BoostCleaning" xml:space="preserve">
+    <value>Удаление ненужных файлов…</value>
+  </data>
+  <data name="Dashboard_BoostConfirmMessage" xml:space="preserve">
+    <value>Ускорение безвозвратно удалит {0} ({1}), затем сбросит кэш DNS и освободит ОЗУ.
+
+Используемые файлы автоматически пропускаются.</value>
+  </data>
+  <data name="Dashboard_BoostConfirmTitle" xml:space="preserve">
+    <value>Запустить ускорение?</value>
+  </data>
+  <data name="Dashboard_BoostDefault" xml:space="preserve">
+    <value>Одним щелчком очищает выбранный мусор, сбрасывает кэш DNS и освобождает ОЗУ — перед удалением запрашивается подтверждение.</value>
+  </data>
+  <data name="Dashboard_BoostDns" xml:space="preserve">
+    <value>Сброс кэша DNS…</value>
+  </data>
+  <data name="Dashboard_BoostDone" xml:space="preserve">
+    <value>Готово! Освобождено {0} на диске и {1} ОЗУ.</value>
+  </data>
+  <data name="Dashboard_BoostDonePartialTitle" xml:space="preserve">
+    <value>Ускорение завершено (некоторые файлы пропущены)</value>
+  </data>
+  <data name="Dashboard_BoostDoneTitle" xml:space="preserve">
+    <value>Ускорение завершено</value>
+  </data>
+  <data name="Dashboard_BoostFailedTitle" xml:space="preserve">
+    <value>Не удалось выполнить ускорение</value>
+  </data>
+  <data name="Dashboard_BoostRam" xml:space="preserve">
+    <value>Освобождение памяти…</value>
+  </data>
+  <data name="Dashboard_BoostRun" xml:space="preserve">
+    <value>Запустить</value>
+  </data>
+  <data name="Dashboard_BoostScanning" xml:space="preserve">
+    <value>Поиск ненужных файлов…</value>
+  </data>
+  <data name="Dashboard_BoostTooltip" xml:space="preserve">
+    <value>Очистить мусор, выбранный в разделе «Очистка», сбросить DNS и освободить ОЗУ (с подтверждением перед удалением)</value>
+  </data>
+  <data name="Dashboard_Cleanup" xml:space="preserve">
+    <value>Очистка</value>
+  </data>
+  <data name="Dashboard_CleanupDesc" xml:space="preserve">
+    <value>Сканирование находит мусор в категориях очистки и папках временных файлов. Ничего не удаляется, пока вы не просмотрите результаты и не подтвердите.</value>
+  </data>
+  <data name="Dashboard_CleanupTitle" xml:space="preserve">
+    <value>Найдите место, которое можно освободить</value>
+  </data>
+  <data name="Dashboard_Cpu" xml:space="preserve">
+    <value>ЦП</value>
+  </data>
+  <data name="Dashboard_CpuCaption" xml:space="preserve">
+    <value>Загрузка процессора</value>
+  </data>
+  <data name="Dashboard_DiskText" xml:space="preserve">
+    <value>Свободно {0} из {1}</value>
+  </data>
+  <data name="Dashboard_DriveLabel" xml:space="preserve">
+    <value>Диск {0}</value>
+  </data>
+  <data name="Dashboard_GoodAfternoon" xml:space="preserve">
+    <value>Добрый день</value>
+  </data>
+  <data name="Dashboard_GoodEvening" xml:space="preserve">
+    <value>Добрый вечер</value>
+  </data>
+  <data name="Dashboard_GoodMorning" xml:space="preserve">
+    <value>Доброе утро</value>
+  </data>
+  <data name="Dashboard_Memory" xml:space="preserve">
+    <value>Память</value>
+  </data>
+  <data name="Dashboard_Never" xml:space="preserve">
+    <value>Никогда</value>
+  </data>
+  <data name="Dashboard_NotScanned" xml:space="preserve">
+    <value>Ещё не сканировалось</value>
+  </data>
+  <data name="Dashboard_OpenOptimize" xml:space="preserve">
+    <value>Оптимизация</value>
+  </data>
+  <data name="Dashboard_OpenTemp" xml:space="preserve">
+    <value>Временные файлы</value>
+  </data>
+  <data name="Dashboard_Overview" xml:space="preserve">
+    <value>Обзор</value>
+  </data>
+  <data name="Dashboard_RamText" xml:space="preserve">
+    <value>Используется {0} из {1}</value>
+  </data>
+  <data name="Dashboard_ReviewCleaner" xml:space="preserve">
+    <value>Открыть очистку</value>
+  </data>
+  <data name="Dashboard_ScanDoneMessage" xml:space="preserve">
+    <value>Найдено {0}, которые можно освободить. Перед удалением просмотрите результаты в разделах «Временные файлы» или «Очистка».</value>
+  </data>
+  <data name="Dashboard_ScanDoneTitle" xml:space="preserve">
+    <value>Сканирование завершено</value>
+  </data>
+  <data name="Dashboard_ScanNow" xml:space="preserve">
+    <value>Сканировать</value>
+  </data>
+  <data name="Dashboard_StatFreed" xml:space="preserve">
+    <value>Всего освобождено</value>
+  </data>
+  <data name="Dashboard_StatFreedHint" xml:space="preserve">
+    <value>За всё время использования</value>
+  </data>
+  <data name="Dashboard_StatJunk" xml:space="preserve">
+    <value>Найдено мусора</value>
+  </data>
+  <data name="Dashboard_StatJunkHint" xml:space="preserve">
+    <value>Выбрано в очистке и временных файлах</value>
+  </data>
+  <data name="Dashboard_StatLastCleaned" xml:space="preserve">
+    <value>Последняя очистка</value>
+  </data>
+  <data name="Dashboard_StatTemp" xml:space="preserve">
+    <value>Временные файлы</value>
+  </data>
+  <data name="Dashboard_StatTempHint" xml:space="preserve">
+    <value>Можно освободить в Temp и Prefetch</value>
+  </data>
+  <data name="Dashboard_SystemStatus" xml:space="preserve">
+    <value>Состояние системы</value>
+  </data>
+  <data name="Dashboard_UpFor" xml:space="preserve">
+    <value>Работает</value>
+  </data>
+  <data name="Dashboard_UptimeDays" xml:space="preserve">
+    <value>{0} д {1} ч {2} мин</value>
+  </data>
+  <data name="Dashboard_UptimeHours" xml:space="preserve">
+    <value>{0} ч {1} мин</value>
+  </data>
+  <data name="Health_AdminMessage" xml:space="preserve">
+    <value>Эти средства восстановления Windows работают, только если Ultimate PC Cleaner запущен от имени администратора.</value>
+  </data>
+  <data name="Health_AdminTitle" xml:space="preserve">
+    <value>Требуются права администратора</value>
+  </data>
+  <data name="Health_Cancelled" xml:space="preserve">
+    <value>{0}: отменено</value>
+  </data>
+  <data name="Health_Clear" xml:space="preserve">
+    <value>Очистить вывод</value>
+  </data>
+  <data name="Health_Copy" xml:space="preserve">
+    <value>Копировать вывод</value>
+  </data>
+  <data name="Health_CouldNotStart" xml:space="preserve">
+    <value>Не удалось запустить {0}: {1}</value>
+  </data>
+  <data name="Health_Duration" xml:space="preserve">
+    <value>{0} мин</value>
+  </data>
+  <data name="Health_Finished" xml:space="preserve">
+    <value>{0}: успешно завершено</value>
+  </data>
+  <data name="Health_FinishedCode" xml:space="preserve">
+    <value>{0}: завершено (код выхода {1})</value>
+  </data>
+  <data name="Health_Idle" xml:space="preserve">
+    <value>Ожидание</value>
+  </data>
+  <data name="Health_OutputPlaceholder" xml:space="preserve">
+    <value>Выберите инструмент выше. Вывод появится здесь в реальном времени.</value>
+  </data>
+  <data name="Health_Running" xml:space="preserve">
+    <value>Выполняется: {0}…</value>
+  </data>
+  <data name="Health_chkdsk_Desc" xml:space="preserve">
+    <value>Проверяет {0} на ошибки файловой системы в режиме онлайн, не внося изменений (chkdsk /scan).</value>
+  </data>
+  <data name="Health_chkdsk_Name" xml:space="preserve">
+    <value>Проверка диска на ошибки</value>
+  </data>
+  <data name="Health_defrag_Desc" xml:space="preserve">
+    <value>Выполняет TRIM для SSD или дефрагментацию жёстких дисков для {0}.</value>
+  </data>
+  <data name="Health_defrag_Name" xml:space="preserve">
+    <value>Оптимизация системного диска</value>
+  </data>
+  <data name="Health_dism_cleanup_Desc" xml:space="preserve">
+    <value>Удаляет заменённые компоненты обновлений Windows из WinSxS, освобождая место на диске.</value>
+  </data>
+  <data name="Health_dism_cleanup_Name" xml:space="preserve">
+    <value>Очистка хранилища компонентов</value>
+  </data>
+  <data name="Health_dism_restore_Desc" xml:space="preserve">
+    <value>Проверяет хранилище компонентов Windows и загружает исправные копии повреждённых файлов (DISM RestoreHealth).</value>
+  </data>
+  <data name="Health_dism_restore_Name" xml:space="preserve">
+    <value>Восстановление образа Windows</value>
+  </data>
+  <data name="Health_sfc_Desc" xml:space="preserve">
+    <value>Проверяет защищённые файлы Windows и восстанавливает повреждённые (sfc /scannow).</value>
+  </data>
+  <data name="Health_sfc_Name" xml:space="preserve">
+    <value>Проверка системных файлов</value>
+  </data>
+  <data name="Main_LimitedMessage" xml:space="preserve">
+    <value>Ultimate PC Cleaner работает без прав администратора. Свои временные файлы можно очистить; для Windows Temp, Prefetch, системных кэшей, служб, точек восстановления и средств восстановления нужны повышенные права.</value>
+  </data>
+  <data name="Main_LimitedTitle" xml:space="preserve">
+    <value>Ограниченный режим.</value>
+  </data>
+  <data name="Nav_Cleaner" xml:space="preserve">
+    <value>Очистка</value>
+  </data>
+  <data name="Nav_Dashboard" xml:space="preserve">
+    <value>Панель управления</value>
+  </data>
+  <data name="Nav_Health" xml:space="preserve">
+    <value>Состояние системы</value>
+  </data>
+  <data name="Nav_Optimize" xml:space="preserve">
+    <value>Оптимизация</value>
+  </data>
+  <data name="Nav_Security" xml:space="preserve">
+    <value>Безопасность</value>
+  </data>
+  <data name="Nav_Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="Nav_Startup" xml:space="preserve">
+    <value>Автозагрузка</value>
+  </data>
+  <data name="Nav_TempFiles" xml:space="preserve">
+    <value>Временные файлы</value>
+  </data>
+  <data name="Optimize_Applied" xml:space="preserve">
+    <value>Оптимизация применена</value>
+  </data>
+  <data name="Optimize_ApplyAnyway" xml:space="preserve">
+    <value>Всё равно применить</value>
+  </data>
+  <data name="Optimize_ChangeFailed" xml:space="preserve">
+    <value>Не удалось изменить этот параметр</value>
+  </data>
+  <data name="Optimize_DnsDesc" xml:space="preserve">
+    <value>Удаляет сохранённые адреса сайтов. Помогает, если сайты не открываются после изменения сети или DNS.</value>
+  </data>
+  <data name="Optimize_DnsFailed" xml:space="preserve">
+    <value>Не удалось сбросить кэш DNS.</value>
+  </data>
+  <data name="Optimize_DnsFlushed" xml:space="preserve">
+    <value>Кэш DNS сброшен в {0}</value>
+  </data>
+  <data name="Optimize_DnsTitle" xml:space="preserve">
+    <value>Сбросить кэш DNS</value>
+  </data>
+  <data name="Optimize_NoRestoreMessage" xml:space="preserve">
+    <value>{0}
+
+Всё равно применить изменение?</value>
+  </data>
+  <data name="Optimize_NoRestoreTitle" xml:space="preserve">
+    <value>Точка восстановления не создана</value>
+  </data>
+  <data name="Optimize_QuickActions" xml:space="preserve">
+    <value>Быстрые действия</value>
+  </data>
+  <data name="Optimize_RamDesc" xml:space="preserve">
+    <value>Сокращает неиспользуемую память приложений и очищает резервный кэш. Полезно перед запуском игры или тяжёлого приложения.</value>
+  </data>
+  <data name="Optimize_RamFreed" xml:space="preserve">
+    <value>Освобождено {0} ОЗУ в {1}</value>
+  </data>
+  <data name="Optimize_RamName" xml:space="preserve">
+    <value>Освободить ОЗУ</value>
+  </data>
+  <data name="Optimize_RamTitle" xml:space="preserve">
+    <value>Память оптимизирована</value>
+  </data>
+  <data name="Optimize_RestoreCreatedTitle" xml:space="preserve">
+    <value>Точка восстановления создана</value>
+  </data>
+  <data name="Optimize_RestoreCreating" xml:space="preserve">
+    <value>Создание точки восстановления… это может занять около минуты.</value>
+  </data>
+  <data name="Optimize_RestoreCreatingFirst" xml:space="preserve">
+    <value>Создание точки восстановления системы перед первым изменением…</value>
+  </data>
+  <data name="Optimize_RestoreDesc" xml:space="preserve">
+    <value>Сохраняет снимок восстановления системы, к которому можно вернуться из среды восстановления Windows. Требуются права администратора.</value>
+  </data>
+  <data name="Optimize_RestoreDescBefore" xml:space="preserve">
+    <value>{0} - перед оптимизацией</value>
+  </data>
+  <data name="Optimize_RestoreDescManual" xml:space="preserve">
+    <value>{0} - ручная точка восстановления</value>
+  </data>
+  <data name="Optimize_RestoreFailedTitle" xml:space="preserve">
+    <value>Не удалось создать точку восстановления</value>
+  </data>
+  <data name="Optimize_RestoreTitle" xml:space="preserve">
+    <value>Создать точку восстановления</value>
+  </data>
+  <data name="Optimize_Restored" xml:space="preserve">
+    <value>Параметр восстановлен</value>
+  </data>
+  <data name="Optimize_SafeMessage" xml:space="preserve">
+    <value>Любой переключатель можно выключить, чтобы вернуть исходный параметр. Если это включено в настройках, перед первым изменением создаётся точка восстановления системы.</value>
+  </data>
+  <data name="Optimize_SafeTitle" xml:space="preserve">
+    <value>Безопасно и обратимо</value>
+  </data>
+  <data name="Optimize_Tweaks" xml:space="preserve">
+    <value>Настройки производительности</value>
+  </data>
+  <data name="Restore_Created" xml:space="preserve">
+    <value>Точка восстановления создана.</value>
+  </data>
+  <data name="Restore_Failed" xml:space="preserve">
+    <value>Windows не удалось создать точку восстановления: {0}</value>
+  </data>
+  <data name="Restore_FailedCode" xml:space="preserve">
+    <value>Windows не удалось создать точку восстановления (код {0}). Возможно, защита системы отключена.</value>
+  </data>
+  <data name="Restore_NeedsAdmin" xml:space="preserve">
+    <value>Для создания точки восстановления требуются права администратора.</value>
+  </data>
+  <data name="Restore_ProtectionOff" xml:space="preserve">
+    <value>Защита системы отключена для системного диска. Включите её в разделе «Свойства системы» → «Защита системы».</value>
+  </data>
+  <data name="Sec_AdminMessage" xml:space="preserve">
+    <value>Вы можете просматривать состояние и искать подозрительные элементы. Перезапустите от имени администратора, чтобы сканировать, помещать в карантин или восстанавливать.</value>
+  </data>
+  <data name="Sec_AdminTitle" xml:space="preserve">
+    <value>Для сканирования и карантина нужны права администратора</value>
+  </data>
+  <data name="Sec_Allow" xml:space="preserve">
+    <value>Разрешить</value>
+  </data>
+  <data name="Sec_AllowMessage" xml:space="preserve">
+    <value>Microsoft Defender больше не будет реагировать на «{0}». Делайте это, только если уверены, что файл безопасен.</value>
+  </data>
+  <data name="Sec_AllowTitle" xml:space="preserve">
+    <value>Разрешить угрозу</value>
+  </data>
+  <data name="Sec_Allowed" xml:space="preserve">
+    <value>«{0}» теперь разрешена.</value>
+  </data>
+  <data name="Sec_Cancelled" xml:space="preserve">
+    <value>Отменено.</value>
+  </data>
+  <data name="Sec_CheckVirusTotal" xml:space="preserve">
+    <value>Проверить хеш на VirusTotal</value>
+  </data>
+  <data name="Sec_CreatingRestorePoint" xml:space="preserve">
+    <value>Создание точки восстановления…</value>
+  </data>
+  <data name="Sec_DefenderQuarantineEmpty" xml:space="preserve">
+    <value>Карантин Defender пуст.</value>
+  </data>
+  <data name="Sec_DefenderQuarantineHeader" xml:space="preserve">
+    <value>Карантин Microsoft Defender</value>
+  </data>
+  <data name="Sec_Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Sec_DeleteMessage" xml:space="preserve">
+    <value>«{0}» будет удалён навсегда без возможности восстановления.</value>
+  </data>
+  <data name="Sec_DeleteTitle" xml:space="preserve">
+    <value>Удалить навсегда</value>
+  </data>
+  <data name="Sec_Failed" xml:space="preserve">
+    <value>Ошибка: {0}</value>
+  </data>
+  <data name="Sec_FinishedClean" xml:space="preserve">
+    <value>{0}: завершено — угроз не найдено.</value>
+  </data>
+  <data name="Sec_FinishedCode" xml:space="preserve">
+    <value>{0}: завершено с кодом {1}.</value>
+  </data>
+  <data name="Sec_FinishedThreats" xml:space="preserve">
+    <value>{0}: обнаружены угрозы. Microsoft Defender обработал их согласно своим настройкам — см. список ниже.</value>
+  </data>
+  <data name="Sec_FolderScan" xml:space="preserve">
+    <value>Сканирование: {0}</value>
+  </data>
+  <data name="Sec_FullScan" xml:space="preserve">
+    <value>Полное сканирование</value>
+  </data>
+  <data name="Sec_Idle" xml:space="preserve">
+    <value>Готово к работе.</value>
+  </data>
+  <data name="Sec_Intro" xml:space="preserve">
+    <value>Сканирование с помощью Microsoft Defender, проверка скриптов через AMSI, поиск подозрительных элементов автозагрузки и карантин для опасных файлов с возможностью восстановления. Обнаружение выполняет ваш антивирус — эта страница его не заменяет.</value>
+  </data>
+  <data name="Sec_Level_High" xml:space="preserve">
+    <value>Высокий</value>
+  </data>
+  <data name="Sec_Level_Low" xml:space="preserve">
+    <value>Низкий</value>
+  </data>
+  <data name="Sec_Level_Medium" xml:space="preserve">
+    <value>Средний</value>
+  </data>
+  <data name="Sec_Never" xml:space="preserve">
+    <value>никогда</value>
+  </data>
+  <data name="Sec_NoResources" xml:space="preserve">
+    <value>Нет сведений о файле</value>
+  </data>
+  <data name="Sec_NoRestoreMessage" xml:space="preserve">
+    <value>{0}
+
+Всё равно поместить файл в карантин?</value>
+  </data>
+  <data name="Sec_NoThreats" xml:space="preserve">
+    <value>У Microsoft Defender нет зарегистрированных угроз.</value>
+  </data>
+  <data name="Sec_OtherAvDetail" xml:space="preserve">
+    <value>Сканирование Microsoft Defender недоступно, пока активен другой антивирус. Проверка скриптов через AMSI и поиск подозрительных элементов продолжают работать.</value>
+  </data>
+  <data name="Sec_OutputPlaceholder" xml:space="preserve">
+    <value>Здесь появится вывод сканирования.</value>
+  </data>
+  <data name="Sec_Overwrite" xml:space="preserve">
+    <value>Заменить</value>
+  </data>
+  <data name="Sec_PendingReboot" xml:space="preserve">
+    <value>Исходный файл использовался и будет удалён при следующей перезагрузке.</value>
+  </data>
+  <data name="Sec_PickFolder" xml:space="preserve">
+    <value>Выберите папку для сканирования</value>
+  </data>
+  <data name="Sec_Progress_Scripts" xml:space="preserve">
+    <value>Проверка скриптов в пользовательских папках…</value>
+  </data>
+  <data name="Sec_Progress_Startup" xml:space="preserve">
+    <value>Проверка элементов автозагрузки…</value>
+  </data>
+  <data name="Sec_Progress_Tasks" xml:space="preserve">
+    <value>Проверка запланированных задач…</value>
+  </data>
+  <data name="Sec_Quarantine" xml:space="preserve">
+    <value>В карантин</value>
+  </data>
+  <data name="Sec_QuarantineDetails" xml:space="preserve">
+    <value>В карантине с {0} · {1} · {2}</value>
+  </data>
+  <data name="Sec_QuarantineEmpty" xml:space="preserve">
+    <value>В карантине нет файлов.</value>
+  </data>
+  <data name="Sec_QuarantineHeader" xml:space="preserve">
+    <value>Карантин Ultimate PC Cleaner</value>
+  </data>
+  <data name="Sec_QuarantineMessage" xml:space="preserve">
+    <value>{0}
+
+Файл будет перемещён в карантин в неисполняемом виде, а его элемент автозагрузки (если есть) отключён. Его можно восстановить в любой момент.</value>
+  </data>
+  <data name="Sec_QuarantineTitle" xml:space="preserve">
+    <value>Поместить в карантин</value>
+  </data>
+  <data name="Sec_Quarantined" xml:space="preserve">
+    <value>«{0}» помещён в карантин.</value>
+  </data>
+  <data name="Sec_QuarantinedPending" xml:space="preserve">
+    <value>«{0}» помещён в карантин. Оригинал используется и будет удалён при следующей перезагрузке.</value>
+  </data>
+  <data name="Sec_QuickScan" xml:space="preserve">
+    <value>Быстрое сканирование</value>
+  </data>
+  <data name="Sec_Reason_AmsiDetected" xml:space="preserve">
+    <value>Обнаружено вашим антивирусом (AMSI)</value>
+  </data>
+  <data name="Sec_Reason_DoubleExtension" xml:space="preserve">
+    <value>Замаскированное имя файла (двойное расширение)</value>
+  </data>
+  <data name="Sec_Reason_MissingTarget" xml:space="preserve">
+    <value>Указывает на несуществующий файл</value>
+  </data>
+  <data name="Sec_Reason_ObfuscatedCommand" xml:space="preserve">
+    <value>Скрытая или закодированная командная строка</value>
+  </data>
+  <data name="Sec_Reason_ObfuscatedScript" xml:space="preserve">
+    <value>Скрипт использует обфускацию или загружает код</value>
+  </data>
+  <data name="Sec_Reason_ScriptHost" xml:space="preserve">
+    <value>Сервер сценариев запускает файл из пользовательской папки</value>
+  </data>
+  <data name="Sec_Reason_UnsignedUserFolder" xml:space="preserve">
+    <value>Неподписанная программа в папке, доступной пользователю для записи</value>
+  </data>
+  <data name="Sec_RemoveThreats" xml:space="preserve">
+    <value>Удалить активные угрозы</value>
+  </data>
+  <data name="Sec_Restore" xml:space="preserve">
+    <value>Восстановить</value>
+  </data>
+  <data name="Sec_RestoreDefenderMessage" xml:space="preserve">
+    <value>Восстановить все файлы, помещённые Microsoft Defender в карантин как «{0}»? Defender может обнаружить их снова, если вы не разрешите эту угрозу.</value>
+  </data>
+  <data name="Sec_RestoreMessage" xml:space="preserve">
+    <value>{0}
+
+Восстановить файл в исходное расположение? Делайте это, только если уверены, что он безопасен.</value>
+  </data>
+  <data name="Sec_RestoreOverwrite" xml:space="preserve">
+    <value>По пути {0} уже есть файл. Заменить его копией из карантина?</value>
+  </data>
+  <data name="Sec_RestorePendingReboot" xml:space="preserve">
+    <value>Сначала перезагрузите Windows — исходный файл ещё ожидает удаления.</value>
+  </data>
+  <data name="Sec_RestorePointDesc" xml:space="preserve">
+    <value>{0}: перед карантином</value>
+  </data>
+  <data name="Sec_RestoreTitle" xml:space="preserve">
+    <value>Восстановить файл</value>
+  </data>
+  <data name="Sec_Restored" xml:space="preserve">
+    <value>«{0}» восстановлен.</value>
+  </data>
+  <data name="Sec_Running" xml:space="preserve">
+    <value>Выполняется: {0}…</value>
+  </data>
+  <data name="Sec_ScanFolder" xml:space="preserve">
+    <value>Сканировать папку…</value>
+  </data>
+  <data name="Sec_ScanHeader" xml:space="preserve">
+    <value>Сканирование</value>
+  </data>
+  <data name="Sec_ScanScripts" xml:space="preserve">
+    <value>Проверить скрипты (AMSI)…</value>
+  </data>
+  <data name="Sec_ScanScriptsTip" xml:space="preserve">
+    <value>Проверяет каждый файл PowerShell, VBScript, JavaScript и batch в папке через AMSI. Работает с любым установленным антивирусом, не только с Defender.</value>
+  </data>
+  <data name="Sec_ScanSuspicious" xml:space="preserve">
+    <value>Найти подозрительное</value>
+  </data>
+  <data name="Sec_ScanWithDefender" xml:space="preserve">
+    <value>Проверить файл с помощью Microsoft Defender</value>
+  </data>
+  <data name="Sec_ScriptScanClean" xml:space="preserve">
+    <value>Вредоносные скрипты не найдены.</value>
+  </data>
+  <data name="Sec_ScriptScanFound" xml:space="preserve">
+    <value>Антивирус отметил скриптов: {0} — см. вывод выше. Просканируйте папку с помощью Defender, чтобы удалить их.</value>
+  </data>
+  <data name="Sec_ScriptScanRunning" xml:space="preserve">
+    <value>Проверка скриптов в {0}…</value>
+  </data>
+  <data name="Sec_Source_ScheduledTask" xml:space="preserve">
+    <value>Запланированная задача</value>
+  </data>
+  <data name="Sec_Source_ScriptFile" xml:space="preserve">
+    <value>Файл скрипта</value>
+  </data>
+  <data name="Sec_Source_StartupEntry" xml:space="preserve">
+    <value>Автозагрузка</value>
+  </data>
+  <data name="Sec_StatusChecking" xml:space="preserve">
+    <value>Проверка состояния защиты…</value>
+  </data>
+  <data name="Sec_StatusDetail" xml:space="preserve">
+    <value>Сигнатуры {0} · обновлены {1} · последнее быстрое сканирование {2}</value>
+  </data>
+  <data name="Sec_StatusDisabled" xml:space="preserve">
+    <value>Антивирус Microsoft Defender отключён</value>
+  </data>
+  <data name="Sec_StatusOtherAv" xml:space="preserve">
+    <value>Этот компьютер защищает {0}</value>
+  </data>
+  <data name="Sec_StatusProtected" xml:space="preserve">
+    <value>Этот компьютер защищает Microsoft Defender</value>
+  </data>
+  <data name="Sec_StatusRealtimeOff" xml:space="preserve">
+    <value>Защита в реальном времени отключена</value>
+  </data>
+  <data name="Sec_StatusUnavailable" xml:space="preserve">
+    <value>Microsoft Defender недоступен</value>
+  </data>
+  <data name="Sec_SuspiciousIntro" xml:space="preserve">
+    <value>Элементы автозагрузки, запланированные задачи и скрипты, которые ведут себя как вредоносные: скрытые команды, замаскированные имена, неподписанные программы в пользовательских папках. Совпадение — не доказательство: проверьте перед помещением в карантин.</value>
+  </data>
+  <data name="Sec_SuspiciousNone" xml:space="preserve">
+    <value>Ничего подозрительного не найдено.</value>
+  </data>
+  <data name="Sec_SuspiciousNotScanned" xml:space="preserve">
+    <value>Сканирование ещё не выполнялось.</value>
+  </data>
+  <data name="Sec_SuspiciousRunning" xml:space="preserve">
+    <value>Поиск подозрительных элементов…</value>
+  </data>
+  <data name="Sec_SuspiciousTitle" xml:space="preserve">
+    <value>Подозрительные элементы</value>
+  </data>
+  <data name="Sec_TamperOn" xml:space="preserve">
+    <value>защита от подделки включена</value>
+  </data>
+  <data name="Sec_ThreatActive" xml:space="preserve">
+    <value>активна</value>
+  </data>
+  <data name="Sec_ThreatDetails" xml:space="preserve">
+    <value>Опасность: {0} · обнаружено {1} · {2}</value>
+  </data>
+  <data name="Sec_ThreatResolved" xml:space="preserve">
+    <value>обработана</value>
+  </data>
+  <data name="Sec_ThreatSev_0" xml:space="preserve">
+    <value>неизвестна</value>
+  </data>
+  <data name="Sec_ThreatSev_1" xml:space="preserve">
+    <value>низкая</value>
+  </data>
+  <data name="Sec_ThreatSev_2" xml:space="preserve">
+    <value>средняя</value>
+  </data>
+  <data name="Sec_ThreatSev_4" xml:space="preserve">
+    <value>высокая</value>
+  </data>
+  <data name="Sec_ThreatSev_5" xml:space="preserve">
+    <value>критическая</value>
+  </data>
+  <data name="Sec_ThreatsHeader" xml:space="preserve">
+    <value>Обнаружения Microsoft Defender</value>
+  </data>
+  <data name="Sec_ThreatsRemoved" xml:space="preserve">
+    <value>Microsoft Defender удалил активные угрозы.</value>
+  </data>
+  <data name="Sec_UpdateSignatures" xml:space="preserve">
+    <value>Обновить сигнатуры</value>
+  </data>
+  <data name="Sec_VtResult" xml:space="preserve">
+    <value>Обнаружений на VirusTotal: {0}</value>
+  </data>
+  <data name="Sec_VtUnknown" xml:space="preserve">
+    <value>Файл неизвестен VirusTotal</value>
+  </data>
+  <data name="Settings_About" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="Settings_Appearance" xml:space="preserve">
+    <value>Оформление</value>
+  </data>
+  <data name="Settings_Cleaning" xml:space="preserve">
+    <value>Очистка</value>
+  </data>
+  <data name="Settings_DataFolder" xml:space="preserve">
+    <value>Настройки и журналы:</value>
+  </data>
+  <data name="Settings_General" xml:space="preserve">
+    <value>Общие</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="Settings_LanguageDesc" xml:space="preserve">
+    <value>Выберите язык приложения. Изменения применяются сразу.</value>
+  </data>
+  <data name="Settings_OpenFolder" xml:space="preserve">
+    <value>Открыть папку</value>
+  </data>
+  <data name="Settings_ReduceMotion" xml:space="preserve">
+    <value>Уменьшить анимацию</value>
+  </data>
+  <data name="Settings_ReduceMotionDesc" xml:space="preserve">
+    <value>Отключает декоративную анимацию. Анимация также отключена, если эффекты анимации Windows выключены.</value>
+  </data>
+  <data name="Settings_Remember" xml:space="preserve">
+    <value>Запоминать мой выбор</value>
+  </data>
+  <data name="Settings_RememberDesc" xml:space="preserve">
+    <value>Сохранять отмеченные категории и расположения до следующего раза.</value>
+  </data>
+  <data name="Settings_RestorePoint" xml:space="preserve">
+    <value>Создавать точку восстановления перед оптимизацией</value>
+  </data>
+  <data name="Settings_RestorePointDesc" xml:space="preserve">
+    <value>Создаёт точку восстановления системы перед первым изменением в каждом сеансе (только для администратора).</value>
+  </data>
+  <data name="Settings_Safety" xml:space="preserve">
+    <value>Безопасность</value>
+  </data>
+  <data name="Settings_SkipRecent" xml:space="preserve">
+    <value>Пропускать временные файлы новее 24 часов</value>
+  </data>
+  <data name="Settings_SkipRecentDesc" xml:space="preserve">
+    <value>Рекомендуется. Недавние временные файлы могут ещё использоваться установщиками или запущенными приложениями.</value>
+  </data>
+  <data name="Settings_Theme" xml:space="preserve">
+    <value>Тема приложения</value>
+  </data>
+  <data name="Settings_ThemeDark" xml:space="preserve">
+    <value>Тёмная</value>
+  </data>
+  <data name="Settings_ThemeDesc" xml:space="preserve">
+    <value>Выберите светлую, тёмную или тему Windows.</value>
+  </data>
+  <data name="Settings_ThemeLight" xml:space="preserve">
+    <value>Светлая</value>
+  </data>
+  <data name="Settings_ThemeSystem" xml:space="preserve">
+    <value>Как в Windows</value>
+  </data>
+  <data name="Settings_ViewLogs" xml:space="preserve">
+    <value>Просмотреть журналы</value>
+  </data>
+  <data name="Settings_VirusTotal" xml:space="preserve">
+    <value>Проверка хеша на VirusTotal</value>
+  </data>
+  <data name="Settings_VirusTotalDesc" xml:space="preserve">
+    <value>Добавляет кнопку проверки подозрительных файлов более чем 70 антивирусами. Нужен бесплатный API-ключ с virustotal.com.</value>
+  </data>
+  <data name="Settings_VirusTotalKey" xml:space="preserve">
+    <value>API-ключ VirusTotal</value>
+  </data>
+  <data name="Settings_VirusTotalKeySaved" xml:space="preserve">
+    <value>Ключ сохранён.</value>
+  </data>
+  <data name="Settings_VirusTotalPrivacy" xml:space="preserve">
+    <value>На VirusTotal отправляется только SHA-256-хеш файла, а не сам файл. Ключ хранится в зашифрованном виде для вашей учётной записи Windows. Бесплатный API позволяет 4 запроса в минуту.</value>
+  </data>
+  <data name="Settings_VirusTotalSave" xml:space="preserve">
+    <value>Сохранить ключ</value>
+  </data>
+  <data name="Skip_AccessDenied" xml:space="preserve">
+    <value>Доступ запрещён</value>
+  </data>
+  <data name="Skip_Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="Skip_InUse" xml:space="preserve">
+    <value>Используется</value>
+  </data>
+  <data name="Skip_Unsafe" xml:space="preserve">
+    <value>Пропущено ради безопасности</value>
+  </data>
+  <data name="Startup_ChangeFailed" xml:space="preserve">
+    <value>Не удалось изменить элемент автозагрузки</value>
+  </data>
+  <data name="Startup_DisabledMessage" xml:space="preserve">
+    <value>{0} больше не будет запускаться вместе с Windows.</value>
+  </data>
+  <data name="Startup_DisabledTitle" xml:space="preserve">
+    <value>Автозагрузка отключена</value>
+  </data>
+  <data name="Startup_Empty" xml:space="preserve">
+    <value>Элементы автозагрузки не найдены.</value>
+  </data>
+  <data name="Startup_EnabledMessage" xml:space="preserve">
+    <value>{0} будет запускаться вместе с Windows.</value>
+  </data>
+  <data name="Startup_EnabledTitle" xml:space="preserve">
+    <value>Автозагрузка включена</value>
+  </data>
+  <data name="Startup_Intro" xml:space="preserve">
+    <value>Программы, которые запускаются при входе в систему. Их отключение ускоряет загрузку и освобождает память — ничего не удаляется, и их можно снова включить в любой момент.</value>
+  </data>
+  <data name="Startup_Loc_FolderAll" xml:space="preserve">
+    <value>Папка автозагрузки (все пользователи)</value>
+  </data>
+  <data name="Startup_Loc_FolderUser" xml:space="preserve">
+    <value>Папка автозагрузки (текущий пользователь)</value>
+  </data>
+  <data name="Startup_Loc_RegistryAll" xml:space="preserve">
+    <value>Реестр (все пользователи)</value>
+  </data>
+  <data name="Startup_Loc_RegistryAll32" xml:space="preserve">
+    <value>Реестр (все пользователи, 32-бит)</value>
+  </data>
+  <data name="Startup_Loc_RegistryUser" xml:space="preserve">
+    <value>Реестр (текущий пользователь)</value>
+  </data>
+  <data name="Startup_OpenLocation" xml:space="preserve">
+    <value>Открыть расположение файла</value>
+  </data>
+  <data name="Startup_ReadOnlyMessage" xml:space="preserve">
+    <value>Приложения, зарегистрированные для всех пользователей, можно изменить, только если Ultimate PC Cleaner запущен от имени администратора.</value>
+  </data>
+  <data name="Startup_ReadOnlyTitle" xml:space="preserve">
+    <value>Некоторые элементы доступны только для чтения</value>
+  </data>
+  <data name="Startup_Search" xml:space="preserve">
+    <value>Поиск в автозагрузке…</value>
+  </data>
+  <data name="Startup_Summary" xml:space="preserve">
+    <value>Включено: {0} · отключено: {1}</value>
+  </data>
+  <data name="Startup_UnknownPublisher" xml:space="preserve">
+    <value>Неизвестный издатель</value>
+  </data>
+  <data name="Status_Clean" xml:space="preserve">
+    <value>Чисто</value>
+  </data>
+  <data name="Status_Cleaned" xml:space="preserve">
+    <value>Очищено</value>
+  </data>
+  <data name="Status_Cleaning" xml:space="preserve">
+    <value>Очистка…</value>
+  </data>
+  <data name="Status_Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="Status_RequiresAdmin" xml:space="preserve">
+    <value>Нужны права администратора</value>
+  </data>
+  <data name="Status_Scanning" xml:space="preserve">
+    <value>Сканирование…</value>
+  </data>
+  <data name="Temp_AdminReason" xml:space="preserve">
+    <value>Windows защищает эту папку: просматривать и удалять её файлы могут только администраторы. Перезапустите приложение от имени администратора, чтобы просканировать и очистить её.</value>
+  </data>
+  <data name="Temp_CleanSelected" xml:space="preserve">
+    <value>Удалить выбранное</value>
+  </data>
+  <data name="Temp_ConfirmButton" xml:space="preserve">
+    <value>Удалить файлы</value>
+  </data>
+  <data name="Temp_ConfirmIntro" xml:space="preserve">
+    <value>Следующие временные файлы будут удалены безвозвратно (не в корзину):</value>
+  </data>
+  <data name="Temp_ConfirmSafety" xml:space="preserve">
+    <value>Удаляются только файлы — сами папки остаются. Используемые и защищённые файлы пропускаются и попадают в отчёт.</value>
+  </data>
+  <data name="Temp_ConfirmTitle" xml:space="preserve">
+    <value>Удалить временные файлы?</value>
+  </data>
+  <data name="Temp_ConfirmTotal" xml:space="preserve">
+    <value>Ожидается освободить: {0}</value>
+  </data>
+  <data name="Temp_Intro" xml:space="preserve">
+    <value>Сканирует папки временных файлов Windows и безопасно удаляет оставшиеся файлы. Просмотрите найденное, выберите расположения и подтвердите удаление.</value>
+  </data>
+  <data name="Temp_NothingMessage" xml:space="preserve">
+    <value>Сначала выполните сканирование, затем выберите расположение с файлами для удаления.</value>
+  </data>
+  <data name="Temp_OpenFolder" xml:space="preserve">
+    <value>Открыть папку в Проводнике</value>
+  </data>
+  <data name="Temp_PathUnresolved" xml:space="preserve">
+    <value>Не удалось безопасно определить путь</value>
+  </data>
+  <data name="Temp_Prefetch_Desc" xml:space="preserve">
+    <value>Трассировки запуска приложений (*.pf) в %WINDIR%\Prefetch.</value>
+  </data>
+  <data name="Temp_Prefetch_Name" xml:space="preserve">
+    <value>Windows Prefetch</value>
+  </data>
+  <data name="Temp_Prefetch_Note" xml:space="preserve">
+    <value>Windows управляет Prefetch автоматически. Очистка не ускоряет ПК — приложения сначала могут запускаться медленнее, пока Windows заново собирает эти данные. Очищайте только при устранении неполадок.</value>
+  </data>
+  <data name="Temp_ProgressCounts" xml:space="preserve">
+    <value>Обработано {0} из {1} файлов · {2} · {3}</value>
+  </data>
+  <data name="Temp_Reclaimed" xml:space="preserve">
+    <value>Освобождено</value>
+  </data>
+  <data name="Temp_ResultCancelled" xml:space="preserve">
+    <value>Очистка отменена</value>
+  </data>
+  <data name="Temp_ResultFailed" xml:space="preserve">
+    <value>Очистка не удалась</value>
+  </data>
+  <data name="Temp_ResultFreed" xml:space="preserve">
+    <value>{0} · освобождено {1}</value>
+  </data>
+  <data name="Temp_ResultLocationError" xml:space="preserve">
+    <value>одно из расположений не удалось очистить (см. журнал)</value>
+  </data>
+  <data name="Temp_ResultPartial" xml:space="preserve">
+    <value>Очищено частично</value>
+  </data>
+  <data name="Temp_ResultSuccess" xml:space="preserve">
+    <value>Очистка завершена</value>
+  </data>
+  <data name="Temp_SafetyBody" xml:space="preserve">
+    <value>• Пути берутся из переменных среды Windows (%LOCALAPPDATA%, %WINDIR%), ничего не задано жёстко.
+• Удаляются только файлы. Сами папки Temp и Prefetch никогда не удаляются; убираются лишь пустые вложенные папки.
+• Ссылки (junction/symlink) никогда не обрабатываются, а каждый файл повторно проверяется непосредственно перед удалением.
+• Используемые и защищённые файлы пропускаются и попадают в отчёт. Временные файлы за последние 24 часа по умолчанию сохраняются.
+• Документы, загрузки, профили браузеров, пароли и настройки приложений никогда не затрагиваются.</value>
+  </data>
+  <data name="Temp_SafetyHeader" xml:space="preserve">
+    <value>Как обеспечивается безопасность очистки</value>
+  </data>
+  <data name="Temp_Scanning" xml:space="preserve">
+    <value>Сканирование папок временных файлов…</value>
+  </data>
+  <data name="Temp_SkippedHeader" xml:space="preserve">
+    <value>Пропущенные файлы</value>
+  </data>
+  <data name="Temp_SkippedHint" xml:space="preserve">
+    <value>Эти файлы оставлены на месте. Большинство из них используется запущенными приложениями и может быть удалено после перезагрузки. (Показано не более 200.)</value>
+  </data>
+  <data name="Temp_State_AccessDenied" xml:space="preserve">
+    <value>Доступ запрещён</value>
+  </data>
+  <data name="Temp_State_Cancelled" xml:space="preserve">
+    <value>Отменено</value>
+  </data>
+  <data name="Temp_State_Missing" xml:space="preserve">
+    <value>Папка не найдена</value>
+  </data>
+  <data name="Temp_State_NotScanned" xml:space="preserve">
+    <value>Не сканировалось</value>
+  </data>
+  <data name="Temp_State_ResolveError" xml:space="preserve">
+    <value>Недоступно</value>
+  </data>
+  <data name="Temp_SummaryNotScanned" xml:space="preserve">
+    <value>Выполните сканирование, чтобы узнать, сколько места занимают временные файлы.</value>
+  </data>
+  <data name="Temp_SummaryScanned" xml:space="preserve">
+    <value>Выбрано: {0} · можно освободить {1}</value>
+  </data>
+  <data name="Temp_UserTemp_Desc" xml:space="preserve">
+    <value>Ваша личная папка Temp (%LOCALAPPDATA%\Temp), где приложения и установщики оставляют файлы.</value>
+  </data>
+  <data name="Temp_UserTemp_Name" xml:space="preserve">
+    <value>Временные файлы пользователя</value>
+  </data>
+  <data name="Temp_WindowsTemp_Desc" xml:space="preserve">
+    <value>Системная папка Temp (%WINDIR%\Temp), которую используют Windows, службы и установщики.</value>
+  </data>
+  <data name="Temp_WindowsTemp_Name" xml:space="preserve">
+    <value>Временные файлы Windows</value>
+  </data>
+  <data name="Tweak_PowerPlanRevertFailed" xml:space="preserve">
+    <value>Не удалось вернуться к предыдущей схеме электропитания.</value>
+  </data>
+  <data name="Tweak_PowerPlanUnsupported" xml:space="preserve">
+    <value>Конфигурация питания этого ПК не допускает эту схему (устройства с Modern Standby поддерживают только «Сбалансированная»).</value>
+  </data>
+  <data name="Tweak_game_dvr_Desc" xml:space="preserve">
+    <value>Запрещает Xbox Game Bar постоянно записывать игровой процесс в фоне (Game DVR).</value>
+  </data>
+  <data name="Tweak_game_dvr_Name" xml:space="preserve">
+    <value>Отключить фоновую запись игр</value>
+  </data>
+  <data name="Tweak_power_high_Desc" xml:space="preserve">
+    <value>Держит процессор на более высоких частотах вместо экономии энергии. Лучше всего для настольных ПК или ноутбуков от сети.</value>
+  </data>
+  <data name="Tweak_power_high_Name" xml:space="preserve">
+    <value>Схема электропитания «Высокая производительность»</value>
+  </data>
+  <data name="Tweak_power_ultimate_Desc" xml:space="preserve">
+    <value>Убирает микрозадержки, связанные с энергосбережением. Предназначено для рабочих станций; расходует больше энергии и заряда батареи.</value>
+  </data>
+  <data name="Tweak_power_ultimate_Name" xml:space="preserve">
+    <value>Схема электропитания «Максимальная производительность»</value>
+  </data>
+  <data name="Tweak_visual_effects_Desc" xml:space="preserve">
+    <value>Отключает анимацию окон, плавную прокрутку и прозрачность, чтобы рабочий стол быстрее реагировал на медленных ПК.</value>
+  </data>
+  <data name="Tweak_visual_effects_Name" xml:space="preserve">
+    <value>Визуальные эффекты для производительности</value>
+  </data>
+  <data name="Unit_B" xml:space="preserve">
+    <value>Б</value>
+  </data>
+  <data name="Unit_GB" xml:space="preserve">
+    <value>ГБ</value>
+  </data>
+  <data name="Unit_KB" xml:space="preserve">
+    <value>КБ</value>
+  </data>
+  <data name="Unit_MB" xml:space="preserve">
+    <value>МБ</value>
+  </data>
+  <data name="Unit_TB" xml:space="preserve">
+    <value>ТБ</value>
+  </data>
+  <data name="Nav_System" xml:space="preserve">
+    <value>Система</value>
+  </data>
+  <data name="System_AdminTitle" xml:space="preserve">
+    <value>Нужны права администратора</value>
+  </data>
+  <data name="System_AdminMessage" xml:space="preserve">
+    <value>Для переименования компьютера и установки обновлений нужны права администратора. Проверить наличие обновлений можно и без них.</value>
+  </data>
+  <data name="System_RenameHeader" xml:space="preserve">
+    <value>Имя компьютера</value>
+  </data>
+  <data name="System_RenameTitle" xml:space="preserve">
+    <value>Переименовать компьютер</value>
+  </data>
+  <data name="System_RenameDesc" xml:space="preserve">
+    <value>Имя, которое видят другие устройства в сети. Новое имя вступит в силу после перезагрузки.</value>
+  </data>
+  <data name="System_CurrentName" xml:space="preserve">
+    <value>Текущее имя: {0}</value>
+  </data>
+  <data name="System_PendingName" xml:space="preserve">
+    <value>После перезагрузки: {0}</value>
+  </data>
+  <data name="System_NewNamePlaceholder" xml:space="preserve">
+    <value>Новое имя</value>
+  </data>
+  <data name="System_Rename" xml:space="preserve">
+    <value>Переименовать</value>
+  </data>
+  <data name="System_NameRules" xml:space="preserve">
+    <value>До 15 символов: латинские буквы, цифры и дефисы.</value>
+  </data>
+  <data name="System_NameTooLong" xml:space="preserve">
+    <value>Имя может содержать не более 15 символов.</value>
+  </data>
+  <data name="System_NameInvalidChars" xml:space="preserve">
+    <value>Используйте только латинские буквы (A–Z), цифры и дефисы, без пробелов.</value>
+  </data>
+  <data name="System_NameAllDigits" xml:space="preserve">
+    <value>Имя не может состоять только из цифр.</value>
+  </data>
+  <data name="System_NameHyphenEdge" xml:space="preserve">
+    <value>Имя не может начинаться или заканчиваться дефисом.</value>
+  </data>
+  <data name="System_Renamed" xml:space="preserve">
+    <value>После перезагрузки компьютер будет называться «{0}».</value>
+  </data>
+  <data name="System_RenameFailed" xml:space="preserve">
+    <value>Не удалось переименовать</value>
+  </data>
+  <data name="System_RestartTitle" xml:space="preserve">
+    <value>Требуется перезагрузка</value>
+  </data>
+  <data name="System_RestartMessage" xml:space="preserve">
+    <value>Изменения вступят в силу после перезагрузки компьютера. Сохраните свою работу перед перезагрузкой.</value>
+  </data>
+  <data name="System_RebootRequired" xml:space="preserve">
+    <value>Перезагрузите компьютер, чтобы завершить применение изменений и обновлений.</value>
+  </data>
+  <data name="System_RestartNow" xml:space="preserve">
+    <value>Перезагрузить сейчас</value>
+  </data>
+  <data name="System_RestartLater" xml:space="preserve">
+    <value>Позже</value>
+  </data>
+  <data name="System_UpdatesHeader" xml:space="preserve">
+    <value>Центр обновления Windows</value>
+  </data>
+  <data name="System_UpdatesTitle" xml:space="preserve">
+    <value>Обновления Windows</value>
+  </data>
+  <data name="System_UpdatesDesc" xml:space="preserve">
+    <value>Поиск, загрузка и установка обновлений от Microsoft.</value>
+  </data>
+  <data name="System_Check" xml:space="preserve">
+    <value>Проверить обновления</value>
+  </data>
+  <data name="System_Install" xml:space="preserve">
+    <value>Установить выбранные</value>
+  </data>
+  <data name="System_OpenSettings" xml:space="preserve">
+    <value>Открыть параметры Центра обновления Windows</value>
+  </data>
+  <data name="System_UpdatesIdle" xml:space="preserve">
+    <value>Проверка ещё не выполнялась.</value>
+  </data>
+  <data name="System_Searching" xml:space="preserve">
+    <value>Поиск обновлений… Это может занять несколько минут.</value>
+  </data>
+  <data name="System_UpToDate" xml:space="preserve">
+    <value>Обновлений нет</value>
+  </data>
+  <data name="System_LastChecked" xml:space="preserve">
+    <value>последняя проверка в {0}</value>
+  </data>
+  <data name="System_SearchFailed" xml:space="preserve">
+    <value>Ошибка Центра обновления Windows: {0}</value>
+  </data>
+  <data name="System_Downloading" xml:space="preserve">
+    <value>Загрузка {0} из {1}: {2}</value>
+  </data>
+  <data name="System_Installing" xml:space="preserve">
+    <value>Установка {0} из {1}: {2}</value>
+  </data>
+  <data name="System_InstallDone" xml:space="preserve">
+    <value>Установлено обновлений: {0} из {1}.</value>
+  </data>
+  <data name="System_InstallCancelled" xml:space="preserve">
+    <value>Установка остановлена. Уже установленные обновления сохранятся.</value>
+  </data>
+  <data name="System_UpdateDownloaded" xml:space="preserve">
+    <value>Загружено</value>
+  </data>
+  <data name="System_UpdateOptional" xml:space="preserve">
+    <value>Необязательное</value>
+  </data>
+  <data name="Count_Updates_One" xml:space="preserve">
+    <value>Доступно {0} обновление</value>
+  </data>
+  <data name="Count_Updates_Few" xml:space="preserve">
+    <value>Доступно {0} обновления</value>
+  </data>
+  <data name="Count_Updates_Many" xml:space="preserve">
+    <value>Доступно {0} обновлений</value>
+  </data>
+  <data name="Nav_Help" xml:space="preserve">
+    <value>Руководство</value>
+  </data>
+  <data name="Help_Intro" xml:space="preserve">
+    <value>Подробное руководство по Ultimate PC Cleaner: что делает каждая страница, как ею пользоваться и как приложение защищает ваши данные. Нажмите на раздел, чтобы развернуть его, а затем «Открыть страницу», чтобы сразу перейти к этой функции.</value>
+  </data>
+  <data name="Help_QuickStartHeader" xml:space="preserve">
+    <value>Быстрый старт</value>
+  </data>
+  <data name="Help_QuickStartBody" xml:space="preserve">
+    <value>1. На панели управления нажмите «Сканировать». Приложение найдёт ненужные файлы, но ничего не удалит.
+2. Просмотрите результаты на страницах «Очистка» и «Временные файлы», отметьте то, что хотите удалить, и подтвердите.
+3. На странице «Автозагрузка» отключите программы, которые не нужны сразу после входа, — Windows будет запускаться быстрее.
+4. На странице «Безопасность» проверьте состояние защиты и время от времени запускайте «Найти подозрительное».
+5. Для обслуживания в один клик используйте кнопку «УСКОРИТЬ» на панели управления.
+
+Совет: для системных папок, сканирования Defender, средств восстановления и установки обновлений запустите приложение от имени администратора (кнопка «Перезапустить от имени администратора» на полосе вверху окна).</value>
+  </data>
+  <data name="Help_PagesHeader" xml:space="preserve">
+    <value>Страницы приложения</value>
+  </data>
+  <data name="Help_OpenPage" xml:space="preserve">
+    <value>Открыть страницу</value>
+  </data>
+  <data name="Help_Dashboard_Summary" xml:space="preserve">
+    <value>Состояние ПК, статистика очистки и ускорение в один клик.</value>
+  </data>
+  <data name="Help_Dashboard_Body" xml:space="preserve">
+    <value>Панель управления — это стартовый экран, который показывает состояние компьютера с первого взгляда.
+• Состояние системы — индикаторы в реальном времени показывают загрузку процессора (CPU), использование памяти (ОЗУ) и свободное место на системном диске, а также время работы с последнего запуска.
+• Найдено мусора — общий размер ненужных файлов, выбранных на страницах «Очистка» и «Временные файлы».
+• Временные файлы — место, которое можно освободить в папках Temp и Prefetch.
+• Всего освобождено и Последняя очистка — сколько места вы освободили с начала использования приложения и когда.
+• «Сканировать» — проверяет все категории и показывает, сколько места можно освободить. Сканирование ничего не удаляет; просмотрите результаты кнопкой «Открыть очистку».
+• «УСКОРИТЬ» — в один клик удаляет мусор, выбранный в «Очистке», сбрасывает кэш DNS и освобождает ОЗУ. Перед удалением показывает точный объём данных и просит подтверждения; «Отмена» ничего не меняет.
+Ярлыки «Временные файлы» и «Оптимизация» ведут прямо на эти страницы.</value>
+  </data>
+  <data name="Help_TempFiles_Summary" xml:space="preserve">
+    <value>Просмотр и безопасное удаление файлов из временных папок Windows.</value>
+  </data>
+  <data name="Help_TempFiles_Body" xml:space="preserve">
+    <value>Эта страница работает с тремя расположениями, где Windows хранит временные данные:
+• Временные файлы пользователя (%LOCALAPPDATA%\Temp) — ваша личная папка Temp; права администратора не нужны.
+• Временные файлы Windows (%WINDIR%\Temp) — системная папка Temp; нужны права администратора.
+• Windows Prefetch (%WINDIR%\Prefetch, только файлы *.pf) — нужны права администратора.
+
+Как пользоваться:
+1. Нажмите «Сканировать». Для каждого расположения вы увидите число файлов, объём, который можно освободить, используемые файлы и недоступные элементы.
+2. Отметьте расположения, которые нужно очистить. Значок папки открывает расположение в Проводнике.
+3. Нажмите «Удалить выбранное», проверьте список в окне подтверждения и нажмите «Удалить файлы».
+4. Следите за ходом очистки. В конце вы увидите, что удалено, что пропущено (и почему) и что уже отсутствовало.
+
+Используемые файлы пропускаются — большинство из них можно удалить после перезагрузки. Файлы новее 24 часов по умолчанию сохраняются (Настройки → «Пропускать временные файлы новее 24 часов»).
+Примечание: очистка Prefetch не ускоряет компьютер; приложения поначалу могут запускаться медленнее. Используйте её только для устранения неполадок.</value>
+  </data>
+  <data name="Help_Cleaner_Summary" xml:space="preserve">
+    <value>Очистка кэшей, журналов, корзины и кэша браузеров по категориям.</value>
+  </data>
+  <data name="Help_Cleaner_Body" xml:space="preserve">
+    <value>«Очистка» охватывает более широкий набор категорий, разделённых на группы:
+• Windows — временные файлы пользователя и Windows, кэш Центра обновления Windows, кэш оптимизации доставки, отчёты об ошибках, дампы памяти, старые журналы Windows (старше 7 дней), корзина, данные Prefetch и кэш эскизов.
+• Веб-браузеры — кэш Microsoft Edge, Google Chrome, Brave и Mozilla Firefox. Удаляется только кэш; файлы cookie, история и пароли сохраняются.
+• Приложения — кэш шейдеров DirectX.
+
+Как пользоваться:
+1. Отметьте или снимите отметку с категорий. Флажок рядом с названием группы выбирает или снимает всю группу; «Выбрать все», «Рекомендуемые» и «Снять выбор» меняют выбор сразу для всех категорий.
+2. Нажмите «Сканировать», чтобы увидеть, сколько места занимает каждая категория.
+3. Нажмите «Очистить выбранное» и подтвердите. В конце приложение покажет, сколько места освобождено.
+
+Если браузер запущен, появится предупреждение «Некоторые приложения запущены» — закройте его, чтобы полностью очистить кэш. У категорий с жёлтым предупреждением (например, Prefetch или кэш шейдеров) есть побочные эффекты, включайте их только при необходимости. Категории с пометкой «Нужны права администратора» работают только в режиме администратора.</value>
+  </data>
+  <data name="Help_Startup_Summary" xml:space="preserve">
+    <value>Включение и отключение программ, запускающихся вместе с Windows.</value>
+  </data>
+  <data name="Help_Startup_Body" xml:space="preserve">
+    <value>Здесь перечислены все программы, которые автоматически запускаются при входе в Windows, — из реестра и папок автозагрузки, для текущего пользователя и для всех пользователей.
+• Переключатель рядом с программой отключает или снова включает её автозапуск. Используется тот же механизм, что и в Диспетчере задач, поэтому ничего не удаляется и не деинсталлируется.
+• Поле поиска фильтрует список по имени; рядом показано число включённых и отключённых элементов.
+• Для каждого элемента видны издатель и расположение (например, «Реестр (текущий пользователь)»); «Открыть расположение файла» показывает программу в Проводнике.
+• «Обновить» перезагружает список.
+
+Элементы, зарегистрированные для всех пользователей, можно изменить только в режиме администратора — иначе они доступны только для чтения.
+Совет: отключите программы, которые не нужны сразу после входа (лаунчеры игр, средства обновления, мессенджеры). Антивирус и утилиты оборудования (звук, тачпад, графика) оставьте включёнными.</value>
+  </data>
+  <data name="Help_Security_Summary" xml:space="preserve">
+    <value>Сканирование Microsoft Defender, проверка скриптов, подозрительные элементы и карантин.</value>
+  </data>
+  <data name="Help_Security_Body" xml:space="preserve">
+    <value>Страница «Безопасность» использует Microsoft Defender и установленный на компьютере антивирус — это не отдельный антивирус.
+• Состояние защиты — вверху видно, защищён ли компьютер, версия и дата сигнатур и время последнего сканирования. Если активен другой антивирус, сканирование Defender недоступно, но остальные функции работают.
+• «Быстрое сканирование», «Полное сканирование» и «Сканировать папку…» запускают сканирование Defender с выводом в реальном времени. «Обновить сигнатуры» загружает последние антивирусные базы.
+• «Проверить скрипты (AMSI)…» — отправляет каждый скрипт PowerShell, VBScript, JavaScript и batch из выбранной папки на проверку установленному антивирусу.
+• «Найти подозрительное» — проверяет элементы автозагрузки, запланированные задачи и скрипты и отмечает рискованные признаки: скрытые или закодированные команды, замаскированные имена (например, invoice.pdf.exe), неподписанные программы в пользовательских папках и записи, указывающие на отсутствующие файлы. У каждого элемента есть уровень риска (Низкий, Средний, Высокий) и причина. Совпадение — не доказательство; проверьте, прежде чем действовать.
+• Подозрительный элемент можно проверить с помощью Defender, проверить его хеш на VirusTotal (если включено в настройках) или поместить в карантин.
+• Обнаружения Microsoft Defender — список обнаружений. «Удалить активные угрозы» удаляет их, а «Разрешить» помечает файл как безопасный (только если вы уверены).
+• Карантин Ultimate PC Cleaner — перемещённые файлы хранятся в форме, которую нельзя запустить. «Восстановить» возвращает файл на место, «Удалить» удаляет его навсегда. Здесь же можно восстановить файлы из карантина Defender.
+
+Сканирование, карантин и восстановление требуют прав администратора; состояние защиты и поиск подозрительного работают и без них.</value>
+  </data>
+  <data name="Help_Optimize_Summary" xml:space="preserve">
+    <value>Обратимые настройки производительности и быстрые действия.</value>
+  </data>
+  <data name="Help_Optimize_Body" xml:space="preserve">
+    <value>Настройки производительности (переключатели — выключение возвращает прежнее состояние):
+• Схема электропитания «Высокая производительность» — процессор работает на более высоких частотах; лучше всего для настольных ПК и ноутбуков от сети.
+• Схема электропитания «Максимальная производительность» — убирает микрозадержки энергосбережения, но расходует больше энергии и заряда. На устройствах с Modern Standby доступна только сбалансированная схема.
+• Визуальные эффекты для производительности — отключают анимацию окон, плавную прокрутку и прозрачность; полезно на слабых ПК.
+• Отключить фоновую запись игр — не даёт Xbox Game Bar (Game DVR) постоянно записывать игровой процесс.
+
+Перед первым изменением в сеансе приложение создаёт точку восстановления системы (если это включено в настройках и приложение запущено от имени администратора). Если точку создать не удалось, приложение спросит, продолжить ли всё равно.
+
+Быстрые действия:
+• Сбросить кэш DNS — помогает, когда сайты не открываются после смены сети или DNS-сервера.
+• Освободить ОЗУ — сокращает неиспользуемую память приложений; полезно перед игрой или тяжёлой программой.
+• Создать точку восстановления — вручную сохраняет снимок системы, к которому можно вернуться через восстановление Windows (нужны права администратора и включённая защита системы).</value>
+  </data>
+  <data name="Help_Health_Summary" xml:space="preserve">
+    <value>Средства проверки и восстановления Windows с выводом в реальном времени.</value>
+  </data>
+  <data name="Help_Health_Body" xml:space="preserve">
+    <value>Здесь запускаются встроенные средства обслуживания Windows. Все они требуют прав администратора.
+• Проверка системных файлов (sfc /scannow) — находит и восстанавливает повреждённые защищённые файлы Windows.
+• Восстановление образа Windows (DISM RestoreHealth) — восстанавливает хранилище компонентов Windows; нужно подключение к интернету. Запустите его, если SFC сообщает об ошибках, которые не может исправить, а затем снова запустите SFC.
+• Очистка хранилища компонентов (DISM) — удаляет устаревшие компоненты обновлений из папки WinSxS и освобождает место.
+• Оптимизация системного диска — TRIM для SSD или дефрагментация для жёсткого диска.
+• Проверка диска на ошибки (chkdsk /scan) — ищет ошибки файловой системы, ничего не изменяя.
+
+Нажмите «Запустить» рядом со средством и следите за выводом в окне ниже. Средство можно остановить кнопкой «Отмена», а вывод — скопировать («Копировать вывод») или очистить («Очистить вывод»). Некоторые средства работают десятки минут — не выключайте компьютер во время их работы.</value>
+  </data>
+  <data name="Help_System_Summary" xml:space="preserve">
+    <value>Переименование компьютера и обновления Windows.</value>
+  </data>
+  <data name="Help_System_Body" xml:space="preserve">
+    <value>Имя компьютера
+• Карточка показывает, как компьютер сейчас называется в сети.
+• Введите новое имя и нажмите «Переименовать». Правила: до 15 символов, только буквы (A–Z), цифры и дефисы, без пробелов; имя не может состоять только из цифр, начинаться или заканчиваться дефисом.
+• Новое имя вступает в силу после перезагрузки.
+
+Центр обновления Windows
+• «Проверить обновления» ищет доступные обновления (это может занять несколько минут); работает и без прав администратора.
+• Обновления показываются списком. Обязательные отмечены заранее, необязательные (например, обновления функций) — нет.
+• «Установить выбранные» загружает и устанавливает отмеченные обновления с отображением хода; «Отмена» останавливает установку, а уже установленные обновления остаются.
+• Значок рядом с кнопками открывает Центр обновления в параметрах Windows.
+
+Когда нужна перезагрузка (после переименования или обновлений), вверху страницы появляется карточка с кнопкой «Перезагрузить сейчас». Сохраните работу перед перезагрузкой.</value>
+  </data>
+  <data name="Help_Settings_Summary" xml:space="preserve">
+    <value>Язык, тема, параметры безопасной очистки и VirusTotal.</value>
+  </data>
+  <data name="Help_Settings_Body" xml:space="preserve">
+    <value>Общие
+• Язык — сербский (латиница), английский, русский, немецкий или китайский; изменение применяется сразу.
+
+Оформление
+• Тема приложения — светлая, тёмная или как в Windows.
+• Уменьшить анимацию — отключает декоративную анимацию (она также отключена, если анимация выключена в Windows).
+
+Очистка
+• Пропускать временные файлы новее 24 часов — рекомендуется, так как новые файлы ещё могут использоваться установщиками или запущенными приложениями.
+• Запоминать мой выбор — сохраняет отмеченные категории и расположения до следующего раза.
+
+Безопасность
+• Создавать точку восстановления перед оптимизацией — создаёт точку восстановления системы перед первым изменением в каждом сеансе.
+• Проверка хеша на VirusTotal — добавляет кнопку для проверки подозрительных файлов более чем 70 антивирусами. Нужен бесплатный API-ключ с virustotal.com: введите его и нажмите «Сохранить ключ». Отправляется только хеш SHA-256 файла, никогда сам файл, а ключ хранится в зашифрованном виде для вашей учётной записи Windows.
+
+О программе
+• Показывает версию и папку с настройками и журналами; «Открыть папку» и «Просмотреть журналы» открывают её в Проводнике.</value>
+  </data>
+  <data name="Help_SafetyHeader" xml:space="preserve">
+    <value>Безопасность и права администратора</value>
+  </data>
+  <data name="Help_SafetyTitle" xml:space="preserve">
+    <value>Как приложение защищает ваши данные</value>
+  </data>
+  <data name="Help_SafetySummary" xml:space="preserve">
+    <value>Правила, действующие при каждом сканировании и удалении.</value>
+  </data>
+  <data name="Help_SafetyBody" xml:space="preserve">
+    <value>• Ничего не удаляется без вашего подтверждения — любое удаление, включая «УСКОРИТЬ», сначала показывает, что будет удалено и сколько места это займёт.
+• Сканирование только читает данные и никогда ничего не удаляет.
+• Пути определяются из переменных среды Windows (%LOCALAPPDATA%, %WINDIR%). Путь, который нельзя безопасно определить (относительный, сетевой, корень диска или ссылка), сообщается и не очищается.
+• Удаляются только файлы. Основные папки никогда не удаляются, а пустые вложенные папки удаляются по одной.
+• Ссылки (junctions и symlinks) никогда не отслеживаются, а каждый файл повторно проверяется непосредственно перед удалением.
+• Используемые файлы, файлы без доступа или не прошедшие проверку пропускаются и перечисляются в результате — частичный успех отображается как частичный.
+• Документы, загрузки, файлы cookie, история браузера, пароли и настройки приложений никогда не затрагиваются.
+• Оптимизации обратимы, а перед первым изменением создаётся точка восстановления системы.
+• Страница «Безопасность» никогда сама не удаляет файлы; карантин выполняется только после подтверждения и может быть отменён.
+• Удалённые файлы не попадают в корзину — удаление необратимо, поэтому внимательно проверяйте выбор.</value>
+  </data>
+  <data name="Help_AdminTitle" xml:space="preserve">
+    <value>Ограниченный режим и права администратора</value>
+  </data>
+  <data name="Help_AdminSummary" xml:space="preserve">
+    <value>Что работает без повышенных прав и что требует администратора.</value>
+  </data>
+  <data name="Help_AdminBody" xml:space="preserve">
+    <value>Приложение запускается с правами текущего пользователя. В этом случае в заголовке окна есть пометка «(ограниченный режим)», а вверху появляется полоса с пояснением.
+
+Без прав администратора доступно:
+• очистка вашей папки Temp и кэша браузеров,
+• включение и отключение ваших программ автозагрузки,
+• большинство настроек производительности и быстрых действий,
+• состояние защиты, проверка скриптов и поиск подозрительного,
+• проверка обновлений Windows.
+
+Права администратора нужны для:
+• Windows Temp, Prefetch и системных кэшей,
+• программ автозагрузки, зарегистрированных для всех пользователей,
+• точек восстановления системы,
+• средств на странице «Состояние системы»,
+• сканирования Defender, карантина и восстановления файлов,
+• переименования компьютера и установки обновлений.
+
+Нажмите «Перезапустить от имени администратора» на полосе вверху и подтвердите запрос UAC. Приложение никогда не запрашивает повышенные права само. Полосу можно закрыть кнопкой X.</value>
+  </data>
+  <data name="Help_FaqHeader" xml:space="preserve">
+    <value>Часто задаваемые вопросы</value>
+  </data>
+  <data name="Help_Faq1_Q" xml:space="preserve">
+    <value>Почему после очистки остаются некоторые файлы?</value>
+  </data>
+  <data name="Help_Faq1_A" xml:space="preserve">
+    <value>Файлы, которые сейчас использует приложение или сама Windows, удалить нельзя, поэтому они пропускаются и перечисляются в результате («Используется», «Доступ запрещён»). Закройте приложения или перезагрузите компьютер и запустите очистку ещё раз. Временные файлы новее 24 часов также сохраняются намеренно.</value>
+  </data>
+  <data name="Help_Faq2_Q" xml:space="preserve">
+    <value>Удаляет ли очистка кэша браузера пароли или историю?</value>
+  </data>
+  <data name="Help_Faq2_A" xml:space="preserve">
+    <value>Нет. Удаляется только кэш (временно сохранённые страницы, изображения и скрипты). Файлы cookie, история, пароли, закладки и настройки остаются. После очистки сайты в первый раз могут загружаться чуть медленнее.</value>
+  </data>
+  <data name="Help_Faq3_Q" xml:space="preserve">
+    <value>Можно ли вернуть удалённые файлы?</value>
+  </data>
+  <data name="Help_Faq3_A" xml:space="preserve">
+    <value>Нет — удалённые файлы не попадают в корзину, поэтому перед каждым удалением запрашивается подтверждение. Исключение — файлы, перемещённые в карантин на странице «Безопасность»: их всегда можно вернуть кнопкой «Восстановить». Изменения на странице «Оптимизация» отменяются выключением переключателя или с помощью точки восстановления системы.</value>
+  </data>
+  <data name="Help_Faq4_Q" xml:space="preserve">
+    <value>Почему некоторые кнопки или категории недоступны?</value>
+  </data>
+  <data name="Help_Faq4_A" xml:space="preserve">
+    <value>Чаще всего потому, что приложение работает в ограниченном режиме. Функции, изменяющие систему, требуют прав администратора — нажмите «Перезапустить от имени администратора». На странице «Безопасность» сканирование Defender также недоступно, если активен другой антивирус.</value>
+  </data>
+  <data name="Help_Faq5_Q" xml:space="preserve">
+    <value>Не удаётся создать точку восстановления. Что делать?</value>
+  </data>
+  <data name="Help_Faq5_A" xml:space="preserve">
+    <value>Убедитесь, что приложение запущено от имени администратора. Если да, вероятно, для системного диска отключена защита системы: введите в поиске Windows «Создание точки восстановления», выберите системный диск (обычно C:), нажмите «Настроить» и включите защиту системы.</value>
+  </data>
+  <data name="Help_Faq6_Q" xml:space="preserve">
+    <value>Windows SmartScreen предупреждает при установке. Это проблема?</value>
+  </data>
+  <data name="Help_Faq6_A" xml:space="preserve">
+    <value>Установщик не подписан цифровой подписью, поэтому Windows SmartScreen может показать «Система Windows защитила ваш компьютер». Нажмите «Подробнее», затем «Выполнить в любом случае». Приложение никуда не отправляет ваши данные; единственное исключение — необязательная проверка VirusTotal, которая отправляет только хеш файла.</value>
+  </data>
+  <data name="Help_Faq7_Q" xml:space="preserve">
+    <value>Где находятся настройки и журналы и что отправить при сообщении о проблеме?</value>
+  </data>
+  <data name="Help_Faq7_A" xml:space="preserve">
+    <value>Настройки и журналы находятся в папке %LOCALAPPDATA%\UltimatePCCleaner. Откройте Настройки → О программе → «Просмотреть журналы» и приложите последний журнал вместе с описанием проблемы и шагов, которые к ней привели.</value>
+  </data>
+</root>

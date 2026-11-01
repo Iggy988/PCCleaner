@@ -1,0 +1,159 @@
+<Page
+    x:Class="PCCleaner.Views.Pages.SystemPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:loc="clr-namespace:PCCleaner.Services.Localization"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:vm="clr-namespace:PCCleaner.ViewModels"
+    Title="{loc:Tr Nav_System}"
+    d:DataContext="{d:DesignInstance vm:SystemViewModel}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d">
+    <StackPanel Margin="0,0,0,24">
+        <ui:InfoBar
+            Title="{loc:Tr System_AdminTitle}"
+            Margin="0,0,0,10"
+            IsClosable="False"
+            IsOpen="{Binding IsAdministrator, Converter={StaticResource InverseBool}, Mode=OneTime}"
+            Message="{loc:Tr System_AdminMessage}"
+            Severity="Warning" />
+
+        <!--  Pending restart (after a rename or installed updates)  -->
+        <ui:CardControl Margin="0,0,0,6" Visibility="{Binding RebootRequired, Converter={StaticResource BoolToVisibility}}">
+            <ui:CardControl.Icon>
+                <ui:SymbolIcon
+                    FontSize="24"
+                    Foreground="{DynamicResource SystemFillColorCautionBrush}"
+                    Symbol="ArrowClockwise24" />
+            </ui:CardControl.Icon>
+            <ui:CardControl.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr System_RestartTitle}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr System_RebootRequired}" />
+                </StackPanel>
+            </ui:CardControl.Header>
+            <ui:Button
+                Appearance="Primary"
+                Command="{Binding RestartCommand}"
+                Content="{loc:Tr System_RestartNow}"
+                Icon="{ui:SymbolIcon ArrowClockwise24}" />
+        </ui:CardControl>
+
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr System_RenameHeader}" />
+        <ui:CardControl Margin="0,0,0,6" IsEnabled="{Binding IsAdministrator}">
+            <ui:CardControl.Icon>
+                <ui:SymbolIcon FontSize="24" Symbol="Desktop24" />
+            </ui:CardControl.Icon>
+            <ui:CardControl.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr System_RenameTitle}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr System_RenameDesc}" />
+                    <TextBlock
+                        Margin="0,4,0,0"
+                        Style="{StaticResource CaptionText}"
+                        Text="{Binding CurrentNameText}" />
+                    <TextBlock
+                        Foreground="{DynamicResource SystemFillColorCautionBrush}"
+                        Style="{StaticResource CaptionText}"
+                        Text="{Binding PendingNameText}"
+                        Visibility="{Binding PendingNameText, Converter={StaticResource NullToVisibility}}" />
+                </StackPanel>
+            </ui:CardControl.Header>
+            <StackPanel Width="280">
+                <StackPanel Orientation="Horizontal">
+                    <ui:TextBox
+                        Width="170"
+                        MaxLength="15"
+                        PlaceholderText="{loc:Tr System_NewNamePlaceholder}"
+                        Text="{Binding NewName, UpdateSourceTrigger=PropertyChanged}" />
+                    <ui:Button
+                        Margin="8,0,0,0"
+                        Command="{Binding RenameCommand}"
+                        Content="{loc:Tr System_Rename}"
+                        Icon="{ui:SymbolIcon Rename24}" />
+                </StackPanel>
+                <TextBlock
+                    Margin="0,4,0,0"
+                    Style="{StaticResource CaptionText}"
+                    Text="{loc:Tr System_NameRules}"
+                    TextWrapping="Wrap" />
+                <TextBlock
+                    Margin="0,2,0,0"
+                    Foreground="{DynamicResource SystemFillColorCriticalBrush}"
+                    Style="{StaticResource CaptionText}"
+                    Text="{Binding NameError}"
+                    TextWrapping="Wrap"
+                    Visibility="{Binding NameError, Converter={StaticResource NullToVisibility}}" />
+            </StackPanel>
+        </ui:CardControl>
+
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr System_UpdatesHeader}" />
+        <ui:CardControl Margin="0,0,0,6">
+            <ui:CardControl.Icon>
+                <ui:SymbolIcon FontSize="24" Symbol="ArrowSync24" />
+            </ui:CardControl.Icon>
+            <ui:CardControl.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr System_UpdatesTitle}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr System_UpdatesDesc}" />
+                    <TextBlock
+                        Margin="0,4,0,0"
+                        Style="{StaticResource CaptionText}"
+                        Text="{Binding UpdateStatus}"
+                        TextWrapping="Wrap" />
+                </StackPanel>
+            </ui:CardControl.Header>
+            <StackPanel Orientation="Horizontal">
+                <ui:ProgressRing
+                    Width="18"
+                    Height="18"
+                    Margin="0,0,12,0"
+                    IsIndeterminate="True"
+                    Visibility="{Binding IsUpdateBusy, Converter={StaticResource BoolToVisibility}}" />
+                <ui:Button
+                    Command="{Binding CheckForUpdatesCommand}"
+                    Content="{loc:Tr System_Check}"
+                    Icon="{ui:SymbolIcon ArrowSync24}" />
+                <ui:Button
+                    Margin="6,0,0,0"
+                    Appearance="Primary"
+                    Command="{Binding InstallUpdatesCommand}"
+                    Content="{loc:Tr System_Install}"
+                    Icon="{ui:SymbolIcon ArrowDownload24}"
+                    Visibility="{Binding IsInstalling, Converter={StaticResource InverseBoolToVisibility}}" />
+                <ui:Button
+                    Margin="6,0,0,0"
+                    Command="{Binding CancelInstallCommand}"
+                    Content="{loc:Tr Common_Cancel}"
+                    Icon="{ui:SymbolIcon Dismiss24}"
+                    Visibility="{Binding IsInstalling, Converter={StaticResource BoolToVisibility}}" />
+                <ui:Button
+                    Margin="6,0,0,0"
+                    Appearance="Transparent"
+                    Command="{Binding OpenWindowsUpdateSettingsCommand}"
+                    Icon="{ui:SymbolIcon Open24}"
+                    ToolTip="{loc:Tr System_OpenSettings}" />
+            </StackPanel>
+        </ui:CardControl>
+
+        <ItemsControl IsEnabled="{Binding IsUpdateBusy, Converter={StaticResource InverseBool}}" ItemsSource="{Binding Updates}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type vm:UpdateItemViewModel}">
+                    <Border
+                        Margin="0,0,0,4"
+                        Padding="14,8"
+                        Style="{StaticResource Card}">
+                        <CheckBox IsChecked="{Binding IsSelected}">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" />
+                                <TextBlock Style="{StaticResource CaptionText}" Text="{Binding Details}" />
+                            </StackPanel>
+                        </CheckBox>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </StackPanel>
+</Page>

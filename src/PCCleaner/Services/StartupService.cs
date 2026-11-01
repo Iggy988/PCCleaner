@@ -23,11 +23,12 @@ public sealed class StartupService
     public Task<IReadOnlyList<StartupItem>> GetItemsAsync() => Task.Run<IReadOnlyList<StartupItem>>(() =>
     {
         var items = new List<StartupItem>();
-        items.AddRange(ReadRunKey(RegistryHive.CurrentUser, RunKey, "Run", "Registry (current user)"));
-        items.AddRange(ReadRunKey(RegistryHive.LocalMachine, RunKey, "Run", "Registry (all users)"));
-        items.AddRange(ReadRunKey(RegistryHive.LocalMachine, Run32Key, "Run32", "Registry (all users, 32-bit)"));
-        items.AddRange(ReadStartupFolder(Environment.GetFolderPath(Environment.SpecialFolder.Startup), RegistryHive.CurrentUser, "Startup folder (current user)"));
-        items.AddRange(ReadStartupFolder(Environment.GetFolderPath(Environment.SpecialFolder.CommonStartup), RegistryHive.LocalMachine, "Startup folder (all users)"));
+        // Locations are string-resource keys, resolved for display by the view model.
+        items.AddRange(ReadRunKey(RegistryHive.CurrentUser, RunKey, "Run", "Startup_Loc_RegistryUser"));
+        items.AddRange(ReadRunKey(RegistryHive.LocalMachine, RunKey, "Run", "Startup_Loc_RegistryAll"));
+        items.AddRange(ReadRunKey(RegistryHive.LocalMachine, Run32Key, "Run32", "Startup_Loc_RegistryAll32"));
+        items.AddRange(ReadStartupFolder(Environment.GetFolderPath(Environment.SpecialFolder.Startup), RegistryHive.CurrentUser, "Startup_Loc_FolderUser"));
+        items.AddRange(ReadStartupFolder(Environment.GetFolderPath(Environment.SpecialFolder.CommonStartup), RegistryHive.LocalMachine, "Startup_Loc_FolderAll"));
         return items.OrderBy(i => i.Name, StringComparer.CurrentCultureIgnoreCase).ToList();
     });
 

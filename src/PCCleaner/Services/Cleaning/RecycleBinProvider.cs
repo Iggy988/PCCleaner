@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using PCCleaner.Models;
+using PCCleaner.Services.Localization;
 using PCCleaner.Services.Native;
 using Wpf.Ui.Controls;
 
@@ -9,9 +10,9 @@ public sealed class RecycleBinProvider : ICleanupProvider
 {
     public string Id => "recycle-bin";
 
-    public string Name => "Recycle Bin";
+    public string Name => Loc.T("Cleanup_recycle_bin_Name");
 
-    public string Description => "Files you deleted that are still kept in the Recycle Bin on all drives.";
+    public string Description => Loc.T("Cleanup_recycle_bin_Desc");
 
     public CleanupGroup Group => CleanupGroup.System;
 
@@ -25,9 +26,11 @@ public sealed class RecycleBinProvider : ICleanupProvider
 
     public IReadOnlyList<string> BlockingProcesses => [];
 
+    public string? BlockingAppName => null;
+
     public Task<ScanResult> ScanAsync(CancellationToken cancellationToken) => Task.Run(Query, cancellationToken);
 
-    public Task<CleanResult> CleanAsync(IProgress<long>? progress, CancellationToken cancellationToken) =>
+    public Task<CleanResult> CleanAsync(IProgress<CleanProgress>? progress, CancellationToken cancellationToken) =>
         Task.Run(() =>
         {
             var before = Query();
@@ -38,8 +41,9 @@ public sealed class RecycleBinProvider : ICleanupProvider
 
             var after = Query();
             var freed = Math.Max(0, before.Bytes - after.Bytes);
-            progress?.Report(freed);
-            return new CleanResult(freed, Math.Max(0, before.FileCount - after.FileCount), after.FileCount);
+            var deleted = Math.Max(0, before.FileCount - after.FileCount);
+            progress?.Report(new CleanProgress(before.FileCount, deleted, after.FileCount, freed));
+            return new CleanResult(freed, deleted, after.FileCount) { Failed = after.FileCount };
         }, cancellationToken);
 
     private static ScanResult Query()

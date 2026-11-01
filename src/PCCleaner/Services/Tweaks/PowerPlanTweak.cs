@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using PCCleaner.Services.Localization;
 using PCCleaner.Services.Native;
 using Wpf.Ui.Controls;
 
@@ -7,8 +8,9 @@ namespace PCCleaner.Services.Tweaks;
 /// <summary>
 /// Activates a high-performance power plan. If the built-in plan is hidden (common on laptops),
 /// it is duplicated under a fixed GUID owned by this app. Revert re-activates the previous plan.
+/// Text comes from the string resources: <c>Tweak_{id}_Name</c> / <c>_Desc</c>.
 /// </summary>
-public sealed class PowerPlanTweak(string id, string name, string description, SymbolRegular icon,
+public sealed class PowerPlanTweak(string id, SymbolRegular icon,
     Guid builtInScheme, Guid ownCopyScheme, SettingsService settings) : ITweak
 {
     public static readonly Guid Balanced = new("381b4222-f694-41f0-9685-ff5bb260df2e");
@@ -17,9 +19,9 @@ public sealed class PowerPlanTweak(string id, string name, string description, S
 
     public string Id { get; } = id;
 
-    public string Name { get; } = name;
+    public string Name => Loc.T($"Tweak_{Id.Replace('-', '_')}_Name");
 
-    public string Description { get; } = description;
+    public string Description => Loc.T($"Tweak_{Id.Replace('-', '_')}_Desc");
 
     public SymbolRegular Icon { get; } = icon;
 
@@ -47,7 +49,7 @@ public sealed class PowerPlanTweak(string id, string name, string description, S
         // Plan not present: create our own copy of it, then activate.
         ProcessRunner.Run("powercfg.exe", $"-duplicatescheme {builtInScheme} {ownCopyScheme}");
         if (!TrySetActive(ownCopyScheme))
-            throw new InvalidOperationException("This PC's power configuration doesn't allow this plan (Modern Standby devices only support Balanced).");
+            throw new InvalidOperationException(Loc.T("Tweak_PowerPlanUnsupported"));
     }
 
     public void Revert()
@@ -57,7 +59,7 @@ public sealed class PowerPlanTweak(string id, string name, string description, S
             : Balanced;
 
         if (!TrySetActive(target) && !TrySetActive(Balanced))
-            throw new InvalidOperationException("Could not switch back to the previous power plan.");
+            throw new InvalidOperationException(Loc.T("Tweak_PowerPlanRevertFailed"));
 
         settings.Current.TweakBackups.Remove(BackupKey);
         settings.Save();

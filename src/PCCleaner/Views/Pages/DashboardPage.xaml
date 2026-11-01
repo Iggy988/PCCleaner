@@ -4,10 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:PCCleaner.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:loc="clr-namespace:PCCleaner.Services.Localization"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     xmlns:vm="clr-namespace:PCCleaner.ViewModels"
-    Title="Dashboard"
+    Title="{loc:Tr Nav_Dashboard}"
     d:DataContext="{d:DesignInstance vm:DashboardViewModel}"
     Foreground="{DynamicResource TextFillColorPrimaryBrush}"
     mc:Ignorable="d">
@@ -15,53 +16,84 @@
 
         <!--  Hero  -->
         <Border
-            Padding="28,24"
+            Padding="20,18,28,18"
+            controls:Motion.Entrance="True"
             Background="{StaticResource BrandGradient}"
-            CornerRadius="14">
+            CornerRadius="16">
             <Grid>
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <StackPanel VerticalAlignment="Center">
+                <!--  Logo: uniform scale; its black background fades into the gradient  -->
+                <Image
+                    Height="168"
+                    Margin="0,0,16,0"
+                    VerticalAlignment="Center"
+                    RenderOptions.BitmapScalingMode="HighQuality"
+                    Source="pack://application:,,,/Assets/logo.png"
+                    Stretch="Uniform">
+                    <Image.OpacityMask>
+                        <RadialGradientBrush Center="0.5,0.5" GradientOrigin="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
+                            <GradientStop Offset="0.72" Color="Black" />
+                            <GradientStop Offset="1" Color="Transparent" />
+                        </RadialGradientBrush>
+                    </Image.OpacityMask>
+                </Image>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
                     <TextBlock
+                        FontSize="12"
+                        FontWeight="SemiBold"
+                        Foreground="{StaticResource BrandCyanBrush}"
+                        Text="{loc:Tr App_NameUpper}" />
+                    <TextBlock
+                        Margin="0,6,0,0"
                         FontSize="14"
                         Foreground="#DDFFFFFF"
                         Text="{Binding Greeting}" />
                     <TextBlock
-                        Margin="0,2,0,10"
-                        FontSize="30"
+                        Margin="0,0,0,10"
+                        FontSize="28"
                         FontWeight="Bold"
                         Foreground="White"
-                        Text="{Binding MachineName}" />
+                        Text="{Binding MachineName}"
+                        TextTrimming="CharacterEllipsis" />
                     <StackPanel Margin="0,0,0,4" Orientation="Horizontal">
                         <ui:SymbolIcon
                             Margin="0,0,8,0"
-                            Foreground="#DDFFFFFF"
+                            Foreground="#CCFFFFFF"
                             Symbol="Desktop24" />
-                        <TextBlock Foreground="#EEFFFFFF" Text="{Binding OsName}" />
+                        <TextBlock
+                            Foreground="#EEFFFFFF"
+                            Text="{Binding OsName}"
+                            TextTrimming="CharacterEllipsis" />
                     </StackPanel>
                     <StackPanel Margin="0,0,0,4" Orientation="Horizontal">
                         <ui:SymbolIcon
                             Margin="0,0,8,0"
-                            Foreground="#DDFFFFFF"
+                            Foreground="#CCFFFFFF"
                             Symbol="DeveloperBoard24" />
-                        <TextBlock Foreground="#EEFFFFFF" Text="{Binding CpuName}" />
+                        <TextBlock
+                            Foreground="#EEFFFFFF"
+                            Text="{Binding CpuName}"
+                            TextTrimming="CharacterEllipsis" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <ui:SymbolIcon
                             Margin="0,0,8,0"
-                            Foreground="#DDFFFFFF"
+                            Foreground="#CCFFFFFF"
                             Symbol="Clock24" />
                         <TextBlock Foreground="#EEFFFFFF">
-                            <Run Text="Up for" />
+                            <Run Text="{loc:Tr Dashboard_UpFor}" />
                             <Run Text="{Binding UptimeText, Mode=OneWay}" />
                         </TextBlock>
                     </StackPanel>
                     <TextBlock
                         MaxWidth="460"
-                        Margin="0,16,0,0"
+                        Margin="0,14,0,0"
                         HorizontalAlignment="Left"
                         FontSize="13"
                         Foreground="White"
@@ -69,65 +101,205 @@
                         TextWrapping="Wrap" />
                 </StackPanel>
 
-                <Grid
-                    Grid.Column="1"
-                    Margin="24,0,8,0"
-                    VerticalAlignment="Center">
-                    <Button
-                        Command="{Binding BoostCommand}"
-                        Style="{StaticResource BoostButton}"
-                        ToolTip="Clean selected junk, flush DNS and free RAM">
-                        <Grid>
-                            <StackPanel Visibility="{Binding IsBoosting, Converter={StaticResource InverseBoolToVisibility}}">
-                                <ui:SymbolIcon
-                                    HorizontalAlignment="Center"
-                                    FontSize="38"
-                                    Foreground="{StaticResource BrandBrush}"
-                                    Symbol="Rocket24" />
-                                <TextBlock
-                                    Margin="0,4,0,0"
-                                    HorizontalAlignment="Center"
-                                    FontSize="15"
-                                    FontWeight="Bold"
-                                    Foreground="{StaticResource BrandBrush}"
-                                    Text="BOOST" />
-                            </StackPanel>
-                            <ui:ProgressRing
-                                Width="48"
-                                Height="48"
+                <Button
+                    Grid.Column="2"
+                    Margin="20,0,0,0"
+                    VerticalAlignment="Center"
+                    AutomationProperties.Name="{loc:Tr Dashboard_Boost}"
+                    Command="{Binding BoostCommand}"
+                    Style="{StaticResource BoostButton}"
+                    ToolTip="{loc:Tr Dashboard_BoostTooltip}">
+                    <Grid>
+                        <StackPanel Visibility="{Binding IsBoosting, Converter={StaticResource InverseBoolToVisibility}}">
+                            <ui:SymbolIcon
+                                HorizontalAlignment="Center"
+                                FontSize="38"
                                 Foreground="{StaticResource BrandBrush}"
-                                IsIndeterminate="True"
-                                Visibility="{Binding IsBoosting, Converter={StaticResource BoolToVisibility}}" />
-                        </Grid>
-                    </Button>
-                </Grid>
+                                Symbol="Rocket24" />
+                            <TextBlock
+                                Margin="0,4,0,0"
+                                HorizontalAlignment="Center"
+                                FontSize="15"
+                                FontWeight="Bold"
+                                Foreground="{StaticResource BrandBrush}"
+                                Text="{loc:Tr Dashboard_Boost}" />
+                        </StackPanel>
+                        <ui:ProgressRing
+                            Width="48"
+                            Height="48"
+                            Foreground="{StaticResource BrandBrush}"
+                            IsIndeterminate="True"
+                            Visibility="{Binding IsBoosting, Converter={StaticResource BoolToVisibility}}" />
+                    </Grid>
+                </Button>
             </Grid>
         </Border>
 
+        <!--  Feedback after scans, Boost and cleaning  -->
+        <ui:InfoBar
+            Title="{Binding FeedbackTitle}"
+            Margin="0,12,0,0"
+            IsClosable="True"
+            IsOpen="{Binding ShowFeedback, Mode=TwoWay}"
+            Message="{Binding FeedbackMessage}"
+            Severity="{Binding FeedbackSeverity}" />
+
+        <!--  Quick stats (animated counters, clickable)  -->
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Dashboard_Overview}" />
+        <UniformGrid Columns="4">
+            <Button
+                Margin="0,0,6,0"
+                controls:Motion.Delay="60"
+                controls:Motion.Entrance="True"
+                Command="{Binding OpenCleanerCommand}"
+                Style="{StaticResource CardButton}"
+                ToolTip="{loc:Tr Dashboard_ReviewCleaner}">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Width="32" Height="32">
+                            <Border Width="32" Height="32" Style="{StaticResource IconTile}" />
+                            <ui:SymbolIcon FontSize="18" Foreground="{StaticResource BrandBrush}" Symbol="Broom24" />
+                        </Grid>
+                        <TextBlock
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource CaptionText}"
+                            Text="{loc:Tr Dashboard_StatJunk}" />
+                    </StackPanel>
+                    <controls:AnimatedNumber
+                        Format="Bytes"
+                        Style="{StaticResource StatValueText}"
+                        Value="{Binding JunkFoundBytes}" />
+                    <TextBlock>
+                        <TextBlock.Style>
+                            <Style BasedOn="{StaticResource CaptionText}" TargetType="TextBlock">
+                                <Setter Property="Text" Value="{loc:Tr Dashboard_StatJunkHint}" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding HasScanned}" Value="False">
+                                        <Setter Property="Text" Value="{loc:Tr Dashboard_NotScanned}" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </StackPanel>
+            </Button>
+
+            <Button
+                Margin="3,0,3,0"
+                controls:Motion.Delay="120"
+                controls:Motion.Entrance="True"
+                Command="{Binding OpenTempFilesCommand}"
+                Style="{StaticResource CardButton}"
+                ToolTip="{loc:Tr Dashboard_OpenTemp}">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Width="32" Height="32">
+                            <Border Width="32" Height="32" Style="{StaticResource IconTile}" />
+                            <ui:SymbolIcon FontSize="18" Foreground="{StaticResource BrandBrush}" Symbol="DocumentBulletList24" />
+                        </Grid>
+                        <TextBlock
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource CaptionText}"
+                            Text="{loc:Tr Dashboard_StatTemp}" />
+                    </StackPanel>
+                    <controls:AnimatedNumber
+                        Format="Bytes"
+                        Style="{StaticResource StatValueText}"
+                        Value="{Binding TempCleaner.FoundBytes}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Dashboard_StatTempHint}" />
+                </StackPanel>
+            </Button>
+
+            <ContentControl
+                Margin="3,0,3,0"
+                controls:Motion.Delay="180"
+                controls:Motion.Entrance="True"
+                Padding="18,16"
+                Style="{StaticResource ElevatedCard}">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Width="32" Height="32">
+                            <Border Width="32" Height="32" Style="{StaticResource IconTile}" />
+                            <ui:SymbolIcon FontSize="18" Foreground="{StaticResource BrandBrush}" Symbol="DataUsage24" />
+                        </Grid>
+                        <TextBlock
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource CaptionText}"
+                            Text="{loc:Tr Dashboard_StatFreed}" />
+                    </StackPanel>
+                    <controls:AnimatedNumber
+                        Format="Bytes"
+                        Style="{StaticResource StatValueText}"
+                        Value="{Binding TotalFreedBytes}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Dashboard_StatFreedHint}" />
+                </StackPanel>
+            </ContentControl>
+
+            <ContentControl
+                Margin="6,0,0,0"
+                controls:Motion.Delay="240"
+                controls:Motion.Entrance="True"
+                Padding="18,16"
+                Style="{StaticResource ElevatedCard}">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Grid Width="32" Height="32">
+                            <Border Width="32" Height="32" Style="{StaticResource IconTile}" />
+                            <ui:SymbolIcon FontSize="18" Foreground="{StaticResource BrandBrush}" Symbol="History24" />
+                        </Grid>
+                        <TextBlock
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource CaptionText}"
+                            Text="{loc:Tr Dashboard_StatLastCleaned}" />
+                    </StackPanel>
+                    <TextBlock
+                        FontSize="18"
+                        Style="{StaticResource StatValueText}"
+                        Text="{Binding LastCleanedText}" />
+                </StackPanel>
+            </ContentControl>
+        </UniformGrid>
+
         <!--  Live gauges  -->
-        <TextBlock Style="{StaticResource SectionHeader}" Text="System status" />
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Dashboard_SystemStatus}" />
         <UniformGrid Columns="3">
-            <Border Margin="0,0,6,0" Style="{StaticResource Card}">
+            <ContentControl
+                Margin="0,0,6,0"
+                controls:Motion.Delay="300"
+                controls:Motion.Entrance="True"
+                Style="{StaticResource ElevatedCard}">
                 <StackPanel HorizontalAlignment="Center">
-                    <controls:ArcGauge Label="CPU" Value="{Binding CpuPercent}" />
+                    <controls:ArcGauge Label="{loc:Tr Dashboard_Cpu}" Value="{Binding CpuPercent}" />
                     <TextBlock
                         HorizontalAlignment="Center"
                         Style="{StaticResource CaptionText}"
-                        Text="Processor load"
+                        Text="{loc:Tr Dashboard_CpuCaption}"
                         TextAlignment="Center" />
                 </StackPanel>
-            </Border>
-            <Border Margin="3,0,3,0" Style="{StaticResource Card}">
+            </ContentControl>
+            <ContentControl
+                Margin="3,0,3,0"
+                controls:Motion.Delay="360"
+                controls:Motion.Entrance="True"
+                Style="{StaticResource ElevatedCard}">
                 <StackPanel HorizontalAlignment="Center">
-                    <controls:ArcGauge Label="Memory" Value="{Binding RamPercent}" />
+                    <controls:ArcGauge Label="{loc:Tr Dashboard_Memory}" Value="{Binding RamPercent}" />
                     <TextBlock
                         HorizontalAlignment="Center"
                         Style="{StaticResource CaptionText}"
                         Text="{Binding RamText}"
                         TextAlignment="Center" />
                 </StackPanel>
-            </Border>
-            <Border Margin="6,0,0,0" Style="{StaticResource Card}">
+            </ContentControl>
+            <ContentControl
+                Margin="6,0,0,0"
+                controls:Motion.Delay="420"
+                controls:Motion.Entrance="True"
+                Style="{StaticResource ElevatedCard}">
                 <StackPanel HorizontalAlignment="Center">
                     <controls:ArcGauge Label="{Binding DiskLabel}" Value="{Binding DiskPercent}" />
                     <TextBlock
@@ -136,94 +308,70 @@
                         Text="{Binding DiskText}"
                         TextAlignment="Center" />
                 </StackPanel>
-            </Border>
+            </ContentControl>
         </UniformGrid>
 
-        <!--  Junk + stats  -->
-        <TextBlock Style="{StaticResource SectionHeader}" Text="Cleanup" />
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*" />
-                <ColumnDefinition Width="2*" />
-            </Grid.ColumnDefinitions>
-
-            <Border Margin="0,0,6,0" Style="{StaticResource Card}">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid
-                        Width="56"
-                        Height="56"
-                        Margin="0,0,16,0"
-                        VerticalAlignment="Top">
-                        <Border
-                            Width="56"
-                            Height="56"
-                            Style="{StaticResource IconTile}" />
-                        <ui:SymbolIcon
-                            FontSize="28"
-                            Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}"
-                            Symbol="Broom24" />
-                    </Grid>
-                    <StackPanel Grid.Column="1">
-                        <TextBlock Style="{StaticResource CaptionText}" Text="Junk found in selected categories" />
-                        <Grid>
-                            <TextBlock
-                                FontSize="32"
-                                FontWeight="Bold"
-                                Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                                Text="{Binding Cleaner.SelectedBytes, Converter={StaticResource Bytes}}"
-                                Visibility="{Binding Cleaner.HasScanned, Converter={StaticResource BoolToVisibility}}" />
-                            <TextBlock
-                                Margin="0,6,0,6"
-                                FontSize="20"
-                                FontWeight="SemiBold"
-                                Foreground="{DynamicResource TextFillColorSecondaryBrush}"
-                                Text="Not scanned yet"
-                                Visibility="{Binding Cleaner.HasScanned, Converter={StaticResource InverseBoolToVisibility}}" />
-                        </Grid>
-                        <ProgressBar
-                            Margin="0,4,0,8"
-                            IsIndeterminate="True"
-                            Visibility="{Binding Cleaner.IsScanning, Converter={StaticResource BoolToVisibility}}" />
-                        <StackPanel Margin="0,6,0,0" Orientation="Horizontal">
-                            <ui:Button
-                                Appearance="Primary"
-                                Command="{Binding ScanJunkCommand}"
-                                Content="Scan now"
-                                Icon="{ui:SymbolIcon Search24}" />
-                            <ui:Button
-                                Margin="8,0,0,0"
-                                Command="{Binding OpenCleanerCommand}"
-                                Content="Review in Cleaner"
-                                Icon="{ui:SymbolIcon ChevronRight24}" />
-                        </StackPanel>
-                    </StackPanel>
-                </Grid>
-            </Border>
-
-            <Border
-                Grid.Column="1"
-                Margin="6,0,0,0"
-                Style="{StaticResource Card}">
-                <StackPanel>
-                    <TextBlock Style="{StaticResource CaptionText}" Text="Total space freed" />
-                    <TextBlock
-                        Margin="0,0,0,12"
+        <!--  Actions  -->
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Dashboard_Cleanup}" />
+        <ContentControl
+            controls:Motion.Delay="480"
+            controls:Motion.Entrance="True"
+            Style="{StaticResource ElevatedCard}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid
+                    Width="52"
+                    Height="52"
+                    Margin="0,0,16,0"
+                    VerticalAlignment="Top">
+                    <Border
+                        Width="52"
+                        Height="52"
+                        CornerRadius="14"
+                        Style="{StaticResource IconTile}" />
+                    <ui:SymbolIcon
                         FontSize="26"
-                        FontWeight="Bold"
-                        Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                        Text="{Binding TotalFreedText}" />
-                    <TextBlock Style="{StaticResource CaptionText}" Text="Last cleaned" />
-                    <TextBlock
-                        FontSize="15"
-                        FontWeight="SemiBold"
-                        Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                        Text="{Binding LastCleanedText}" />
+                        Foreground="{StaticResource BrandBrush}"
+                        Symbol="Sparkle24" />
+                </Grid>
+                <StackPanel Grid.Column="1">
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Dashboard_CleanupTitle}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Dashboard_CleanupDesc}" />
+                    <ProgressBar
+                        Margin="0,10,0,0"
+                        IsIndeterminate="True"
+                        Visibility="{Binding IsScanning, Converter={StaticResource BoolToVisibility}}" />
+                    <WrapPanel Margin="0,12,0,0">
+                        <ui:Button
+                            Margin="0,0,8,0"
+                            controls:Motion.Interactive="True"
+                            Appearance="Primary"
+                            Command="{Binding ScanJunkCommand}"
+                            Content="{loc:Tr Dashboard_ScanNow}"
+                            Icon="{ui:SymbolIcon Search24}" />
+                        <ui:Button
+                            Margin="0,0,8,0"
+                            controls:Motion.Interactive="True"
+                            Command="{Binding OpenTempFilesCommand}"
+                            Content="{loc:Tr Dashboard_OpenTemp}"
+                            Icon="{ui:SymbolIcon DocumentBulletList24}" />
+                        <ui:Button
+                            Margin="0,0,8,0"
+                            controls:Motion.Interactive="True"
+                            Command="{Binding OpenCleanerCommand}"
+                            Content="{loc:Tr Dashboard_ReviewCleaner}"
+                            Icon="{ui:SymbolIcon Broom24}" />
+                        <ui:Button
+                            controls:Motion.Interactive="True"
+                            Command="{Binding OpenOptimizeCommand}"
+                            Content="{loc:Tr Dashboard_OpenOptimize}"
+                            Icon="{ui:SymbolIcon Rocket24}" />
+                    </WrapPanel>
                 </StackPanel>
-            </Border>
-        </Grid>
+            </Grid>
+        </ContentControl>
     </StackPanel>
 </Page>

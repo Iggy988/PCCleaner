@@ -1,21 +1,24 @@
 using System.ComponentModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using PCCleaner.Services;
+using PCCleaner.Services.Localization;
 using Wpf.Ui.Controls;
 
 namespace PCCleaner.ViewModels;
 
 public sealed class CleanupGroupViewModel : ObservableObject
 {
-    public CleanupGroupViewModel(string name, SymbolRegular icon, IReadOnlyList<CleanupItemViewModel> items)
+    private readonly string _nameKey;
+
+    public CleanupGroupViewModel(string nameKey, SymbolRegular icon, IReadOnlyList<CleanupItemViewModel> items)
     {
-        Name = name;
+        _nameKey = nameKey;
         Icon = icon;
         Items = items;
         foreach (var item in items) item.PropertyChanged += OnItemChanged;
     }
 
-    public string Name { get; }
+    public string Name => Loc.T(_nameKey);
 
     public SymbolRegular Icon { get; }
 
@@ -43,9 +46,15 @@ public sealed class CleanupGroupViewModel : ObservableObject
         {
             var selected = Items.Count(i => i.IsChecked);
             var bytes = Items.Where(i => i.IsChecked && i.Status == CleanupStatus.Scanned).Sum(i => i.FoundBytes);
-            var text = $"{selected} of {Items.Count} selected";
+            var text = Loc.F("Cleaner_GroupSelected", selected, Items.Count);
             return bytes > 0 ? $"{text} · {ByteSize.Format(bytes)}" : text;
         }
+    }
+
+    public void RefreshText()
+    {
+        OnPropertyChanged(nameof(Name));
+        OnPropertyChanged(nameof(Summary));
     }
 
     private void OnItemChanged(object? sender, PropertyChangedEventArgs e)

@@ -1,4 +1,5 @@
 using Microsoft.Win32;
+using PCCleaner.Services.Localization;
 using Wpf.Ui.Controls;
 
 namespace PCCleaner.Services.Tweaks;
@@ -14,9 +15,9 @@ public sealed class GameDvrTweak(SettingsService settings) : ITweak
 
     public string Id => "game-dvr";
 
-    public string Name => "Disable background game recording";
+    public string Name => Loc.T("Tweak_game_dvr_Name");
 
-    public string Description => "Stops Xbox Game Bar from continuously recording gameplay in the background (Game DVR).";
+    public string Description => Loc.T("Tweak_game_dvr_Desc");
 
     public SymbolRegular Icon => SymbolRegular.Games24;
 

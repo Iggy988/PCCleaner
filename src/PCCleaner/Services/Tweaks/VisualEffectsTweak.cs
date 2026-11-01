@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Microsoft.Win32;
+using PCCleaner.Services.Localization;
 using PCCleaner.Services.Native;
 using Wpf.Ui.Controls;
 
@@ -22,9 +23,9 @@ public sealed class VisualEffectsTweak(SettingsService settings) : ITweak
 
     public string Id => "visual-effects";
 
-    public string Name => "Performance visual effects";
+    public string Name => Loc.T("Tweak_visual_effects_Name");
 
-    public string Description => "Turns off window animations, smooth scrolling and transparency so the desktop feels snappier on slower PCs.";
+    public string Description => Loc.T("Tweak_visual_effects_Desc");
 
     public SymbolRegular Icon => SymbolRegular.Eye24;
 

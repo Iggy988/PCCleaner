@@ -12,6 +12,7 @@ public sealed class StartupItem
 
     public required string Command { get; init; }
 
+    /// <summary>String-resource key describing where the entry is registered (e.g. Startup_Loc_RegistryUser).</summary>
     public required string Location { get; init; }
 
     public string? FilePath { get; init; }

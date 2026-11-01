@@ -8,6 +8,10 @@ namespace PCCleaner.Services;
 public sealed class SettingsService
 {
     public static string DataDirectory { get; } = Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "UltimatePCCleaner");
+
+    /// <summary>Where versions before the Ultimate PC Cleaner rebrand kept their settings.</summary>
+    private static readonly string LegacyDataDirectory = Path.Combine(
         Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "PCCleaner");
 
     public static string LogsDirectory { get; } = Path.Combine(DataDirectory, "logs");
@@ -49,6 +53,7 @@ public sealed class SettingsService
 
     private static AppSettings Load()
     {
+        MigrateLegacySettings();
         try
         {
             if (File.Exists(SettingsPath))
@@ -60,5 +65,23 @@ public sealed class SettingsService
         }
 
         return new AppSettings();
+    }
+
+    /// <summary>Copies settings.json from the pre-rebrand data folder once, so selections and stats carry over.</summary>
+    private static void MigrateLegacySettings()
+    {
+        var legacy = Path.Combine(LegacyDataDirectory, "settings.json");
+        if (File.Exists(SettingsPath) || !File.Exists(legacy)) return;
+
+        try
+        {
+            Directory.CreateDirectory(DataDirectory);
+            File.Copy(legacy, SettingsPath);
+            AppLog.Write("Migrated settings from the previous PC Cleaner data folder.");
+        }
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
+        {
+            AppLog.Write($"Could not migrate old settings: {ex.Message}");
+        }
     }
 }

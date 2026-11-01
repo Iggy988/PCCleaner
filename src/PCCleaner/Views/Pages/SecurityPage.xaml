@@ -1,0 +1,478 @@
+<Page
+    x:Class="PCCleaner.Views.Pages.SecurityPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:loc="clr-namespace:PCCleaner.Services.Localization"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:PCCleaner.Models"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:vm="clr-namespace:PCCleaner.ViewModels"
+    Title="{loc:Tr Nav_Security}"
+    d:DataContext="{d:DesignInstance vm:SecurityViewModel}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d">
+    <StackPanel Margin="0,0,0,24">
+        <TextBlock
+            Margin="2,0,0,12"
+            Style="{StaticResource CaptionText}"
+            Text="{loc:Tr Sec_Intro}" />
+
+        <ui:InfoBar
+            Title="{loc:Tr Sec_AdminTitle}"
+            Margin="0,0,0,10"
+            IsClosable="False"
+            IsOpen="{Binding IsAdministrator, Converter={StaticResource InverseBool}, Mode=OneTime}"
+            Message="{loc:Tr Sec_AdminMessage}"
+            Severity="Warning" />
+
+        <!--  Protection status  -->
+        <Border Margin="0,0,0,6" Style="{StaticResource Card}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid
+                    Width="48"
+                    Height="48"
+                    Margin="0,0,16,0">
+                    <Border Style="{StaticResource IconTile}" />
+                    <ui:SymbolIcon x:Name="StatusIcon" FontSize="26">
+                        <ui:SymbolIcon.Style>
+                            <Style TargetType="ui:SymbolIcon">
+                                <Setter Property="Symbol" Value="ShieldError24" />
+                                <Setter Property="Foreground" Value="{DynamicResource SystemFillColorCautionBrush}" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsProtected}" Value="True">
+                                        <Setter Property="Symbol" Value="ShieldCheckmark24" />
+                                        <Setter Property="Foreground" Value="{DynamicResource SystemFillColorSuccessBrush}" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ui:SymbolIcon.Style>
+                    </ui:SymbolIcon>
+                </Grid>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock
+                        FontSize="16"
+                        FontWeight="SemiBold"
+                        Text="{Binding ProtectionTitle}"
+                        TextWrapping="Wrap" />
+                    <TextBlock
+                        Style="{StaticResource CaptionText}"
+                        Text="{Binding ProtectionDetail}"
+                        TextWrapping="Wrap" />
+                </StackPanel>
+                <StackPanel
+                    Grid.Column="2"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <ui:ProgressRing
+                        Width="18"
+                        Height="18"
+                        Margin="0,0,10,0"
+                        IsIndeterminate="True"
+                        Visibility="{Binding IsRefreshing, Converter={StaticResource BoolToVisibility}}" />
+                    <ui:Button
+                        Command="{Binding UpdateSignaturesCommand}"
+                        Content="{loc:Tr Sec_UpdateSignatures}"
+                        Icon="{ui:SymbolIcon ArrowDownload24}" />
+                    <ui:Button
+                        Margin="6,0,0,0"
+                        Appearance="Transparent"
+                        Command="{Binding RefreshCommand}"
+                        Icon="{ui:SymbolIcon ArrowClockwise24}"
+                        ToolTip="{loc:Tr Common_Refresh}" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!--  Scans  -->
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Sec_ScanHeader}" />
+        <WrapPanel Margin="0,0,0,8">
+            <ui:Button
+                Margin="0,0,8,6"
+                Appearance="Primary"
+                Command="{Binding QuickScanCommand}"
+                Content="{loc:Tr Sec_QuickScan}"
+                Icon="{ui:SymbolIcon Flash24}" />
+            <ui:Button
+                Margin="0,0,8,6"
+                Command="{Binding FullScanCommand}"
+                Content="{loc:Tr Sec_FullScan}"
+                Icon="{ui:SymbolIcon ShieldTask24}" />
+            <ui:Button
+                Margin="0,0,8,6"
+                Command="{Binding ScanFolderCommand}"
+                Content="{loc:Tr Sec_ScanFolder}"
+                Icon="{ui:SymbolIcon FolderSearch24}" />
+            <ui:Button
+                Margin="0,0,8,6"
+                Command="{Binding ScanScriptsCommand}"
+                Content="{loc:Tr Sec_ScanScripts}"
+                Icon="{ui:SymbolIcon Code24}"
+                ToolTip="{loc:Tr Sec_ScanScriptsTip}" />
+        </WrapPanel>
+
+        <Grid Margin="0,0,0,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <ui:ProgressRing
+                Width="18"
+                Height="18"
+                Margin="0,0,10,0"
+                IsIndeterminate="True"
+                Visibility="{Binding IsBusy, Converter={StaticResource BoolToVisibility}}" />
+            <TextBlock
+                Grid.Column="1"
+                VerticalAlignment="Center"
+                FontWeight="SemiBold"
+                Text="{Binding StatusText}"
+                TextTrimming="CharacterEllipsis" />
+            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                <ui:Button
+                    Appearance="Danger"
+                    Command="{Binding CancelCommand}"
+                    Content="{loc:Tr Common_Cancel}"
+                    Icon="{ui:SymbolIcon Stop24}"
+                    Visibility="{Binding IsBusy, Converter={StaticResource BoolToVisibility}}" />
+                <ui:Button
+                    Margin="6,0,0,0"
+                    Appearance="Transparent"
+                    Command="{Binding CopyOutputCommand}"
+                    Icon="{ui:SymbolIcon Copy24}"
+                    ToolTip="{loc:Tr Health_Copy}" />
+                <ui:Button
+                    Margin="2,0,0,0"
+                    Appearance="Transparent"
+                    Command="{Binding ClearOutputCommand}"
+                    Icon="{ui:SymbolIcon Delete24}"
+                    IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBool}}"
+                    ToolTip="{loc:Tr Health_Clear}" />
+            </StackPanel>
+        </Grid>
+
+        <Border
+            Height="200"
+            Margin="0,0,0,6"
+            Background="#FF0C0C14"
+            BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1"
+            CornerRadius="10">
+            <TextBox
+                x:Name="OutputBox"
+                Padding="14,10"
+                Background="Transparent"
+                BorderThickness="0"
+                FontFamily="Cascadia Mono, Consolas"
+                FontSize="12.5"
+                Foreground="#FFB8F5C8"
+                HorizontalScrollBarVisibility="Auto"
+                IsReadOnly="True"
+                Text="{Binding Output, Mode=OneWay}"
+                TextChanged="OnOutputChanged"
+                TextWrapping="NoWrap"
+                VerticalScrollBarVisibility="Auto" />
+        </Border>
+
+        <!--  Defender detections  -->
+        <Grid>
+            <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Sec_ThreatsHeader}" />
+            <ui:Button
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Appearance="Danger"
+                Command="{Binding RemoveActiveThreatsCommand}"
+                Content="{loc:Tr Sec_RemoveThreats}"
+                Icon="{ui:SymbolIcon ShieldDismiss24}"
+                IsEnabled="{Binding IsAdministrator, Mode=OneTime}"
+                Visibility="{Binding HasActiveThreats, Converter={StaticResource BoolToVisibility}}" />
+        </Grid>
+        <TextBlock
+            Margin="2,0,0,6"
+            Style="{StaticResource CaptionText}"
+            Text="{loc:Tr Sec_NoThreats}"
+            Visibility="{Binding HasThreats, Converter={StaticResource InverseBoolToVisibility}}" />
+        <ItemsControl ItemsSource="{Binding Threats}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type vm:DefenderThreatViewModel}">
+                    <Border Style="{StaticResource RowCard}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <ui:SymbolIcon
+                                Margin="0,0,14,0"
+                                FontSize="22"
+                                Foreground="{DynamicResource SystemFillColorCriticalBrush}"
+                                Symbol="Bug24" />
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Style="{StaticResource TitleText}" Text="{Binding Name}" />
+                                <TextBlock Style="{StaticResource CaptionText}" Text="{Binding Details}" />
+                                <TextBlock
+                                    FontFamily="Consolas"
+                                    FontSize="11"
+                                    Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                                    Text="{Binding Resources}"
+                                    TextTrimming="CharacterEllipsis" />
+                            </StackPanel>
+                            <ui:Button
+                                Grid.Column="2"
+                                Margin="12,0,0,0"
+                                VerticalAlignment="Center"
+                                Command="{Binding DataContext.AllowThreatCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                CommandParameter="{Binding}"
+                                Content="{loc:Tr Sec_Allow}"
+                                Icon="{ui:SymbolIcon Checkmark24}"
+                                IsEnabled="{Binding DataContext.IsAdministrator, RelativeSource={RelativeSource AncestorType=Page}, Mode=OneTime}" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <!--  Suspicious items (own heuristics)  -->
+        <Grid>
+            <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Sec_SuspiciousTitle}" />
+            <ui:Button
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Command="{Binding ScanSuspiciousCommand}"
+                Content="{loc:Tr Sec_ScanSuspicious}"
+                Icon="{ui:SymbolIcon SearchShield20}" />
+        </Grid>
+        <TextBlock
+            Margin="2,0,0,2"
+            Style="{StaticResource CaptionText}"
+            Text="{loc:Tr Sec_SuspiciousIntro}" />
+        <TextBlock
+            Margin="2,0,0,8"
+            FontWeight="SemiBold"
+            Text="{Binding SuspiciousSummary}" />
+        <ItemsControl ItemsSource="{Binding SuspiciousItems}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type vm:SuspiciousItemViewModel}">
+                    <Border Style="{StaticResource RowCard}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Border
+                                x:Name="Badge"
+                                MinWidth="74"
+                                Margin="0,0,14,0"
+                                Padding="8,3"
+                                VerticalAlignment="Center"
+                                Background="{DynamicResource TextFillColorTertiaryBrush}"
+                                CornerRadius="6">
+                                <TextBlock
+                                    HorizontalAlignment="Center"
+                                    FontSize="11"
+                                    FontWeight="SemiBold"
+                                    Foreground="White"
+                                    Text="{Binding Severity}" />
+                            </Border>
+
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                <TextBlock Style="{StaticResource TitleText}" Text="{Binding Name}" />
+                                <TextBlock Style="{StaticResource CaptionText}" TextWrapping="Wrap">
+                                    <Run Text="{Binding Source, Mode=OneWay}" />
+                                    <Run Text=" · " />
+                                    <Run Text="{Binding Reasons, Mode=OneWay}" />
+                                </TextBlock>
+                                <TextBlock
+                                    FontFamily="Consolas"
+                                    FontSize="11"
+                                    Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                                    Text="{Binding Path}"
+                                    TextTrimming="CharacterEllipsis"
+                                    ToolTip="{Binding Path}" />
+                                <TextBlock
+                                    FontFamily="Consolas"
+                                    FontSize="11"
+                                    Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                                    Text="{Binding Command}"
+                                    TextTrimming="CharacterEllipsis"
+                                    ToolTip="{Binding Command}"
+                                    Visibility="{Binding HasCommand, Converter={StaticResource BoolToVisibility}}" />
+                            </StackPanel>
+
+                            <StackPanel
+                                Grid.Column="2"
+                                Margin="12,0,0,0"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                                <ui:ProgressRing
+                                    Width="16"
+                                    Height="16"
+                                    Margin="0,0,8,0"
+                                    IsIndeterminate="True"
+                                    Visibility="{Binding IsBusy, Converter={StaticResource BoolToVisibility}}" />
+                                <ui:Button
+                                    Appearance="Transparent"
+                                    Command="{Binding DataContext.OpenItemLocationCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                    CommandParameter="{Binding}"
+                                    Icon="{ui:SymbolIcon FolderOpen24}"
+                                    IsEnabled="{Binding FileExists}"
+                                    ToolTip="{loc:Tr Startup_OpenLocation}" />
+                                <ui:Button
+                                    Appearance="Transparent"
+                                    Command="{Binding DataContext.CheckVirusTotalCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                    CommandParameter="{Binding}"
+                                    Icon="{ui:SymbolIcon Globe24}"
+                                    IsEnabled="{Binding FileExists}"
+                                    ToolTip="{loc:Tr Sec_CheckVirusTotal}"
+                                    Visibility="{Binding DataContext.VirusTotalEnabled, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource BoolToVisibility}}" />
+                                <ui:Button
+                                    Appearance="Transparent"
+                                    Command="{Binding DataContext.ScanItemWithDefenderCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                    CommandParameter="{Binding}"
+                                    Icon="{ui:SymbolIcon ShieldTask24}"
+                                    IsEnabled="{Binding FileExists}"
+                                    ToolTip="{loc:Tr Sec_ScanWithDefender}" />
+                                <ui:Button
+                                    Margin="6,0,0,0"
+                                    Appearance="Caution"
+                                    Command="{Binding DataContext.QuarantineItemCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                    CommandParameter="{Binding}"
+                                    Content="{loc:Tr Sec_Quarantine}"
+                                    Icon="{ui:SymbolIcon ShieldLock24}"
+                                    IsEnabled="{Binding FileExists}" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding IsMedium}" Value="True">
+                            <Setter TargetName="Badge" Property="Background" Value="{DynamicResource SystemFillColorCautionBrush}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsHigh}" Value="True">
+                            <Setter TargetName="Badge" Property="Background" Value="{DynamicResource SystemFillColorCriticalBrush}" />
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <!--  Own quarantine  -->
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Sec_QuarantineHeader}" />
+        <TextBlock
+            Margin="2,0,0,6"
+            Style="{StaticResource CaptionText}"
+            Text="{loc:Tr Sec_QuarantineEmpty}"
+            Visibility="{Binding HasQuarantine, Converter={StaticResource InverseBoolToVisibility}}" />
+        <ItemsControl ItemsSource="{Binding QuarantineEntries}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type vm:QuarantineEntryViewModel}">
+                    <Border Style="{StaticResource RowCard}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <ui:SymbolIcon
+                                Margin="0,0,14,0"
+                                FontSize="22"
+                                Foreground="{StaticResource BrandBrush}"
+                                Symbol="ShieldLock24" />
+                            <StackPanel Grid.Column="1">
+                                <TextBlock Style="{StaticResource TitleText}" Text="{Binding FileName}" />
+                                <TextBlock Style="{StaticResource CaptionText}" Text="{Binding Details}" TextWrapping="Wrap" />
+                                <TextBlock
+                                    FontFamily="Consolas"
+                                    FontSize="11"
+                                    Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                                    Text="{Binding OriginalPath}"
+                                    TextTrimming="CharacterEllipsis"
+                                    ToolTip="{Binding OriginalPath}" />
+                                <TextBlock
+                                    Style="{StaticResource WarningText}"
+                                    Text="{loc:Tr Sec_PendingReboot}"
+                                    Visibility="{Binding PendingReboot, Converter={StaticResource BoolToVisibility}}" />
+                            </StackPanel>
+                            <StackPanel
+                                Grid.Column="2"
+                                Margin="12,0,0,0"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                                <ui:Button
+                                    Command="{Binding DataContext.RestoreQuarantinedCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                    CommandParameter="{Binding}"
+                                    Content="{loc:Tr Sec_Restore}"
+                                    Icon="{ui:SymbolIcon ArrowUndo24}"
+                                    IsEnabled="{Binding DataContext.IsAdministrator, RelativeSource={RelativeSource AncestorType=Page}, Mode=OneTime}" />
+                                <ui:Button
+                                    Margin="6,0,0,0"
+                                    Appearance="Danger"
+                                    Command="{Binding DataContext.DeleteQuarantinedCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                    CommandParameter="{Binding}"
+                                    Content="{loc:Tr Sec_Delete}"
+                                    Icon="{ui:SymbolIcon Delete24}"
+                                    IsEnabled="{Binding DataContext.IsAdministrator, RelativeSource={RelativeSource AncestorType=Page}, Mode=OneTime}" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <!--  Defender quarantine (admin only)  -->
+        <StackPanel Visibility="{Binding IsAdministrator, Mode=OneTime, Converter={StaticResource BoolToVisibility}}">
+            <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Sec_DefenderQuarantineHeader}" />
+            <TextBlock
+                Margin="2,0,0,6"
+                Style="{StaticResource CaptionText}"
+                Text="{loc:Tr Sec_DefenderQuarantineEmpty}"
+                Visibility="{Binding HasDefenderQuarantine, Converter={StaticResource InverseBoolToVisibility}}" />
+            <ItemsControl ItemsSource="{Binding DefenderQuarantine}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type models:DefenderQuarantineItem}">
+                        <Border Style="{StaticResource RowCard}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <ui:SymbolIcon
+                                    Margin="0,0,14,0"
+                                    FontSize="22"
+                                    Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                    Symbol="ShieldLock24" />
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Style="{StaticResource TitleText}" Text="{Binding ThreatName}" />
+                                    <TextBlock Style="{StaticResource CaptionText}" Text="{Binding QuarantinedAt}" />
+                                    <TextBlock
+                                        FontFamily="Consolas"
+                                        FontSize="11"
+                                        Foreground="{DynamicResource TextFillColorTertiaryBrush}"
+                                        Text="{Binding FilePath}"
+                                        TextTrimming="CharacterEllipsis"
+                                        ToolTip="{Binding FilePath}" />
+                                </StackPanel>
+                                <ui:Button
+                                    Grid.Column="2"
+                                    Margin="12,0,0,0"
+                                    VerticalAlignment="Center"
+                                    Command="{Binding DataContext.RestoreDefenderItemCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                    CommandParameter="{Binding}"
+                                    Content="{loc:Tr Sec_Restore}"
+                                    Icon="{ui:SymbolIcon ArrowUndo24}" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </StackPanel>
+</Page>

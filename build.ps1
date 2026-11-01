@@ -1,12 +1,12 @@
 <#
 .SYNOPSIS
-    Builds PC Cleaner end to end: runs tests, publishes a self-contained x64 build and compiles the Inno Setup installer.
+    Builds Ultimate PC Cleaner end to end: runs tests, publishes a self-contained x64 build and compiles the Inno Setup installer.
 .EXAMPLE
     .\build.ps1
     .\build.ps1 -SkipTests
 .NOTES
     Requires the .NET 10 SDK and Inno Setup 6 (winget install --id JRSoftware.InnoSetup -e).
-    Output: artifacts\installer\PCCleanerSetup-<version>.exe
+    Output: artifacts\installer\UltimatePCCleanerSetup-<version>.exe
 #>
 param(
     [switch]$SkipTests
@@ -19,7 +19,7 @@ $publishDir = Join-Path $root 'artifacts\publish'
 
 [xml]$csproj = Get-Content $project
 $version = ($csproj.Project.PropertyGroup | Where-Object { $_.Version } | Select-Object -First 1).Version
-Write-Host "PC Cleaner $version" -ForegroundColor Cyan
+Write-Host "Ultimate PC Cleaner $version" -ForegroundColor Cyan
 
 if (-not $SkipTests) {
     Write-Host "`n==> Running tests" -ForegroundColor Cyan
@@ -45,8 +45,8 @@ $iscc = @(
 
 if (-not $iscc) { throw 'Inno Setup (ISCC.exe) not found. Install it with: winget install --id JRSoftware.InnoSetup -e' }
 
-& $iscc "/DAppVersion=$version" "/DPublishDir=$publishDir" (Join-Path $root 'installer\PCCleaner.iss')
+& $iscc "/DAppVersion=$version" "/DPublishDir=$publishDir" (Join-Path $root 'installer\UltimatePCCleaner.iss')
 if ($LASTEXITCODE -ne 0) { throw 'Installer compilation failed.' }
 
-$setup = Join-Path $root "artifacts\installer\PCCleanerSetup-$version.exe"
+$setup = Join-Path $root "artifacts\installer\UltimatePCCleanerSetup-$version.exe"
 Write-Host "`nInstaller ready: $setup" -ForegroundColor Green

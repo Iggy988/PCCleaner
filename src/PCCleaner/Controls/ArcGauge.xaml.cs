@@ -15,7 +15,7 @@ public partial class ArcGauge : UserControl
     [
         (85, Color.FromRgb(0xEF, 0x44, 0x44)),
         (60, Color.FromRgb(0xF5, 0x9E, 0x0B)),
-        (0, Color.FromRgb(0x22, 0xC5, 0x5E)),
+        (0, Color.FromRgb(0x00, 0xB4, 0xFF)), // brand cyan = healthy
     ];
 
     public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
@@ -50,7 +50,7 @@ public partial class ArcGauge : UserControl
     private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
         var gauge = (ArcGauge)d;
-        var animation = new DoubleAnimation(Math.Clamp((double)e.NewValue, 0, 100), TimeSpan.FromMilliseconds(700))
+        var animation = new DoubleAnimation(Math.Clamp((double)e.NewValue, 0, 100), MotionSettings.For(700))
         {
             EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut },
         };

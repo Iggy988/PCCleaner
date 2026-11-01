@@ -2,11 +2,13 @@
     x:Class="PCCleaner.Views.Pages.CleanerPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:PCCleaner.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:loc="clr-namespace:PCCleaner.Services.Localization"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     xmlns:vm="clr-namespace:PCCleaner.ViewModels"
-    Title="Cleaner"
+    Title="{loc:Tr Nav_Cleaner}"
     d:DataContext="{d:DesignInstance vm:CleanerViewModel}"
     ScrollViewer.CanContentScroll="False"
     Foreground="{DynamicResource TextFillColorPrimaryBrush}"
@@ -29,34 +31,36 @@
                 <ui:Button
                     Appearance="Transparent"
                     Command="{Binding SelectRecommendedCommand}"
-                    Content="Recommended"
+                    Content="{loc:Tr Cleaner_Recommended}"
                     Icon="{ui:SymbolIcon Sparkle24}"
                     IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBool}}" />
                 <ui:Button
                     Margin="4,0,0,0"
                     Appearance="Transparent"
                     Command="{Binding SelectAllCommand}"
-                    Content="Select all"
+                    Content="{loc:Tr Cleaner_SelectAll}"
                     Icon="{ui:SymbolIcon CheckboxChecked24}"
                     IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBool}}" />
                 <ui:Button
                     Margin="4,0,0,0"
                     Appearance="Transparent"
                     Command="{Binding SelectNoneCommand}"
-                    Content="Select none"
+                    Content="{loc:Tr Cleaner_SelectNone}"
                     Icon="{ui:SymbolIcon CheckboxUnchecked24}"
                     IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBool}}" />
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
                 <ui:Button
+                    controls:Motion.Interactive="True"
                     Command="{Binding ScanCommand}"
-                    Content="Scan"
+                    Content="{loc:Tr Common_Scan}"
                     Icon="{ui:SymbolIcon Search24}" />
                 <ui:Button
                     Margin="8,0,0,0"
+                    controls:Motion.Interactive="True"
                     Appearance="Primary"
                     Command="{Binding CleanCommand}"
-                    Content="Clean selected"
+                    Content="{loc:Tr Cleaner_CleanSelected}"
                     Icon="{ui:SymbolIcon Broom24}" />
             </StackPanel>
         </Grid>
@@ -64,7 +68,7 @@
         <!--  Notices  -->
         <StackPanel Grid.Row="1">
             <ui:InfoBar
-                Title="Some apps are running"
+                Title="{loc:Tr Cleaner_AppsRunning}"
                 Margin="0,0,0,8"
                 IsClosable="False"
                 IsOpen="True"
@@ -96,7 +100,7 @@
                                     VerticalAlignment="Center"
                                     IsChecked="{Binding IsAllChecked}"
                                     IsEnabled="{Binding DataContext.IsBusy, RelativeSource={RelativeSource AncestorType=Page}, Converter={StaticResource InverseBool}}"
-                                    ToolTip="Select or clear this whole group" />
+                                    ToolTip="{loc:Tr Cleaner_GroupToggle}" />
                                 <ui:SymbolIcon
                                     Grid.Column="1"
                                     Margin="2,0,8,0"
@@ -149,7 +153,7 @@
                                                     <Border Style="{StaticResource IconTile}" />
                                                     <ui:SymbolIcon
                                                         FontSize="20"
-                                                        Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}"
+                                                        Foreground="{StaticResource BrandBrush}"
                                                         Symbol="{Binding Icon}" />
                                                 </Grid>
 
@@ -205,7 +209,7 @@
                                                 <Setter TargetName="StatusLabel" Property="Foreground" Value="{DynamicResource SystemFillColorSuccessBrush}" />
                                             </DataTrigger>
                                             <DataTrigger Binding="{Binding HasFoundJunk}" Value="True">
-                                                <Setter TargetName="StatusLabel" Property="Foreground" Value="{DynamicResource AccentTextFillColorPrimaryBrush}" />
+                                                <Setter TargetName="StatusLabel" Property="Foreground" Value="{StaticResource BrandBrush}" />
                                             </DataTrigger>
                                             <DataTrigger Binding="{Binding Status}" Value="Failed">
                                                 <Setter TargetName="StatusLabel" Property="Foreground" Value="{DynamicResource SystemFillColorCriticalBrush}" />
@@ -245,7 +249,7 @@
                     <ui:SymbolIcon
                         Margin="0,0,10,0"
                         FontSize="20"
-                        Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}"
+                        Foreground="{StaticResource BrandBrush}"
                         Symbol="DataUsage24" />
                     <TextBlock
                         VerticalAlignment="Center"
@@ -274,7 +278,7 @@
                         Grid.Column="1"
                         Margin="16,0,0,0"
                         Command="{Binding CancelCommand}"
-                        Content="Cancel"
+                        Content="{loc:Tr Common_Cancel}"
                         Icon="{ui:SymbolIcon Dismiss24}" />
                 </Grid>
 
@@ -301,14 +305,36 @@
                     <ui:SymbolIcon
                         Margin="0,0,14,0"
                         VerticalAlignment="Center"
-                        FontSize="34"
-                        Foreground="{DynamicResource SystemFillColorSuccessBrush}"
-                        Symbol="CheckmarkCircle24" />
+                        FontSize="34">
+                        <ui:SymbolIcon.Style>
+                            <Style TargetType="ui:SymbolIcon">
+                                <Setter Property="Symbol" Value="CheckmarkCircle24" />
+                                <Setter Property="Foreground" Value="{DynamicResource SystemFillColorSuccessBrush}" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ResultIsPartial}" Value="True">
+                                        <Setter Property="Symbol" Value="Warning24" />
+                                        <Setter Property="Foreground" Value="{DynamicResource SystemFillColorCautionBrush}" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ui:SymbolIcon.Style>
+                    </ui:SymbolIcon>
                     <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                        <TextBlock FontSize="22" FontWeight="Bold">
-                            <Run Text="Freed" />
-                            <Run Foreground="{DynamicResource SystemFillColorSuccessBrush}" Text="{Binding DisplayedFreedBytes, Converter={StaticResource Bytes}, Mode=OneWay}" />
-                        </TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                VerticalAlignment="Bottom"
+                                FontSize="22"
+                                FontWeight="Bold"
+                                Text="{loc:Tr Cleaner_Freed}" />
+                            <controls:AnimatedNumber
+                                Margin="8,0,0,0"
+                                VerticalAlignment="Bottom"
+                                FontSize="22"
+                                FontWeight="Bold"
+                                Foreground="{StaticResource BrandBrush}"
+                                Format="Bytes"
+                                Value="{Binding FreedBytes}" />
+                        </StackPanel>
                         <TextBlock Style="{StaticResource CaptionText}" Text="{Binding ResultDetails}" />
                     </StackPanel>
                 </Grid>

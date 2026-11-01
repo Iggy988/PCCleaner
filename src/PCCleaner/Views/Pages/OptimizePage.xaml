@@ -3,22 +3,23 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:loc="clr-namespace:PCCleaner.Services.Localization"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     xmlns:vm="clr-namespace:PCCleaner.ViewModels"
-    Title="Optimize"
+    Title="{loc:Tr Nav_Optimize}"
     d:DataContext="{d:DesignInstance vm:OptimizeViewModel}"
     Foreground="{DynamicResource TextFillColorPrimaryBrush}"
     mc:Ignorable="d">
     <StackPanel Margin="0,0,0,24">
         <ui:InfoBar
-            Title="Safe and reversible"
+            Title="{loc:Tr Optimize_SafeTitle}"
             IsClosable="False"
             IsOpen="True"
-            Message="Every switch can be turned back off to restore your original setting. When enabled in Settings, a System Restore point is created before the first change."
+            Message="{loc:Tr Optimize_SafeMessage}"
             Severity="Informational" />
 
-        <TextBlock Style="{StaticResource SectionHeader}" Text="Performance tweaks" />
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Optimize_Tweaks}" />
         <ItemsControl ItemsSource="{Binding Tweaks}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="{x:Type vm:TweakItemViewModel}">
@@ -42,15 +43,15 @@
                             <ui:ToggleSwitch
                                 IsChecked="{Binding IsApplied, Mode=TwoWay}"
                                 IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBool}}"
-                                OffContent="Off"
-                                OnContent="On" />
+                                OffContent="{loc:Tr Common_Off}"
+                                OnContent="{loc:Tr Common_On}" />
                         </StackPanel>
                     </ui:CardControl>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <TextBlock Style="{StaticResource SectionHeader}" Text="Quick actions" />
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Optimize_QuickActions}" />
 
         <ui:CardControl Margin="0,0,0,6">
             <ui:CardControl.Icon>
@@ -58,8 +59,8 @@
             </ui:CardControl.Icon>
             <ui:CardControl.Header>
                 <StackPanel>
-                    <TextBlock Style="{StaticResource TitleText}" Text="Flush DNS cache" />
-                    <TextBlock Style="{StaticResource CaptionText}" Text="Clears stored website addresses. Fixes sites that fail to load after network or DNS changes." />
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Optimize_DnsTitle}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Optimize_DnsDesc}" />
                     <TextBlock
                         Margin="0,2,0,0"
                         Foreground="{DynamicResource SystemFillColorSuccessBrush}"
@@ -78,7 +79,7 @@
                 <ui:Button
                     MinWidth="96"
                     Command="{Binding FlushDnsCommand}"
-                    Content="Run"
+                    Content="{loc:Tr Common_Run}"
                     Icon="{ui:SymbolIcon Play24}" />
             </StackPanel>
         </ui:CardControl>
@@ -89,8 +90,8 @@
             </ui:CardControl.Icon>
             <ui:CardControl.Header>
                 <StackPanel>
-                    <TextBlock Style="{StaticResource TitleText}" Text="Free up RAM" />
-                    <TextBlock Style="{StaticResource CaptionText}" Text="Trims apps' unused memory and clears the standby cache. Handy right before starting a game or heavy app." />
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Optimize_RamName}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Optimize_RamDesc}" />
                     <TextBlock
                         Margin="0,2,0,0"
                         Foreground="{DynamicResource SystemFillColorSuccessBrush}"
@@ -109,7 +110,7 @@
                 <ui:Button
                     MinWidth="96"
                     Command="{Binding FreeRamCommand}"
-                    Content="Run"
+                    Content="{loc:Tr Common_Run}"
                     Icon="{ui:SymbolIcon Play24}" />
             </StackPanel>
         </ui:CardControl>
@@ -120,8 +121,8 @@
             </ui:CardControl.Icon>
             <ui:CardControl.Header>
                 <StackPanel>
-                    <TextBlock Style="{StaticResource TitleText}" Text="Create a restore point" />
-                    <TextBlock Style="{StaticResource CaptionText}" Text="Saves a System Restore snapshot you can roll back to from Windows Recovery. Requires administrator rights." />
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Optimize_RestoreTitle}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Optimize_RestoreDesc}" />
                     <TextBlock
                         Margin="0,2,0,0"
                         Style="{StaticResource CaptionText}"
@@ -139,7 +140,7 @@
                 <ui:Button
                     MinWidth="96"
                     Command="{Binding CreateRestorePointCommand}"
-                    Content="Create"
+                    Content="{loc:Tr Common_Create}"
                     Icon="{ui:SymbolIcon Add24}"
                     IsEnabled="{Binding IsCreatingRestorePoint, Converter={StaticResource InverseBool}}" />
             </StackPanel>

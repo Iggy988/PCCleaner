@@ -1,6 +1,7 @@
 using System.Management;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
+using PCCleaner.Services.Localization;
 
 namespace PCCleaner.Services;
 
@@ -17,7 +18,7 @@ public sealed class RestorePointService
     public Task<(bool Success, string Message)> CreateAsync(string description) => Task.Run(() =>
     {
         if (!AdminHelper.IsAdministrator)
-            return (false, "Administrator rights are required to create a restore point.");
+            return (false, Loc.T("Restore_NeedsAdmin"));
 
         using var key = Registry.LocalMachine.CreateSubKey(SystemRestoreKey, writable: true);
         var previous = key.GetValue(FrequencyValue);
@@ -39,18 +40,18 @@ public sealed class RestorePointService
             {
                 CreatedThisSession = true;
                 AppLog.Write($"Restore point created: {description}");
-                return (true, "Restore point created.");
+                return (true, Loc.T("Restore_Created"));
             }
 
             AppLog.Write($"Restore point failed with code {code}");
             return (false, code is 1058 or 0x80070422
-                ? "System Protection is turned off for the system drive. Turn it on in System Properties → System Protection."
-                : $"Windows could not create a restore point (code {code}). System Protection may be turned off.");
+                ? Loc.T("Restore_ProtectionOff")
+                : Loc.F("Restore_FailedCode", code));
         }
         catch (Exception ex) when (ex is ManagementException or COMException or UnauthorizedAccessException)
         {
             AppLog.Write($"Restore point failed: {ex.Message}");
-            return (false, $"Windows could not create a restore point: {ex.Message}");
+            return (false, Loc.F("Restore_Failed", ex.Message));
         }
         finally
         {

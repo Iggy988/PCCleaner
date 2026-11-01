@@ -8,6 +8,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PCCleaner.Models;
 using PCCleaner.Services;
+using PCCleaner.Services.Localization;
 using Wpf.Ui;
 using Wpf.Ui.Controls;
 using Wpf.Ui.Extensions;
@@ -20,11 +21,11 @@ public sealed partial class StartupItemViewModel(StartupItem item, StartupViewMo
 
     public string Name => Item.Name;
 
-    public string Publisher => Item.Publisher ?? "Unknown publisher";
+    public string Publisher => Item.Publisher ?? Loc.T("Startup_UnknownPublisher");
 
     public string Command => Item.Command;
 
-    public string Location => Item.Location;
+    public string Location => Loc.T(Item.Location);
 
     public ImageSource? Icon => Item.Icon;
 
@@ -45,6 +46,12 @@ public sealed partial class StartupItemViewModel(StartupItem item, StartupViewMo
 
     internal void Refresh() => OnPropertyChanged(nameof(IsEnabled));
 
+    internal void RefreshText()
+    {
+        OnPropertyChanged(nameof(Publisher));
+        OnPropertyChanged(nameof(Location));
+    }
+
     [RelayCommand]
     private void OpenLocation() => StartupService.OpenFileLocation(Item);
 }
@@ -61,6 +68,11 @@ public sealed partial class StartupViewModel : ObservableObject
         _snackbar = snackbar;
         View = CollectionViewSource.GetDefaultView(Items);
         View.Filter = Matches;
+        LocalizationService.Instance.LanguageChanged += (_, _) =>
+        {
+            foreach (var item in Items) item.RefreshText();
+            OnPropertyChanged(nameof(Summary));
+        };
     }
 
     public ObservableCollection<StartupItemViewModel> Items { get; } = [];
@@ -73,7 +85,7 @@ public sealed partial class StartupViewModel : ObservableObject
     [ObservableProperty]
     public partial bool IsLoading { get; set; }
 
-    public string Summary => $"{Items.Count(i => i.IsEnabled)} enabled · {Items.Count(i => !i.IsEnabled)} disabled";
+    public string Summary => Loc.F("Startup_Summary", Items.Count(i => i.IsEnabled), Items.Count(i => !i.IsEnabled));
 
     public bool ShowAdminNotice => !AdminHelper.IsAdministrator && Items.Any(i => i.Item.IsMachineWide);
 
@@ -114,13 +126,13 @@ public sealed partial class StartupViewModel : ObservableObject
         {
             _service.SetEnabled(vm.Item, enabled);
             AppLog.Write($"Startup item {(enabled ? "enabled" : "disabled")}: {vm.Name}");
-            _snackbar.Show(enabled ? "Startup app enabled" : "Startup app disabled",
-                $"{vm.Name} will {(enabled ? "" : "no longer ")}start with Windows.",
+            _snackbar.Show(Loc.T(enabled ? "Startup_EnabledTitle" : "Startup_DisabledTitle"),
+                Loc.F(enabled ? "Startup_EnabledMessage" : "Startup_DisabledMessage", vm.Name),
                 ControlAppearance.Success, new SymbolIcon(SymbolRegular.CheckmarkCircle24), TimeSpan.FromSeconds(3));
         }
         catch (Exception ex) when (ex is UnauthorizedAccessException or SecurityException or IOException)
         {
-            _snackbar.Show("Couldn't change startup app", ex.Message, ControlAppearance.Danger,
+            _snackbar.Show(Loc.T("Startup_ChangeFailed"), ex.Message, ControlAppearance.Danger,
                 new SymbolIcon(SymbolRegular.ErrorCircle24), TimeSpan.FromSeconds(5));
         }
 

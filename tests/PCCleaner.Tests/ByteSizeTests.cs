@@ -3,6 +3,7 @@ using PCCleaner.Services;
 
 namespace PCCleaner.Tests;
 
+[Collection("Culture")]
 public sealed class ByteSizeTests
 {
     [Theory]

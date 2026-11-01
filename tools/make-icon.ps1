@@ -1,37 +1,45 @@
 <#
 .SYNOPSIS
-    Generates the PC Cleaner app icon (Assets\app.ico with multiple sizes + Assets\app.png).
+    Generates the Ultimate PC Cleaner app assets from the master logo (Assets\ultimate_cleaner.png).
 .DESCRIPTION
-    Draws a rounded gradient tile with "sparkle" stars using System.Drawing (Windows PowerShell 5.1 or PowerShell 7 on Windows).
+    Writes, using System.Drawing (Windows PowerShell 5.1 or PowerShell 7 on Windows):
+      Assets\app.ico            multi-size icon (16-256 px), rounded dark tile
+      Assets\app.png            256 px square version of the icon
+      Assets\logo.png           768x512 downscaled logo for the dashboard (keeps the exe small)
+      installer\wizard-*.bmp    Inno Setup wizard images (100/125/150 % DPI)
+    The logo is 3:2 on black, so the square icon is a crop around the artwork's bounding box
+    (padded with the logo's own black) rather than a stretch — nothing is distorted.
     Sizes below 256px are stored as classic 32-bit DIBs, the 256px frame as PNG, which every Windows tool accepts.
 #>
 param(
-    [string]$OutDir = (Join-Path $PSScriptRoot '..\src\PCCleaner\Assets')
+    [string]$Source = (Join-Path $PSScriptRoot '..\src\PCCleaner\Assets\ultimate_cleaner.png'),
+    [string]$OutDir = (Join-Path $PSScriptRoot '..\src\PCCleaner\Assets'),
+    [string]$InstallerDir = (Join-Path $PSScriptRoot '..\installer')
 )
 
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
 
-New-Item -ItemType Directory -Force -Path $OutDir | Out-Null
+$Source = (Resolve-Path $Source).Path
+New-Item -ItemType Directory -Force -Path $OutDir, $InstallerDir | Out-Null
 $OutDir = (Resolve-Path $OutDir).Path
+$InstallerDir = (Resolve-Path $InstallerDir).Path
 
-function Add-Sparkle([System.Drawing.Drawing2D.GraphicsPath]$Path, [float]$Cx, [float]$Cy, [float]$R) {
-    $k = $R * 0.16
-    $top    = [System.Drawing.PointF]::new($Cx, $Cy - $R)
-    $right  = [System.Drawing.PointF]::new($Cx + $R, $Cy)
-    $bottom = [System.Drawing.PointF]::new($Cx, $Cy + $R)
-    $left   = [System.Drawing.PointF]::new($Cx - $R, $Cy)
-    $q1 = [System.Drawing.PointF]::new($Cx + $k, $Cy - $k)
-    $q2 = [System.Drawing.PointF]::new($Cx + $k, $Cy + $k)
-    $q3 = [System.Drawing.PointF]::new($Cx - $k, $Cy + $k)
-    $q4 = [System.Drawing.PointF]::new($Cx - $k, $Cy - $k)
+$logo = [System.Drawing.Image]::FromFile($Source)
+$background = [System.Drawing.Color]::FromArgb(255, 5, 8, 16)
 
-    $Path.StartFigure()
-    $Path.AddBezier($top, $q1, $q1, $right)
-    $Path.AddBezier($right, $q2, $q2, $bottom)
-    $Path.AddBezier($bottom, $q3, $q3, $left)
-    $Path.AddBezier($left, $q4, $q4, $top)
-    $Path.CloseFigure()
+# Square region around the artwork (monitor + broom + swoosh), in source pixels scaled to the actual image size.
+$sx = $logo.Width / 1536.0; $sy = $logo.Height / 1024.0
+$side = 1190 * $sx
+$cropRect = [System.Drawing.RectangleF]::new(200 * $sx, 505 * $sy - $side / 2, $side, $side)
+
+function New-Graphics([System.Drawing.Bitmap]$Bmp) {
+    $g = [System.Drawing.Graphics]::FromImage($Bmp)
+    $g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
+    $g.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+    $g.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
+    $g.CompositingQuality = [System.Drawing.Drawing2D.CompositingQuality]::HighQuality
+    return $g
 }
 
 function New-RoundedRect([System.Drawing.RectangleF]$Rect, [float]$Radius) {
@@ -47,40 +55,47 @@ function New-RoundedRect([System.Drawing.RectangleF]$Rect, [float]$Radius) {
 
 function New-IconBitmap([int]$Size) {
     $bmp = New-Object System.Drawing.Bitmap $Size, $Size, ([System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
-    $g = [System.Drawing.Graphics]::FromImage($bmp)
-    $g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
-    $g.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
-    $g.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
+    $g = New-Graphics $bmp
     $g.Clear([System.Drawing.Color]::Transparent)
 
     $s = [float]$Size
-    $pad = if ($Size -ge 48) { $s * 0.04 } else { 0 }
+    $pad = if ($Size -ge 48) { $s * 0.03 } else { 0 }
     $rect = [System.Drawing.RectangleF]::new($pad, $pad, $s - 2 * $pad, $s - 2 * $pad)
-    $tile = New-RoundedRect $rect ($rect.Width * 0.24)
+    $tile = New-RoundedRect $rect ($rect.Width * 0.2)
 
-    $gradient = New-Object System.Drawing.Drawing2D.LinearGradientBrush(
-        $rect,
-        [System.Drawing.Color]::FromArgb(255, 99, 102, 241),   # indigo
-        [System.Drawing.Color]::FromArgb(255, 6, 182, 212),    # cyan
-        [single]45)
-    $g.FillPath($gradient, $tile)
-
-    # Soft glossy highlight across the top half.
+    $brush = New-Object System.Drawing.SolidBrush $background
+    $g.FillPath($brush, $tile)
     $g.SetClip($tile)
-    $shine = New-Object System.Drawing.Drawing2D.GraphicsPath
-    $shine.AddEllipse($rect.X - $rect.Width * 0.25, $rect.Y - $rect.Height * 0.65, $rect.Width * 1.5, $rect.Height * 1.05)
-    $shineBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(34, 255, 255, 255))
-    $g.FillPath($shineBrush, $shine)
+    $g.DrawImage($logo, $rect, $cropRect, [System.Drawing.GraphicsUnit]::Pixel)
     $g.ResetClip()
 
-    $stars = New-Object System.Drawing.Drawing2D.GraphicsPath
-    Add-Sparkle $stars ($s * 0.43) ($s * 0.56) ($s * 0.31)
-    Add-Sparkle $stars ($s * 0.73) ($s * 0.27) ($s * 0.13)
-    if ($Size -ge 32) { Add-Sparkle $stars ($s * 0.75) ($s * 0.76) ($s * 0.08) }
-    $g.FillPath([System.Drawing.Brushes]::White, $stars)
-
-    $gradient.Dispose(); $shineBrush.Dispose(); $shine.Dispose(); $stars.Dispose(); $tile.Dispose(); $g.Dispose()
+    $brush.Dispose(); $tile.Dispose(); $g.Dispose()
     return $bmp
+}
+
+function Save-Resized([int]$Width, [int]$Height, [string]$Path, [System.Drawing.Imaging.ImageFormat]$Format) {
+    # Fit the whole logo (uniform scale) and fill the rest with the logo's black.
+    $bmp = New-Object System.Drawing.Bitmap $Width, $Height, ([System.Drawing.Imaging.PixelFormat]::Format24bppRgb)
+    $g = New-Graphics $bmp
+    $g.Clear($background)
+    $scale = [Math]::Min($Width / $logo.Width, $Height / $logo.Height)
+    $w = $logo.Width * $scale; $h = $logo.Height * $scale
+    $g.DrawImage($logo, [System.Drawing.RectangleF]::new(($Width - $w) / 2, ($Height - $h) / 2, $w, $h))
+    $g.Dispose()
+    $bmp.Save($Path, $Format)
+    $bmp.Dispose()
+}
+
+function Save-Cropped([int]$Width, [int]$Height, [string]$Path) {
+    # Tall wizard image: fill the height with the square artwork crop, centered, black around it.
+    $bmp = New-Object System.Drawing.Bitmap $Width, $Height, ([System.Drawing.Imaging.PixelFormat]::Format24bppRgb)
+    $g = New-Graphics $bmp
+    $g.Clear($background)
+    $side = [Math]::Min($Width, $Height) * 0.96
+    $g.DrawImage($logo, [System.Drawing.RectangleF]::new(($Width - $side) / 2, ($Height - $side) / 2, $side, $side), $cropRect, [System.Drawing.GraphicsUnit]::Pixel)
+    $g.Dispose()
+    $bmp.Save($Path, [System.Drawing.Imaging.ImageFormat]::Bmp)
+    $bmp.Dispose()
 }
 
 function ConvertTo-Dib([System.Drawing.Bitmap]$Bmp) {
@@ -152,4 +167,15 @@ foreach ($f in $frames) {
 foreach ($f in $frames) { $bw.Write($f.Bytes) }
 $bw.Dispose(); $fs.Dispose()
 
-Write-Host "Icon written to $icoPath"
+Save-Resized 768 512 (Join-Path $OutDir 'logo.png') ([System.Drawing.Imaging.ImageFormat]::Png)
+
+# Inno Setup wizard images at 100 / 125 / 150 % DPI.
+foreach ($size in @(@(164, 314), @(192, 386), @(246, 459))) {
+    Save-Cropped $size[0] $size[1] (Join-Path $InstallerDir "wizard-$($size[0]).bmp")
+}
+foreach ($size in @(@(55, 55), @(64, 68), @(83, 80))) {
+    Save-Cropped $size[0] $size[1] (Join-Path $InstallerDir "wizard-small-$($size[0]).bmp")
+}
+
+$logo.Dispose()
+Write-Host "Assets written to $OutDir and $InstallerDir"

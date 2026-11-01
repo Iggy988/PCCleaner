@@ -3,15 +3,34 @@ using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PCCleaner.Services;
+using PCCleaner.Services.Localization;
 using Wpf.Ui;
 using Wpf.Ui.Controls;
 using Wpf.Ui.Extensions;
 
 namespace PCCleaner.ViewModels;
 
-public sealed partial class HealthViewModel(HealthToolsService service, ISnackbarService snackbar) : ObservableObject
+public sealed partial class HealthViewModel : ObservableObject
 {
     private const int MaxLines = 2000;
+
+    private readonly HealthToolsService service;
+    private readonly ISnackbarService snackbar;
+    private Func<string> _status = () => Loc.T("Health_Idle");
+
+    public HealthViewModel(HealthToolsService service, ISnackbarService snackbar)
+    {
+        this.service = service;
+        this.snackbar = snackbar;
+        Output = Loc.T("Health_OutputPlaceholder");
+        LocalizationService.Instance.LanguageChanged += (_, _) =>
+        {
+            if (_lines.Count == 0 && !IsRunning) Output = Loc.T("Health_OutputPlaceholder");
+            // A new list instance makes the tool cards re-read their localized text.
+            OnPropertyChanged(nameof(Tools));
+            OnPropertyChanged(nameof(StatusText));
+        };
+    }
 
     // Lines like "Verification 45% complete." or "[=====   20.0%   ]" overwrite each other instead of piling up.
     [GeneratedRegex(@"\d+([.,]\d+)?\s*%")]
@@ -21,7 +40,7 @@ public sealed partial class HealthViewModel(HealthToolsService service, ISnackba
     private bool _lastWasProgress;
     private CancellationTokenSource? _cts;
 
-    public IReadOnlyList<HealthTool> Tools => service.Tools;
+    public IReadOnlyList<HealthTool> Tools => service.Tools.ToList();
 
     public bool IsAdministrator => AdminHelper.IsAdministrator;
 
@@ -30,10 +49,9 @@ public sealed partial class HealthViewModel(HealthToolsService service, ISnackba
     public partial bool IsRunning { get; set; }
 
     [ObservableProperty]
-    public partial string Output { get; set; } = "Pick a tool above to start. Output appears here live.";
+    public partial string Output { get; set; }
 
-    [ObservableProperty]
-    public partial string StatusText { get; set; } = "Idle";
+    public string StatusText => _status();
 
     [RelayCommand(CanExecute = nameof(CanRun))]
     private async Task RunToolAsync(HealthTool tool)
@@ -42,7 +60,7 @@ public sealed partial class HealthViewModel(HealthToolsService service, ISnackba
         IsRunning = true;
         _lines.Clear();
         _lastWasProgress = false;
-        StatusText = $"Running {tool.Name}…";
+        SetStatus(() => Loc.F("Health_Running", tool.Name));
         AppendLine($"> {tool.FileName} {tool.Arguments}");
         AppendLine("");
 
@@ -50,24 +68,30 @@ public sealed partial class HealthViewModel(HealthToolsService service, ISnackba
         try
         {
             var exitCode = await service.RunAsync(tool, line => ((IProgress<string>)progress).Report(line), _cts.Token);
-            StatusText = exitCode == 0 ? $"{tool.Name} finished successfully" : $"{tool.Name} finished (exit code {exitCode})";
+            SetStatus(() => exitCode == 0 ? Loc.F("Health_Finished", tool.Name) : Loc.F("Health_FinishedCode", tool.Name, exitCode));
             snackbar.Show(tool.Name, StatusText, exitCode == 0 ? ControlAppearance.Success : ControlAppearance.Caution,
                 new SymbolIcon(SymbolRegular.HeartPulse24), TimeSpan.FromSeconds(4));
         }
         catch (OperationCanceledException)
         {
-            StatusText = $"{tool.Name} was cancelled";
+            SetStatus(() => Loc.F("Health_Cancelled", tool.Name));
         }
         catch (Exception ex)
         {
-            StatusText = $"{tool.Name} could not start: {ex.Message}";
+            SetStatus(() => Loc.F("Health_CouldNotStart", tool.Name, ex.Message));
             AppLog.Write($"Health tool {tool.Name} failed: {ex}");
         }
         finally
         {
             IsRunning = false;
-            AppLog.Write(StatusText);
+            AppLog.Write($"Health tool {tool.Id} ended.");
         }
+    }
+
+    private void SetStatus(Func<string> status)
+    {
+        _status = status;
+        OnPropertyChanged(nameof(StatusText));
     }
 
     private bool CanRun(HealthTool? tool) => !IsRunning && AdminHelper.IsAdministrator;

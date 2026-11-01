@@ -1,6 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using PCCleaner.Services;
+using PCCleaner.Services.Localization;
 using PCCleaner.Services.Tweaks;
 using Wpf.Ui;
 using Wpf.Ui.Controls;
@@ -37,6 +38,12 @@ public sealed partial class TweakItemViewModel(ITweak tweak, OptimizeViewModel o
         }
     }
 
+    public void RefreshText()
+    {
+        OnPropertyChanged(nameof(Name));
+        OnPropertyChanged(nameof(Description));
+    }
+
     internal void Refresh()
     {
         try
@@ -69,6 +76,10 @@ public sealed partial class OptimizeViewModel : ObservableObject
         _snackbar = snackbar;
         _dialogs = dialogs;
         Tweaks = catalog.Tweaks.Select(t => new TweakItemViewModel(t, this)).ToList();
+        LocalizationService.Instance.LanguageChanged += (_, _) =>
+        {
+            foreach (var tweak in Tweaks) tweak.RefreshText();
+        };
     }
 
     public IReadOnlyList<TweakItemViewModel> Tweaks { get; }
@@ -112,13 +123,13 @@ public sealed partial class OptimizeViewModel : ObservableObject
             });
 
             AppLog.Write($"{(apply ? "Applied" : "Reverted")} tweak: {item.Name}");
-            _snackbar.Show(apply ? "Optimization applied" : "Setting restored", item.Name, ControlAppearance.Success,
+            _snackbar.Show(Loc.T(apply ? "Optimize_Applied" : "Optimize_Restored"), item.Name, ControlAppearance.Success,
                 new SymbolIcon(SymbolRegular.CheckmarkCircle24), TimeSpan.FromSeconds(3));
         }
         catch (Exception ex)
         {
             AppLog.Write($"Tweak {item.Name} failed: {ex}");
-            _snackbar.Show("Couldn't change this setting", ex.Message, ControlAppearance.Danger,
+            _snackbar.Show(Loc.T("Optimize_ChangeFailed"), ex.Message, ControlAppearance.Danger,
                 new SymbolIcon(SymbolRegular.ErrorCircle24), TimeSpan.FromSeconds(5));
         }
         finally
@@ -135,8 +146,8 @@ public sealed partial class OptimizeViewModel : ObservableObject
             return true;
 
         IsCreatingRestorePoint = true;
-        RestorePointResult = "Creating a System Restore point before the first change…";
-        var (success, message) = await _restorePoints.CreateAsync("PC Cleaner - before optimization");
+        RestorePointResult = Loc.T("Optimize_RestoreCreatingFirst");
+        var (success, message) = await _restorePoints.CreateAsync(Loc.F("Optimize_RestoreDescBefore", Loc.T("App_Name")));
         IsCreatingRestorePoint = false;
         RestorePointResult = message;
 
@@ -144,10 +155,10 @@ public sealed partial class OptimizeViewModel : ObservableObject
 
         var answer = await _dialogs.ShowSimpleDialogAsync(new SimpleContentDialogCreateOptions
         {
-            Title = "No restore point was created",
-            Content = $"{message}\n\nDo you want to apply the change anyway?",
-            PrimaryButtonText = "Apply anyway",
-            CloseButtonText = "Cancel",
+            Title = Loc.T("Optimize_NoRestoreTitle"),
+            Content = Loc.F("Optimize_NoRestoreMessage", message),
+            PrimaryButtonText = Loc.T("Optimize_ApplyAnyway"),
+            CloseButtonText = Loc.T("Common_Cancel"),
         });
         return answer == ContentDialogResult.Primary;
     }
@@ -156,11 +167,11 @@ public sealed partial class OptimizeViewModel : ObservableObject
     private async Task CreateRestorePointAsync()
     {
         IsCreatingRestorePoint = true;
-        RestorePointResult = "Creating restore point… this can take a minute.";
-        var (success, message) = await _restorePoints.CreateAsync("PC Cleaner - manual restore point");
+        RestorePointResult = Loc.T("Optimize_RestoreCreating");
+        var (success, message) = await _restorePoints.CreateAsync(Loc.F("Optimize_RestoreDescManual", Loc.T("App_Name")));
         IsCreatingRestorePoint = false;
         RestorePointResult = message;
-        _snackbar.Show(success ? "Restore point created" : "Restore point failed", message,
+        _snackbar.Show(Loc.T(success ? "Optimize_RestoreCreatedTitle" : "Optimize_RestoreFailedTitle"), message,
             success ? ControlAppearance.Success : ControlAppearance.Danger,
             new SymbolIcon(success ? SymbolRegular.ShieldCheckmark24 : SymbolRegular.ErrorCircle24), TimeSpan.FromSeconds(5));
     }
@@ -171,7 +182,7 @@ public sealed partial class OptimizeViewModel : ObservableObject
         IsFlushingDns = true;
         var ok = await _actions.FlushDnsAsync();
         IsFlushingDns = false;
-        DnsResult = ok ? $"DNS cache flushed at {DateTime.Now:t}" : "Could not flush the DNS cache.";
+        DnsResult = ok ? Loc.F("Optimize_DnsFlushed", DateTime.Now.ToString("t", LocalizationService.Instance.Culture)) : Loc.T("Optimize_DnsFailed");
     }
 
     [RelayCommand]
@@ -180,8 +191,8 @@ public sealed partial class OptimizeViewModel : ObservableObject
         IsFreeingRam = true;
         var freed = await _actions.FreeMemoryAsync();
         IsFreeingRam = false;
-        RamResult = $"Freed {ByteSize.Format(freed)} of RAM at {DateTime.Now:t}";
-        _snackbar.Show("Memory optimized", RamResult, ControlAppearance.Success,
+        RamResult = Loc.F("Optimize_RamFreed", ByteSize.Format(freed), DateTime.Now.ToString("t", LocalizationService.Instance.Culture));
+        _snackbar.Show(Loc.T("Optimize_RamTitle"), RamResult, ControlAppearance.Success,
             new SymbolIcon(SymbolRegular.DeveloperBoard24), TimeSpan.FromSeconds(3));
     }
 }

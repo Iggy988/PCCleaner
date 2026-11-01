@@ -1,0 +1,257 @@
+<Page
+    x:Class="PCCleaner.Views.Pages.HelpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:loc="clr-namespace:PCCleaner.Services.Localization"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pages="clr-namespace:PCCleaner.Views.Pages"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:vm="clr-namespace:PCCleaner.ViewModels"
+    Title="{loc:Tr Nav_Help}"
+    d:DataContext="{d:DesignInstance vm:HelpViewModel}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <!--  Manual text: larger and higher-contrast than captions, since it is meant to be read in full  -->
+        <Style x:Key="HelpBody" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="LineHeight" Value="21" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="Foreground" Value="{DynamicResource TextFillColorPrimaryBrush}" />
+        </Style>
+    </Page.Resources>
+
+    <StackPanel Margin="0,0,0,24">
+        <TextBlock
+            Margin="2,0,0,12"
+            Style="{StaticResource CaptionText}"
+            Text="{loc:Tr Help_Intro}" />
+
+        <!--  Quick start  -->
+        <ContentControl Style="{StaticResource ElevatedCard}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ui:SymbolIcon
+                    Margin="0,2,16,0"
+                    VerticalAlignment="Top"
+                    FontSize="28"
+                    Foreground="{StaticResource BrandBrush}"
+                    Symbol="Lightbulb24" />
+                <StackPanel Grid.Column="1">
+                    <TextBlock
+                        Margin="0,0,0,8"
+                        Style="{StaticResource TitleText}"
+                        Text="{loc:Tr Help_QuickStartHeader}" />
+                    <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_QuickStartBody}" />
+                </StackPanel>
+            </Grid>
+        </ContentControl>
+
+        <!--  One section per page, in navigation order  -->
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Help_PagesHeader}" />
+        <ui:CardExpander Margin="0,0,0,6" Icon="{ui:SymbolIcon Home24}">
+            <ui:CardExpander.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Nav_Dashboard}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Help_Dashboard_Summary}" />
+                </StackPanel>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_Dashboard_Body}" />
+                <ui:Button
+                    Margin="0,14,0,0"
+                    Command="{Binding OpenPageCommand}"
+                    CommandParameter="{x:Type pages:DashboardPage}"
+                    Content="{loc:Tr Help_OpenPage}"
+                    Icon="{ui:SymbolIcon ArrowRight24}" />
+            </StackPanel>
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Icon="{ui:SymbolIcon DocumentBulletList24}">
+            <ui:CardExpander.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Nav_TempFiles}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Help_TempFiles_Summary}" />
+                </StackPanel>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_TempFiles_Body}" />
+                <ui:Button
+                    Margin="0,14,0,0"
+                    Command="{Binding OpenPageCommand}"
+                    CommandParameter="{x:Type pages:TempCleanerPage}"
+                    Content="{loc:Tr Help_OpenPage}"
+                    Icon="{ui:SymbolIcon ArrowRight24}" />
+            </StackPanel>
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Icon="{ui:SymbolIcon Broom24}">
+            <ui:CardExpander.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Nav_Cleaner}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Help_Cleaner_Summary}" />
+                </StackPanel>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_Cleaner_Body}" />
+                <ui:Button
+                    Margin="0,14,0,0"
+                    Command="{Binding OpenPageCommand}"
+                    CommandParameter="{x:Type pages:CleanerPage}"
+                    Content="{loc:Tr Help_OpenPage}"
+                    Icon="{ui:SymbolIcon ArrowRight24}" />
+            </StackPanel>
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Icon="{ui:SymbolIcon Apps24}">
+            <ui:CardExpander.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Nav_Startup}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Help_Startup_Summary}" />
+                </StackPanel>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_Startup_Body}" />
+                <ui:Button
+                    Margin="0,14,0,0"
+                    Command="{Binding OpenPageCommand}"
+                    CommandParameter="{x:Type pages:StartupPage}"
+                    Content="{loc:Tr Help_OpenPage}"
+                    Icon="{ui:SymbolIcon ArrowRight24}" />
+            </StackPanel>
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Icon="{ui:SymbolIcon Shield24}">
+            <ui:CardExpander.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Nav_Security}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Help_Security_Summary}" />
+                </StackPanel>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_Security_Body}" />
+                <ui:Button
+                    Margin="0,14,0,0"
+                    Command="{Binding OpenPageCommand}"
+                    CommandParameter="{x:Type pages:SecurityPage}"
+                    Content="{loc:Tr Help_OpenPage}"
+                    Icon="{ui:SymbolIcon ArrowRight24}" />
+            </StackPanel>
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Icon="{ui:SymbolIcon Rocket24}">
+            <ui:CardExpander.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Nav_Optimize}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Help_Optimize_Summary}" />
+                </StackPanel>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_Optimize_Body}" />
+                <ui:Button
+                    Margin="0,14,0,0"
+                    Command="{Binding OpenPageCommand}"
+                    CommandParameter="{x:Type pages:OptimizePage}"
+                    Content="{loc:Tr Help_OpenPage}"
+                    Icon="{ui:SymbolIcon ArrowRight24}" />
+            </StackPanel>
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Icon="{ui:SymbolIcon HeartPulse24}">
+            <ui:CardExpander.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Nav_Health}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Help_Health_Summary}" />
+                </StackPanel>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_Health_Body}" />
+                <ui:Button
+                    Margin="0,14,0,0"
+                    Command="{Binding OpenPageCommand}"
+                    CommandParameter="{x:Type pages:HealthPage}"
+                    Content="{loc:Tr Help_OpenPage}"
+                    Icon="{ui:SymbolIcon ArrowRight24}" />
+            </StackPanel>
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Icon="{ui:SymbolIcon Desktop24}">
+            <ui:CardExpander.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Nav_System}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Help_System_Summary}" />
+                </StackPanel>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_System_Body}" />
+                <ui:Button
+                    Margin="0,14,0,0"
+                    Command="{Binding OpenPageCommand}"
+                    CommandParameter="{x:Type pages:SystemPage}"
+                    Content="{loc:Tr Help_OpenPage}"
+                    Icon="{ui:SymbolIcon ArrowRight24}" />
+            </StackPanel>
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Icon="{ui:SymbolIcon Settings24}">
+            <ui:CardExpander.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Nav_Settings}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Help_Settings_Summary}" />
+                </StackPanel>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_Settings_Body}" />
+                <ui:Button
+                    Margin="0,14,0,0"
+                    Command="{Binding OpenPageCommand}"
+                    CommandParameter="{x:Type pages:SettingsPage}"
+                    Content="{loc:Tr Help_OpenPage}"
+                    Icon="{ui:SymbolIcon ArrowRight24}" />
+            </StackPanel>
+        </ui:CardExpander>
+
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Help_SafetyHeader}" />
+        <ui:CardExpander Margin="0,0,0,6" Icon="{ui:SymbolIcon ShieldCheckmark24}">
+            <ui:CardExpander.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Help_SafetyTitle}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Help_SafetySummary}" />
+                </StackPanel>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_SafetyBody}" />
+            </StackPanel>
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Icon="{ui:SymbolIcon ShieldKeyhole24}">
+            <ui:CardExpander.Header>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TitleText}" Text="{loc:Tr Help_AdminTitle}" />
+                    <TextBlock Style="{StaticResource CaptionText}" Text="{loc:Tr Help_AdminSummary}" />
+                </StackPanel>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_AdminBody}" />
+            </StackPanel>
+        </ui:CardExpander>
+
+        <TextBlock Style="{StaticResource SectionHeader}" Text="{loc:Tr Help_FaqHeader}" />
+        <ui:CardExpander Margin="0,0,0,6" Header="{loc:Tr Help_Faq1_Q}" Icon="{ui:SymbolIcon QuestionCircle24}">
+            <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_Faq1_A}" />
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Header="{loc:Tr Help_Faq2_Q}" Icon="{ui:SymbolIcon QuestionCircle24}">
+            <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_Faq2_A}" />
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Header="{loc:Tr Help_Faq3_Q}" Icon="{ui:SymbolIcon QuestionCircle24}">
+            <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_Faq3_A}" />
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Header="{loc:Tr Help_Faq4_Q}" Icon="{ui:SymbolIcon QuestionCircle24}">
+            <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_Faq4_A}" />
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Header="{loc:Tr Help_Faq5_Q}" Icon="{ui:SymbolIcon QuestionCircle24}">
+            <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_Faq5_A}" />
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Header="{loc:Tr Help_Faq6_Q}" Icon="{ui:SymbolIcon QuestionCircle24}">
+            <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_Faq6_A}" />
+        </ui:CardExpander>
+        <ui:CardExpander Margin="0,0,0,6" Header="{loc:Tr Help_Faq7_Q}" Icon="{ui:SymbolIcon QuestionCircle24}">
+            <TextBlock Style="{StaticResource HelpBody}" Text="{loc:Tr Help_Faq7_A}" />
+        </ui:CardExpander>
+    </StackPanel>
+</Page>

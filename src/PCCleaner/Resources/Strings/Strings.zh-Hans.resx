@@ -1,0 +1,1738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="App_Name" xml:space="preserve">
+    <value>Ultimate PC Cleaner</value>
+  </data>
+  <data name="App_NameUpper" xml:space="preserve">
+    <value>ULTIMATE PC CLEANER</value>
+  </data>
+  <data name="App_TitleLimited" xml:space="preserve">
+    <value>{0}（受限模式）</value>
+  </data>
+  <data name="App_UnhandledError" xml:space="preserve">
+    <value>出现问题：
+
+{0}
+
+详细信息已写入日志：{1}。</value>
+  </data>
+  <data name="Cleaner_Analyzing" xml:space="preserve">
+    <value>正在分析您的电脑…</value>
+  </data>
+  <data name="Cleaner_AppsRunning" xml:space="preserve">
+    <value>部分应用正在运行</value>
+  </data>
+  <data name="Cleaner_BlockingWarning" xml:space="preserve">
+    <value>正在运行：{0}。关闭这些应用即可完全清理缓存；正在使用的文件将被跳过。</value>
+  </data>
+  <data name="Cleaner_CleanSelected" xml:space="preserve">
+    <value>清理所选项</value>
+  </data>
+  <data name="Cleaner_CleaningItem" xml:space="preserve">
+    <value>正在清理：{0}…</value>
+  </data>
+  <data name="Cleaner_ConfirmMessage" xml:space="preserve">
+    <value>Ultimate PC Cleaner 将永久删除 {0}（{1}）。
+
+正在使用的文件会被自动跳过。</value>
+  </data>
+  <data name="Cleaner_ConfirmTitle" xml:space="preserve">
+    <value>清理所选项目？</value>
+  </data>
+  <data name="Cleaner_DoneMessage" xml:space="preserve">
+    <value>已释放 {0} 磁盘空间。</value>
+  </data>
+  <data name="Cleaner_DonePartialTitle" xml:space="preserve">
+    <value>清理部分完成</value>
+  </data>
+  <data name="Cleaner_DoneTitle" xml:space="preserve">
+    <value>清理完成</value>
+  </data>
+  <data name="Cleaner_Freed" xml:space="preserve">
+    <value>已释放</value>
+  </data>
+  <data name="Cleaner_GroupSelected" xml:space="preserve">
+    <value>已选 {0}/{1}</value>
+  </data>
+  <data name="Cleaner_GroupToggle" xml:space="preserve">
+    <value>全选或取消此组</value>
+  </data>
+  <data name="Cleaner_Group_Apps" xml:space="preserve">
+    <value>应用程序</value>
+  </data>
+  <data name="Cleaner_Group_Browsers" xml:space="preserve">
+    <value>网页浏览器</value>
+  </data>
+  <data name="Cleaner_Group_Windows" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="Cleaner_NothingMessage" xml:space="preserve">
+    <value>所选类别已经很干净。</value>
+  </data>
+  <data name="Cleaner_NothingTitle" xml:space="preserve">
+    <value>无需清理</value>
+  </data>
+  <data name="Cleaner_Recommended" xml:space="preserve">
+    <value>推荐</value>
+  </data>
+  <data name="Cleaner_SelectAll" xml:space="preserve">
+    <value>全选</value>
+  </data>
+  <data name="Cleaner_SelectNone" xml:space="preserve">
+    <value>全不选</value>
+  </data>
+  <data name="Cleaner_SummaryNotScanned" xml:space="preserve">
+    <value>已选 {0} · 扫描以查看可释放的空间</value>
+  </data>
+  <data name="Cleaner_SummaryScanned" xml:space="preserve">
+    <value>已选 {0} · 可释放 {1}</value>
+  </data>
+  <data name="Cleanup_BrowserCache_Desc" xml:space="preserve">
+    <value>缓存的网页、脚本和图片。Cookie、历史记录和密码会保留。</value>
+  </data>
+  <data name="Cleanup_brave_cache_Name" xml:space="preserve">
+    <value>Brave 缓存</value>
+  </data>
+  <data name="Cleanup_chrome_cache_Name" xml:space="preserve">
+    <value>Google Chrome 缓存</value>
+  </data>
+  <data name="Cleanup_delivery_optimization_Desc" xml:space="preserve">
+    <value>Windows 为与其他电脑共享而保留的更新文件。</value>
+  </data>
+  <data name="Cleanup_delivery_optimization_Name" xml:space="preserve">
+    <value>传递优化缓存</value>
+  </data>
+  <data name="Cleanup_edge_cache_Name" xml:space="preserve">
+    <value>Microsoft Edge 缓存</value>
+  </data>
+  <data name="Cleanup_error_reports_Desc" xml:space="preserve">
+    <value>已发送或排队等待发送的崩溃和问题报告。</value>
+  </data>
+  <data name="Cleanup_error_reports_Name" xml:space="preserve">
+    <value>Windows 错误报告</value>
+  </data>
+  <data name="Cleanup_firefox_cache_Name" xml:space="preserve">
+    <value>Mozilla Firefox 缓存</value>
+  </data>
+  <data name="Cleanup_memory_dumps_Desc" xml:space="preserve">
+    <value>Windows 或应用崩溃时写入的诊断转储文件。</value>
+  </data>
+  <data name="Cleanup_memory_dumps_Name" xml:space="preserve">
+    <value>内存转储</value>
+  </data>
+  <data name="Cleanup_prefetch_Desc" xml:space="preserve">
+    <value>Windows 用于更快启动应用的启动跟踪文件。</value>
+  </data>
+  <data name="Cleanup_prefetch_Name" xml:space="preserve">
+    <value>Prefetch 数据</value>
+  </data>
+  <data name="Cleanup_prefetch_Warn" xml:space="preserve">
+    <value>Windows 会自动管理这些数据。清除它不会让电脑变快——在 Windows 重建数据之前，应用启动可能会暂时变慢。</value>
+  </data>
+  <data name="Cleanup_recycle_bin_Desc" xml:space="preserve">
+    <value>您已删除但仍保留在所有驱动器回收站中的文件。</value>
+  </data>
+  <data name="Cleanup_recycle_bin_Name" xml:space="preserve">
+    <value>回收站</value>
+  </data>
+  <data name="Cleanup_shader_cache_Desc" xml:space="preserve">
+    <value>游戏和应用缓存的已编译图形着色器。</value>
+  </data>
+  <data name="Cleanup_shader_cache_Name" xml:space="preserve">
+    <value>DirectX 着色器缓存</value>
+  </data>
+  <data name="Cleanup_shader_cache_Warn" xml:space="preserve">
+    <value>游戏会在下次启动时重新生成着色器，首次运行时可能出现短暂卡顿。</value>
+  </data>
+  <data name="Cleanup_thumbnail_cache_Desc" xml:space="preserve">
+    <value>文件资源管理器中显示的图片和视频预览缓存。</value>
+  </data>
+  <data name="Cleanup_thumbnail_cache_Name" xml:space="preserve">
+    <value>缩略图缓存</value>
+  </data>
+  <data name="Cleanup_thumbnail_cache_Warn" xml:space="preserve">
+    <value>文件资源管理器会占用其中部分文件；浏览文件夹时会重新生成。</value>
+  </data>
+  <data name="Cleanup_user_temp_Desc" xml:space="preserve">
+    <value>应用和安装程序写入您个人 Temp 文件夹的残留文件。</value>
+  </data>
+  <data name="Cleanup_user_temp_Name" xml:space="preserve">
+    <value>用户临时文件</value>
+  </data>
+  <data name="Cleanup_windows_logs_Desc" xml:space="preserve">
+    <value>超过 7 天的安装和维护日志。</value>
+  </data>
+  <data name="Cleanup_windows_logs_Name" xml:space="preserve">
+    <value>旧的 Windows 日志文件</value>
+  </data>
+  <data name="Cleanup_windows_temp_Desc" xml:space="preserve">
+    <value>Windows 和系统服务创建的临时文件。</value>
+  </data>
+  <data name="Cleanup_windows_temp_Name" xml:space="preserve">
+    <value>Windows 临时文件</value>
+  </data>
+  <data name="Cleanup_windows_update_Desc" xml:space="preserve">
+    <value>已下载并安装的更新包。</value>
+  </data>
+  <data name="Cleanup_windows_update_Name" xml:space="preserve">
+    <value>Windows 更新缓存</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Common_CleanNow" xml:space="preserve">
+    <value>立即清理</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>创建</value>
+  </data>
+  <data name="Common_Disabled" xml:space="preserve">
+    <value>已禁用</value>
+  </data>
+  <data name="Common_Dismiss" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="Common_Enabled" xml:space="preserve">
+    <value>已启用</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>关</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>开</value>
+  </data>
+  <data name="Common_Refresh" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="Common_RestartAsAdmin" xml:space="preserve">
+    <value>以管理员身份重新启动</value>
+  </data>
+  <data name="Common_Run" xml:space="preserve">
+    <value>运行</value>
+  </data>
+  <data name="Common_Scan" xml:space="preserve">
+    <value>扫描</value>
+  </data>
+  <data name="Count_AccessDenied_Few" xml:space="preserve">
+    <value>{0} 个拒绝访问</value>
+  </data>
+  <data name="Count_AccessDenied_Many" xml:space="preserve">
+    <value>{0} 个拒绝访问</value>
+  </data>
+  <data name="Count_AccessDenied_One" xml:space="preserve">
+    <value>{0} 个拒绝访问</value>
+  </data>
+  <data name="Count_AlreadyGone_Few" xml:space="preserve">
+    <value>{0} 个已不存在</value>
+  </data>
+  <data name="Count_AlreadyGone_Many" xml:space="preserve">
+    <value>{0} 个已不存在</value>
+  </data>
+  <data name="Count_AlreadyGone_One" xml:space="preserve">
+    <value>{0} 个已不存在</value>
+  </data>
+  <data name="Count_Categories_Few" xml:space="preserve">
+    <value>{0} 个类别</value>
+  </data>
+  <data name="Count_Categories_Many" xml:space="preserve">
+    <value>{0} 个类别</value>
+  </data>
+  <data name="Count_Categories_One" xml:space="preserve">
+    <value>{0} 个类别</value>
+  </data>
+  <data name="Count_EligibleFiles_Few" xml:space="preserve">
+    <value>可删除 {0} 个文件</value>
+  </data>
+  <data name="Count_EligibleFiles_Many" xml:space="preserve">
+    <value>可删除 {0} 个文件</value>
+  </data>
+  <data name="Count_EligibleFiles_One" xml:space="preserve">
+    <value>可删除 {0} 个文件</value>
+  </data>
+  <data name="Count_Errors_Few" xml:space="preserve">
+    <value>{0} 个错误</value>
+  </data>
+  <data name="Count_Errors_Many" xml:space="preserve">
+    <value>{0} 个错误</value>
+  </data>
+  <data name="Count_Errors_One" xml:space="preserve">
+    <value>{0} 个错误</value>
+  </data>
+  <data name="Count_FilesRemoved_Few" xml:space="preserve">
+    <value>已删除 {0} 个文件</value>
+  </data>
+  <data name="Count_FilesRemoved_Many" xml:space="preserve">
+    <value>已删除 {0} 个文件</value>
+  </data>
+  <data name="Count_FilesRemoved_One" xml:space="preserve">
+    <value>已删除 {0} 个文件</value>
+  </data>
+  <data name="Count_Files_Few" xml:space="preserve">
+    <value>{0} 个文件</value>
+  </data>
+  <data name="Count_Files_Many" xml:space="preserve">
+    <value>{0} 个文件</value>
+  </data>
+  <data name="Count_Files_One" xml:space="preserve">
+    <value>{0} 个文件</value>
+  </data>
+  <data name="Count_InUse_Few" xml:space="preserve">
+    <value>{0} 个正在使用</value>
+  </data>
+  <data name="Count_InUse_Many" xml:space="preserve">
+    <value>{0} 个正在使用</value>
+  </data>
+  <data name="Count_InUse_One" xml:space="preserve">
+    <value>{0} 个正在使用</value>
+  </data>
+  <data name="Count_Inaccessible_Few" xml:space="preserve">
+    <value>{0} 项无法访问</value>
+  </data>
+  <data name="Count_Inaccessible_Many" xml:space="preserve">
+    <value>{0} 项无法访问</value>
+  </data>
+  <data name="Count_Inaccessible_One" xml:space="preserve">
+    <value>{0} 项无法访问</value>
+  </data>
+  <data name="Count_Items_Few" xml:space="preserve">
+    <value>{0} 项</value>
+  </data>
+  <data name="Count_Items_Many" xml:space="preserve">
+    <value>{0} 项</value>
+  </data>
+  <data name="Count_Items_One" xml:space="preserve">
+    <value>{0} 项</value>
+  </data>
+  <data name="Count_SkippedInUse_Few" xml:space="preserve">
+    <value>{0} 个正在使用，已跳过</value>
+  </data>
+  <data name="Count_SkippedInUse_Many" xml:space="preserve">
+    <value>{0} 个正在使用，已跳过</value>
+  </data>
+  <data name="Count_SkippedInUse_One" xml:space="preserve">
+    <value>{0} 个正在使用，已跳过</value>
+  </data>
+  <data name="Count_SkippedSafety_Few" xml:space="preserve">
+    <value>出于安全原因跳过 {0} 个</value>
+  </data>
+  <data name="Count_SkippedSafety_Many" xml:space="preserve">
+    <value>出于安全原因跳过 {0} 个</value>
+  </data>
+  <data name="Count_SkippedSafety_One" xml:space="preserve">
+    <value>出于安全原因跳过 {0} 个</value>
+  </data>
+  <data name="Count_Skipped_Few" xml:space="preserve">
+    <value>已跳过 {0} 个</value>
+  </data>
+  <data name="Count_Skipped_Many" xml:space="preserve">
+    <value>已跳过 {0} 个</value>
+  </data>
+  <data name="Count_Skipped_One" xml:space="preserve">
+    <value>已跳过 {0} 个</value>
+  </data>
+  <data name="Count_Suspicious_Few" xml:space="preserve">
+    <value>发现 {0} 个可疑项目</value>
+  </data>
+  <data name="Count_Suspicious_Many" xml:space="preserve">
+    <value>发现 {0} 个可疑项目</value>
+  </data>
+  <data name="Count_Suspicious_One" xml:space="preserve">
+    <value>发现 {0} 个可疑项目</value>
+  </data>
+  <data name="Dashboard_Boost" xml:space="preserve">
+    <value>加速</value>
+  </data>
+  <data name="Dashboard_BoostCancelled" xml:space="preserve">
+    <value>加速已取消，未删除任何内容。</value>
+  </data>
+  <data name="Dashboard_BoostCleaning" xml:space="preserve">
+    <value>正在删除垃圾文件…</value>
+  </data>
+  <data name="Dashboard_BoostConfirmMessage" xml:space="preserve">
+    <value>加速将永久删除 {0}（{1}），然后刷新 DNS 缓存并释放内存。
+
+正在使用的文件会被自动跳过。</value>
+  </data>
+  <data name="Dashboard_BoostConfirmTitle" xml:space="preserve">
+    <value>运行加速？</value>
+  </data>
+  <data name="Dashboard_BoostDefault" xml:space="preserve">
+    <value>一键清理所选垃圾、刷新 DNS 并释放内存——删除前会请您确认。</value>
+  </data>
+  <data name="Dashboard_BoostDns" xml:space="preserve">
+    <value>正在刷新 DNS 缓存…</value>
+  </data>
+  <data name="Dashboard_BoostDone" xml:space="preserve">
+    <value>完成！已释放 {0} 磁盘空间和 {1} 内存。</value>
+  </data>
+  <data name="Dashboard_BoostDonePartialTitle" xml:space="preserve">
+    <value>加速完成（部分文件已跳过）</value>
+  </data>
+  <data name="Dashboard_BoostDoneTitle" xml:space="preserve">
+    <value>加速完成</value>
+  </data>
+  <data name="Dashboard_BoostFailedTitle" xml:space="preserve">
+    <value>加速失败</value>
+  </data>
+  <data name="Dashboard_BoostRam" xml:space="preserve">
+    <value>正在释放内存…</value>
+  </data>
+  <data name="Dashboard_BoostRun" xml:space="preserve">
+    <value>运行加速</value>
+  </data>
+  <data name="Dashboard_BoostScanning" xml:space="preserve">
+    <value>正在扫描垃圾文件…</value>
+  </data>
+  <data name="Dashboard_BoostTooltip" xml:space="preserve">
+    <value>清理“清理”页中所选的垃圾、刷新 DNS 并释放内存（删除前会确认）</value>
+  </data>
+  <data name="Dashboard_Cleanup" xml:space="preserve">
+    <value>清理</value>
+  </data>
+  <data name="Dashboard_CleanupDesc" xml:space="preserve">
+    <value>扫描会查找清理类别和临时文件夹中的垃圾。在您查看并确认之前不会删除任何内容。</value>
+  </data>
+  <data name="Dashboard_CleanupTitle" xml:space="preserve">
+    <value>查找可释放的空间</value>
+  </data>
+  <data name="Dashboard_Cpu" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="Dashboard_CpuCaption" xml:space="preserve">
+    <value>处理器负载</value>
+  </data>
+  <data name="Dashboard_DiskText" xml:space="preserve">
+    <value>可用 {0}，共 {1}</value>
+  </data>
+  <data name="Dashboard_DriveLabel" xml:space="preserve">
+    <value>驱动器 {0}</value>
+  </data>
+  <data name="Dashboard_GoodAfternoon" xml:space="preserve">
+    <value>下午好</value>
+  </data>
+  <data name="Dashboard_GoodEvening" xml:space="preserve">
+    <value>晚上好</value>
+  </data>
+  <data name="Dashboard_GoodMorning" xml:space="preserve">
+    <value>早上好</value>
+  </data>
+  <data name="Dashboard_Memory" xml:space="preserve">
+    <value>内存</value>
+  </data>
+  <data name="Dashboard_Never" xml:space="preserve">
+    <value>从未</value>
+  </data>
+  <data name="Dashboard_NotScanned" xml:space="preserve">
+    <value>尚未扫描</value>
+  </data>
+  <data name="Dashboard_OpenOptimize" xml:space="preserve">
+    <value>优化</value>
+  </data>
+  <data name="Dashboard_OpenTemp" xml:space="preserve">
+    <value>临时文件</value>
+  </data>
+  <data name="Dashboard_Overview" xml:space="preserve">
+    <value>概览</value>
+  </data>
+  <data name="Dashboard_RamText" xml:space="preserve">
+    <value>已用 {0}，共 {1}</value>
+  </data>
+  <data name="Dashboard_ReviewCleaner" xml:space="preserve">
+    <value>在清理中查看</value>
+  </data>
+  <data name="Dashboard_ScanDoneMessage" xml:space="preserve">
+    <value>找到 {0} 可释放空间。删除前请在“临时文件”或“清理”中查看。</value>
+  </data>
+  <data name="Dashboard_ScanDoneTitle" xml:space="preserve">
+    <value>扫描完成</value>
+  </data>
+  <data name="Dashboard_ScanNow" xml:space="preserve">
+    <value>立即扫描</value>
+  </data>
+  <data name="Dashboard_StatFreed" xml:space="preserve">
+    <value>累计释放空间</value>
+  </data>
+  <data name="Dashboard_StatFreedHint" xml:space="preserve">
+    <value>自开始使用本应用以来</value>
+  </data>
+  <data name="Dashboard_StatJunk" xml:space="preserve">
+    <value>发现的垃圾</value>
+  </data>
+  <data name="Dashboard_StatJunkHint" xml:space="preserve">
+    <value>在清理和临时文件中所选</value>
+  </data>
+  <data name="Dashboard_StatLastCleaned" xml:space="preserve">
+    <value>上次清理</value>
+  </data>
+  <data name="Dashboard_StatTemp" xml:space="preserve">
+    <value>临时文件</value>
+  </data>
+  <data name="Dashboard_StatTempHint" xml:space="preserve">
+    <value>Temp 和 Prefetch 中可释放</value>
+  </data>
+  <data name="Dashboard_SystemStatus" xml:space="preserve">
+    <value>系统状态</value>
+  </data>
+  <data name="Dashboard_UpFor" xml:space="preserve">
+    <value>已运行</value>
+  </data>
+  <data name="Dashboard_UptimeDays" xml:space="preserve">
+    <value>{0} 天 {1} 小时 {2} 分钟</value>
+  </data>
+  <data name="Dashboard_UptimeHours" xml:space="preserve">
+    <value>{0} 小时 {1} 分钟</value>
+  </data>
+  <data name="Health_AdminMessage" xml:space="preserve">
+    <value>仅当以管理员身份启动 Ultimate PC Cleaner 时，这些 Windows 修复工具才能运行。</value>
+  </data>
+  <data name="Health_AdminTitle" xml:space="preserve">
+    <value>需要管理员权限</value>
+  </data>
+  <data name="Health_Cancelled" xml:space="preserve">
+    <value>{0} 已取消</value>
+  </data>
+  <data name="Health_Clear" xml:space="preserve">
+    <value>清除输出</value>
+  </data>
+  <data name="Health_Copy" xml:space="preserve">
+    <value>复制输出</value>
+  </data>
+  <data name="Health_CouldNotStart" xml:space="preserve">
+    <value>无法启动 {0}：{1}</value>
+  </data>
+  <data name="Health_Duration" xml:space="preserve">
+    <value>{0} 分钟</value>
+  </data>
+  <data name="Health_Finished" xml:space="preserve">
+    <value>{0} 已成功完成</value>
+  </data>
+  <data name="Health_FinishedCode" xml:space="preserve">
+    <value>{0} 已结束（退出代码 {1}）</value>
+  </data>
+  <data name="Health_Idle" xml:space="preserve">
+    <value>空闲</value>
+  </data>
+  <data name="Health_OutputPlaceholder" xml:space="preserve">
+    <value>在上方选择一个工具开始。输出将实时显示在此处。</value>
+  </data>
+  <data name="Health_Running" xml:space="preserve">
+    <value>正在运行 {0}…</value>
+  </data>
+  <data name="Health_chkdsk_Desc" xml:space="preserve">
+    <value>在线扫描 {0} 的文件系统错误，不做任何更改 (chkdsk /scan)。</value>
+  </data>
+  <data name="Health_chkdsk_Name" xml:space="preserve">
+    <value>检查磁盘错误</value>
+  </data>
+  <data name="Health_defrag_Desc" xml:space="preserve">
+    <value>为 {0} 在 SSD 上运行 TRIM 或对硬盘进行碎片整理。</value>
+  </data>
+  <data name="Health_defrag_Name" xml:space="preserve">
+    <value>优化系统驱动器</value>
+  </data>
+  <data name="Health_dism_cleanup_Desc" xml:space="preserve">
+    <value>从 WinSxS 中删除已被取代的 Windows 更新组件以释放磁盘空间。</value>
+  </data>
+  <data name="Health_dism_cleanup_Name" xml:space="preserve">
+    <value>清理组件存储</value>
+  </data>
+  <data name="Health_dism_restore_Desc" xml:space="preserve">
+    <value>检查 Windows 组件存储并下载损坏文件的新副本 (DISM RestoreHealth)。</value>
+  </data>
+  <data name="Health_dism_restore_Name" xml:space="preserve">
+    <value>修复 Windows 映像</value>
+  </data>
+  <data name="Health_sfc_Desc" xml:space="preserve">
+    <value>扫描受保护的 Windows 文件并修复损坏的文件 (sfc /scannow)。</value>
+  </data>
+  <data name="Health_sfc_Name" xml:space="preserve">
+    <value>系统文件检查器</value>
+  </data>
+  <data name="Main_LimitedMessage" xml:space="preserve">
+    <value>Ultimate PC Cleaner 当前未以管理员身份运行。您可以清理自己的临时文件；Windows Temp、Prefetch、系统缓存、服务、还原点和修复工具需要提升权限。</value>
+  </data>
+  <data name="Main_LimitedTitle" xml:space="preserve">
+    <value>受限模式。</value>
+  </data>
+  <data name="Nav_Cleaner" xml:space="preserve">
+    <value>清理</value>
+  </data>
+  <data name="Nav_Dashboard" xml:space="preserve">
+    <value>仪表板</value>
+  </data>
+  <data name="Nav_Health" xml:space="preserve">
+    <value>系统健康</value>
+  </data>
+  <data name="Nav_Optimize" xml:space="preserve">
+    <value>优化</value>
+  </data>
+  <data name="Nav_Security" xml:space="preserve">
+    <value>安全</value>
+  </data>
+  <data name="Nav_Settings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="Nav_Startup" xml:space="preserve">
+    <value>启动项</value>
+  </data>
+  <data name="Nav_TempFiles" xml:space="preserve">
+    <value>临时文件</value>
+  </data>
+  <data name="Optimize_Applied" xml:space="preserve">
+    <value>已应用优化</value>
+  </data>
+  <data name="Optimize_ApplyAnyway" xml:space="preserve">
+    <value>仍然应用</value>
+  </data>
+  <data name="Optimize_ChangeFailed" xml:space="preserve">
+    <value>无法更改此设置</value>
+  </data>
+  <data name="Optimize_DnsDesc" xml:space="preserve">
+    <value>清除已存储的网站地址。可修复网络或 DNS 更改后网站无法加载的问题。</value>
+  </data>
+  <data name="Optimize_DnsFailed" xml:space="preserve">
+    <value>无法刷新 DNS 缓存。</value>
+  </data>
+  <data name="Optimize_DnsFlushed" xml:space="preserve">
+    <value>DNS 缓存已于 {0} 刷新</value>
+  </data>
+  <data name="Optimize_DnsTitle" xml:space="preserve">
+    <value>刷新 DNS 缓存</value>
+  </data>
+  <data name="Optimize_NoRestoreMessage" xml:space="preserve">
+    <value>{0}
+
+是否仍要应用此更改？</value>
+  </data>
+  <data name="Optimize_NoRestoreTitle" xml:space="preserve">
+    <value>未创建还原点</value>
+  </data>
+  <data name="Optimize_QuickActions" xml:space="preserve">
+    <value>快捷操作</value>
+  </data>
+  <data name="Optimize_RamDesc" xml:space="preserve">
+    <value>整理应用未使用的内存并清除待机缓存。适合在启动游戏或大型应用前使用。</value>
+  </data>
+  <data name="Optimize_RamFreed" xml:space="preserve">
+    <value>已于 {1} 释放 {0} 内存</value>
+  </data>
+  <data name="Optimize_RamName" xml:space="preserve">
+    <value>释放内存</value>
+  </data>
+  <data name="Optimize_RamTitle" xml:space="preserve">
+    <value>内存已优化</value>
+  </data>
+  <data name="Optimize_RestoreCreatedTitle" xml:space="preserve">
+    <value>已创建还原点</value>
+  </data>
+  <data name="Optimize_RestoreCreating" xml:space="preserve">
+    <value>正在创建还原点…可能需要一分钟。</value>
+  </data>
+  <data name="Optimize_RestoreCreatingFirst" xml:space="preserve">
+    <value>正在第一次更改前创建系统还原点…</value>
+  </data>
+  <data name="Optimize_RestoreDesc" xml:space="preserve">
+    <value>保存一个系统还原快照，可从 Windows 恢复环境回滚。需要管理员权限。</value>
+  </data>
+  <data name="Optimize_RestoreDescBefore" xml:space="preserve">
+    <value>{0} - 优化前</value>
+  </data>
+  <data name="Optimize_RestoreDescManual" xml:space="preserve">
+    <value>{0} - 手动还原点</value>
+  </data>
+  <data name="Optimize_RestoreFailedTitle" xml:space="preserve">
+    <value>还原点创建失败</value>
+  </data>
+  <data name="Optimize_RestoreTitle" xml:space="preserve">
+    <value>创建还原点</value>
+  </data>
+  <data name="Optimize_Restored" xml:space="preserve">
+    <value>设置已恢复</value>
+  </data>
+  <data name="Optimize_SafeMessage" xml:space="preserve">
+    <value>每个开关都可以关闭以恢复原始设置。如果在设置中启用，首次更改前会创建系统还原点。</value>
+  </data>
+  <data name="Optimize_SafeTitle" xml:space="preserve">
+    <value>安全且可撤销</value>
+  </data>
+  <data name="Optimize_Tweaks" xml:space="preserve">
+    <value>性能调整</value>
+  </data>
+  <data name="Restore_Created" xml:space="preserve">
+    <value>已创建还原点。</value>
+  </data>
+  <data name="Restore_Failed" xml:space="preserve">
+    <value>Windows 无法创建还原点：{0}</value>
+  </data>
+  <data name="Restore_FailedCode" xml:space="preserve">
+    <value>Windows 无法创建还原点（代码 {0}）。系统保护可能已关闭。</value>
+  </data>
+  <data name="Restore_NeedsAdmin" xml:space="preserve">
+    <value>创建还原点需要管理员权限。</value>
+  </data>
+  <data name="Restore_ProtectionOff" xml:space="preserve">
+    <value>系统驱动器的系统保护已关闭。请在“系统属性”→“系统保护”中启用。</value>
+  </data>
+  <data name="Sec_AdminMessage" xml:space="preserve">
+    <value>您可以查看状态并查找可疑项目。以管理员身份重新启动后才能扫描、隔离或恢复。</value>
+  </data>
+  <data name="Sec_AdminTitle" xml:space="preserve">
+    <value>扫描和隔离需要管理员权限</value>
+  </data>
+  <data name="Sec_Allow" xml:space="preserve">
+    <value>允许</value>
+  </data>
+  <data name="Sec_AllowMessage" xml:space="preserve">
+    <value>Microsoft Defender 将不再处理“{0}”。只有在确定文件安全时才这样做。</value>
+  </data>
+  <data name="Sec_AllowTitle" xml:space="preserve">
+    <value>允许威胁</value>
+  </data>
+  <data name="Sec_Allowed" xml:space="preserve">
+    <value>已允许“{0}”。</value>
+  </data>
+  <data name="Sec_Cancelled" xml:space="preserve">
+    <value>已取消。</value>
+  </data>
+  <data name="Sec_CheckVirusTotal" xml:space="preserve">
+    <value>在 VirusTotal 上检查哈希</value>
+  </data>
+  <data name="Sec_CreatingRestorePoint" xml:space="preserve">
+    <value>正在创建还原点…</value>
+  </data>
+  <data name="Sec_DefenderQuarantineEmpty" xml:space="preserve">
+    <value>Defender 隔离区为空。</value>
+  </data>
+  <data name="Sec_DefenderQuarantineHeader" xml:space="preserve">
+    <value>Microsoft Defender 隔离区</value>
+  </data>
+  <data name="Sec_Delete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="Sec_DeleteMessage" xml:space="preserve">
+    <value>“{0}”将被永久删除，无法恢复。</value>
+  </data>
+  <data name="Sec_DeleteTitle" xml:space="preserve">
+    <value>永久删除</value>
+  </data>
+  <data name="Sec_Failed" xml:space="preserve">
+    <value>失败：{0}</value>
+  </data>
+  <data name="Sec_FinishedClean" xml:space="preserve">
+    <value>{0}：已完成——未发现威胁。</value>
+  </data>
+  <data name="Sec_FinishedCode" xml:space="preserve">
+    <value>{0}：已结束，代码 {1}。</value>
+  </data>
+  <data name="Sec_FinishedThreats" xml:space="preserve">
+    <value>{0}：发现威胁。Microsoft Defender 已按其设置处理——请查看下方列表。</value>
+  </data>
+  <data name="Sec_FolderScan" xml:space="preserve">
+    <value>扫描 {0}</value>
+  </data>
+  <data name="Sec_FullScan" xml:space="preserve">
+    <value>完全扫描</value>
+  </data>
+  <data name="Sec_Idle" xml:space="preserve">
+    <value>就绪。</value>
+  </data>
+  <data name="Sec_Intro" xml:space="preserve">
+    <value>使用 Microsoft Defender 扫描、通过 AMSI 检查脚本、查找可疑的启动项，并将有风险的文件移入可恢复的隔离区。检测由您的防病毒软件完成——此页面不能替代它。</value>
+  </data>
+  <data name="Sec_Level_High" xml:space="preserve">
+    <value>高</value>
+  </data>
+  <data name="Sec_Level_Low" xml:space="preserve">
+    <value>低</value>
+  </data>
+  <data name="Sec_Level_Medium" xml:space="preserve">
+    <value>中</value>
+  </data>
+  <data name="Sec_Never" xml:space="preserve">
+    <value>从未</value>
+  </data>
+  <data name="Sec_NoResources" xml:space="preserve">
+    <value>无文件信息</value>
+  </data>
+  <data name="Sec_NoRestoreMessage" xml:space="preserve">
+    <value>{0}
+
+仍要隔离该文件吗？</value>
+  </data>
+  <data name="Sec_NoThreats" xml:space="preserve">
+    <value>Microsoft Defender 没有检测记录。</value>
+  </data>
+  <data name="Sec_OtherAvDetail" xml:space="preserve">
+    <value>当其他防病毒软件处于活动状态时，Microsoft Defender 扫描不可用。AMSI 脚本检查和可疑项目扫描仍然可用。</value>
+  </data>
+  <data name="Sec_OutputPlaceholder" xml:space="preserve">
+    <value>扫描输出将显示在此处。</value>
+  </data>
+  <data name="Sec_Overwrite" xml:space="preserve">
+    <value>覆盖</value>
+  </data>
+  <data name="Sec_PendingReboot" xml:space="preserve">
+    <value>原始文件正在使用中，将在下次重启时删除。</value>
+  </data>
+  <data name="Sec_PickFolder" xml:space="preserve">
+    <value>选择要扫描的文件夹</value>
+  </data>
+  <data name="Sec_Progress_Scripts" xml:space="preserve">
+    <value>正在检查用户文件夹中的脚本…</value>
+  </data>
+  <data name="Sec_Progress_Startup" xml:space="preserve">
+    <value>正在检查启动项…</value>
+  </data>
+  <data name="Sec_Progress_Tasks" xml:space="preserve">
+    <value>正在检查计划任务…</value>
+  </data>
+  <data name="Sec_Quarantine" xml:space="preserve">
+    <value>隔离</value>
+  </data>
+  <data name="Sec_QuarantineDetails" xml:space="preserve">
+    <value>隔离于 {0} · {1} · {2}</value>
+  </data>
+  <data name="Sec_QuarantineEmpty" xml:space="preserve">
+    <value>隔离区中没有文件。</value>
+  </data>
+  <data name="Sec_QuarantineHeader" xml:space="preserve">
+    <value>Ultimate PC Cleaner 隔离区</value>
+  </data>
+  <data name="Sec_QuarantineMessage" xml:space="preserve">
+    <value>{0}
+
+该文件将以不可执行的形式移入隔离区，其启动项（如有）将被禁用。您可以随时恢复。</value>
+  </data>
+  <data name="Sec_QuarantineTitle" xml:space="preserve">
+    <value>移入隔离区</value>
+  </data>
+  <data name="Sec_Quarantined" xml:space="preserve">
+    <value>“{0}”已移入隔离区。</value>
+  </data>
+  <data name="Sec_QuarantinedPending" xml:space="preserve">
+    <value>“{0}”已隔离。原始文件正在使用中，将在下次重启时删除。</value>
+  </data>
+  <data name="Sec_QuickScan" xml:space="preserve">
+    <value>快速扫描</value>
+  </data>
+  <data name="Sec_Reason_AmsiDetected" xml:space="preserve">
+    <value>被您的防病毒软件标记 (AMSI)</value>
+  </data>
+  <data name="Sec_Reason_DoubleExtension" xml:space="preserve">
+    <value>伪装的文件名（双扩展名）</value>
+  </data>
+  <data name="Sec_Reason_MissingTarget" xml:space="preserve">
+    <value>指向已不存在的文件</value>
+  </data>
+  <data name="Sec_Reason_ObfuscatedCommand" xml:space="preserve">
+    <value>隐藏或编码的命令行</value>
+  </data>
+  <data name="Sec_Reason_ObfuscatedScript" xml:space="preserve">
+    <value>脚本使用混淆或下载代码</value>
+  </data>
+  <data name="Sec_Reason_ScriptHost" xml:space="preserve">
+    <value>脚本宿主运行用户文件夹中的文件</value>
+  </data>
+  <data name="Sec_Reason_UnsignedUserFolder" xml:space="preserve">
+    <value>位于用户可写文件夹中的未签名程序</value>
+  </data>
+  <data name="Sec_RemoveThreats" xml:space="preserve">
+    <value>删除活动威胁</value>
+  </data>
+  <data name="Sec_Restore" xml:space="preserve">
+    <value>恢复</value>
+  </data>
+  <data name="Sec_RestoreDefenderMessage" xml:space="preserve">
+    <value>要恢复 Microsoft Defender 以“{0}”隔离的所有文件吗？除非您允许该威胁，否则 Defender 可能会再次检测到它们。</value>
+  </data>
+  <data name="Sec_RestoreMessage" xml:space="preserve">
+    <value>{0}
+
+要将此文件恢复到原始位置吗？只有在确定它安全时才这样做。</value>
+  </data>
+  <data name="Sec_RestoreOverwrite" xml:space="preserve">
+    <value>{0} 处已存在文件。要用隔离区中的副本替换它吗？</value>
+  </data>
+  <data name="Sec_RestorePendingReboot" xml:space="preserve">
+    <value>请先重启 Windows——原始文件仍在等待删除。</value>
+  </data>
+  <data name="Sec_RestorePointDesc" xml:space="preserve">
+    <value>{0}：隔离前</value>
+  </data>
+  <data name="Sec_RestoreTitle" xml:space="preserve">
+    <value>恢复文件</value>
+  </data>
+  <data name="Sec_Restored" xml:space="preserve">
+    <value>“{0}”已恢复。</value>
+  </data>
+  <data name="Sec_Running" xml:space="preserve">
+    <value>正在运行：{0}…</value>
+  </data>
+  <data name="Sec_ScanFolder" xml:space="preserve">
+    <value>扫描文件夹…</value>
+  </data>
+  <data name="Sec_ScanHeader" xml:space="preserve">
+    <value>扫描</value>
+  </data>
+  <data name="Sec_ScanScripts" xml:space="preserve">
+    <value>检查脚本 (AMSI)…</value>
+  </data>
+  <data name="Sec_ScanScriptsTip" xml:space="preserve">
+    <value>通过 AMSI 检查文件夹中的每个 PowerShell、VBScript、JavaScript 和批处理文件。适用于任何已安装的防病毒软件，而不仅仅是 Defender。</value>
+  </data>
+  <data name="Sec_ScanSuspicious" xml:space="preserve">
+    <value>查找可疑项目</value>
+  </data>
+  <data name="Sec_ScanWithDefender" xml:space="preserve">
+    <value>使用 Microsoft Defender 扫描此文件</value>
+  </data>
+  <data name="Sec_ScriptScanClean" xml:space="preserve">
+    <value>未发现恶意脚本。</value>
+  </data>
+  <data name="Sec_ScriptScanFound" xml:space="preserve">
+    <value>您的防病毒软件标记了 {0} 个脚本——请查看上方输出。使用 Defender 扫描该文件夹以将其删除。</value>
+  </data>
+  <data name="Sec_ScriptScanRunning" xml:space="preserve">
+    <value>正在检查 {0} 中的脚本…</value>
+  </data>
+  <data name="Sec_Source_ScheduledTask" xml:space="preserve">
+    <value>计划任务</value>
+  </data>
+  <data name="Sec_Source_ScriptFile" xml:space="preserve">
+    <value>脚本文件</value>
+  </data>
+  <data name="Sec_Source_StartupEntry" xml:space="preserve">
+    <value>启动项</value>
+  </data>
+  <data name="Sec_StatusChecking" xml:space="preserve">
+    <value>正在检查保护状态…</value>
+  </data>
+  <data name="Sec_StatusDetail" xml:space="preserve">
+    <value>特征库 {0} · 更新于 {1} · 上次快速扫描 {2}</value>
+  </data>
+  <data name="Sec_StatusDisabled" xml:space="preserve">
+    <value>Microsoft Defender 防病毒已关闭</value>
+  </data>
+  <data name="Sec_StatusOtherAv" xml:space="preserve">
+    <value>{0} 正在保护此电脑</value>
+  </data>
+  <data name="Sec_StatusProtected" xml:space="preserve">
+    <value>Microsoft Defender 正在保护此电脑</value>
+  </data>
+  <data name="Sec_StatusRealtimeOff" xml:space="preserve">
+    <value>实时保护已关闭</value>
+  </data>
+  <data name="Sec_StatusUnavailable" xml:space="preserve">
+    <value>Microsoft Defender 不可用</value>
+  </data>
+  <data name="Sec_SuspiciousIntro" xml:space="preserve">
+    <value>行为类似恶意软件的启动项、计划任务和脚本：隐藏的命令、伪装的名称、用户文件夹中的未签名程序。匹配并不等于证据——隔离前请先检查。</value>
+  </data>
+  <data name="Sec_SuspiciousNone" xml:space="preserve">
+    <value>未发现可疑项目。</value>
+  </data>
+  <data name="Sec_SuspiciousNotScanned" xml:space="preserve">
+    <value>尚未扫描。</value>
+  </data>
+  <data name="Sec_SuspiciousRunning" xml:space="preserve">
+    <value>正在查找可疑项目…</value>
+  </data>
+  <data name="Sec_SuspiciousTitle" xml:space="preserve">
+    <value>可疑项目</value>
+  </data>
+  <data name="Sec_TamperOn" xml:space="preserve">
+    <value>篡改防护已开启</value>
+  </data>
+  <data name="Sec_ThreatActive" xml:space="preserve">
+    <value>活动</value>
+  </data>
+  <data name="Sec_ThreatDetails" xml:space="preserve">
+    <value>严重性：{0} · 检测于 {1} · {2}</value>
+  </data>
+  <data name="Sec_ThreatResolved" xml:space="preserve">
+    <value>已处理</value>
+  </data>
+  <data name="Sec_ThreatSev_0" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="Sec_ThreatSev_1" xml:space="preserve">
+    <value>低</value>
+  </data>
+  <data name="Sec_ThreatSev_2" xml:space="preserve">
+    <value>中等</value>
+  </data>
+  <data name="Sec_ThreatSev_4" xml:space="preserve">
+    <value>高</value>
+  </data>
+  <data name="Sec_ThreatSev_5" xml:space="preserve">
+    <value>严重</value>
+  </data>
+  <data name="Sec_ThreatsHeader" xml:space="preserve">
+    <value>Microsoft Defender 检测结果</value>
+  </data>
+  <data name="Sec_ThreatsRemoved" xml:space="preserve">
+    <value>Microsoft Defender 已删除活动威胁。</value>
+  </data>
+  <data name="Sec_UpdateSignatures" xml:space="preserve">
+    <value>更新特征库</value>
+  </data>
+  <data name="Sec_VtResult" xml:space="preserve">
+    <value>VirusTotal 检出：{0}</value>
+  </data>
+  <data name="Sec_VtUnknown" xml:space="preserve">
+    <value>VirusTotal 未收录</value>
+  </data>
+  <data name="Settings_About" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="Settings_Appearance" xml:space="preserve">
+    <value>外观</value>
+  </data>
+  <data name="Settings_Cleaning" xml:space="preserve">
+    <value>清理</value>
+  </data>
+  <data name="Settings_DataFolder" xml:space="preserve">
+    <value>设置和日志：</value>
+  </data>
+  <data name="Settings_General" xml:space="preserve">
+    <value>常规</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="Settings_LanguageDesc" xml:space="preserve">
+    <value>选择应用语言。更改立即生效。</value>
+  </data>
+  <data name="Settings_OpenFolder" xml:space="preserve">
+    <value>打开文件夹</value>
+  </data>
+  <data name="Settings_ReduceMotion" xml:space="preserve">
+    <value>减少动画</value>
+  </data>
+  <data name="Settings_ReduceMotionDesc" xml:space="preserve">
+    <value>关闭装饰性动画。当 Windows 动画效果被禁用时，动画也会保持关闭。</value>
+  </data>
+  <data name="Settings_Remember" xml:space="preserve">
+    <value>记住我的选择</value>
+  </data>
+  <data name="Settings_RememberDesc" xml:space="preserve">
+    <value>下次保留您勾选或取消勾选的类别和位置。</value>
+  </data>
+  <data name="Settings_RestorePoint" xml:space="preserve">
+    <value>优化前创建还原点</value>
+  </data>
+  <data name="Settings_RestorePointDesc" xml:space="preserve">
+    <value>每次会话中首次调整前创建系统还原点（仅限管理员）。</value>
+  </data>
+  <data name="Settings_Safety" xml:space="preserve">
+    <value>安全</value>
+  </data>
+  <data name="Settings_SkipRecent" xml:space="preserve">
+    <value>跳过 24 小时内的临时文件</value>
+  </data>
+  <data name="Settings_SkipRecentDesc" xml:space="preserve">
+    <value>推荐。最近的临时文件可能仍被安装程序或正在运行的应用使用。</value>
+  </data>
+  <data name="Settings_Theme" xml:space="preserve">
+    <value>应用主题</value>
+  </data>
+  <data name="Settings_ThemeDark" xml:space="preserve">
+    <value>深色</value>
+  </data>
+  <data name="Settings_ThemeDesc" xml:space="preserve">
+    <value>选择浅色、深色或跟随 Windows 设置。</value>
+  </data>
+  <data name="Settings_ThemeLight" xml:space="preserve">
+    <value>浅色</value>
+  </data>
+  <data name="Settings_ThemeSystem" xml:space="preserve">
+    <value>跟随 Windows 设置</value>
+  </data>
+  <data name="Settings_ViewLogs" xml:space="preserve">
+    <value>查看日志</value>
+  </data>
+  <data name="Settings_VirusTotal" xml:space="preserve">
+    <value>VirusTotal 哈希查询</value>
+  </data>
+  <data name="Settings_VirusTotalDesc" xml:space="preserve">
+    <value>添加一个按钮，用 70 多个防病毒引擎检查可疑文件。需要 virustotal.com 的免费 API 密钥。</value>
+  </data>
+  <data name="Settings_VirusTotalKey" xml:space="preserve">
+    <value>VirusTotal API 密钥</value>
+  </data>
+  <data name="Settings_VirusTotalKeySaved" xml:space="preserve">
+    <value>已保存密钥。</value>
+  </data>
+  <data name="Settings_VirusTotalPrivacy" xml:space="preserve">
+    <value>只会向 VirusTotal 发送文件的 SHA-256 哈希值，绝不发送文件本身。密钥会针对您的 Windows 帐户加密存储。免费 API 每分钟允许 4 次查询。</value>
+  </data>
+  <data name="Settings_VirusTotalSave" xml:space="preserve">
+    <value>保存密钥</value>
+  </data>
+  <data name="Skip_AccessDenied" xml:space="preserve">
+    <value>拒绝访问</value>
+  </data>
+  <data name="Skip_Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="Skip_InUse" xml:space="preserve">
+    <value>正在使用</value>
+  </data>
+  <data name="Skip_Unsafe" xml:space="preserve">
+    <value>出于安全原因跳过</value>
+  </data>
+  <data name="Startup_ChangeFailed" xml:space="preserve">
+    <value>无法更改启动项</value>
+  </data>
+  <data name="Startup_DisabledMessage" xml:space="preserve">
+    <value>{0} 将不再随 Windows 启动。</value>
+  </data>
+  <data name="Startup_DisabledTitle" xml:space="preserve">
+    <value>已禁用启动项</value>
+  </data>
+  <data name="Startup_Empty" xml:space="preserve">
+    <value>未找到启动项。</value>
+  </data>
+  <data name="Startup_EnabledMessage" xml:space="preserve">
+    <value>{0} 将随 Windows 启动。</value>
+  </data>
+  <data name="Startup_EnabledTitle" xml:space="preserve">
+    <value>已启用启动项</value>
+  </data>
+  <data name="Startup_Intro" xml:space="preserve">
+    <value>登录时启动的程序。禁用它们可加快启动速度并释放内存——不会卸载任何内容，您可以随时重新启用。</value>
+  </data>
+  <data name="Startup_Loc_FolderAll" xml:space="preserve">
+    <value>启动文件夹（所有用户）</value>
+  </data>
+  <data name="Startup_Loc_FolderUser" xml:space="preserve">
+    <value>启动文件夹（当前用户）</value>
+  </data>
+  <data name="Startup_Loc_RegistryAll" xml:space="preserve">
+    <value>注册表（所有用户）</value>
+  </data>
+  <data name="Startup_Loc_RegistryAll32" xml:space="preserve">
+    <value>注册表（所有用户，32 位）</value>
+  </data>
+  <data name="Startup_Loc_RegistryUser" xml:space="preserve">
+    <value>注册表（当前用户）</value>
+  </data>
+  <data name="Startup_OpenLocation" xml:space="preserve">
+    <value>打开文件位置</value>
+  </data>
+  <data name="Startup_ReadOnlyMessage" xml:space="preserve">
+    <value>只有在以管理员身份运行 Ultimate PC Cleaner 时，才能更改为所有用户注册的应用。</value>
+  </data>
+  <data name="Startup_ReadOnlyTitle" xml:space="preserve">
+    <value>部分条目为只读</value>
+  </data>
+  <data name="Startup_Search" xml:space="preserve">
+    <value>搜索启动项…</value>
+  </data>
+  <data name="Startup_Summary" xml:space="preserve">
+    <value>已启用 {0} · 已禁用 {1}</value>
+  </data>
+  <data name="Startup_UnknownPublisher" xml:space="preserve">
+    <value>未知发布者</value>
+  </data>
+  <data name="Status_Clean" xml:space="preserve">
+    <value>干净</value>
+  </data>
+  <data name="Status_Cleaned" xml:space="preserve">
+    <value>已清理</value>
+  </data>
+  <data name="Status_Cleaning" xml:space="preserve">
+    <value>正在清理…</value>
+  </data>
+  <data name="Status_Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="Status_RequiresAdmin" xml:space="preserve">
+    <value>需要管理员权限</value>
+  </data>
+  <data name="Status_Scanning" xml:space="preserve">
+    <value>正在扫描…</value>
+  </data>
+  <data name="Temp_AdminReason" xml:space="preserve">
+    <value>Windows 保护此文件夹：只有管理员才能列出并删除其中的文件。请以管理员身份重新启动以扫描和清理。</value>
+  </data>
+  <data name="Temp_CleanSelected" xml:space="preserve">
+    <value>删除所选</value>
+  </data>
+  <data name="Temp_ConfirmButton" xml:space="preserve">
+    <value>删除文件</value>
+  </data>
+  <data name="Temp_ConfirmIntro" xml:space="preserve">
+    <value>以下临时文件将被永久删除（不会进入回收站）：</value>
+  </data>
+  <data name="Temp_ConfirmSafety" xml:space="preserve">
+    <value>只删除文件——文件夹本身会保留。正在使用或受保护的文件将被跳过并在报告中列出。</value>
+  </data>
+  <data name="Temp_ConfirmTitle" xml:space="preserve">
+    <value>删除临时文件？</value>
+  </data>
+  <data name="Temp_ConfirmTotal" xml:space="preserve">
+    <value>预计可释放空间：{0}</value>
+  </data>
+  <data name="Temp_Intro" xml:space="preserve">
+    <value>扫描 Windows 临时文件夹并安全删除残留文件。查看扫描结果、选择位置，并在删除前确认。</value>
+  </data>
+  <data name="Temp_NothingMessage" xml:space="preserve">
+    <value>请先扫描，然后选择包含可删除文件的位置。</value>
+  </data>
+  <data name="Temp_OpenFolder" xml:space="preserve">
+    <value>在文件资源管理器中打开文件夹</value>
+  </data>
+  <data name="Temp_PathUnresolved" xml:space="preserve">
+    <value>无法安全确定路径</value>
+  </data>
+  <data name="Temp_Prefetch_Desc" xml:space="preserve">
+    <value>%WINDIR%\Prefetch 中的应用启动跟踪文件 (*.pf)。</value>
+  </data>
+  <data name="Temp_Prefetch_Name" xml:space="preserve">
+    <value>Windows Prefetch</value>
+  </data>
+  <data name="Temp_Prefetch_Note" xml:space="preserve">
+    <value>Windows 会自动管理 Prefetch。清除它不会让电脑变快——在 Windows 重建这些数据之前，应用启动可能会暂时变慢。仅在排查问题时清理。</value>
+  </data>
+  <data name="Temp_ProgressCounts" xml:space="preserve">
+    <value>已处理 {0}/{1} 个文件 · {2} · {3}</value>
+  </data>
+  <data name="Temp_Reclaimed" xml:space="preserve">
+    <value>已释放</value>
+  </data>
+  <data name="Temp_ResultCancelled" xml:space="preserve">
+    <value>清理已取消</value>
+  </data>
+  <data name="Temp_ResultFailed" xml:space="preserve">
+    <value>清理失败</value>
+  </data>
+  <data name="Temp_ResultFreed" xml:space="preserve">
+    <value>{0} · 已释放 {1}</value>
+  </data>
+  <data name="Temp_ResultLocationError" xml:space="preserve">
+    <value>有位置无法清理（请查看日志）</value>
+  </data>
+  <data name="Temp_ResultPartial" xml:space="preserve">
+    <value>部分已清理</value>
+  </data>
+  <data name="Temp_ResultSuccess" xml:space="preserve">
+    <value>清理完成</value>
+  </data>
+  <data name="Temp_SafetyBody" xml:space="preserve">
+    <value>• 路径来自 Windows 环境变量（%LOCALAPPDATA%、%WINDIR%），没有任何硬编码。
+• 只删除文件。Temp 和 Prefetch 文件夹本身永远不会被删除；只清理空的子文件夹。
+• 从不跟随链接（交接点/符号链接），每个文件在删除前都会再次检查。
+• 正在使用或受保护的文件会被跳过并列入报告。默认保留最近 24 小时内的临时文件。
+• 绝不触碰文档、下载、浏览器配置文件、密码和应用设置。</value>
+  </data>
+  <data name="Temp_SafetyHeader" xml:space="preserve">
+    <value>清理如何保证安全</value>
+  </data>
+  <data name="Temp_Scanning" xml:space="preserve">
+    <value>正在扫描临时文件夹…</value>
+  </data>
+  <data name="Temp_SkippedHeader" xml:space="preserve">
+    <value>跳过的文件</value>
+  </data>
+  <data name="Temp_SkippedHint" xml:space="preserve">
+    <value>这些文件被保留。大多数正被运行中的应用使用，可在重启后删除。（最多列出 200 个。）</value>
+  </data>
+  <data name="Temp_State_AccessDenied" xml:space="preserve">
+    <value>拒绝访问</value>
+  </data>
+  <data name="Temp_State_Cancelled" xml:space="preserve">
+    <value>已取消</value>
+  </data>
+  <data name="Temp_State_Missing" xml:space="preserve">
+    <value>未找到文件夹</value>
+  </data>
+  <data name="Temp_State_NotScanned" xml:space="preserve">
+    <value>未扫描</value>
+  </data>
+  <data name="Temp_State_ResolveError" xml:space="preserve">
+    <value>不可用</value>
+  </data>
+  <data name="Temp_SummaryNotScanned" xml:space="preserve">
+    <value>扫描以查看临时文件占用的空间。</value>
+  </data>
+  <data name="Temp_SummaryScanned" xml:space="preserve">
+    <value>已选：{0} · 可释放 {1}</value>
+  </data>
+  <data name="Temp_UserTemp_Desc" xml:space="preserve">
+    <value>您的个人 Temp 文件夹 (%LOCALAPPDATA%\Temp)，应用和安装程序会在此留下文件。</value>
+  </data>
+  <data name="Temp_UserTemp_Name" xml:space="preserve">
+    <value>用户临时文件</value>
+  </data>
+  <data name="Temp_WindowsTemp_Desc" xml:space="preserve">
+    <value>Windows、服务和安装程序使用的系统 Temp 文件夹 (%WINDIR%\Temp)。</value>
+  </data>
+  <data name="Temp_WindowsTemp_Name" xml:space="preserve">
+    <value>Windows 临时文件</value>
+  </data>
+  <data name="Tweak_PowerPlanRevertFailed" xml:space="preserve">
+    <value>无法切换回之前的电源计划。</value>
+  </data>
+  <data name="Tweak_PowerPlanUnsupported" xml:space="preserve">
+    <value>此电脑的电源配置不允许使用该计划（支持现代待机的设备仅支持“平衡”）。</value>
+  </data>
+  <data name="Tweak_game_dvr_Desc" xml:space="preserve">
+    <value>阻止 Xbox Game Bar 在后台持续录制游戏 (Game DVR)。</value>
+  </data>
+  <data name="Tweak_game_dvr_Name" xml:space="preserve">
+    <value>禁用后台游戏录制</value>
+  </data>
+  <data name="Tweak_power_high_Desc" xml:space="preserve">
+    <value>让 CPU 保持更高频率而不是省电。最适合台式机或接通电源的笔记本电脑。</value>
+  </data>
+  <data name="Tweak_power_high_Name" xml:space="preserve">
+    <value>高性能电源计划</value>
+  </data>
+  <data name="Tweak_power_ultimate_Desc" xml:space="preserve">
+    <value>消除节能带来的微延迟。适用于工作站；会消耗更多电量。</value>
+  </data>
+  <data name="Tweak_power_ultimate_Name" xml:space="preserve">
+    <value>卓越性能电源计划</value>
+  </data>
+  <data name="Tweak_visual_effects_Desc" xml:space="preserve">
+    <value>关闭窗口动画、平滑滚动和透明效果，让较慢的电脑上桌面更流畅。</value>
+  </data>
+  <data name="Tweak_visual_effects_Name" xml:space="preserve">
+    <value>性能优先视觉效果</value>
+  </data>
+  <data name="Unit_B" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="Unit_GB" xml:space="preserve">
+    <value>GB</value>
+  </data>
+  <data name="Unit_KB" xml:space="preserve">
+    <value>KB</value>
+  </data>
+  <data name="Unit_MB" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="Unit_TB" xml:space="preserve">
+    <value>TB</value>
+  </data>
+  <data name="Nav_System" xml:space="preserve">
+    <value>系统</value>
+  </data>
+  <data name="System_AdminTitle" xml:space="preserve">
+    <value>需要管理员权限</value>
+  </data>
+  <data name="System_AdminMessage" xml:space="preserve">
+    <value>重命名电脑和安装更新需要管理员权限。检查更新无需管理员权限。</value>
+  </data>
+  <data name="System_RenameHeader" xml:space="preserve">
+    <value>计算机名</value>
+  </data>
+  <data name="System_RenameTitle" xml:space="preserve">
+    <value>重命名这台电脑</value>
+  </data>
+  <data name="System_RenameDesc" xml:space="preserve">
+    <value>网络上其他设备看到的名称。新名称在重启后生效。</value>
+  </data>
+  <data name="System_CurrentName" xml:space="preserve">
+    <value>当前名称：{0}</value>
+  </data>
+  <data name="System_PendingName" xml:space="preserve">
+    <value>重启后：{0}</value>
+  </data>
+  <data name="System_NewNamePlaceholder" xml:space="preserve">
+    <value>新名称</value>
+  </data>
+  <data name="System_Rename" xml:space="preserve">
+    <value>重命名</value>
+  </data>
+  <data name="System_NameRules" xml:space="preserve">
+    <value>最多 15 个字符：字母、数字和连字符。</value>
+  </data>
+  <data name="System_NameTooLong" xml:space="preserve">
+    <value>名称最多 15 个字符。</value>
+  </data>
+  <data name="System_NameInvalidChars" xml:space="preserve">
+    <value>只能使用字母 (A–Z)、数字和连字符，不能有空格。</value>
+  </data>
+  <data name="System_NameAllDigits" xml:space="preserve">
+    <value>名称不能只包含数字。</value>
+  </data>
+  <data name="System_NameHyphenEdge" xml:space="preserve">
+    <value>名称不能以连字符开头或结尾。</value>
+  </data>
+  <data name="System_Renamed" xml:space="preserve">
+    <value>重启后计算机名称将变为“{0}”。</value>
+  </data>
+  <data name="System_RenameFailed" xml:space="preserve">
+    <value>重命名失败</value>
+  </data>
+  <data name="System_RestartTitle" xml:space="preserve">
+    <value>需要重启</value>
+  </data>
+  <data name="System_RestartMessage" xml:space="preserve">
+    <value>更改将在计算机重启后生效。重启前请保存您的工作。</value>
+  </data>
+  <data name="System_RebootRequired" xml:space="preserve">
+    <value>重启计算机以完成更改和更新。</value>
+  </data>
+  <data name="System_RestartNow" xml:space="preserve">
+    <value>立即重启</value>
+  </data>
+  <data name="System_RestartLater" xml:space="preserve">
+    <value>稍后</value>
+  </data>
+  <data name="System_UpdatesHeader" xml:space="preserve">
+    <value>Windows 更新</value>
+  </data>
+  <data name="System_UpdatesTitle" xml:space="preserve">
+    <value>Windows 更新</value>
+  </data>
+  <data name="System_UpdatesDesc" xml:space="preserve">
+    <value>检查、下载并安装来自 Microsoft 的更新。</value>
+  </data>
+  <data name="System_Check" xml:space="preserve">
+    <value>检查更新</value>
+  </data>
+  <data name="System_Install" xml:space="preserve">
+    <value>安装所选更新</value>
+  </data>
+  <data name="System_OpenSettings" xml:space="preserve">
+    <value>打开 Windows 更新设置</value>
+  </data>
+  <data name="System_UpdatesIdle" xml:space="preserve">
+    <value>尚未检查。</value>
+  </data>
+  <data name="System_Searching" xml:space="preserve">
+    <value>正在检查更新… 这可能需要几分钟。</value>
+  </data>
+  <data name="System_UpToDate" xml:space="preserve">
+    <value>已是最新</value>
+  </data>
+  <data name="System_LastChecked" xml:space="preserve">
+    <value>上次检查时间 {0}</value>
+  </data>
+  <data name="System_SearchFailed" xml:space="preserve">
+    <value>Windows 更新错误：{0}</value>
+  </data>
+  <data name="System_Downloading" xml:space="preserve">
+    <value>正在下载 {0}/{1}：{2}</value>
+  </data>
+  <data name="System_Installing" xml:space="preserve">
+    <value>正在安装 {0}/{1}：{2}</value>
+  </data>
+  <data name="System_InstallDone" xml:space="preserve">
+    <value>已安装 {0}/{1} 个更新。</value>
+  </data>
+  <data name="System_InstallCancelled" xml:space="preserve">
+    <value>安装已停止。已安装的更新会保留。</value>
+  </data>
+  <data name="System_UpdateDownloaded" xml:space="preserve">
+    <value>已下载</value>
+  </data>
+  <data name="System_UpdateOptional" xml:space="preserve">
+    <value>可选</value>
+  </data>
+  <data name="Count_Updates_One" xml:space="preserve">
+    <value>有 {0} 个可用更新</value>
+  </data>
+  <data name="Count_Updates_Few" xml:space="preserve">
+    <value>有 {0} 个可用更新</value>
+  </data>
+  <data name="Count_Updates_Many" xml:space="preserve">
+    <value>有 {0} 个可用更新</value>
+  </data>
+  <data name="Nav_Help" xml:space="preserve">
+    <value>用户手册</value>
+  </data>
+  <data name="Help_Intro" xml:space="preserve">
+    <value>Ultimate PC Cleaner 详细使用指南：每个页面的功能、使用方法，以及应用如何保护您的数据。点击某个部分即可展开，然后点击“打开页面”直接转到该功能。</value>
+  </data>
+  <data name="Help_QuickStartHeader" xml:space="preserve">
+    <value>快速入门</value>
+  </data>
+  <data name="Help_QuickStartBody" xml:space="preserve">
+    <value>1. 在“仪表板”上点击“立即扫描”。应用会查找垃圾文件，但不会删除任何内容。
+2. 在“清理”和“临时文件”页面查看结果，选择要删除的内容并确认。
+3. 在“启动项”页面关闭登录后不需要立即运行的程序，Windows 将启动得更快。
+4. 在“安全”页面检查防护状态，并定期运行“查找可疑项目”。
+5. 如需一键维护，请使用“仪表板”上的“加速”按钮。
+
+提示：清理系统文件夹、运行 Defender 扫描、使用修复工具和安装更新时，请以管理员身份运行应用（点击窗口顶部提示栏中的“以管理员身份重新启动”）。</value>
+  </data>
+  <data name="Help_PagesHeader" xml:space="preserve">
+    <value>应用页面</value>
+  </data>
+  <data name="Help_OpenPage" xml:space="preserve">
+    <value>打开页面</value>
+  </data>
+  <data name="Help_Dashboard_Summary" xml:space="preserve">
+    <value>一目了然的电脑状态、清理统计和一键加速。</value>
+  </data>
+  <data name="Help_Dashboard_Body" xml:space="preserve">
+    <value>仪表板是启动后的首页，一眼即可了解电脑状态。
+• 系统状态 — 实时仪表显示处理器负载 (CPU)、内存使用 (RAM) 和系统驱动器的可用空间，以及自上次重启以来的运行时间。
+• 发现的垃圾 — 在“清理”和“临时文件”页面中所选垃圾文件的总大小。
+• 临时文件 — Temp 和 Prefetch 文件夹中可释放的空间。
+• 累计释放空间和上次清理 — 自开始使用本应用以来释放了多少空间，以及上次清理的时间。
+• “立即扫描” — 检查所有类别并显示可释放的空间。扫描绝不会删除任何内容；可通过“在清理中查看”查看结果。
+• “加速” — 一键清理“清理”页面中选中的垃圾文件、刷新 DNS 缓存并释放内存。删除前会显示将要删除的确切数据量并请求确认；选择“取消”则不会做任何更改。
+“临时文件”和“优化”快捷方式可直接打开对应页面。</value>
+  </data>
+  <data name="Help_TempFiles_Summary" xml:space="preserve">
+    <value>查看并安全删除 Windows 临时文件夹中的文件。</value>
+  </data>
+  <data name="Help_TempFiles_Body" xml:space="preserve">
+    <value>此页面处理 Windows 存放临时数据的三个位置：
+• 用户临时文件 (%LOCALAPPDATA%\Temp) — 您个人的 Temp 文件夹；无需管理员权限。
+• Windows 临时文件 (%WINDIR%\Temp) — 系统 Temp 文件夹；需要管理员权限。
+• Windows Prefetch (%WINDIR%\Prefetch，仅 *.pf 文件) — 需要管理员权限。
+
+使用方法：
+1. 点击“扫描”。每个位置都会显示文件数量、可释放的空间、正在使用的文件和无法访问的项目。
+2. 选择要清理的位置。点击文件夹图标可在文件资源管理器中打开该位置。
+3. 点击“删除所选”，在确认对话框中检查列表，然后点击“删除文件”。
+4. 实时查看进度。完成后会显示已删除的内容、已跳过的内容（及原因）以及已不存在的内容。
+
+正在使用的文件会被跳过，其中大部分可在重启后删除。默认保留 24 小时内的文件（设置 →“跳过 24 小时内的临时文件”）。
+注意：清除 Prefetch 不会让电脑变快，应用在一开始可能启动较慢。仅在排查问题时使用。</value>
+  </data>
+  <data name="Help_Cleaner_Summary" xml:space="preserve">
+    <value>按类别清理缓存、日志、回收站和浏览器缓存。</value>
+  </data>
+  <data name="Help_Cleaner_Body" xml:space="preserve">
+    <value>“清理”涵盖更多类别，按组划分：
+• Windows — 用户和 Windows 临时文件、Windows 更新缓存、传递优化缓存、错误报告、内存转储、旧的 Windows 日志（超过 7 天）、回收站、Prefetch 数据和缩略图缓存。
+• 网页浏览器 — Microsoft Edge、Google Chrome、Brave 和 Mozilla Firefox 的缓存。仅删除缓存；Cookie、历史记录和密码均会保留。
+• 应用程序 — DirectX 着色器缓存。
+
+使用方法：
+1. 勾选或取消勾选类别。组名旁的复选框可选中或取消整个组；“全选”、“推荐”和“全不选”可一次性更改所有类别的选择。
+2. 点击“扫描”查看每个类别占用的空间。
+3. 点击“清理所选项”并确认。完成后应用会显示释放了多少空间。
+
+如果浏览器正在运行，会出现“部分应用正在运行”警告，关闭浏览器即可完全清理其缓存。带黄色警告的类别（例如 Prefetch 或着色器缓存）有副作用，请仅在需要时启用。标有“需要管理员权限”的类别仅在管理员模式下可用。</value>
+  </data>
+  <data name="Help_Startup_Summary" xml:space="preserve">
+    <value>启用或禁用随 Windows 启动的程序。</value>
+  </data>
+  <data name="Help_Startup_Body" xml:space="preserve">
+    <value>此处列出登录 Windows 时自动启动的所有程序，来源包括注册表和启动文件夹，涵盖当前用户和所有用户。
+• 程序旁的开关可禁用或重新启用其开机启动。它使用与任务管理器相同的机制，因此不会删除或卸载任何内容。
+• 搜索框可按名称筛选列表；旁边显示已启用和已禁用项目的数量。
+• 每个项目都会显示发布者和位置（例如“注册表（当前用户）”）；“打开文件位置”可在文件资源管理器中显示该程序。
+• “刷新”会重新加载列表。
+
+为所有用户注册的项目只能在管理员模式下更改，否则为只读。
+提示：关闭登录后不需要立即运行的程序（游戏启动器、更新程序、聊天应用）。请保持杀毒软件和硬件工具（音频、触摸板、显卡）为启用状态。</value>
+  </data>
+  <data name="Help_Security_Summary" xml:space="preserve">
+    <value>Microsoft Defender 扫描、脚本检查、可疑项目和隔离区。</value>
+  </data>
+  <data name="Help_Security_Body" xml:space="preserve">
+    <value>“安全”页面使用 Microsoft Defender 及电脑上安装的杀毒软件，它本身并不是独立的杀毒软件。
+• 防护状态 — 顶部显示电脑是否受保护、特征库版本和日期以及上次扫描时间。如果其他杀毒软件处于活动状态，则无法使用 Defender 扫描，但其他功能仍可正常使用。
+• “快速扫描”、“完全扫描”和“扫描文件夹…”会运行 Defender 扫描并实时显示输出。“更新特征库”会下载最新的病毒定义。
+• “检查脚本 (AMSI)…” — 将所选文件夹中的每个 PowerShell、VBScript、JavaScript 和批处理脚本交给已安装的杀毒软件检查。
+• “查找可疑项目” — 检查启动项、计划任务和脚本，并标记风险特征：隐藏或编码的命令、伪装的文件名（例如 invoice.pdf.exe）、用户文件夹中未签名的程序，以及指向不存在文件的条目。每个项目都有风险级别（低、中、高）和原因。匹配并不代表一定有害，请先核实再处理。
+• 对于可疑项目，您可以使用 Defender 扫描、在 VirusTotal 上检查其哈希（需在设置中启用）或将其移入隔离区。
+• Microsoft Defender 检测结果 — 检测列表。“删除活动威胁”会将其删除，“允许”会将文件标记为安全（仅在确定安全时使用）。
+• Ultimate PC Cleaner 隔离区 — 被移入的文件以无法运行的形式保存。“恢复”会将文件放回原位置，“删除”会将其永久删除。您也可以在此恢复 Defender 隔离区中的文件。
+
+扫描、隔离和恢复需要管理员权限；防护状态和可疑项目查找无需管理员权限。</value>
+  </data>
+  <data name="Help_Optimize_Summary" xml:space="preserve">
+    <value>可撤销的性能调整和快捷操作。</value>
+  </data>
+  <data name="Help_Optimize_Body" xml:space="preserve">
+    <value>性能调整（开关 — 关闭即可恢复之前的设置）：
+• 高性能电源计划 — 让处理器保持较高频率；最适合台式机和接通电源的笔记本电脑。
+• 卓越性能电源计划 — 消除节能带来的微小延迟，但耗电更多、电池消耗更快。支持新式待机 (Modern Standby) 的设备只支持“平衡”计划。
+• 性能优先视觉效果 — 关闭窗口动画、平滑滚动和透明效果；适合配置较低的电脑。
+• 禁用后台游戏录制 — 阻止 Xbox Game Bar (Game DVR) 在后台持续录制游戏。
+
+在每个会话的首次更改之前，应用会创建系统还原点（前提是已在设置中启用此选项且应用以管理员身份运行）。如果无法创建还原点，应用会询问您是否仍要继续。
+
+快捷操作：
+• 刷新 DNS 缓存 — 在更换网络或 DNS 服务器后网站无法打开时很有帮助。
+• 释放内存 — 回收应用未使用的内存；适合在运行游戏或大型程序前使用。
+• 创建还原点 — 手动保存系统快照，之后可通过 Windows 恢复功能还原（需要管理员权限并启用系统保护）。</value>
+  </data>
+  <data name="Help_Health_Summary" xml:space="preserve">
+    <value>带实时输出的 Windows 检查与修复工具。</value>
+  </data>
+  <data name="Help_Health_Body" xml:space="preserve">
+    <value>此处可运行 Windows 内置的维护工具，所有工具都需要管理员权限。
+• 系统文件检查器 (sfc /scannow) — 查找并修复损坏的受保护 Windows 文件。
+• 修复 Windows 映像 (DISM RestoreHealth) — 修复 Windows 组件存储，需要联网。当 SFC 报告无法修复的错误时运行它，然后再次运行 SFC。
+• 清理组件存储 (DISM) — 从 WinSxS 文件夹中删除已被取代的更新组件以释放空间。
+• 优化系统驱动器 — 对 SSD 执行 TRIM，对机械硬盘执行碎片整理。
+• 检查磁盘错误 (chkdsk /scan) — 查找文件系统错误，但不做任何更改。
+
+点击工具旁的“运行”，并在下方面板中查看输出。可以用“取消”停止工具，也可以复制（“复制输出”）或清除（“清除输出”）输出内容。某些工具需要运行数十分钟，运行期间请勿关闭电脑。</value>
+  </data>
+  <data name="Help_System_Summary" xml:space="preserve">
+    <value>重命名计算机并管理 Windows 更新。</value>
+  </data>
+  <data name="Help_System_Body" xml:space="preserve">
+    <value>计算机名
+• 卡片显示电脑当前在网络中的名称。
+• 输入新名称并点击“重命名”。规则：最多 15 个字符，只能使用字母 (A–Z)、数字和连字符，不能有空格；名称不能全为数字，也不能以连字符开头或结尾。
+• 新名称在重启后生效。
+
+Windows 更新
+• “检查更新”会查找可用更新（可能需要几分钟）；无需管理员权限。
+• 更新以列表形式显示。必需更新已预先选中，可选更新（例如功能更新）则不会选中。
+• “安装所选更新”会下载并安装选中的更新并显示进度；“取消”会停止安装，已安装的更新会保留。
+• 按钮旁的图标可打开 Windows 设置中的 Windows 更新。
+
+需要重启时（重命名或更新后），页面顶部会出现带有“立即重启”按钮的卡片。重启前请保存您的工作。</value>
+  </data>
+  <data name="Help_Settings_Summary" xml:space="preserve">
+    <value>语言、主题、清理安全选项和 VirusTotal。</value>
+  </data>
+  <data name="Help_Settings_Body" xml:space="preserve">
+    <value>常规
+• 语言 — 塞尔维亚语（拉丁字母）、英语、俄语、德语或中文；更改立即生效。
+
+外观
+• 应用主题 — 浅色、深色或跟随 Windows。
+• 减少动画 — 关闭装饰性动画（当 Windows 中关闭动画时也会自动关闭）。
+
+清理
+• 跳过 24 小时内的临时文件 — 推荐启用，因为新文件可能仍被安装程序或正在运行的应用使用。
+• 记住我的选择 — 保留您勾选的类别和位置，供下次使用。
+
+安全
+• 优化前创建还原点 — 在每个会话的首次更改之前创建系统还原点。
+• VirusTotal 哈希查询 — 添加一个按钮，可使用 70 多个杀毒引擎检查可疑文件。需要从 virustotal.com 获取免费的 API 密钥：输入密钥后点击“保存密钥”。只会发送文件的 SHA-256 哈希，绝不发送文件本身；密钥会针对您的 Windows 帐户加密保存。
+
+关于
+• 显示版本以及设置和日志所在的文件夹；“打开文件夹”和“查看日志”可在文件资源管理器中打开该文件夹。</value>
+  </data>
+  <data name="Help_SafetyHeader" xml:space="preserve">
+    <value>安全与管理员权限</value>
+  </data>
+  <data name="Help_SafetyTitle" xml:space="preserve">
+    <value>应用如何保护您的数据</value>
+  </data>
+  <data name="Help_SafetySummary" xml:space="preserve">
+    <value>每次扫描和删除都遵循的规则。</value>
+  </data>
+  <data name="Help_SafetyBody" xml:space="preserve">
+    <value>• 未经您确认绝不删除任何内容 — 每次删除（包括“加速”）都会先显示将删除的内容及占用的空间。
+• 扫描只读取数据，绝不删除任何内容。
+• 路径由 Windows 环境变量 (%LOCALAPPDATA%、%WINDIR%) 解析。无法安全解析的路径（相对路径、网络路径、驱动器根目录或链接）会被报告，且绝不清理。
+• 只删除文件。主文件夹绝不会被删除，空的子文件夹会逐个删除。
+• 绝不跟随链接（交接点和符号链接），每个文件在删除前都会再次检查。
+• 正在使用、没有权限或未通过检查的文件会被跳过并在结果中列出 — 部分成功会如实报告为部分成功。
+• 绝不触及文档、下载内容、Cookie、浏览器历史记录、密码和应用设置。
+• 优化可以撤销，并且在首次更改前会创建系统还原点。
+• “安全”页面绝不会自行删除文件；隔离只有在您确认后才会执行，并且可以撤销。
+• 删除的文件不会进入回收站 — 删除是永久性的，请仔细检查您的选择。</value>
+  </data>
+  <data name="Help_AdminTitle" xml:space="preserve">
+    <value>受限模式与管理员权限</value>
+  </data>
+  <data name="Help_AdminSummary" xml:space="preserve">
+    <value>哪些功能无需提升权限即可使用，哪些需要管理员权限。</value>
+  </data>
+  <data name="Help_AdminBody" xml:space="preserve">
+    <value>应用以当前用户的权限启动。此时窗口标题中会显示“（受限模式）”，顶部会出现一条说明栏。
+
+无需管理员权限即可：
+• 清理您自己的 Temp 文件夹和浏览器缓存，
+• 启用或禁用您自己的启动程序，
+• 使用大多数性能调整和快捷操作，
+• 查看防护状态、检查脚本和查找可疑项目，
+• 检查 Windows 更新。
+
+需要管理员权限的功能：
+• Windows Temp、Prefetch 和系统缓存，
+• 为所有用户注册的启动程序，
+• 系统还原点，
+• “系统健康”页面中的工具，
+• Defender 扫描、隔离和恢复文件，
+• 重命名计算机和安装更新。
+
+点击顶部提示栏中的“以管理员身份重新启动”，并在 Windows UAC 提示中确认。应用绝不会自行请求提升权限。您可以点击 X 按钮关闭提示栏。</value>
+  </data>
+  <data name="Help_FaqHeader" xml:space="preserve">
+    <value>常见问题</value>
+  </data>
+  <data name="Help_Faq1_Q" xml:space="preserve">
+    <value>为什么清理后仍有一些文件残留？</value>
+  </data>
+  <data name="Help_Faq1_A" xml:space="preserve">
+    <value>正在被应用或 Windows 本身使用的文件无法删除，因此会被跳过并在结果中列出（“正在使用”、“拒绝访问”）。关闭应用或重启电脑后再清理一次即可。另外，24 小时内的临时文件也会被有意保留。</value>
+  </data>
+  <data name="Help_Faq2_Q" xml:space="preserve">
+    <value>清理浏览器缓存会删除密码或历史记录吗？</value>
+  </data>
+  <data name="Help_Faq2_A" xml:space="preserve">
+    <value>不会。只删除缓存（临时保存的网页、图片和脚本）。Cookie、历史记录、密码、书签和设置都会保留。清理后首次打开网站时可能会稍慢一些。</value>
+  </data>
+  <data name="Help_Faq3_Q" xml:space="preserve">
+    <value>删除的文件可以恢复吗？</value>
+  </data>
+  <data name="Help_Faq3_A" xml:space="preserve">
+    <value>不可以 — 删除的文件不会进入回收站，因此每次删除前都会请求确认。例外的是在“安全”页面中移入隔离区的文件：您随时可以通过“恢复”将其找回。“优化”页面中的更改可以通过关闭开关或使用系统还原点来撤销。</value>
+  </data>
+  <data name="Help_Faq4_Q" xml:space="preserve">
+    <value>为什么某些按钮或类别不可用？</value>
+  </data>
+  <data name="Help_Faq4_A" xml:space="preserve">
+    <value>通常是因为应用正在受限模式下运行。更改系统的功能需要管理员权限，请点击“以管理员身份重新启动”。此外，在“安全”页面中，如果其他杀毒软件处于活动状态，Defender 扫描也不可用。</value>
+  </data>
+  <data name="Help_Faq5_Q" xml:space="preserve">
+    <value>无法创建还原点，该怎么办？</value>
+  </data>
+  <data name="Help_Faq5_A" xml:space="preserve">
+    <value>请确认应用以管理员身份运行。如果是，则系统驱动器的系统保护可能已关闭：在 Windows 搜索中输入“创建还原点”，选择系统驱动器（通常为 C:），点击“配置”并启用系统保护。</value>
+  </data>
+  <data name="Help_Faq6_Q" xml:space="preserve">
+    <value>安装时 Windows SmartScreen 发出警告，这有问题吗？</value>
+  </data>
+  <data name="Help_Faq6_A" xml:space="preserve">
+    <value>安装程序没有数字签名，因此 Windows SmartScreen 可能会显示“Windows 已保护你的电脑”。点击“更多信息”，然后点击“仍要运行”。应用不会将您的数据发送到任何地方；唯一的例外是可选的 VirusTotal 检查，它只发送文件哈希。</value>
+  </data>
+  <data name="Help_Faq7_Q" xml:space="preserve">
+    <value>设置和日志在哪里？报告问题时应发送什么？</value>
+  </data>
+  <data name="Help_Faq7_A" xml:space="preserve">
+    <value>设置和日志位于 %LOCALAPPDATA%\UltimatePCCleaner 文件夹中。打开 设置 → 关于 →“查看日志”，附上最新的日志，并说明问题以及导致问题的操作步骤。</value>
+  </data>
+</root>

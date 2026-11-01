@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1">
-  <assemblyIdentity version="1.0.0.0" name="PCCleaner.app" />
+  <assemblyIdentity version="2.0.0.0" name="UltimatePCCleaner.app" />
 
   <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">
     <security>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
-        <!-- Cleaning Windows folders, stopping services, restore points and HKLM edits need admin rights. -->
-        <requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
+        <!-- Runs as the current user. Admin-only features (Windows Temp, Prefetch, services, restore points,
+             health tools) explain why they need elevation and offer "Restart as administrator". -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
     </security>
   </trustInfo>

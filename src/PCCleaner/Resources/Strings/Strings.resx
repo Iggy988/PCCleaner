@@ -1,0 +1,1738 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="App_Name" xml:space="preserve">
+    <value>Ultimate PC Cleaner</value>
+  </data>
+  <data name="App_NameUpper" xml:space="preserve">
+    <value>ULTIMATE PC CLEANER</value>
+  </data>
+  <data name="App_TitleLimited" xml:space="preserve">
+    <value>{0} (limited mode)</value>
+  </data>
+  <data name="App_UnhandledError" xml:space="preserve">
+    <value>Something went wrong:
+
+{0}
+
+Details were written to the log in {1}.</value>
+  </data>
+  <data name="Cleaner_Analyzing" xml:space="preserve">
+    <value>Analyzing your PC…</value>
+  </data>
+  <data name="Cleaner_AppsRunning" xml:space="preserve">
+    <value>Some apps are running</value>
+  </data>
+  <data name="Cleaner_BlockingWarning" xml:space="preserve">
+    <value>Running now: {0}. Close these apps to clean their cache completely; files in use are skipped.</value>
+  </data>
+  <data name="Cleaner_CleanSelected" xml:space="preserve">
+    <value>Clean selected</value>
+  </data>
+  <data name="Cleaner_CleaningItem" xml:space="preserve">
+    <value>Cleaning {0}…</value>
+  </data>
+  <data name="Cleaner_ConfirmMessage" xml:space="preserve">
+    <value>Ultimate PC Cleaner will permanently delete {0} ({1}).
+
+Files that are currently in use are skipped automatically.</value>
+  </data>
+  <data name="Cleaner_ConfirmTitle" xml:space="preserve">
+    <value>Clean selected items?</value>
+  </data>
+  <data name="Cleaner_DoneMessage" xml:space="preserve">
+    <value>Freed {0} of disk space.</value>
+  </data>
+  <data name="Cleaner_DonePartialTitle" xml:space="preserve">
+    <value>Cleaning partly complete</value>
+  </data>
+  <data name="Cleaner_DoneTitle" xml:space="preserve">
+    <value>Cleaning complete</value>
+  </data>
+  <data name="Cleaner_Freed" xml:space="preserve">
+    <value>Freed</value>
+  </data>
+  <data name="Cleaner_GroupSelected" xml:space="preserve">
+    <value>{0} of {1} selected</value>
+  </data>
+  <data name="Cleaner_GroupToggle" xml:space="preserve">
+    <value>Select or clear this whole group</value>
+  </data>
+  <data name="Cleaner_Group_Apps" xml:space="preserve">
+    <value>Applications</value>
+  </data>
+  <data name="Cleaner_Group_Browsers" xml:space="preserve">
+    <value>Web browsers</value>
+  </data>
+  <data name="Cleaner_Group_Windows" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+  <data name="Cleaner_NothingMessage" xml:space="preserve">
+    <value>The selected categories are already clean.</value>
+  </data>
+  <data name="Cleaner_NothingTitle" xml:space="preserve">
+    <value>Nothing to clean</value>
+  </data>
+  <data name="Cleaner_Recommended" xml:space="preserve">
+    <value>Recommended</value>
+  </data>
+  <data name="Cleaner_SelectAll" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="Cleaner_SelectNone" xml:space="preserve">
+    <value>Select none</value>
+  </data>
+  <data name="Cleaner_SummaryNotScanned" xml:space="preserve">
+    <value>{0} selected · scan to see how much space you can free</value>
+  </data>
+  <data name="Cleaner_SummaryScanned" xml:space="preserve">
+    <value>{0} selected · {1} can be freed</value>
+  </data>
+  <data name="Cleanup_BrowserCache_Desc" xml:space="preserve">
+    <value>Cached web pages, scripts and images. Cookies, history and passwords are kept.</value>
+  </data>
+  <data name="Cleanup_brave_cache_Name" xml:space="preserve">
+    <value>Brave cache</value>
+  </data>
+  <data name="Cleanup_chrome_cache_Name" xml:space="preserve">
+    <value>Google Chrome cache</value>
+  </data>
+  <data name="Cleanup_delivery_optimization_Desc" xml:space="preserve">
+    <value>Update files Windows keeps to share with other PCs.</value>
+  </data>
+  <data name="Cleanup_delivery_optimization_Name" xml:space="preserve">
+    <value>Delivery Optimization cache</value>
+  </data>
+  <data name="Cleanup_edge_cache_Name" xml:space="preserve">
+    <value>Microsoft Edge cache</value>
+  </data>
+  <data name="Cleanup_error_reports_Desc" xml:space="preserve">
+    <value>Crash and problem reports that were already sent or queued.</value>
+  </data>
+  <data name="Cleanup_error_reports_Name" xml:space="preserve">
+    <value>Windows error reports</value>
+  </data>
+  <data name="Cleanup_firefox_cache_Name" xml:space="preserve">
+    <value>Mozilla Firefox cache</value>
+  </data>
+  <data name="Cleanup_memory_dumps_Desc" xml:space="preserve">
+    <value>Diagnostic dump files written when Windows or an app crashed.</value>
+  </data>
+  <data name="Cleanup_memory_dumps_Name" xml:space="preserve">
+    <value>Memory dumps</value>
+  </data>
+  <data name="Cleanup_prefetch_Desc" xml:space="preserve">
+    <value>Launch traces Windows uses to start your apps faster.</value>
+  </data>
+  <data name="Cleanup_prefetch_Name" xml:space="preserve">
+    <value>Prefetch data</value>
+  </data>
+  <data name="Cleanup_prefetch_Warn" xml:space="preserve">
+    <value>Windows manages this automatically. Clearing it doesn't speed up your PC — apps may start more slowly at first while Windows rebuilds it.</value>
+  </data>
+  <data name="Cleanup_recycle_bin_Desc" xml:space="preserve">
+    <value>Files you deleted that are still kept in the Recycle Bin on all drives.</value>
+  </data>
+  <data name="Cleanup_recycle_bin_Name" xml:space="preserve">
+    <value>Recycle Bin</value>
+  </data>
+  <data name="Cleanup_shader_cache_Desc" xml:space="preserve">
+    <value>Compiled graphics shaders cached by games and apps.</value>
+  </data>
+  <data name="Cleanup_shader_cache_Name" xml:space="preserve">
+    <value>DirectX shader cache</value>
+  </data>
+  <data name="Cleanup_shader_cache_Warn" xml:space="preserve">
+    <value>Games rebuild shaders on next launch, which can cause brief stutter the first time.</value>
+  </data>
+  <data name="Cleanup_thumbnail_cache_Desc" xml:space="preserve">
+    <value>Cached picture and video previews shown in File Explorer.</value>
+  </data>
+  <data name="Cleanup_thumbnail_cache_Name" xml:space="preserve">
+    <value>Thumbnail cache</value>
+  </data>
+  <data name="Cleanup_thumbnail_cache_Warn" xml:space="preserve">
+    <value>File Explorer keeps some of these open; they are rebuilt as you browse folders.</value>
+  </data>
+  <data name="Cleanup_user_temp_Desc" xml:space="preserve">
+    <value>Leftovers that apps and installers write to your personal Temp folder.</value>
+  </data>
+  <data name="Cleanup_user_temp_Name" xml:space="preserve">
+    <value>User temporary files</value>
+  </data>
+  <data name="Cleanup_windows_logs_Desc" xml:space="preserve">
+    <value>Setup and servicing logs older than 7 days.</value>
+  </data>
+  <data name="Cleanup_windows_logs_Name" xml:space="preserve">
+    <value>Old Windows log files</value>
+  </data>
+  <data name="Cleanup_windows_temp_Desc" xml:space="preserve">
+    <value>Temporary files created by Windows and system services.</value>
+  </data>
+  <data name="Cleanup_windows_temp_Name" xml:space="preserve">
+    <value>Windows temporary files</value>
+  </data>
+  <data name="Cleanup_windows_update_Desc" xml:space="preserve">
+    <value>Update packages that were already downloaded and installed.</value>
+  </data>
+  <data name="Cleanup_windows_update_Name" xml:space="preserve">
+    <value>Windows Update cache</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Common_CleanNow" xml:space="preserve">
+    <value>Clean now</value>
+  </data>
+  <data name="Common_Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="Common_Disabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="Common_Dismiss" xml:space="preserve">
+    <value>Dismiss</value>
+  </data>
+  <data name="Common_Enabled" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="Common_Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="Common_RestartAsAdmin" xml:space="preserve">
+    <value>Restart as administrator</value>
+  </data>
+  <data name="Common_Run" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="Common_Scan" xml:space="preserve">
+    <value>Scan</value>
+  </data>
+  <data name="Count_AccessDenied_Few" xml:space="preserve">
+    <value>{0} access denied</value>
+  </data>
+  <data name="Count_AccessDenied_Many" xml:space="preserve">
+    <value>{0} access denied</value>
+  </data>
+  <data name="Count_AccessDenied_One" xml:space="preserve">
+    <value>{0} access denied</value>
+  </data>
+  <data name="Count_AlreadyGone_Few" xml:space="preserve">
+    <value>{0} already gone</value>
+  </data>
+  <data name="Count_AlreadyGone_Many" xml:space="preserve">
+    <value>{0} already gone</value>
+  </data>
+  <data name="Count_AlreadyGone_One" xml:space="preserve">
+    <value>{0} already gone</value>
+  </data>
+  <data name="Count_Categories_Few" xml:space="preserve">
+    <value>{0} categories</value>
+  </data>
+  <data name="Count_Categories_Many" xml:space="preserve">
+    <value>{0} categories</value>
+  </data>
+  <data name="Count_Categories_One" xml:space="preserve">
+    <value>{0} category</value>
+  </data>
+  <data name="Count_EligibleFiles_Few" xml:space="preserve">
+    <value>{0} files can be removed</value>
+  </data>
+  <data name="Count_EligibleFiles_Many" xml:space="preserve">
+    <value>{0} files can be removed</value>
+  </data>
+  <data name="Count_EligibleFiles_One" xml:space="preserve">
+    <value>{0} file can be removed</value>
+  </data>
+  <data name="Count_Errors_Few" xml:space="preserve">
+    <value>{0} errors</value>
+  </data>
+  <data name="Count_Errors_Many" xml:space="preserve">
+    <value>{0} errors</value>
+  </data>
+  <data name="Count_Errors_One" xml:space="preserve">
+    <value>{0} error</value>
+  </data>
+  <data name="Count_FilesRemoved_Few" xml:space="preserve">
+    <value>{0} files removed</value>
+  </data>
+  <data name="Count_FilesRemoved_Many" xml:space="preserve">
+    <value>{0} files removed</value>
+  </data>
+  <data name="Count_FilesRemoved_One" xml:space="preserve">
+    <value>{0} file removed</value>
+  </data>
+  <data name="Count_Files_Few" xml:space="preserve">
+    <value>{0} files</value>
+  </data>
+  <data name="Count_Files_Many" xml:space="preserve">
+    <value>{0} files</value>
+  </data>
+  <data name="Count_Files_One" xml:space="preserve">
+    <value>{0} file</value>
+  </data>
+  <data name="Count_InUse_Few" xml:space="preserve">
+    <value>{0} in use</value>
+  </data>
+  <data name="Count_InUse_Many" xml:space="preserve">
+    <value>{0} in use</value>
+  </data>
+  <data name="Count_InUse_One" xml:space="preserve">
+    <value>{0} in use</value>
+  </data>
+  <data name="Count_Inaccessible_Few" xml:space="preserve">
+    <value>{0} inaccessible</value>
+  </data>
+  <data name="Count_Inaccessible_Many" xml:space="preserve">
+    <value>{0} inaccessible</value>
+  </data>
+  <data name="Count_Inaccessible_One" xml:space="preserve">
+    <value>{0} inaccessible</value>
+  </data>
+  <data name="Count_Items_Few" xml:space="preserve">
+    <value>{0} items</value>
+  </data>
+  <data name="Count_Items_Many" xml:space="preserve">
+    <value>{0} items</value>
+  </data>
+  <data name="Count_Items_One" xml:space="preserve">
+    <value>{0} item</value>
+  </data>
+  <data name="Count_SkippedInUse_Few" xml:space="preserve">
+    <value>{0} in use, skipped</value>
+  </data>
+  <data name="Count_SkippedInUse_Many" xml:space="preserve">
+    <value>{0} in use, skipped</value>
+  </data>
+  <data name="Count_SkippedInUse_One" xml:space="preserve">
+    <value>{0} in use, skipped</value>
+  </data>
+  <data name="Count_SkippedSafety_Few" xml:space="preserve">
+    <value>{0} skipped for safety</value>
+  </data>
+  <data name="Count_SkippedSafety_Many" xml:space="preserve">
+    <value>{0} skipped for safety</value>
+  </data>
+  <data name="Count_SkippedSafety_One" xml:space="preserve">
+    <value>{0} skipped for safety</value>
+  </data>
+  <data name="Count_Skipped_Few" xml:space="preserve">
+    <value>{0} skipped</value>
+  </data>
+  <data name="Count_Skipped_Many" xml:space="preserve">
+    <value>{0} skipped</value>
+  </data>
+  <data name="Count_Skipped_One" xml:space="preserve">
+    <value>{0} skipped</value>
+  </data>
+  <data name="Count_Suspicious_Few" xml:space="preserve">
+    <value>{0} suspicious items found</value>
+  </data>
+  <data name="Count_Suspicious_Many" xml:space="preserve">
+    <value>{0} suspicious items found</value>
+  </data>
+  <data name="Count_Suspicious_One" xml:space="preserve">
+    <value>{0} suspicious item found</value>
+  </data>
+  <data name="Dashboard_Boost" xml:space="preserve">
+    <value>BOOST</value>
+  </data>
+  <data name="Dashboard_BoostCancelled" xml:space="preserve">
+    <value>Boost cancelled. Nothing was deleted.</value>
+  </data>
+  <data name="Dashboard_BoostCleaning" xml:space="preserve">
+    <value>Removing junk files…</value>
+  </data>
+  <data name="Dashboard_BoostConfirmMessage" xml:space="preserve">
+    <value>Boost will permanently delete {0} ({1}), then flush the DNS cache and free up RAM.
+
+Files that are in use are skipped automatically.</value>
+  </data>
+  <data name="Dashboard_BoostConfirmTitle" xml:space="preserve">
+    <value>Run Boost?</value>
+  </data>
+  <data name="Dashboard_BoostDefault" xml:space="preserve">
+    <value>Cleans your selected junk, flushes DNS and frees up RAM in one click — you confirm before anything is deleted.</value>
+  </data>
+  <data name="Dashboard_BoostDns" xml:space="preserve">
+    <value>Flushing DNS cache…</value>
+  </data>
+  <data name="Dashboard_BoostDone" xml:space="preserve">
+    <value>Done! Freed {0} of disk space and {1} of RAM.</value>
+  </data>
+  <data name="Dashboard_BoostDonePartialTitle" xml:space="preserve">
+    <value>Boost complete (some files skipped)</value>
+  </data>
+  <data name="Dashboard_BoostDoneTitle" xml:space="preserve">
+    <value>Boost complete</value>
+  </data>
+  <data name="Dashboard_BoostFailedTitle" xml:space="preserve">
+    <value>Boost failed</value>
+  </data>
+  <data name="Dashboard_BoostRam" xml:space="preserve">
+    <value>Freeing up memory…</value>
+  </data>
+  <data name="Dashboard_BoostRun" xml:space="preserve">
+    <value>Run Boost</value>
+  </data>
+  <data name="Dashboard_BoostScanning" xml:space="preserve">
+    <value>Scanning for junk files…</value>
+  </data>
+  <data name="Dashboard_BoostTooltip" xml:space="preserve">
+    <value>Clean the junk selected in Cleaner, flush DNS and free RAM (asks before deleting)</value>
+  </data>
+  <data name="Dashboard_Cleanup" xml:space="preserve">
+    <value>Cleanup</value>
+  </data>
+  <data name="Dashboard_CleanupDesc" xml:space="preserve">
+    <value>Scanning finds junk in the Cleaner categories and the temporary-file folders. Nothing is deleted until you review and confirm.</value>
+  </data>
+  <data name="Dashboard_CleanupTitle" xml:space="preserve">
+    <value>Find reclaimable space</value>
+  </data>
+  <data name="Dashboard_Cpu" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="Dashboard_CpuCaption" xml:space="preserve">
+    <value>Processor load</value>
+  </data>
+  <data name="Dashboard_DiskText" xml:space="preserve">
+    <value>{0} free of {1}</value>
+  </data>
+  <data name="Dashboard_DriveLabel" xml:space="preserve">
+    <value>Drive {0}</value>
+  </data>
+  <data name="Dashboard_GoodAfternoon" xml:space="preserve">
+    <value>Good afternoon</value>
+  </data>
+  <data name="Dashboard_GoodEvening" xml:space="preserve">
+    <value>Good evening</value>
+  </data>
+  <data name="Dashboard_GoodMorning" xml:space="preserve">
+    <value>Good morning</value>
+  </data>
+  <data name="Dashboard_Memory" xml:space="preserve">
+    <value>Memory</value>
+  </data>
+  <data name="Dashboard_Never" xml:space="preserve">
+    <value>Never</value>
+  </data>
+  <data name="Dashboard_NotScanned" xml:space="preserve">
+    <value>Not scanned yet</value>
+  </data>
+  <data name="Dashboard_OpenOptimize" xml:space="preserve">
+    <value>Optimize</value>
+  </data>
+  <data name="Dashboard_OpenTemp" xml:space="preserve">
+    <value>Temp files</value>
+  </data>
+  <data name="Dashboard_Overview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="Dashboard_RamText" xml:space="preserve">
+    <value>{0} of {1} in use</value>
+  </data>
+  <data name="Dashboard_ReviewCleaner" xml:space="preserve">
+    <value>Review in Cleaner</value>
+  </data>
+  <data name="Dashboard_ScanDoneMessage" xml:space="preserve">
+    <value>Found {0} that can be freed. Review it in Temp files or Cleaner before deleting.</value>
+  </data>
+  <data name="Dashboard_ScanDoneTitle" xml:space="preserve">
+    <value>Scan complete</value>
+  </data>
+  <data name="Dashboard_ScanNow" xml:space="preserve">
+    <value>Scan now</value>
+  </data>
+  <data name="Dashboard_StatFreed" xml:space="preserve">
+    <value>Total space freed</value>
+  </data>
+  <data name="Dashboard_StatFreedHint" xml:space="preserve">
+    <value>Since you started using the app</value>
+  </data>
+  <data name="Dashboard_StatJunk" xml:space="preserve">
+    <value>Junk found</value>
+  </data>
+  <data name="Dashboard_StatJunkHint" xml:space="preserve">
+    <value>Selected in Cleaner and Temp files</value>
+  </data>
+  <data name="Dashboard_StatLastCleaned" xml:space="preserve">
+    <value>Last cleaned</value>
+  </data>
+  <data name="Dashboard_StatTemp" xml:space="preserve">
+    <value>Temporary files</value>
+  </data>
+  <data name="Dashboard_StatTempHint" xml:space="preserve">
+    <value>Reclaimable in Temp and Prefetch</value>
+  </data>
+  <data name="Dashboard_SystemStatus" xml:space="preserve">
+    <value>System status</value>
+  </data>
+  <data name="Dashboard_UpFor" xml:space="preserve">
+    <value>Up for</value>
+  </data>
+  <data name="Dashboard_UptimeDays" xml:space="preserve">
+    <value>{0} d {1} h {2} min</value>
+  </data>
+  <data name="Dashboard_UptimeHours" xml:space="preserve">
+    <value>{0} h {1} min</value>
+  </data>
+  <data name="Health_AdminMessage" xml:space="preserve">
+    <value>These Windows repair tools only run when Ultimate PC Cleaner is started as administrator.</value>
+  </data>
+  <data name="Health_AdminTitle" xml:space="preserve">
+    <value>Administrator rights required</value>
+  </data>
+  <data name="Health_Cancelled" xml:space="preserve">
+    <value>{0} was cancelled</value>
+  </data>
+  <data name="Health_Clear" xml:space="preserve">
+    <value>Clear output</value>
+  </data>
+  <data name="Health_Copy" xml:space="preserve">
+    <value>Copy output</value>
+  </data>
+  <data name="Health_CouldNotStart" xml:space="preserve">
+    <value>{0} could not start: {1}</value>
+  </data>
+  <data name="Health_Duration" xml:space="preserve">
+    <value>{0} min</value>
+  </data>
+  <data name="Health_Finished" xml:space="preserve">
+    <value>{0} finished successfully</value>
+  </data>
+  <data name="Health_FinishedCode" xml:space="preserve">
+    <value>{0} finished (exit code {1})</value>
+  </data>
+  <data name="Health_Idle" xml:space="preserve">
+    <value>Idle</value>
+  </data>
+  <data name="Health_OutputPlaceholder" xml:space="preserve">
+    <value>Pick a tool above to start. Output appears here live.</value>
+  </data>
+  <data name="Health_Running" xml:space="preserve">
+    <value>Running {0}…</value>
+  </data>
+  <data name="Health_chkdsk_Desc" xml:space="preserve">
+    <value>Scans {0} for file system errors online, without making changes (chkdsk /scan).</value>
+  </data>
+  <data name="Health_chkdsk_Name" xml:space="preserve">
+    <value>Check disk for errors</value>
+  </data>
+  <data name="Health_defrag_Desc" xml:space="preserve">
+    <value>Runs TRIM on SSDs or defragments hard drives for {0}.</value>
+  </data>
+  <data name="Health_defrag_Name" xml:space="preserve">
+    <value>Optimize system drive</value>
+  </data>
+  <data name="Health_dism_cleanup_Desc" xml:space="preserve">
+    <value>Removes superseded Windows update components from WinSxS to free disk space.</value>
+  </data>
+  <data name="Health_dism_cleanup_Name" xml:space="preserve">
+    <value>Clean up component store</value>
+  </data>
+  <data name="Health_dism_restore_Desc" xml:space="preserve">
+    <value>Checks the Windows component store and downloads fresh copies of damaged files (DISM RestoreHealth).</value>
+  </data>
+  <data name="Health_dism_restore_Name" xml:space="preserve">
+    <value>Repair Windows image</value>
+  </data>
+  <data name="Health_sfc_Desc" xml:space="preserve">
+    <value>Scans protected Windows files and repairs corrupted ones (sfc /scannow).</value>
+  </data>
+  <data name="Health_sfc_Name" xml:space="preserve">
+    <value>System File Checker</value>
+  </data>
+  <data name="Main_LimitedMessage" xml:space="preserve">
+    <value>Ultimate PC Cleaner is running without administrator rights. You can clean your own temporary files; Windows Temp, Prefetch, system caches, services, restore points and repair tools need elevation.</value>
+  </data>
+  <data name="Main_LimitedTitle" xml:space="preserve">
+    <value>Limited mode.</value>
+  </data>
+  <data name="Nav_Cleaner" xml:space="preserve">
+    <value>Cleaner</value>
+  </data>
+  <data name="Nav_Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Nav_Health" xml:space="preserve">
+    <value>Health</value>
+  </data>
+  <data name="Nav_Optimize" xml:space="preserve">
+    <value>Optimize</value>
+  </data>
+  <data name="Nav_Security" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="Nav_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Nav_Startup" xml:space="preserve">
+    <value>Startup apps</value>
+  </data>
+  <data name="Nav_TempFiles" xml:space="preserve">
+    <value>Temp files</value>
+  </data>
+  <data name="Optimize_Applied" xml:space="preserve">
+    <value>Optimization applied</value>
+  </data>
+  <data name="Optimize_ApplyAnyway" xml:space="preserve">
+    <value>Apply anyway</value>
+  </data>
+  <data name="Optimize_ChangeFailed" xml:space="preserve">
+    <value>Couldn't change this setting</value>
+  </data>
+  <data name="Optimize_DnsDesc" xml:space="preserve">
+    <value>Clears stored website addresses. Fixes sites that fail to load after network or DNS changes.</value>
+  </data>
+  <data name="Optimize_DnsFailed" xml:space="preserve">
+    <value>Could not flush the DNS cache.</value>
+  </data>
+  <data name="Optimize_DnsFlushed" xml:space="preserve">
+    <value>DNS cache flushed at {0}</value>
+  </data>
+  <data name="Optimize_DnsTitle" xml:space="preserve">
+    <value>Flush DNS cache</value>
+  </data>
+  <data name="Optimize_NoRestoreMessage" xml:space="preserve">
+    <value>{0}
+
+Do you want to apply the change anyway?</value>
+  </data>
+  <data name="Optimize_NoRestoreTitle" xml:space="preserve">
+    <value>No restore point was created</value>
+  </data>
+  <data name="Optimize_QuickActions" xml:space="preserve">
+    <value>Quick actions</value>
+  </data>
+  <data name="Optimize_RamDesc" xml:space="preserve">
+    <value>Trims apps' unused memory and clears the standby cache. Handy right before starting a game or heavy app.</value>
+  </data>
+  <data name="Optimize_RamFreed" xml:space="preserve">
+    <value>Freed {0} of RAM at {1}</value>
+  </data>
+  <data name="Optimize_RamName" xml:space="preserve">
+    <value>Free up RAM</value>
+  </data>
+  <data name="Optimize_RamTitle" xml:space="preserve">
+    <value>Memory optimized</value>
+  </data>
+  <data name="Optimize_RestoreCreatedTitle" xml:space="preserve">
+    <value>Restore point created</value>
+  </data>
+  <data name="Optimize_RestoreCreating" xml:space="preserve">
+    <value>Creating restore point… this can take a minute.</value>
+  </data>
+  <data name="Optimize_RestoreCreatingFirst" xml:space="preserve">
+    <value>Creating a System Restore point before the first change…</value>
+  </data>
+  <data name="Optimize_RestoreDesc" xml:space="preserve">
+    <value>Saves a System Restore snapshot you can roll back to from Windows Recovery. Requires administrator rights.</value>
+  </data>
+  <data name="Optimize_RestoreDescBefore" xml:space="preserve">
+    <value>{0} - before optimization</value>
+  </data>
+  <data name="Optimize_RestoreDescManual" xml:space="preserve">
+    <value>{0} - manual restore point</value>
+  </data>
+  <data name="Optimize_RestoreFailedTitle" xml:space="preserve">
+    <value>Restore point failed</value>
+  </data>
+  <data name="Optimize_RestoreTitle" xml:space="preserve">
+    <value>Create a restore point</value>
+  </data>
+  <data name="Optimize_Restored" xml:space="preserve">
+    <value>Setting restored</value>
+  </data>
+  <data name="Optimize_SafeMessage" xml:space="preserve">
+    <value>Every switch can be turned back off to restore your original setting. When enabled in Settings, a System Restore point is created before the first change.</value>
+  </data>
+  <data name="Optimize_SafeTitle" xml:space="preserve">
+    <value>Safe and reversible</value>
+  </data>
+  <data name="Optimize_Tweaks" xml:space="preserve">
+    <value>Performance tweaks</value>
+  </data>
+  <data name="Restore_Created" xml:space="preserve">
+    <value>Restore point created.</value>
+  </data>
+  <data name="Restore_Failed" xml:space="preserve">
+    <value>Windows could not create a restore point: {0}</value>
+  </data>
+  <data name="Restore_FailedCode" xml:space="preserve">
+    <value>Windows could not create a restore point (code {0}). System Protection may be turned off.</value>
+  </data>
+  <data name="Restore_NeedsAdmin" xml:space="preserve">
+    <value>Administrator rights are required to create a restore point.</value>
+  </data>
+  <data name="Restore_ProtectionOff" xml:space="preserve">
+    <value>System Protection is turned off for the system drive. Turn it on in System Properties → System Protection.</value>
+  </data>
+  <data name="Sec_AdminMessage" xml:space="preserve">
+    <value>You can view the status and look for suspicious items. Restart as administrator to scan, quarantine or restore.</value>
+  </data>
+  <data name="Sec_AdminTitle" xml:space="preserve">
+    <value>Scans and quarantine need administrator rights</value>
+  </data>
+  <data name="Sec_Allow" xml:space="preserve">
+    <value>Allow</value>
+  </data>
+  <data name="Sec_AllowMessage" xml:space="preserve">
+    <value>Microsoft Defender will no longer act on “{0}”. Only do this if you are sure the file is safe.</value>
+  </data>
+  <data name="Sec_AllowTitle" xml:space="preserve">
+    <value>Allow threat</value>
+  </data>
+  <data name="Sec_Allowed" xml:space="preserve">
+    <value>“{0}” is now allowed.</value>
+  </data>
+  <data name="Sec_Cancelled" xml:space="preserve">
+    <value>Cancelled.</value>
+  </data>
+  <data name="Sec_CheckVirusTotal" xml:space="preserve">
+    <value>Check hash on VirusTotal</value>
+  </data>
+  <data name="Sec_CreatingRestorePoint" xml:space="preserve">
+    <value>Creating a restore point…</value>
+  </data>
+  <data name="Sec_DefenderQuarantineEmpty" xml:space="preserve">
+    <value>Defender’s quarantine is empty.</value>
+  </data>
+  <data name="Sec_DefenderQuarantineHeader" xml:space="preserve">
+    <value>Microsoft Defender quarantine</value>
+  </data>
+  <data name="Sec_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Sec_DeleteMessage" xml:space="preserve">
+    <value>“{0}” will be deleted for good and can’t be restored.</value>
+  </data>
+  <data name="Sec_DeleteTitle" xml:space="preserve">
+    <value>Delete permanently</value>
+  </data>
+  <data name="Sec_Failed" xml:space="preserve">
+    <value>Failed: {0}</value>
+  </data>
+  <data name="Sec_FinishedClean" xml:space="preserve">
+    <value>{0}: finished — no threats found.</value>
+  </data>
+  <data name="Sec_FinishedCode" xml:space="preserve">
+    <value>{0}: finished with code {1}.</value>
+  </data>
+  <data name="Sec_FinishedThreats" xml:space="preserve">
+    <value>{0}: threats were found. Microsoft Defender handled them according to its settings — see the list below.</value>
+  </data>
+  <data name="Sec_FolderScan" xml:space="preserve">
+    <value>Scan of {0}</value>
+  </data>
+  <data name="Sec_FullScan" xml:space="preserve">
+    <value>Full scan</value>
+  </data>
+  <data name="Sec_Idle" xml:space="preserve">
+    <value>Ready.</value>
+  </data>
+  <data name="Sec_Intro" xml:space="preserve">
+    <value>Scan with Microsoft Defender, check scripts through AMSI, find suspicious startup entries and keep risky files in a quarantine you can restore from. Detection is done by your antivirus — this page doesn't replace it.</value>
+  </data>
+  <data name="Sec_Level_High" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="Sec_Level_Low" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="Sec_Level_Medium" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="Sec_Never" xml:space="preserve">
+    <value>never</value>
+  </data>
+  <data name="Sec_NoResources" xml:space="preserve">
+    <value>No file information</value>
+  </data>
+  <data name="Sec_NoRestoreMessage" xml:space="preserve">
+    <value>{0}
+
+Do you want to quarantine the file anyway?</value>
+  </data>
+  <data name="Sec_NoThreats" xml:space="preserve">
+    <value>Microsoft Defender has no detections on record.</value>
+  </data>
+  <data name="Sec_OtherAvDetail" xml:space="preserve">
+    <value>Microsoft Defender scans aren’t available while another antivirus is active. AMSI script checks and the suspicious-items scan still work.</value>
+  </data>
+  <data name="Sec_OutputPlaceholder" xml:space="preserve">
+    <value>Scan output appears here.</value>
+  </data>
+  <data name="Sec_Overwrite" xml:space="preserve">
+    <value>Overwrite</value>
+  </data>
+  <data name="Sec_PendingReboot" xml:space="preserve">
+    <value>The original file was in use and will be removed at the next restart.</value>
+  </data>
+  <data name="Sec_PickFolder" xml:space="preserve">
+    <value>Choose a folder to scan</value>
+  </data>
+  <data name="Sec_Progress_Scripts" xml:space="preserve">
+    <value>Checking scripts in user folders…</value>
+  </data>
+  <data name="Sec_Progress_Startup" xml:space="preserve">
+    <value>Checking startup entries…</value>
+  </data>
+  <data name="Sec_Progress_Tasks" xml:space="preserve">
+    <value>Checking scheduled tasks…</value>
+  </data>
+  <data name="Sec_Quarantine" xml:space="preserve">
+    <value>Quarantine</value>
+  </data>
+  <data name="Sec_QuarantineDetails" xml:space="preserve">
+    <value>Quarantined {0} · {1} · {2}</value>
+  </data>
+  <data name="Sec_QuarantineEmpty" xml:space="preserve">
+    <value>No files in quarantine.</value>
+  </data>
+  <data name="Sec_QuarantineHeader" xml:space="preserve">
+    <value>Ultimate PC Cleaner quarantine</value>
+  </data>
+  <data name="Sec_QuarantineMessage" xml:space="preserve">
+    <value>{0}
+
+The file will be moved to quarantine in a non-executable form and its startup entry (if any) disabled. You can restore it at any time.</value>
+  </data>
+  <data name="Sec_QuarantineTitle" xml:space="preserve">
+    <value>Move to quarantine</value>
+  </data>
+  <data name="Sec_Quarantined" xml:space="preserve">
+    <value>“{0}” was moved to quarantine.</value>
+  </data>
+  <data name="Sec_QuarantinedPending" xml:space="preserve">
+    <value>“{0}” was quarantined. The original is in use and will be removed at the next restart.</value>
+  </data>
+  <data name="Sec_QuickScan" xml:space="preserve">
+    <value>Quick scan</value>
+  </data>
+  <data name="Sec_Reason_AmsiDetected" xml:space="preserve">
+    <value>Flagged by your antivirus (AMSI)</value>
+  </data>
+  <data name="Sec_Reason_DoubleExtension" xml:space="preserve">
+    <value>Disguised file name (double extension)</value>
+  </data>
+  <data name="Sec_Reason_MissingTarget" xml:space="preserve">
+    <value>Points to a file that no longer exists</value>
+  </data>
+  <data name="Sec_Reason_ObfuscatedCommand" xml:space="preserve">
+    <value>Hidden or encoded command line</value>
+  </data>
+  <data name="Sec_Reason_ObfuscatedScript" xml:space="preserve">
+    <value>Script uses obfuscation or downloads code</value>
+  </data>
+  <data name="Sec_Reason_ScriptHost" xml:space="preserve">
+    <value>Script host runs a file from a user folder</value>
+  </data>
+  <data name="Sec_Reason_UnsignedUserFolder" xml:space="preserve">
+    <value>Unsigned program in a user-writable folder</value>
+  </data>
+  <data name="Sec_RemoveThreats" xml:space="preserve">
+    <value>Remove active threats</value>
+  </data>
+  <data name="Sec_Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="Sec_RestoreDefenderMessage" xml:space="preserve">
+    <value>Restore every file Microsoft Defender quarantined as “{0}”? Defender may detect them again unless you allow the threat.</value>
+  </data>
+  <data name="Sec_RestoreMessage" xml:space="preserve">
+    <value>{0}
+
+Restore this file to its original location? Only do this if you are sure it is safe.</value>
+  </data>
+  <data name="Sec_RestoreOverwrite" xml:space="preserve">
+    <value>A file already exists at {0}. Replace it with the quarantined copy?</value>
+  </data>
+  <data name="Sec_RestorePendingReboot" xml:space="preserve">
+    <value>Restart Windows first — the original file is still waiting to be removed.</value>
+  </data>
+  <data name="Sec_RestorePointDesc" xml:space="preserve">
+    <value>{0}: before quarantine</value>
+  </data>
+  <data name="Sec_RestoreTitle" xml:space="preserve">
+    <value>Restore file</value>
+  </data>
+  <data name="Sec_Restored" xml:space="preserve">
+    <value>“{0}” was restored.</value>
+  </data>
+  <data name="Sec_Running" xml:space="preserve">
+    <value>Running: {0}…</value>
+  </data>
+  <data name="Sec_ScanFolder" xml:space="preserve">
+    <value>Scan folder…</value>
+  </data>
+  <data name="Sec_ScanHeader" xml:space="preserve">
+    <value>Scan</value>
+  </data>
+  <data name="Sec_ScanScripts" xml:space="preserve">
+    <value>Check scripts (AMSI)…</value>
+  </data>
+  <data name="Sec_ScanScriptsTip" xml:space="preserve">
+    <value>Checks every PowerShell, VBScript, JavaScript and batch file in a folder through AMSI. Works with any installed antivirus, not only Defender.</value>
+  </data>
+  <data name="Sec_ScanSuspicious" xml:space="preserve">
+    <value>Find suspicious items</value>
+  </data>
+  <data name="Sec_ScanWithDefender" xml:space="preserve">
+    <value>Scan this file with Microsoft Defender</value>
+  </data>
+  <data name="Sec_ScriptScanClean" xml:space="preserve">
+    <value>No malicious scripts found.</value>
+  </data>
+  <data name="Sec_ScriptScanFound" xml:space="preserve">
+    <value>Your antivirus flagged {0} script(s) — see the output above. Scan the folder with Defender to remove them.</value>
+  </data>
+  <data name="Sec_ScriptScanRunning" xml:space="preserve">
+    <value>Checking scripts in {0}…</value>
+  </data>
+  <data name="Sec_Source_ScheduledTask" xml:space="preserve">
+    <value>Scheduled task</value>
+  </data>
+  <data name="Sec_Source_ScriptFile" xml:space="preserve">
+    <value>Script file</value>
+  </data>
+  <data name="Sec_Source_StartupEntry" xml:space="preserve">
+    <value>Startup entry</value>
+  </data>
+  <data name="Sec_StatusChecking" xml:space="preserve">
+    <value>Checking protection status…</value>
+  </data>
+  <data name="Sec_StatusDetail" xml:space="preserve">
+    <value>Signatures {0} · updated {1} · last quick scan {2}</value>
+  </data>
+  <data name="Sec_StatusDisabled" xml:space="preserve">
+    <value>Microsoft Defender antivirus is turned off</value>
+  </data>
+  <data name="Sec_StatusOtherAv" xml:space="preserve">
+    <value>{0} protects this PC</value>
+  </data>
+  <data name="Sec_StatusProtected" xml:space="preserve">
+    <value>Microsoft Defender protects this PC</value>
+  </data>
+  <data name="Sec_StatusRealtimeOff" xml:space="preserve">
+    <value>Real-time protection is off</value>
+  </data>
+  <data name="Sec_StatusUnavailable" xml:space="preserve">
+    <value>Microsoft Defender is not available</value>
+  </data>
+  <data name="Sec_SuspiciousIntro" xml:space="preserve">
+    <value>Startup entries, scheduled tasks and scripts that behave like malware: hidden commands, disguised names, unsigned programs in user folders. A match isn’t proof — check before you quarantine.</value>
+  </data>
+  <data name="Sec_SuspiciousNone" xml:space="preserve">
+    <value>Nothing suspicious found.</value>
+  </data>
+  <data name="Sec_SuspiciousNotScanned" xml:space="preserve">
+    <value>Not scanned yet.</value>
+  </data>
+  <data name="Sec_SuspiciousRunning" xml:space="preserve">
+    <value>Looking for suspicious items…</value>
+  </data>
+  <data name="Sec_SuspiciousTitle" xml:space="preserve">
+    <value>Suspicious items</value>
+  </data>
+  <data name="Sec_TamperOn" xml:space="preserve">
+    <value>tamper protection on</value>
+  </data>
+  <data name="Sec_ThreatActive" xml:space="preserve">
+    <value>active</value>
+  </data>
+  <data name="Sec_ThreatDetails" xml:space="preserve">
+    <value>Severity: {0} · detected {1} · {2}</value>
+  </data>
+  <data name="Sec_ThreatResolved" xml:space="preserve">
+    <value>handled</value>
+  </data>
+  <data name="Sec_ThreatSev_0" xml:space="preserve">
+    <value>unknown</value>
+  </data>
+  <data name="Sec_ThreatSev_1" xml:space="preserve">
+    <value>low</value>
+  </data>
+  <data name="Sec_ThreatSev_2" xml:space="preserve">
+    <value>moderate</value>
+  </data>
+  <data name="Sec_ThreatSev_4" xml:space="preserve">
+    <value>high</value>
+  </data>
+  <data name="Sec_ThreatSev_5" xml:space="preserve">
+    <value>severe</value>
+  </data>
+  <data name="Sec_ThreatsHeader" xml:space="preserve">
+    <value>Microsoft Defender detections</value>
+  </data>
+  <data name="Sec_ThreatsRemoved" xml:space="preserve">
+    <value>Microsoft Defender removed the active threats.</value>
+  </data>
+  <data name="Sec_UpdateSignatures" xml:space="preserve">
+    <value>Update signatures</value>
+  </data>
+  <data name="Sec_VtResult" xml:space="preserve">
+    <value>VirusTotal detections: {0}</value>
+  </data>
+  <data name="Sec_VtUnknown" xml:space="preserve">
+    <value>Unknown to VirusTotal</value>
+  </data>
+  <data name="Settings_About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Settings_Appearance" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="Settings_Cleaning" xml:space="preserve">
+    <value>Cleaning</value>
+  </data>
+  <data name="Settings_DataFolder" xml:space="preserve">
+    <value>Settings and logs:</value>
+  </data>
+  <data name="Settings_General" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Settings_LanguageDesc" xml:space="preserve">
+    <value>Choose the language of the app. Changes apply immediately.</value>
+  </data>
+  <data name="Settings_OpenFolder" xml:space="preserve">
+    <value>Open folder</value>
+  </data>
+  <data name="Settings_ReduceMotion" xml:space="preserve">
+    <value>Reduce animations</value>
+  </data>
+  <data name="Settings_ReduceMotionDesc" xml:space="preserve">
+    <value>Turns off decorative motion. Animations also stay off when Windows animation effects are disabled.</value>
+  </data>
+  <data name="Settings_Remember" xml:space="preserve">
+    <value>Remember my selections</value>
+  </data>
+  <data name="Settings_RememberDesc" xml:space="preserve">
+    <value>Keep the categories and locations you check or uncheck for next time.</value>
+  </data>
+  <data name="Settings_RestorePoint" xml:space="preserve">
+    <value>Create a restore point before optimizing</value>
+  </data>
+  <data name="Settings_RestorePointDesc" xml:space="preserve">
+    <value>Makes a System Restore point before the first tweak in each session (administrator only).</value>
+  </data>
+  <data name="Settings_Safety" xml:space="preserve">
+    <value>Safety</value>
+  </data>
+  <data name="Settings_SkipRecent" xml:space="preserve">
+    <value>Skip temp files newer than 24 hours</value>
+  </data>
+  <data name="Settings_SkipRecentDesc" xml:space="preserve">
+    <value>Recommended. Recent temp files may still be used by installers or running apps.</value>
+  </data>
+  <data name="Settings_Theme" xml:space="preserve">
+    <value>App theme</value>
+  </data>
+  <data name="Settings_ThemeDark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="Settings_ThemeDesc" xml:space="preserve">
+    <value>Choose light, dark, or follow your Windows setting.</value>
+  </data>
+  <data name="Settings_ThemeLight" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="Settings_ThemeSystem" xml:space="preserve">
+    <value>Use Windows setting</value>
+  </data>
+  <data name="Settings_ViewLogs" xml:space="preserve">
+    <value>View logs</value>
+  </data>
+  <data name="Settings_VirusTotal" xml:space="preserve">
+    <value>VirusTotal hash lookup</value>
+  </data>
+  <data name="Settings_VirusTotalDesc" xml:space="preserve">
+    <value>Adds a button to check suspicious files against 70+ antivirus engines. Needs a free API key from virustotal.com.</value>
+  </data>
+  <data name="Settings_VirusTotalKey" xml:space="preserve">
+    <value>VirusTotal API key</value>
+  </data>
+  <data name="Settings_VirusTotalKeySaved" xml:space="preserve">
+    <value>A key is saved.</value>
+  </data>
+  <data name="Settings_VirusTotalPrivacy" xml:space="preserve">
+    <value>Only the file’s SHA-256 hash is sent to VirusTotal — never the file itself. The key is stored encrypted for your Windows account. The free API allows 4 lookups per minute.</value>
+  </data>
+  <data name="Settings_VirusTotalSave" xml:space="preserve">
+    <value>Save key</value>
+  </data>
+  <data name="Skip_AccessDenied" xml:space="preserve">
+    <value>Access denied</value>
+  </data>
+  <data name="Skip_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Skip_InUse" xml:space="preserve">
+    <value>In use</value>
+  </data>
+  <data name="Skip_Unsafe" xml:space="preserve">
+    <value>Skipped for safety</value>
+  </data>
+  <data name="Startup_ChangeFailed" xml:space="preserve">
+    <value>Couldn't change startup app</value>
+  </data>
+  <data name="Startup_DisabledMessage" xml:space="preserve">
+    <value>{0} will no longer start with Windows.</value>
+  </data>
+  <data name="Startup_DisabledTitle" xml:space="preserve">
+    <value>Startup app disabled</value>
+  </data>
+  <data name="Startup_Empty" xml:space="preserve">
+    <value>No startup apps found.</value>
+  </data>
+  <data name="Startup_EnabledMessage" xml:space="preserve">
+    <value>{0} will start with Windows.</value>
+  </data>
+  <data name="Startup_EnabledTitle" xml:space="preserve">
+    <value>Startup app enabled</value>
+  </data>
+  <data name="Startup_Intro" xml:space="preserve">
+    <value>Programs that launch when you sign in. Disabling them speeds up boot time and frees memory — nothing is uninstalled, and you can turn them back on any time.</value>
+  </data>
+  <data name="Startup_Loc_FolderAll" xml:space="preserve">
+    <value>Startup folder (all users)</value>
+  </data>
+  <data name="Startup_Loc_FolderUser" xml:space="preserve">
+    <value>Startup folder (current user)</value>
+  </data>
+  <data name="Startup_Loc_RegistryAll" xml:space="preserve">
+    <value>Registry (all users)</value>
+  </data>
+  <data name="Startup_Loc_RegistryAll32" xml:space="preserve">
+    <value>Registry (all users, 32-bit)</value>
+  </data>
+  <data name="Startup_Loc_RegistryUser" xml:space="preserve">
+    <value>Registry (current user)</value>
+  </data>
+  <data name="Startup_OpenLocation" xml:space="preserve">
+    <value>Open file location</value>
+  </data>
+  <data name="Startup_ReadOnlyMessage" xml:space="preserve">
+    <value>Apps registered for all users can only be changed when Ultimate PC Cleaner runs as administrator.</value>
+  </data>
+  <data name="Startup_ReadOnlyTitle" xml:space="preserve">
+    <value>Some entries are read-only</value>
+  </data>
+  <data name="Startup_Search" xml:space="preserve">
+    <value>Search startup apps…</value>
+  </data>
+  <data name="Startup_Summary" xml:space="preserve">
+    <value>{0} enabled · {1} disabled</value>
+  </data>
+  <data name="Startup_UnknownPublisher" xml:space="preserve">
+    <value>Unknown publisher</value>
+  </data>
+  <data name="Status_Clean" xml:space="preserve">
+    <value>Clean</value>
+  </data>
+  <data name="Status_Cleaned" xml:space="preserve">
+    <value>Cleaned</value>
+  </data>
+  <data name="Status_Cleaning" xml:space="preserve">
+    <value>Cleaning…</value>
+  </data>
+  <data name="Status_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Status_RequiresAdmin" xml:space="preserve">
+    <value>Requires admin</value>
+  </data>
+  <data name="Status_Scanning" xml:space="preserve">
+    <value>Scanning…</value>
+  </data>
+  <data name="Temp_AdminReason" xml:space="preserve">
+    <value>Windows protects this folder: only administrators can list and delete its files. Restart as administrator to scan and clean it.</value>
+  </data>
+  <data name="Temp_CleanSelected" xml:space="preserve">
+    <value>Delete selected</value>
+  </data>
+  <data name="Temp_ConfirmButton" xml:space="preserve">
+    <value>Delete files</value>
+  </data>
+  <data name="Temp_ConfirmIntro" xml:space="preserve">
+    <value>These temporary files will be permanently deleted (they don't go to the Recycle Bin):</value>
+  </data>
+  <data name="Temp_ConfirmSafety" xml:space="preserve">
+    <value>Only files are removed — the folders themselves stay. Files that are in use or protected are skipped and reported.</value>
+  </data>
+  <data name="Temp_ConfirmTitle" xml:space="preserve">
+    <value>Delete temporary files?</value>
+  </data>
+  <data name="Temp_ConfirmTotal" xml:space="preserve">
+    <value>Estimated space to reclaim: {0}</value>
+  </data>
+  <data name="Temp_Intro" xml:space="preserve">
+    <value>Scans Windows' temporary-file folders and safely removes leftover files. Review what was found, choose the locations, and confirm before anything is deleted.</value>
+  </data>
+  <data name="Temp_NothingMessage" xml:space="preserve">
+    <value>Scan first, then select a location that has files to remove.</value>
+  </data>
+  <data name="Temp_OpenFolder" xml:space="preserve">
+    <value>Open folder in File Explorer</value>
+  </data>
+  <data name="Temp_PathUnresolved" xml:space="preserve">
+    <value>The path could not be determined safely</value>
+  </data>
+  <data name="Temp_Prefetch_Desc" xml:space="preserve">
+    <value>Application launch traces (*.pf) in %WINDIR%\Prefetch.</value>
+  </data>
+  <data name="Temp_Prefetch_Name" xml:space="preserve">
+    <value>Windows Prefetch</value>
+  </data>
+  <data name="Temp_Prefetch_Note" xml:space="preserve">
+    <value>Windows manages Prefetch automatically. Clearing it does not make your PC faster — apps may start more slowly at first while Windows rebuilds this data. Clean it only when troubleshooting.</value>
+  </data>
+  <data name="Temp_ProgressCounts" xml:space="preserve">
+    <value>{0} of {1} files processed · {2} · {3}</value>
+  </data>
+  <data name="Temp_Reclaimed" xml:space="preserve">
+    <value>Reclaimed</value>
+  </data>
+  <data name="Temp_ResultCancelled" xml:space="preserve">
+    <value>Cleaning cancelled</value>
+  </data>
+  <data name="Temp_ResultFailed" xml:space="preserve">
+    <value>Cleaning failed</value>
+  </data>
+  <data name="Temp_ResultFreed" xml:space="preserve">
+    <value>{0} · {1} reclaimed</value>
+  </data>
+  <data name="Temp_ResultLocationError" xml:space="preserve">
+    <value>a location could not be cleaned (see log)</value>
+  </data>
+  <data name="Temp_ResultPartial" xml:space="preserve">
+    <value>Partly cleaned</value>
+  </data>
+  <data name="Temp_ResultSuccess" xml:space="preserve">
+    <value>Cleaning complete</value>
+  </data>
+  <data name="Temp_SafetyBody" xml:space="preserve">
+    <value>• Paths come from Windows environment variables (%LOCALAPPDATA%, %WINDIR%), so nothing is hardcoded.
+• Only files are deleted. The Temp and Prefetch folders themselves are never removed; only empty sub-folders are tidied up.
+• Links (junctions/symlinks) are never followed, and every file is re-checked right before deletion.
+• Files that are in use or protected are skipped and reported. Temp files from the last 24 hours are kept by default.
+• Documents, downloads, browser profiles, passwords and app settings are never touched.</value>
+  </data>
+  <data name="Temp_SafetyHeader" xml:space="preserve">
+    <value>How cleaning stays safe</value>
+  </data>
+  <data name="Temp_Scanning" xml:space="preserve">
+    <value>Scanning temporary-file folders…</value>
+  </data>
+  <data name="Temp_SkippedHeader" xml:space="preserve">
+    <value>Skipped files</value>
+  </data>
+  <data name="Temp_SkippedHint" xml:space="preserve">
+    <value>These files were left in place. Most are in use by running apps and can be removed after a restart. (Up to 200 are listed.)</value>
+  </data>
+  <data name="Temp_State_AccessDenied" xml:space="preserve">
+    <value>Access denied</value>
+  </data>
+  <data name="Temp_State_Cancelled" xml:space="preserve">
+    <value>Cancelled</value>
+  </data>
+  <data name="Temp_State_Missing" xml:space="preserve">
+    <value>Folder not found</value>
+  </data>
+  <data name="Temp_State_NotScanned" xml:space="preserve">
+    <value>Not scanned</value>
+  </data>
+  <data name="Temp_State_ResolveError" xml:space="preserve">
+    <value>Unavailable</value>
+  </data>
+  <data name="Temp_SummaryNotScanned" xml:space="preserve">
+    <value>Scan to see how much space the temporary files use.</value>
+  </data>
+  <data name="Temp_SummaryScanned" xml:space="preserve">
+    <value>Selected: {0} · {1} can be reclaimed</value>
+  </data>
+  <data name="Temp_UserTemp_Desc" xml:space="preserve">
+    <value>Your personal Temp folder (%LOCALAPPDATA%\Temp), where apps and installers leave files behind.</value>
+  </data>
+  <data name="Temp_UserTemp_Name" xml:space="preserve">
+    <value>User temporary files</value>
+  </data>
+  <data name="Temp_WindowsTemp_Desc" xml:space="preserve">
+    <value>The system Temp folder (%WINDIR%\Temp) used by Windows, services and installers.</value>
+  </data>
+  <data name="Temp_WindowsTemp_Name" xml:space="preserve">
+    <value>Windows temporary files</value>
+  </data>
+  <data name="Tweak_PowerPlanRevertFailed" xml:space="preserve">
+    <value>Could not switch back to the previous power plan.</value>
+  </data>
+  <data name="Tweak_PowerPlanUnsupported" xml:space="preserve">
+    <value>This PC's power configuration doesn't allow this plan (Modern Standby devices only support Balanced).</value>
+  </data>
+  <data name="Tweak_game_dvr_Desc" xml:space="preserve">
+    <value>Stops Xbox Game Bar from continuously recording gameplay in the background (Game DVR).</value>
+  </data>
+  <data name="Tweak_game_dvr_Name" xml:space="preserve">
+    <value>Disable background game recording</value>
+  </data>
+  <data name="Tweak_power_high_Desc" xml:space="preserve">
+    <value>Keeps the CPU at higher clock speeds instead of saving power. Best for desktops or laptops on AC power.</value>
+  </data>
+  <data name="Tweak_power_high_Name" xml:space="preserve">
+    <value>High performance power plan</value>
+  </data>
+  <data name="Tweak_power_ultimate_Desc" xml:space="preserve">
+    <value>Removes power-saving micro-latencies. Intended for workstations; uses more energy and battery.</value>
+  </data>
+  <data name="Tweak_power_ultimate_Name" xml:space="preserve">
+    <value>Ultimate performance power plan</value>
+  </data>
+  <data name="Tweak_visual_effects_Desc" xml:space="preserve">
+    <value>Turns off window animations, smooth scrolling and transparency so the desktop feels snappier on slower PCs.</value>
+  </data>
+  <data name="Tweak_visual_effects_Name" xml:space="preserve">
+    <value>Performance visual effects</value>
+  </data>
+  <data name="Unit_B" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="Unit_GB" xml:space="preserve">
+    <value>GB</value>
+  </data>
+  <data name="Unit_KB" xml:space="preserve">
+    <value>KB</value>
+  </data>
+  <data name="Unit_MB" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="Unit_TB" xml:space="preserve">
+    <value>TB</value>
+  </data>
+  <data name="Nav_System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="System_AdminTitle" xml:space="preserve">
+    <value>Administrator rights needed</value>
+  </data>
+  <data name="System_AdminMessage" xml:space="preserve">
+    <value>Renaming the PC and installing updates require administrator rights. You can still check for updates.</value>
+  </data>
+  <data name="System_RenameHeader" xml:space="preserve">
+    <value>Computer name</value>
+  </data>
+  <data name="System_RenameTitle" xml:space="preserve">
+    <value>Rename your PC</value>
+  </data>
+  <data name="System_RenameDesc" xml:space="preserve">
+    <value>The name other devices see on the network. The new name takes effect after a restart.</value>
+  </data>
+  <data name="System_CurrentName" xml:space="preserve">
+    <value>Current name: {0}</value>
+  </data>
+  <data name="System_PendingName" xml:space="preserve">
+    <value>After restart: {0}</value>
+  </data>
+  <data name="System_NewNamePlaceholder" xml:space="preserve">
+    <value>New name</value>
+  </data>
+  <data name="System_Rename" xml:space="preserve">
+    <value>Rename</value>
+  </data>
+  <data name="System_NameRules" xml:space="preserve">
+    <value>Up to 15 characters: letters, digits and hyphens.</value>
+  </data>
+  <data name="System_NameTooLong" xml:space="preserve">
+    <value>The name can have at most 15 characters.</value>
+  </data>
+  <data name="System_NameInvalidChars" xml:space="preserve">
+    <value>Use only letters (A–Z), digits and hyphens, without spaces.</value>
+  </data>
+  <data name="System_NameAllDigits" xml:space="preserve">
+    <value>The name can't consist of digits only.</value>
+  </data>
+  <data name="System_NameHyphenEdge" xml:space="preserve">
+    <value>The name can't start or end with a hyphen.</value>
+  </data>
+  <data name="System_Renamed" xml:space="preserve">
+    <value>The computer will be called "{0}" after a restart.</value>
+  </data>
+  <data name="System_RenameFailed" xml:space="preserve">
+    <value>Renaming failed</value>
+  </data>
+  <data name="System_RestartTitle" xml:space="preserve">
+    <value>Restart needed</value>
+  </data>
+  <data name="System_RestartMessage" xml:space="preserve">
+    <value>The changes take effect after the computer restarts. Save your work before restarting.</value>
+  </data>
+  <data name="System_RebootRequired" xml:space="preserve">
+    <value>Restart the computer to finish applying changes and updates.</value>
+  </data>
+  <data name="System_RestartNow" xml:space="preserve">
+    <value>Restart now</value>
+  </data>
+  <data name="System_RestartLater" xml:space="preserve">
+    <value>Later</value>
+  </data>
+  <data name="System_UpdatesHeader" xml:space="preserve">
+    <value>Windows Update</value>
+  </data>
+  <data name="System_UpdatesTitle" xml:space="preserve">
+    <value>Windows updates</value>
+  </data>
+  <data name="System_UpdatesDesc" xml:space="preserve">
+    <value>Check for, download and install updates from Microsoft.</value>
+  </data>
+  <data name="System_Check" xml:space="preserve">
+    <value>Check for updates</value>
+  </data>
+  <data name="System_Install" xml:space="preserve">
+    <value>Install selected</value>
+  </data>
+  <data name="System_OpenSettings" xml:space="preserve">
+    <value>Open Windows Update settings</value>
+  </data>
+  <data name="System_UpdatesIdle" xml:space="preserve">
+    <value>Not checked yet.</value>
+  </data>
+  <data name="System_Searching" xml:space="preserve">
+    <value>Checking for updates… This can take a few minutes.</value>
+  </data>
+  <data name="System_UpToDate" xml:space="preserve">
+    <value>You're up to date</value>
+  </data>
+  <data name="System_LastChecked" xml:space="preserve">
+    <value>last checked at {0}</value>
+  </data>
+  <data name="System_SearchFailed" xml:space="preserve">
+    <value>Windows Update error: {0}</value>
+  </data>
+  <data name="System_Downloading" xml:space="preserve">
+    <value>Downloading {0} of {1}: {2}</value>
+  </data>
+  <data name="System_Installing" xml:space="preserve">
+    <value>Installing {0} of {1}: {2}</value>
+  </data>
+  <data name="System_InstallDone" xml:space="preserve">
+    <value>Installed {0} of {1} updates.</value>
+  </data>
+  <data name="System_InstallCancelled" xml:space="preserve">
+    <value>Installation stopped. Updates already installed stay installed.</value>
+  </data>
+  <data name="System_UpdateDownloaded" xml:space="preserve">
+    <value>Downloaded</value>
+  </data>
+  <data name="System_UpdateOptional" xml:space="preserve">
+    <value>Optional</value>
+  </data>
+  <data name="Count_Updates_One" xml:space="preserve">
+    <value>{0} update available</value>
+  </data>
+  <data name="Count_Updates_Few" xml:space="preserve">
+    <value>{0} updates available</value>
+  </data>
+  <data name="Count_Updates_Many" xml:space="preserve">
+    <value>{0} updates available</value>
+  </data>
+  <data name="Nav_Help" xml:space="preserve">
+    <value>User manual</value>
+  </data>
+  <data name="Help_Intro" xml:space="preserve">
+    <value>A detailed guide to Ultimate PC Cleaner: what each page does, how to use it and how the app keeps your data safe. Click a section to expand it, then “Open page” to go straight to that feature.</value>
+  </data>
+  <data name="Help_QuickStartHeader" xml:space="preserve">
+    <value>Quick start</value>
+  </data>
+  <data name="Help_QuickStartBody" xml:space="preserve">
+    <value>1. On the Dashboard, click “Scan now”. The app finds junk files but doesn't delete anything.
+2. Review the results on the Cleaner and Temp files pages, select what you want to remove and confirm.
+3. On the Startup apps page, turn off programs you don't need right after sign-in — Windows will start faster.
+4. On the Security page, check the protection status and run “Find suspicious items” from time to time.
+5. For one-click maintenance, use the “BOOST” button on the Dashboard.
+
+Tip: for system folders, Defender scans, the repair tools and installing updates, run the app as administrator (the “Restart as administrator” button in the bar at the top of the window).</value>
+  </data>
+  <data name="Help_PagesHeader" xml:space="preserve">
+    <value>App pages</value>
+  </data>
+  <data name="Help_OpenPage" xml:space="preserve">
+    <value>Open page</value>
+  </data>
+  <data name="Help_Dashboard_Summary" xml:space="preserve">
+    <value>PC status at a glance, cleaning statistics and one-click Boost.</value>
+  </data>
+  <data name="Help_Dashboard_Body" xml:space="preserve">
+    <value>The Dashboard is the start screen and shows the state of your PC at a glance.
+• System status — live gauges show processor load (CPU), memory use (RAM) and free space on the system drive, plus how long the PC has been running since the last restart.
+• Junk found — the total size of junk files selected on the Cleaner and Temp files pages.
+• Temporary files — space that can be freed in the Temp and Prefetch folders.
+• Total space freed and Last cleaned — how much space you've freed since you started using the app, and when.
+• “Scan now” — checks every category and shows how much space you can free. Scanning never deletes anything; review the results with “Review in Cleaner”.
+• “BOOST” — in one click, cleans the junk selected in Cleaner, flushes the DNS cache and frees RAM. Before deleting, it shows exactly how much data will be removed and asks you to confirm; choosing “Cancel” changes nothing.
+The “Temp files” and “Optimize” shortcuts take you straight to those pages.</value>
+  </data>
+  <data name="Help_TempFiles_Summary" xml:space="preserve">
+    <value>Review and safely delete files in Windows' temporary-file folders.</value>
+  </data>
+  <data name="Help_TempFiles_Body" xml:space="preserve">
+    <value>This page works with three locations Windows uses for temporary data:
+• User temporary files (%LOCALAPPDATA%\Temp) — your personal Temp folder; no administrator rights needed.
+• Windows temporary files (%WINDIR%\Temp) — the system Temp folder; requires administrator.
+• Windows Prefetch (%WINDIR%\Prefetch, *.pf files only) — requires administrator.
+
+How to use it:
+1. Click “Scan”. For each location you'll see the number of files, the space that can be freed, files in use and inaccessible items.
+2. Select the locations you want to clean. The folder icon opens the location in File Explorer.
+3. Click “Delete selected”, check the list in the confirmation dialog and click “Delete files”.
+4. Watch the live progress. At the end you'll see what was deleted, what was skipped (and why) and what was already gone.
+
+Files in use are skipped — most can be deleted after a restart. Files newer than 24 hours are kept by default (Settings → “Skip temp files newer than 24 hours”).
+Note: clearing Prefetch doesn't make the PC faster; apps may start more slowly at first. Use it only for troubleshooting.</value>
+  </data>
+  <data name="Help_Cleaner_Summary" xml:space="preserve">
+    <value>Clean caches, logs, the Recycle Bin and browser caches by category.</value>
+  </data>
+  <data name="Help_Cleaner_Body" xml:space="preserve">
+    <value>Cleaner covers a wider set of categories, organized in groups:
+• Windows — user and Windows temporary files, Windows Update cache, Delivery Optimization cache, error reports, memory dumps, old Windows logs (older than 7 days), the Recycle Bin, Prefetch data and the thumbnail cache.
+• Web browsers — cache for Microsoft Edge, Google Chrome, Brave and Mozilla Firefox. Only the cache is removed; cookies, history and passwords are kept.
+• Applications — the DirectX shader cache.
+
+How to use it:
+1. Check or uncheck categories. The box next to a group name selects or clears the whole group; “Select all”, “Recommended” and “Select none” change the selection for every category at once.
+2. Click “Scan” to see how much space each category uses.
+3. Click “Clean selected” and confirm. At the end, the app shows how much space was freed.
+
+If a browser is running, you'll see the “Some apps are running” warning — close it to clean its cache completely. Categories with a yellow warning (for example Prefetch or the shader cache) have side effects, so turn them on only when you need them. Categories marked “Requires admin” work only in administrator mode.</value>
+  </data>
+  <data name="Help_Startup_Summary" xml:space="preserve">
+    <value>Turn programs that start with Windows on or off.</value>
+  </data>
+  <data name="Help_Startup_Body" xml:space="preserve">
+    <value>This page lists every program that starts automatically when you sign in to Windows — from the registry and the Startup folders, for the current user and for all users.
+• The switch next to a program disables or re-enables it at startup. It uses the same mechanism as Task Manager, so nothing is deleted or uninstalled.
+• The search box filters the list by name; next to it is a count of enabled and disabled items.
+• Each item shows its publisher and location (for example “Registry (current user)”); “Open file location” shows the program in File Explorer.
+• “Refresh” reloads the list.
+
+Items registered for all users can be changed only in administrator mode — otherwise they are read-only.
+Tip: turn off programs you don't need right after sign-in (game launchers, updaters, chat apps). Leave your antivirus and hardware utilities (audio, touchpad, graphics) on.</value>
+  </data>
+  <data name="Help_Security_Summary" xml:space="preserve">
+    <value>Microsoft Defender scans, script checks, suspicious items and quarantine.</value>
+  </data>
+  <data name="Help_Security_Body" xml:space="preserve">
+    <value>The Security page uses Microsoft Defender and whatever antivirus is installed on the PC — it is not an antivirus of its own.
+• Protection status — at the top you'll see whether the PC is protected, the signature version and date, and when the last scan ran. If another antivirus is active, Defender scans aren't available, but everything else still works.
+• “Quick scan”, “Full scan” and “Scan folder…” run a Defender scan with live output. “Update signatures” downloads the latest virus definitions.
+• “Check scripts (AMSI)…” — sends every PowerShell, VBScript, JavaScript and batch script in a chosen folder to the installed antivirus for checking.
+• “Find suspicious items” — reviews startup entries, scheduled tasks and scripts and flags risky patterns: hidden or encoded commands, disguised names (such as invoice.pdf.exe), unsigned programs in user folders and entries that point to missing files. Each item has a risk level (Low, Medium, High) and a reason. A match isn't proof — check before you act.
+• For a suspicious item you can scan it with Defender, check its hash on VirusTotal (if turned on in Settings) or move it to quarantine.
+• Microsoft Defender detections — the list of detections. “Remove active threats” removes them, and “Allow” marks a file as safe (only if you're sure).
+• Ultimate PC Cleaner quarantine — moved files are stored in a form that can't run. “Restore” puts a file back where it was, and “Delete” removes it permanently. You can also restore files from Defender's quarantine here.
+
+Scanning, quarantine and restore need administrator rights; the status and the suspicious-item search work without them.</value>
+  </data>
+  <data name="Help_Optimize_Summary" xml:space="preserve">
+    <value>Reversible performance tweaks and quick actions.</value>
+  </data>
+  <data name="Help_Optimize_Body" xml:space="preserve">
+    <value>Performance tweaks (switches — turning one off restores the previous setting):
+• High performance power plan — keeps the processor at higher clock speeds; best for desktops and laptops plugged in.
+• Ultimate performance power plan — removes micro-delays from power saving, but uses more power and battery. Devices with Modern Standby support only the Balanced plan.
+• Performance visual effects — turns off window animations, smooth scrolling and transparency; useful on slower PCs.
+• Disable background game recording — stops Xbox Game Bar (Game DVR) from recording gameplay in the background.
+
+Before the first change in a session, the app creates a System Restore point (if this is on in Settings and the app runs as administrator). If the restore point can't be created, it asks whether you want to continue anyway.
+
+Quick actions:
+• Flush DNS cache — helps when websites don't load after changing networks or DNS servers.
+• Free up RAM — trims apps' unused memory; useful before a game or a demanding program.
+• Create a restore point — manually saves a snapshot of the system that you can return to from Windows recovery (requires administrator and System Protection turned on).</value>
+  </data>
+  <data name="Help_Health_Summary" xml:space="preserve">
+    <value>Windows check and repair tools with live output.</value>
+  </data>
+  <data name="Help_Health_Body" xml:space="preserve">
+    <value>Here you run Windows' built-in maintenance tools. All of them need administrator rights.
+• System File Checker (sfc /scannow) — finds and repairs damaged protected Windows files.
+• Repair Windows image (DISM RestoreHealth) — repairs the Windows component store and needs an internet connection. Run it when SFC reports errors it can't fix, then run SFC again.
+• Clean up component store (DISM) — removes superseded update components from the WinSxS folder to free space.
+• Optimize system drive — TRIM on an SSD, defragmentation on a hard disk.
+• Check disk for errors (chkdsk /scan) — looks for file system errors without making changes.
+
+Click “Run” next to a tool and follow the output in the panel below. You can stop a tool with “Cancel”, and copy (“Copy output”) or clear (“Clear output”) the output. Some tools take tens of minutes — don't shut down the PC while they run.</value>
+  </data>
+  <data name="Help_System_Summary" xml:space="preserve">
+    <value>Rename the computer and manage Windows updates.</value>
+  </data>
+  <data name="Help_System_Body" xml:space="preserve">
+    <value>Computer name
+• The card shows what the PC is currently called on the network.
+• Enter a new name and click “Rename”. Rules: up to 15 characters, only letters (A–Z), digits and hyphens, no spaces; the name can't be all digits or start or end with a hyphen.
+• The new name takes effect after a restart.
+
+Windows Update
+• “Check for updates” looks for available updates (this can take a few minutes); it works without administrator rights.
+• Updates are shown as a list. Required updates are preselected; optional ones (such as feature upgrades) aren't.
+• “Install selected” downloads and installs the checked updates with progress; “Cancel” stops the installation, and updates already installed stay.
+• The icon next to the buttons opens Windows Update in Windows Settings.
+
+When a restart is needed (after a rename or updates), a card with a “Restart now” button appears at the top of the page. Save your work before restarting.</value>
+  </data>
+  <data name="Help_Settings_Summary" xml:space="preserve">
+    <value>Language, theme, cleaning safety options and VirusTotal.</value>
+  </data>
+  <data name="Help_Settings_Body" xml:space="preserve">
+    <value>General
+• Language — Serbian (Latin), English, Russian, German or Chinese; the change applies immediately.
+
+Appearance
+• App theme — light, dark or follow Windows.
+• Reduce animations — turns off decorative animations (they're also off when animations are disabled in Windows).
+
+Cleaning
+• Skip temp files newer than 24 hours — recommended, because new files may still be used by installers or running apps.
+• Remember my selections — keeps the categories and locations you check for next time.
+
+Safety
+• Create a restore point before optimizing — creates a System Restore point before the first change in each session.
+• VirusTotal hash lookup — adds a button to check suspicious files with 70+ antivirus engines. It needs a free API key from virustotal.com: enter it and click “Save key”. Only the file's SHA-256 hash is sent, never the file itself, and the key is stored encrypted for your Windows account.
+
+About
+• Shows the version and the folder with settings and logs; “Open folder” and “View logs” open it in File Explorer.</value>
+  </data>
+  <data name="Help_SafetyHeader" xml:space="preserve">
+    <value>Safety and administrator rights</value>
+  </data>
+  <data name="Help_SafetyTitle" xml:space="preserve">
+    <value>How the app keeps your data safe</value>
+  </data>
+  <data name="Help_SafetySummary" xml:space="preserve">
+    <value>Rules that apply to every scan and every deletion.</value>
+  </data>
+  <data name="Help_SafetyBody" xml:space="preserve">
+    <value>• Nothing is deleted without your confirmation — every deletion, including BOOST, first shows what will be removed and how much space it takes.
+• Scanning only reads data and never deletes anything.
+• Paths are resolved from Windows environment variables (%LOCALAPPDATA%, %WINDIR%). A path that can't be resolved safely (relative, network, drive root or a link) is reported and never cleaned.
+• Only files are deleted. Main folders are never removed, and empty sub-folders are removed one at a time.
+• Links (junctions and symlinks) are never followed, and every file is re-checked right before deletion.
+• Files that are in use, without permission or that fail the re-check are skipped and listed in the result — partial success is reported as partial.
+• Documents, downloads, cookies, browser history, passwords and app settings are never touched.
+• Optimizations are reversible, and a System Restore point is created before the first change.
+• The Security page never deletes files on its own; quarantine happens only after you confirm and can be undone.
+• Deleted files don't go to the Recycle Bin — deletion is permanent, so review your selection carefully.</value>
+  </data>
+  <data name="Help_AdminTitle" xml:space="preserve">
+    <value>Limited mode and administrator rights</value>
+  </data>
+  <data name="Help_AdminSummary" xml:space="preserve">
+    <value>What works without elevation and what needs administrator.</value>
+  </data>
+  <data name="Help_AdminBody" xml:space="preserve">
+    <value>The app starts with the current user's rights. In that case the window title includes “(limited mode)” and a bar with an explanation appears at the top.
+
+Without administrator rights you can:
+• clean your own Temp folder and browser caches,
+• turn your own startup programs on and off,
+• use most performance tweaks and quick actions,
+• see the protection status, check scripts and search for suspicious items,
+• check for Windows updates.
+
+Administrator rights are needed for:
+• Windows Temp, Prefetch and system caches,
+• startup programs registered for all users,
+• System Restore points,
+• the tools on the Health page,
+• Defender scans, quarantine and restoring files,
+• renaming the computer and installing updates.
+
+Click “Restart as administrator” in the bar at the top and confirm the Windows UAC prompt. The app never asks for elevation on its own. You can close the bar with the X button.</value>
+  </data>
+  <data name="Help_FaqHeader" xml:space="preserve">
+    <value>Frequently asked questions</value>
+  </data>
+  <data name="Help_Faq1_Q" xml:space="preserve">
+    <value>Why are some files left after cleaning?</value>
+  </data>
+  <data name="Help_Faq1_A" xml:space="preserve">
+    <value>Files currently used by an app or by Windows itself can't be deleted, so they're skipped and listed in the result (“In use”, “Access denied”). Close your apps or restart the PC and clean again. Temp files newer than 24 hours are also kept on purpose.</value>
+  </data>
+  <data name="Help_Faq2_Q" xml:space="preserve">
+    <value>Does cleaning the browser cache delete passwords or history?</value>
+  </data>
+  <data name="Help_Faq2_A" xml:space="preserve">
+    <value>No. Only the cache (temporarily stored pages, images and scripts) is removed. Cookies, history, passwords, bookmarks and settings stay. Websites may load a little more slowly the first time after cleaning.</value>
+  </data>
+  <data name="Help_Faq3_Q" xml:space="preserve">
+    <value>Can I get deleted files back?</value>
+  </data>
+  <data name="Help_Faq3_A" xml:space="preserve">
+    <value>No — deleted files don't go to the Recycle Bin, which is why every deletion asks for confirmation first. The exception is files moved to quarantine on the Security page: you can always bring them back with “Restore”. Changes on the Optimize page are undone by turning the switch off, or with a System Restore point.</value>
+  </data>
+  <data name="Help_Faq4_Q" xml:space="preserve">
+    <value>Why are some buttons or categories unavailable?</value>
+  </data>
+  <data name="Help_Faq4_A" xml:space="preserve">
+    <value>Usually because the app is running in limited mode. Features that change the system need administrator rights — click “Restart as administrator”. On the Security page, Defender scans are also unavailable when another antivirus is active.</value>
+  </data>
+  <data name="Help_Faq5_Q" xml:space="preserve">
+    <value>A restore point can't be created. What should I do?</value>
+  </data>
+  <data name="Help_Faq5_A" xml:space="preserve">
+    <value>Make sure the app is running as administrator. If it is, System Protection is probably turned off for the system drive: search Windows for “Create a restore point”, select the system drive (usually C:), click “Configure” and turn on system protection.</value>
+  </data>
+  <data name="Help_Faq6_Q" xml:space="preserve">
+    <value>Windows SmartScreen warns me during setup. Is that a problem?</value>
+  </data>
+  <data name="Help_Faq6_A" xml:space="preserve">
+    <value>The installer isn't digitally signed, so Windows SmartScreen may show “Windows protected your PC”. Click “More info”, then “Run anyway”. The app doesn't send your data anywhere; the only exception is the optional VirusTotal check, which sends only a file hash.</value>
+  </data>
+  <data name="Help_Faq7_Q" xml:space="preserve">
+    <value>Where are the settings and logs, and what should I send when reporting a problem?</value>
+  </data>
+  <data name="Help_Faq7_A" xml:space="preserve">
+    <value>Settings and logs are in the %LOCALAPPDATA%\UltimatePCCleaner folder. Open Settings → About → “View logs” and attach the newest log together with a description of the problem and the steps that led to it.</value>
+  </data>
+</root>

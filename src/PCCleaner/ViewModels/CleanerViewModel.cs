@@ -5,6 +5,7 @@ using CommunityToolkit.Mvvm.Input;
 using PCCleaner.Models;
 using PCCleaner.Services;
 using PCCleaner.Services.Cleaning;
+using PCCleaner.Services.Localization;
 using Wpf.Ui;
 using Wpf.Ui.Controls;
 using Wpf.Ui.Extensions;
@@ -17,6 +18,7 @@ public sealed partial class CleanerViewModel : ObservableObject
     private readonly ISnackbarService _snackbar;
     private readonly IContentDialogService _dialogs;
     private CancellationTokenSource? _cts;
+    private CleanResult? _lastResult;
 
     public CleanerViewModel(CleanupCatalog catalog, SettingsService settings, ISnackbarService snackbar, IContentDialogService dialogs)
     {
@@ -32,12 +34,14 @@ public sealed partial class CleanerViewModel : ObservableObject
 
         Groups = new[]
             {
-                new CleanupGroupViewModel("Windows", SymbolRegular.Desktop24, ItemsIn(CleanupGroup.System)),
-                new CleanupGroupViewModel("Web browsers", SymbolRegular.Globe24, ItemsIn(CleanupGroup.Browsers)),
-                new CleanupGroupViewModel("Applications", SymbolRegular.Apps24, ItemsIn(CleanupGroup.Applications)),
+                new CleanupGroupViewModel("Cleaner_Group_Windows", SymbolRegular.Desktop24, ItemsIn(CleanupGroup.System)),
+                new CleanupGroupViewModel("Cleaner_Group_Browsers", SymbolRegular.Globe24, ItemsIn(CleanupGroup.Browsers)),
+                new CleanupGroupViewModel("Cleaner_Group_Apps", SymbolRegular.Apps24, ItemsIn(CleanupGroup.Applications)),
             }
             .Where(g => g.Items.Count > 0)
             .ToList();
+
+        LocalizationService.Instance.LanguageChanged += (_, _) => RefreshText();
     }
 
     /// <summary>Raised after a cleaning run finishes (used by the dashboard to refresh its stats).</summary>
@@ -72,8 +76,12 @@ public sealed partial class CleanerViewModel : ObservableObject
     [ObservableProperty]
     public partial bool ShowResult { get; set; }
 
+    /// <summary>Bytes freed by the last run (the view counts up to it).</summary>
     [ObservableProperty]
-    public partial long DisplayedFreedBytes { get; set; }
+    public partial long FreedBytes { get; set; }
+
+    [ObservableProperty]
+    public partial bool ResultIsPartial { get; set; }
 
     [ObservableProperty]
     public partial string? ResultDetails { get; set; }
@@ -89,8 +97,8 @@ public sealed partial class CleanerViewModel : ObservableObject
     public long SelectedBytes => Items.Where(i => i.IsChecked && i.Status == CleanupStatus.Scanned).Sum(i => i.FoundBytes);
 
     public string SelectionSummary => HasScanned
-        ? $"{SelectedCount} categories selected · {ByteSize.Format(SelectedBytes)} can be freed"
-        : $"{SelectedCount} categories selected · scan to see how much space you can free";
+        ? Loc.F("Cleaner_SummaryScanned", Loc.Count("Count_Categories", SelectedCount), ByteSize.Format(SelectedBytes))
+        : Loc.F("Cleaner_SummaryNotScanned", Loc.Count("Count_Categories", SelectedCount));
 
     [RelayCommand(CanExecute = nameof(CanScan))]
     private Task ScanAsync() => ScanItemsAsync(Items.Where(i => i.IsAvailable).ToList());
@@ -105,7 +113,7 @@ public sealed partial class CleanerViewModel : ObservableObject
         var selected = Items.Where(i => i.IsChecked && i.HasFoundJunk).ToList();
         if (selected.Count == 0)
         {
-            _snackbar.Show("Nothing to clean", "The selected categories are already clean.", ControlAppearance.Info,
+            _snackbar.Show(Loc.T("Cleaner_NothingTitle"), Loc.T("Cleaner_NothingMessage"), ControlAppearance.Info,
                 new SymbolIcon(SymbolRegular.CheckmarkCircle24), TimeSpan.FromSeconds(3));
             return;
         }
@@ -113,12 +121,10 @@ public sealed partial class CleanerViewModel : ObservableObject
         UpdateBlockingWarning();
         var answer = await _dialogs.ShowSimpleDialogAsync(new SimpleContentDialogCreateOptions
         {
-            Title = "Clean selected items?",
-            Content = $"PC Cleaner will permanently delete {ByteSize.Format(selected.Sum(i => i.FoundBytes))} " +
-                      $"from {selected.Count} {(selected.Count == 1 ? "category" : "categories")}.\n\n" +
-                      "Files that are currently in use are skipped automatically.",
-            PrimaryButtonText = "Clean now",
-            CloseButtonText = "Cancel",
+            Title = Loc.T("Cleaner_ConfirmTitle"),
+            Content = Loc.F("Cleaner_ConfirmMessage", ByteSize.Format(selected.Sum(i => i.FoundBytes)), Loc.Count("Count_Categories", selected.Count)),
+            PrimaryButtonText = Loc.T("Common_CleanNow"),
+            CloseButtonText = Loc.T("Common_Cancel"),
         });
 
         if (answer == ContentDialogResult.Primary)
@@ -156,7 +162,7 @@ public sealed partial class CleanerViewModel : ObservableObject
         var token = _cts.Token;
         IsScanning = true;
         ShowResult = false;
-        ProgressText = "Analyzing your PC…";
+        ProgressText = Loc.T("Cleaner_Analyzing");
 
         try
         {
@@ -177,7 +183,7 @@ public sealed partial class CleanerViewModel : ObservableObject
                 catch (Exception ex)
                 {
                     item.Status = CleanupStatus.Failed;
-                    AppLog.Write($"Scan of {item.Name} failed: {ex}");
+                    AppLog.Write($"Scan of {item.Provider.Id} failed: {ex}");
                 }
             }));
 
@@ -204,7 +210,7 @@ public sealed partial class CleanerViewModel : ObservableObject
 
         long totalBytes = Math.Max(1, items.Sum(i => i.FoundBytes));
         long completedBytes = 0, freed = 0;
-        int deleted = 0, skipped = 0;
+        int deleted = 0, skipped = 0, failedCategories = 0;
 
         try
         {
@@ -212,14 +218,14 @@ public sealed partial class CleanerViewModel : ObservableObject
             {
                 if (token.IsCancellationRequested) break;
 
-                ProgressText = $"Cleaning {item.Name}…";
+                ProgressText = Loc.F("Cleaner_CleaningItem", item.Name);
                 item.FreedBytes = 0;
                 item.Status = CleanupStatus.Cleaning;
                 var baseBytes = completedBytes;
-                var progress = new Progress<long>(bytes =>
+                var progress = new Progress<CleanProgress>(p =>
                 {
-                    item.FreedBytes = bytes;
-                    Progress = Math.Min(100, (baseBytes + Math.Min(bytes, item.FoundBytes)) * 100.0 / totalBytes);
+                    item.FreedBytes = p.BytesFreed;
+                    Progress = Math.Min(100, (baseBytes + Math.Min(p.BytesFreed, item.FoundBytes)) * 100.0 / totalBytes);
                 });
 
                 try
@@ -239,7 +245,8 @@ public sealed partial class CleanerViewModel : ObservableObject
                 catch (Exception ex)
                 {
                     item.Status = CleanupStatus.Failed;
-                    AppLog.Write($"Cleaning {item.Name} failed: {ex}");
+                    failedCategories++;
+                    AppLog.Write($"Cleaning {item.Provider.Id} failed: {ex}");
                 }
 
                 completedBytes += item.FoundBytes;
@@ -257,48 +264,48 @@ public sealed partial class CleanerViewModel : ObservableObject
         _settings.Current.LastCleaned = DateTime.Now;
         _settings.Current.TotalBytesFreed += freed;
         _settings.Save();
-        AppLog.Write($"Cleaned {items.Count} categories: freed {freed:N0} bytes, {deleted:N0} files deleted, {skipped:N0} skipped.");
+        AppLog.Write($"Cleaned {items.Count} categories: freed {freed:N0} bytes, {deleted:N0} files deleted, {skipped:N0} skipped, {failedCategories} failed.");
 
-        ResultDetails = skipped > 0
-            ? $"{deleted:N0} files removed · {skipped:N0} in use and skipped"
-            : $"{deleted:N0} files removed";
+        _lastResult = summary;
+        ResultIsPartial = skipped > 0 || failedCategories > 0 || token.IsCancellationRequested;
+        ResultDetails = BuildResultDetails(summary);
+        FreedBytes = freed;
         ShowResult = true;
-        _ = AnimateFreedBytesAsync(freed);
 
         if (notify)
         {
-            _snackbar.Show("Cleaning complete", $"Freed {ByteSize.Format(freed)} of disk space.", ControlAppearance.Success,
-                new SymbolIcon(SymbolRegular.CheckmarkCircle24), TimeSpan.FromSeconds(4));
+            _snackbar.Show(
+                Loc.T(ResultIsPartial ? "Cleaner_DonePartialTitle" : "Cleaner_DoneTitle"),
+                Loc.F("Cleaner_DoneMessage", ByteSize.Format(freed)),
+                ResultIsPartial ? ControlAppearance.Caution : ControlAppearance.Success,
+                new SymbolIcon(ResultIsPartial ? SymbolRegular.Warning24 : SymbolRegular.CheckmarkCircle24), TimeSpan.FromSeconds(4));
         }
 
         CleaningCompleted?.Invoke(this, summary);
         return summary;
     }
 
-    private async Task AnimateFreedBytesAsync(long target)
-    {
-        const double durationMs = 900;
-        var clock = Stopwatch.StartNew();
-        while (clock.ElapsedMilliseconds < durationMs)
-        {
-            var t = clock.ElapsedMilliseconds / durationMs;
-            DisplayedFreedBytes = (long)(target * (1 - Math.Pow(1 - t, 3)));
-            await Task.Delay(16);
-        }
-
-        DisplayedFreedBytes = target;
-    }
+    private static string BuildResultDetails(CleanResult result) => result.FilesSkipped > 0
+        ? $"{Loc.Count("Count_FilesRemoved", result.FilesDeleted)} · {Loc.Count("Count_SkippedInUse", result.FilesSkipped)}"
+        : Loc.Count("Count_FilesRemoved", result.FilesDeleted);
 
     private void UpdateBlockingWarning()
     {
         var running = Items
             .Where(i => i.IsChecked && i.Provider.BlockingProcesses.Any(p => Process.GetProcessesByName(p).Length > 0))
-            .Select(i => i.Name.Replace(" cache", ""))
+            .Select(i => i.Provider.BlockingAppName ?? i.Name)
             .ToList();
 
-        BlockingWarning = running.Count == 0
-            ? null
-            : $"{string.Join(", ", running)} {(running.Count == 1 ? "is" : "are")} running. Close {(running.Count == 1 ? "it" : "them")} to clean the cache completely; files in use will be skipped.";
+        BlockingWarning = running.Count == 0 ? null : Loc.F("Cleaner_BlockingWarning", string.Join(", ", running));
+    }
+
+    private void RefreshText()
+    {
+        foreach (var item in Items) item.RefreshText();
+        foreach (var group in Groups) group.RefreshText();
+        if (_lastResult is not null) ResultDetails = BuildResultDetails(_lastResult);
+        if (BlockingWarning is not null) UpdateBlockingWarning();
+        RaiseSelectionChanged();
     }
 
     private void OnItemChanged(object? sender, PropertyChangedEventArgs e)
